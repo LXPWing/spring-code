@@ -887,7 +887,7 @@ that test drives the configuration shown earlier:
 ----
 	public final class Boot {
 
-		public static void main(final String[] args) throws Exception {
+		public static void com.Li.spring.main(final String[] args) throws Exception {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
 			FooService fooService = ctx.getBean(FooService.class);
 			fooService.insertFoo(new Foo());
@@ -899,7 +899,7 @@ that test drives the configuration shown earlier:
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("context.xml")
 		val fooService = ctx.getBean<FooService>("fooService")
 		fooService.insertFoo(Foo())
@@ -934,10 +934,10 @@ output and the stack trace from the `UnsupportedOperationException` thrown by th
 	[DataSourceTransactionManager] - Releasing JDBC Connection after transaction
 	[DataSourceUtils] - Returning JDBC Connection to DataSource
 
-	Exception in thread "main" java.lang.UnsupportedOperationException at x.y.service.DefaultFooService.insertFoo(DefaultFooService.java:14)
+	Exception in thread "com.Li.spring.main" java.lang.UnsupportedOperationException at x.y.service.DefaultFooService.insertFoo(DefaultFooService.java:14)
 	<!-- AOP infrastructure stack trace elements removed for clarity -->
 	at $Proxy0.insertFoo(Unknown Source)
-	at Boot.main(Boot.java:11)
+	at Boot.com.Li.spring.main(Boot.java:11)
 ----
 
 To use reactive transaction management the code has to use reactive types.
@@ -1042,7 +1042,7 @@ The following example shows an implementation of the preceding interface:
 ----
 
 Imperative and reactive transaction management share the same semantics for transaction
-boundary and transaction attribute definitions. The main difference between imperative
+boundary and transaction attribute definitions. The com.Li.spring.main difference between imperative
 and reactive transactions is the deferred nature of the latter. `TransactionInterceptor`
 decorates the returned reactive type with a transactional operator to begin and clean up
 the transaction. Therefore, calling a transactional reactive method defers the actual
@@ -4758,7 +4758,7 @@ listing shows how it works:
 	}
 ----
 
-The main difference when you run the insert by using this second approach is that you do not
+The com.Li.spring.main difference when you run the insert by using this second approach is that you do not
 add the `id` to the `Map`, and you call the `executeAndReturnKey` method. This returns a
 `java.lang.Number` object with which you can create an instance of the numerical type that
 is used in your domain class. You cannot rely on all databases to return a specific Java
@@ -6968,7 +6968,7 @@ Spring bean definition, the DAO would resemble the following:
 	</beans>
 ----
 
-The main advantage of this DAO style is that it depends on Hibernate API only. No import
+The com.Li.spring.main advantage of this DAO style is that it depends on Hibernate API only. No import
 of any Spring class is required. This is appealing from a non-invasiveness
 perspective and may feel more natural to Hibernate developers.
 
@@ -7687,7 +7687,7 @@ Consider the following example:
 	</beans>
 ----
 
-The main problem with such a DAO is that it always creates a new `EntityManager` through
+The com.Li.spring.main problem with such a DAO is that it always creates a new `EntityManager` through
 the factory. You can avoid this by requesting a transactional `EntityManager` (also
 called a "`shared EntityManager`" because it is a shared, thread-safe proxy for the actual
 transactional EntityManager) to be injected instead of the factory. The following example shows how to do so:
@@ -7753,7 +7753,7 @@ Even though the new DAO implementation uses method-level
 injection of an `EntityManager` instead of an `EntityManagerFactory`, no change is
 required in the application context XML, due to annotation usage.
 
-The main advantage of this DAO style is that it depends only on the Java Persistence API.
+The com.Li.spring.main advantage of this DAO style is that it depends only on the Java Persistence API.
 No import of any Spring class is required. Moreover, as the JPA annotations are understood,
 the injections are applied automatically by the Spring container. This is appealing from
 a non-invasiveness perspective and can feel more natural to JPA developers.
@@ -7955,7 +7955,7 @@ the two Spring interfaces used for this purpose.
 ==== Understanding `Marshaller`
 
 Spring abstracts all marshalling operations behind the
-`org.springframework.oxm.Marshaller` interface, the main method of which follows:
+`org.springframework.oxm.Marshaller` interface, the com.Li.spring.main method of which follows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -7985,7 +7985,7 @@ Spring abstracts all marshalling operations behind the
 ----
 
 
-The `Marshaller` interface has one main method, which marshals the given object to a
+The `Marshaller` interface has one com.Li.spring.main method, which marshals the given object to a
 given `javax.xml.transform.Result`. The result is a tagging interface that basically
 represents an XML output abstraction. Concrete implementations wrap various XML
 representations, as the following table indicates:
@@ -8114,9 +8114,9 @@ use a simple JavaBean to represent the settings:
 	}
 ----
 
-The application class uses this bean to store its settings. Besides a main method, the
+The application class uses this bean to store its settings. Besides a com.Li.spring.main method, the
 class has two methods: `saveSettings()` saves the settings bean to a file named
-`settings.xml`, and `loadSettings()` loads these settings again. The following `main()` method
+`settings.xml`, and `loadSettings()` loads these settings again. The following `com.Li.spring.main()` method
 constructs a Spring application context and calls these two methods:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -8159,7 +8159,7 @@ constructs a Spring application context and calls these two methods:
 			}
 		}
 
-		public static void main(String[] args) throws IOException {
+		public static void com.Li.spring.main(String[] args) throws IOException {
 			ApplicationContext appContext =
 					new ClassPathXmlApplicationContext("applicationContext.xml");
 			Application application = (Application) appContext.getBean("application");
@@ -8188,7 +8188,7 @@ constructs a Spring application context and calls these two methods:
 
 	private const val FILE_NAME = "settings.xml"
 
-	fun main(args: Array<String>) {
+	fun com.Li.spring.main(args: Array<String>) {
 		val appContext = ClassPathXmlApplicationContext("applicationContext.xml")
 		val application = appContext.getBean("application") as Application
 		application.saveSettings()

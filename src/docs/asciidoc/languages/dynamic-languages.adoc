@@ -265,7 +265,7 @@ The following listing shows this sample application:
 
 	public final class Boot {
 
-		public static void main(final String[] args) throws Exception {
+		public static void com.Li.spring.main(final String[] args) throws Exception {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 			Messenger messenger = (Messenger) ctx.getBean("messenger");
 			System.out.println(messenger.getMessage());
@@ -480,7 +480,7 @@ Finally, the following small application exercises the preceding configuration:
 
 	public class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 			Calculator calc = ctx.getBean("calculator", Calculator.class);
 			System.out.println(calc.add(2, 8));

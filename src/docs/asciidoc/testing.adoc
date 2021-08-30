@@ -557,7 +557,7 @@ details.
 `ApplicationContext` loaded for an integration test should be a `WebApplicationContext`.
 The mere presence of `@WebAppConfiguration` on a test class ensures that a
 `WebApplicationContext` is loaded for the test, using the default value of
-`"file:src/main/webapp"` for the path to the root of the web application (that is, the
+`"file:src/com.Li.spring.main/webapp"` for the path to the root of the web application (that is, the
 resource base path). The resource base path is used behind the scenes to create a
 `MockServletContext`, which serves as the `ServletContext` for the test's
 `WebApplicationContext`.
@@ -2251,7 +2251,7 @@ the test instance for which it is responsible. The `TestContext` also delegates 
 
 ===== `TestContextManager`
 
-`TestContextManager` is the main entry point into the Spring TestContext Framework and is
+`TestContextManager` is the com.Li.spring.main entry point into the Spring TestContext Framework and is
 responsible for managing a single `TestContext` and signaling events to each registered
 `TestExecutionListener` at well-defined test execution points:
 
@@ -4115,10 +4115,10 @@ The presence of `@WebAppConfiguration` on your test class instructs the TestCont
 framework (TCF) that a `WebApplicationContext` (WAC) should be loaded for your
 integration tests. In the background, the TCF makes sure that a `MockServletContext` is
 created and supplied to your test's WAC. By default, the base resource path for your
-`MockServletContext` is set to `src/main/webapp`. This is interpreted as a path relative
+`MockServletContext` is set to `src/com.Li.spring.main/webapp`. This is interpreted as a path relative
 to the root of your JVM (normally the path to your project). If you are familiar with the
 directory structure of a web application in a Maven project, you know that
-`src/main/webapp` is the default location for the root of your WAR. If you need to
+`src/com.Li.spring.main/webapp` is the default location for the root of your WAR. If you need to
 override this default, you can provide an alternate path to the `@WebAppConfiguration`
 annotation (for example, `@WebAppConfiguration("src/test/webapp")`). If you wish to
 reference a base resource path from the classpath instead of the file system, you can use
@@ -4141,7 +4141,7 @@ framework's support for convention over configuration:
 ----
 	@ExtendWith(SpringExtension.class)
 
-	// defaults to "file:src/main/webapp"
+	// defaults to "file:src/com.Li.spring.main/webapp"
 	@WebAppConfiguration
 
 	// detects "WacTests-context.xml" in the same package
@@ -4156,7 +4156,7 @@ framework's support for convention over configuration:
 ----
 	@ExtendWith(SpringExtension::class)
 
-	// defaults to "file:src/main/webapp"
+	// defaults to "file:src/com.Li.spring.main/webapp"
 	@WebAppConfiguration
 
 	// detects "WacTests-context.xml" in the same package
@@ -4168,7 +4168,7 @@ framework's support for convention over configuration:
 ----
 
 If you annotate a test class with `@WebAppConfiguration` without specifying a resource
-base path, the resource path effectively defaults to `file:src/main/webapp`. Similarly,
+base path, the resource path effectively defaults to `file:src/com.Li.spring.main/webapp`. Similarly,
 if you declare `@ContextConfiguration` without specifying resource `locations`, component
 `classes`, or context `initializers`, Spring tries to detect the presence of your
 configuration by using conventions (that is, `WacTests-context.xml` in the same package
@@ -4224,7 +4224,7 @@ annotations by specifying a Spring resource prefix:
 	@WebAppConfiguration("classpath:test-web-resources")
 
 	// file system resource
-	@ContextConfiguration("file:src/main/webapp/WEB-INF/servlet-config.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-config.xml")
 	class WacTests {
 		//...
 	}
@@ -4238,7 +4238,7 @@ annotations by specifying a Spring resource prefix:
 	@WebAppConfiguration("classpath:test-web-resources")
 
 	// file system resource
-	@ContextConfiguration("file:src/main/webapp/WEB-INF/servlet-config.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-config.xml")
 	class WacTests {
 		//...
 	}
@@ -4497,7 +4497,7 @@ configuration scenario:
 ----
 	@ExtendWith(SpringExtension.class)
 	@WebAppConfiguration
-	@ContextConfiguration("file:src/main/webapp/WEB-INF/applicationContext.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/applicationContext.xml")
 	public abstract class AbstractWebTests {}
 
 	@ContextHierarchy(@ContextConfiguration("/spring/soap-ws-config.xml"))
@@ -4511,7 +4511,7 @@ configuration scenario:
 ----
 	@ExtendWith(SpringExtension::class)
 	@WebAppConfiguration
-	@ContextConfiguration("file:src/main/webapp/WEB-INF/applicationContext.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/applicationContext.xml")
 	abstract class AbstractWebTests
 
 	@ContextHierarchy(ContextConfiguration("/spring/soap-ws-config.xml"))
@@ -6619,7 +6619,7 @@ support for code completion on static members.
 [[spring-mvc-test-server-setup-options]]
 ===== Setup Choices
 
-You have two main options for creating an instance of `MockMvc`. The first is to load
+You have two com.Li.spring.main options for creating an instance of `MockMvc`. The first is to load
 Spring MVC configuration through the TestContext framework, which loads the Spring
 configuration and injects a `WebApplicationContext` into the test to use to build a
 `MockMvc` instance. The following example shows how to do so:
@@ -6911,16 +6911,16 @@ shows:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	mockMvc.perform(get("/app/main/hotels/{id}").contextPath("/app").servletPath("/main"))
+	mockMvc.perform(get("/app/com.Li.spring.main/hotels/{id}").contextPath("/app").servletPath("/com.Li.spring.main"))
 ----
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
 	import org.springframework.test.web.servlet.get
 
-	mockMvc.get("/app/main/hotels/{id}") {
+	mockMvc.get("/app/com.Li.spring.main/hotels/{id}") {
 		contextPath = "/app"
-		servletPath = "/main"
+		servletPath = "/com.Li.spring.main"
 	}
 ----
 
@@ -6939,7 +6939,7 @@ properties, as the following example shows:
 		void setup() {
 			mockMvc = standaloneSetup(new AccountController())
 				.defaultRequest(get("/")
-				.contextPath("/app").servletPath("/main")
+				.contextPath("/app").servletPath("/com.Li.spring.main")
 				.accept(MediaType.APPLICATION_JSON)).build();
 		}
 	}

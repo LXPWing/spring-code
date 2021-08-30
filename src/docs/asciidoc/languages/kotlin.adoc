@@ -435,7 +435,7 @@ For input parameters:
 * If laziness is not needed, `fun handler(mono: Mono<T>)` becomes `fun handler(value: T)` since a suspending functions can be invoked to get the value parameter.
 * If laziness is needed, `fun handler(mono: Mono<T>)` becomes `fun handler(supplier: suspend () -> T)` or `fun handler(supplier: suspend () -> T?)`
 
-https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html[`Flow`] is `Flux` equivalent in Coroutines world, suitable for hot or cold stream, finite or infinite streams, with the following main differences:
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html[`Flow`] is `Flux` equivalent in Coroutines world, suitable for hot or cold stream, finite or infinite streams, with the following com.Li.spring.main differences:
 
 * `Flow` is push-based while `Flux` is push-pull hybrid
 * Backpressure is implemented via suspending functions
@@ -794,7 +794,7 @@ that uses the `${...}` syntax, with configuration beans, as the following exampl
 === Checked Exceptions
 
 Java and https://kotlinlang.org/docs/reference/exceptions.html[Kotlin exception handling]
-are pretty close, with the main difference being that Kotlin treats all exceptions as
+are pretty close, with the com.Li.spring.main difference being that Kotlin treats all exceptions as
 unchecked exceptions. However, when using proxied objects (for example classes or methods
 annotated with `@Transactional`), checked exceptions thrown will be wrapped by default in
 an `UndeclaredThrowableException`.

@@ -265,7 +265,7 @@
 							<xsd:annotation>
 								<xsd:documentation><![CDATA[
 	Specify the amount of time, in milliseconds, before asynchronous request handling times out.
-	In Servlet 3, the timeout begins after the main request processing thread has exited and ends when the request
+	In Servlet 3, the timeout begins after the com.Li.spring.main request processing thread has exited and ends when the request
 	is dispatched again for further processing of the concurrently produced result. If this value is not set,
 	the default timeout of the underlying implementation is used.
 								]]></xsd:documentation>
@@ -362,7 +362,7 @@
 		<xsd:annotation>
 			<xsd:documentation source="org.springframework.web.servlet.resource.ContentVersionStrategy"><![CDATA[
 	A VersionStrategy that calculates an Hex MD5 hashes from the content of the resource and appends it
-	to the file name, e.g. "styles/main-e36d2e05253c6c7085a91522ce43a0b4.css".
+	to the file name, e.g. "styles/com.Li.spring.main-e36d2e05253c6c7085a91522ce43a0b4.css".
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="patterns" type="xsd:string" use="required"/>

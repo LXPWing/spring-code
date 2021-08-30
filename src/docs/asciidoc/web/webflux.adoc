@@ -65,7 +65,7 @@ For example a data repository (acting as
 https://www.reactive-streams.org/reactive-streams-1.0.1-javadoc/org/reactivestreams/Publisher.html[Publisher])
 can produce data that an HTTP server (acting as
 https://www.reactive-streams.org/reactive-streams-1.0.1-javadoc/org/reactivestreams/Subscriber.html[Subscriber])
-can then write to the response. The main purpose of Reactive Streams is to let the
+can then write to the response. The com.Li.spring.main purpose of Reactive Streams is to let the
   subscriber control how quickly or how slowly the publisher produces data.
 
 NOTE: *Common question: what if a publisher cannot slow down?* +
@@ -326,7 +326,7 @@ deserialization of HTTP request and response content.
 
 {api-spring-framework}/http/server/reactive/HttpHandler.html[HttpHandler]
 is a simple contract with a single method to handle a request and a response. It is
-intentionally minimal, and its main and only purpose is to be a minimal abstraction
+intentionally minimal, and its com.Li.spring.main and only purpose is to be a minimal abstraction
 over different HTTP server APIs.
 
 The following table describes the supported server APIs:
@@ -425,8 +425,8 @@ The code snippets below show using the `HttpHandler` adapters with each server A
 	Tomcat server = new Tomcat();
 	File base = new File(System.getProperty("java.io.tmpdir"));
 	Context rootContext = server.addContext("", base.getAbsolutePath());
-	Tomcat.addServlet(rootContext, "main", servlet);
-	rootContext.addServletMappingDecoded("/", "main");
+	Tomcat.addServlet(rootContext, "com.Li.spring.main", servlet);
+	rootContext.addServletMappingDecoded("/", "com.Li.spring.main");
 	server.setHost(host);
 	server.setPort(port);
 	server.start();
@@ -440,8 +440,8 @@ The code snippets below show using the `HttpHandler` adapters with each server A
 	val server = Tomcat()
 	val base = File(System.getProperty("java.io.tmpdir"))
 	val rootContext = server.addContext("", base.absolutePath)
-	Tomcat.addServlet(rootContext, "main", servlet)
-	rootContext.addServletMappingDecoded("/", "main")
+	Tomcat.addServlet(rootContext, "com.Li.spring.main", servlet)
+	rootContext.addServletMappingDecoded("/", "com.Li.spring.main")
 	server.host = host
 	server.setPort(port)
 	server.start()
@@ -1063,7 +1063,7 @@ there are also some other beans detected at a lower level (see
   which vary by `HandlerMapping` implementation -- annotated controllers, simple
   URL pattern mappings, and others.
 
-  The main `HandlerMapping` implementations are `RequestMappingHandlerMapping` for
+  The com.Li.spring.main `HandlerMapping` implementations are `RequestMappingHandlerMapping` for
   `@RequestMapping` annotated methods, `RouterFunctionMapping` for functional endpoint
   routes, and `SimpleUrlHandlerMapping` for explicit registrations of URI path patterns
   and `WebHandler` instances.
@@ -1071,7 +1071,7 @@ there are also some other beans detected at a lower level (see
 | `HandlerAdapter`
 | Help the `DispatcherHandler` to invoke a handler mapped to a request regardless of
   how the handler is actually invoked. For example, invoking an annotated controller
-  requires resolving annotations. The main purpose of a `HandlerAdapter` is to shield the
+  requires resolving annotations. The com.Li.spring.main purpose of a `HandlerAdapter` is to shield the
   `DispatcherHandler` from such details.
 
 | `HandlerResultHandler`

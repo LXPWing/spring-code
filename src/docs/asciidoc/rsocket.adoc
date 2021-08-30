@@ -119,8 +119,8 @@ The API in RSocket Java is intentionally minimal and basic. It focuses on protoc
 features and leaves the application programming model (e.g. RPC codegen vs other) as a
 higher level, independent concern.
 
-The main contract
-{gh-rsocket-java}/blob/master/rsocket-core/src/main/java/io/rsocket/RSocket.java[io.rsocket.RSocket]
+The com.Li.spring.main contract
+{gh-rsocket-java}/blob/master/rsocket-core/src/com.Li.spring.main/java/io/rsocket/RSocket.java[io.rsocket.RSocket]
 models the four request interaction types with `Mono` representing a promise for a
 single message, `Flux` a stream of messages, and `io.rsocket.Payload` the actual
 message with access to data and metadata as byte buffers. The `RSocket` contract is used

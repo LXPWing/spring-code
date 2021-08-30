@@ -786,7 +786,7 @@ On the server, you need to expose the service object that uses the
 
 	public class Server {
 
-		public static void main(String[] args) throws Exception {
+		public static void com.Li.spring.main(String[] args) throws Exception {
 			new ClassPathXmlApplicationContext("com/foo/server.xml", "com/foo/jms.xml");
 		}
 	}
@@ -831,7 +831,7 @@ The following example defines beans that you can inject into other client-side o
 
 	public class Client {
 
-		public static void main(String[] args) throws Exception {
+		public static void com.Li.spring.main(String[] args) throws Exception {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("com/foo/client.xml", "com/foo/jms.xml");
 			CheckingAccountService service = (CheckingAccountService) ctx.getBean("checkingAccountService");
 			service.cancelAccount(new Long(10));
@@ -852,7 +852,7 @@ section of the Spring AMQP reference.
 ====
 Auto-detection is not implemented for remote interfaces
 
-The main reason why auto-detection of implemented interfaces does not occur for remote
+The com.Li.spring.main reason why auto-detection of implemented interfaces does not occur for remote
 interfaces is to avoid opening too many doors to remote callers. The target object might
 implement internal callback interfaces, such as `InitializingBean` or `DisposableBean`
 which one would not want to expose to callers.
@@ -1120,7 +1120,7 @@ writing the body of HTTP requests and responses through `InputStream` and `Outpu
 `HttpMessageConverter` instances are used on the client side (for example, in the `RestTemplate`) and
 on the server side (for example, in Spring MVC REST controllers).
 
-Concrete implementations for the main media (MIME) types are provided in the framework
+Concrete implementations for the com.Li.spring.main media (MIME) types are provided in the framework
 and are, by default, registered with the `RestTemplate` on the client side and with
 `RequestMethodHandlerAdapter` on the server side (see
 <<web.adoc#mvc-config-message-converters, Configuring Message Converters>>).
@@ -1332,7 +1332,7 @@ business methods interface `MyComponent`. The following example shows such an in
 	}
 ----
 
-One of the main reasons to use the Business Methods Interface pattern is to ensure that
+One of the com.Li.spring.main reasons to use the Business Methods Interface pattern is to ensure that
 synchronization between method signatures in local interface and bean implementation
 class is automatic. Another reason is that it later makes it much easier for us to
 switch to a POJO (plain old Java object) implementation of the service if it makes sense
@@ -2520,7 +2520,7 @@ a custom header:
 	}
 ----
 
-The main elements you can inject in JMS listener endpoints are as follows:
+The com.Li.spring.main elements you can inject in JMS listener endpoints are as follows:
 
 * The raw `javax.jms.Message` or any of its subclasses (provided that it
   matches the incoming message type).
@@ -3918,7 +3918,7 @@ By default, `ConnectorServerFactoryBean` creates a `JMXConnectorServer` bound to
 `service:jmx:jmxmp://localhost:9875`. The `serverConnector` bean thus exposes the
 local `MBeanServer` to clients through the JMXMP protocol on localhost, port 9875. Note
 that the JMXMP protocol is marked as optional by the JSR 160 specification. Currently,
-the main open-source JMX implementation, MX4J, and the one provided with the JDK
+the com.Li.spring.main open-source JMX implementation, MX4J, and the one provided with the JDK
 do not support JMXMP.
 
 To specify another URL and register the `JMXConnectorServer` itself with the
@@ -6453,7 +6453,7 @@ The configuration of the thread pool should also be considered in light of the
 executor's queue capacity. For the full description of the relationship between pool
 size and queue capacity, see the documentation for
 https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html[`ThreadPoolExecutor`].
-The main idea is that, when a task is submitted, the executor first tries to use a
+The com.Li.spring.main idea is that, when a task is submitted, the executor first tries to use a
 free thread if the number of active threads is currently less than the core size.
 If the core size has been reached, the task is added to the queue, as long as its
 capacity has not yet been reached. Only then, if the queue's capacity has been
@@ -7513,7 +7513,7 @@ you can switch to these standard annotations without changing your cache storage
 ==== Feature Summary
 
 For those who are familiar with Spring's caching annotations, the following table
-describes the main differences between the Spring annotations and the JSR-107
+describes the com.Li.spring.main differences between the Spring annotations and the JSR-107
 counterpart:
 
 .Spring vs. JSR-107 caching annotations

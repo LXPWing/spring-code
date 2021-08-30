@@ -7,6 +7,6 @@
 <title>Title</title>
 </head>
 <body>
-    <tiles:insertAttribute name="main" /> 
+    <tiles:insertAttribute name="com.Li.spring.main" />
 </body>
 </html>

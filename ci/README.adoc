@@ -41,7 +41,7 @@ You'll find in this folder the following resources:
 * `parameters.yml` the build parameters used for the pipeline
 * `images/` holds the container images definitions used in this pipeline
 * `scripts/` holds the build scripts that ship within the CI container images
-* `tasks` contains the task definitions used in the main `pipeline.yml`
+* `tasks` contains the task definitions used in the com.Li.spring.main `pipeline.yml`
 
 === Updating the build pipeline
 

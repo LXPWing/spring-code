@@ -255,14 +255,14 @@ The following table lists the special beans detected by the `DispatcherServlet`:
   The mapping is based on some criteria, the details of which vary by `HandlerMapping`
   implementation.
 
-  The two main `HandlerMapping` implementations are `RequestMappingHandlerMapping`
+  The two com.Li.spring.main `HandlerMapping` implementations are `RequestMappingHandlerMapping`
   (which supports `@RequestMapping` annotated methods) and `SimpleUrlHandlerMapping`
   (which maintains explicit registrations of URI path patterns to handlers).
 
 | `HandlerAdapter`
 | Help the `DispatcherServlet` to invoke a handler mapped to a request, regardless of
   how the handler is actually invoked. For example, invoking an annotated controller
-  requires resolving annotations. The main purpose of a `HandlerAdapter` is
+  requires resolving annotations. The com.Li.spring.main purpose of a `HandlerAdapter` is
   to shield the `DispatcherServlet` from such details.
 
 | <<mvc-exceptionhandlers, `HandlerExceptionResolver`>>
@@ -301,7 +301,7 @@ Applications can declare the infrastructure beans listed in <<mvc-servlet-specia
 that are required to process requests. The `DispatcherServlet` checks the
 `WebApplicationContext` for each special bean. If there are no matching bean types,
 it falls back on the default types listed in
-https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/resources/org/springframework/web/servlet/DispatcherServlet.properties[`DispatcherServlet.properties`].
+https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/com.Li.spring.main/resources/org/springframework/web/servlet/DispatcherServlet.properties[`DispatcherServlet.properties`].
 
 In most cases, the <<mvc-config>> is the best starting point. It declares the required
 beans in either Java or XML and provides a higher-level configuration callback API to
@@ -2947,7 +2947,7 @@ Post-Redirect-Get pattern. Flash attributes are saved temporarily before the
 redirect (typically in the session) to be made available to the request after the
 redirect and are removed immediately.
 
-Spring MVC has two main abstractions in support of flash attributes. `FlashMap` is used
+Spring MVC has two com.Li.spring.main abstractions in support of flash attributes. `FlashMap` is used
 to hold flash attributes, while `FlashMapManager` is used to store, retrieve, and manage
 `FlashMap` instances.
 
@@ -4058,7 +4058,7 @@ You can create URIs relative to the context path, as the following example shows
 			.path("/accounts").build()
 ----
 
-You can create URIs relative to a Servlet (for example, `/main/{asterisk}`),
+You can create URIs relative to a Servlet (for example, `/com.Li.spring.main/{asterisk}`),
 as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -4365,7 +4365,7 @@ The return value can then be obtained by running the given task through the
 Here is a very concise overview of Servlet asynchronous request processing:
 
 * A `ServletRequest` can be put in asynchronous mode by calling `request.startAsync()`.
-  The main effect of doing so is that the Servlet (as well as any filters) can exit, but
+  The com.Li.spring.main effect of doing so is that the Servlet (as well as any filters) can exit, but
   the response remains open to let processing complete later.
 * The call to `request.startAsync()` returns `AsyncContext`, which you can use for
   further control over asynchronous processing. For example, it provides the `dispatch` method,
@@ -4414,7 +4414,7 @@ controller method returned the given value or as if it produced the given except
 The exception then goes through the regular exception handling mechanism (for example, invoking
 `@ExceptionHandler` methods).
 
-When you use `Callable`, similar processing logic occurs, the main difference being that
+When you use `Callable`, similar processing logic occurs, the com.Li.spring.main difference being that
 the result is returned from the `Callable` or an exception is raised by it.
 
 
@@ -4577,7 +4577,7 @@ stream from a controller, return `SseEmitter`, as the following example shows:
 	emitter.complete()
 ----
 
-While SSE is the main option for streaming into browsers, note that Internet Explorer
+While SSE is the com.Li.spring.main option for streaming into browsers, note that Internet Explorer
 does not support Server-Sent Events. Consider using Spring's
 <<web.adoc#websocket, WebSocket messaging>> with
 <<web.adoc#websocket-fallback, SockJS fallback>> transports (including SSE) that target

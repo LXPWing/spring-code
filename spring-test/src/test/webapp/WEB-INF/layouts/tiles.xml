@@ -3,6 +3,6 @@
 
 <tiles-definitions>
 
-	<definition name="mainLayout" templateExpression="/WEB-INF/layouts/main.jsp"/>
+	<definition name="mainLayout" templateExpression="/WEB-INF/layouts/com.Li.spring.main.jsp"/>
 
 </tiles-definitions>

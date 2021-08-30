@@ -226,7 +226,7 @@ method arguments as well as static information. This means that they must be
 evaluated with every method invocation and that the result cannot be cached, as arguments will
 vary.
 
-The main example is the `control flow` pointcut.
+The com.Li.spring.main example is the `control flow` pointcut.
 
 [[aop-api-pointcuts-cflow]]
 ===== Control Flow Pointcuts
@@ -407,7 +407,7 @@ currently define pointcut interfaces.
 A simpler advice type is a before advice. This does not need a `MethodInvocation`
 object, since it is called only before entering the method.
 
-The main advantage of a before advice is that there is no need to invoke the `proceed()`
+The com.Li.spring.main advantage of a before advice is that there is no need to invoke the `proceed()`
 method and, therefore, no possibility of inadvertently failing to proceed down the
 interceptor chain.
 
@@ -1531,7 +1531,7 @@ As with `ProxyFactoryBean`, there is an `interceptorNames` property rather than 
 of interceptors, to allow correct behavior for prototype advisors. Named "`interceptors`"
 can be advisors or any advice type.
 
-As with auto-proxying in general, the main point of using `BeanNameAutoProxyCreator` is
+As with auto-proxying in general, the com.Li.spring.main point of using `BeanNameAutoProxyCreator` is
 to apply the same configuration consistently to multiple objects, with minimal volume of
 configuration. It is a popular choice for applying declarative transactions to multiple
 objects.

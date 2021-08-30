@@ -593,8 +593,8 @@ after the use of this alias definition, be referred to as `toName`.
 
 For example, the configuration metadata for subsystem A may refer to a DataSource by the
 name of `subsystemA-dataSource`. The configuration metadata for subsystem B may refer to
-a DataSource by the name of `subsystemB-dataSource`. When composing the main application
-that uses both these subsystems, the main application refers to the DataSource by the
+a DataSource by the name of `subsystemB-dataSource`. When composing the com.Li.spring.main application
+that uses both these subsystems, the com.Li.spring.main application refers to the DataSource by the
 name of `myApp-dataSource`. To have all three names refer to the same object, you can
 add the following alias definitions to the configuration metadata:
 
@@ -604,7 +604,7 @@ add the following alias definitions to the configuration metadata:
 	<alias name="myApp-dataSource" alias="subsystemB-dataSource"/>
 ----
 
-Now each component and the main application can refer to the dataSource through a name
+Now each component and the com.Li.spring.main application can refer to the dataSource through a name
 that is unique and guaranteed not to clash with any other definition (effectively
 creating a namespace), yet they refer to the same bean.
 
@@ -3844,7 +3844,7 @@ declared on the `ConfigurableApplicationContext` interface, as the following exa
 
 	public final class Boot {
 
-		public static void main(final String[] args) throws Exception {
+		public static void com.Li.spring.main(final String[] args) throws Exception {
 			ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 
 			// add a shutdown hook for the above context...
@@ -3852,7 +3852,7 @@ declared on the `ConfigurableApplicationContext` interface, as the following exa
 
 			// app runs here...
 
-			// main method exits, hook is called prior to the app shutting down...
+			// com.Li.spring.main method exits, hook is called prior to the app shutting down...
 		}
 	}
 ----
@@ -3861,7 +3861,7 @@ declared on the `ConfigurableApplicationContext` interface, as the following exa
 ----
 	import org.springframework.context.support.ClassPathXmlApplicationContext
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("beans.xml")
 
 		// add a shutdown hook for the above context...
@@ -3869,7 +3869,7 @@ declared on the `ConfigurableApplicationContext` interface, as the following exa
 
 		// app runs here...
 
-		// main method exits, hook is called prior to the app shutting down...
+		// com.Li.spring.main method exits, hook is called prior to the app shutting down...
 	}
 ----
 
@@ -4293,7 +4293,7 @@ The following Java application runs the preceding code and configuration:
 
 	public final class Boot {
 
-		public static void main(final String[] args) throws Exception {
+		public static void com.Li.spring.main(final String[] args) throws Exception {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("scripting/beans.xml");
 			Messenger messenger = ctx.getBean("messenger", Messenger.class);
 			System.out.println(messenger);
@@ -4306,7 +4306,7 @@ The following Java application runs the preceding code and configuration:
 ----
     import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("scripting/beans.xml")
 		val messenger = ctx.getBean<Messenger>("messenger")
 		println(messenger)
@@ -4396,7 +4396,7 @@ You can use the `PropertySourcesPlaceholderConfigurer` to externalize property v
 from a bean definition in a separate file by using the standard Java `Properties` format.
 Doing so enables the person deploying an application to customize environment-specific
 properties, such as database URLs and passwords, without the complexity or risk of
-modifying the main XML definition file or files for the container.
+modifying the com.Li.spring.main XML definition file or files for the container.
 
 Consider the following XML-based configuration metadata fragment, where a `DataSource`
 with placeholder values is defined:
@@ -5256,7 +5256,7 @@ shown in the following example:
 	public class MovieRecommender {
 
 		@Autowired
-		@Qualifier("main")
+		@Qualifier("com.Li.spring.main")
 		private MovieCatalog movieCatalog;
 
 		// ...
@@ -5268,7 +5268,7 @@ shown in the following example:
 	class MovieRecommender {
 
 		@Autowired
-		@Qualifier("main")
+		@Qualifier("com.Li.spring.main")
 		private lateinit var movieCatalog: MovieCatalog
 
 		// ...
@@ -5288,7 +5288,7 @@ method parameters, as shown in the following example:
 		private CustomerPreferenceDao customerPreferenceDao;
 
 		@Autowired
-		public void prepare(@Qualifier("main") MovieCatalog movieCatalog,
+		public void prepare(@Qualifier("com.Li.spring.main") MovieCatalog movieCatalog,
 				CustomerPreferenceDao customerPreferenceDao) {
 			this.movieCatalog = movieCatalog;
 			this.customerPreferenceDao = customerPreferenceDao;
@@ -5307,7 +5307,7 @@ method parameters, as shown in the following example:
 		private lateinit var customerPreferenceDao: CustomerPreferenceDao
 
 		@Autowired
-		fun prepare(@Qualifier("main") movieCatalog: MovieCatalog,
+		fun prepare(@Qualifier("com.Li.spring.main") movieCatalog: MovieCatalog,
 					customerPreferenceDao: CustomerPreferenceDao) {
 			this.movieCatalog = movieCatalog
 			this.customerPreferenceDao = customerPreferenceDao
@@ -5333,7 +5333,7 @@ The following example shows corresponding bean definitions.
 		<context:annotation-config/>
 
 		<bean class="example.SimpleMovieCatalog">
-			<qualifier value="main"/> <1>
+			<qualifier value="com.Li.spring.main"/> <1>
 
 			<!-- inject any dependencies required by this bean -->
 		</bean>
@@ -5348,18 +5348,18 @@ The following example shows corresponding bean definitions.
 
 	</beans>
 ----
-<1> The bean with the `main` qualifier value is wired with the constructor argument that
+<1> The bean with the `com.Li.spring.main` qualifier value is wired with the constructor argument that
 is qualified with the same value.
 <2> The bean with the `action` qualifier value is wired with the constructor argument that
 is qualified with the same value.
 
 For a fallback match, the bean name is considered a default qualifier value. Thus, you
-can define the bean with an `id` of `main` instead of the nested qualifier element, leading
+can define the bean with an `id` of `com.Li.spring.main` instead of the nested qualifier element, leading
 to the same matching result. However, although you can use this convention to refer to
 specific beans by name, `@Autowired` is fundamentally about type-driven injection with
 optional semantic qualifiers. This means that qualifier values, even with the bean name
 fallback, always have narrowing semantics within the set of type matches. They do not
-semantically express a reference to a unique bean `id`. Good qualifier values are `main`
+semantically express a reference to a unique bean `id`. Good qualifier values are `com.Li.spring.main`
 or `EMEA` or `persistent`, expressing characteristics of a specific component that are
 independent from the bean `id`, which may be auto-generated in case of an anonymous bean
 definition such as the one in the preceding example.
@@ -7313,7 +7313,7 @@ you should use the `@Named` annotation, as the following example shows:
 		private MovieFinder movieFinder;
 
 		@Inject
-		public void setMovieFinder(@Named("main") MovieFinder movieFinder) {
+		public void setMovieFinder(@Named("com.Li.spring.main") MovieFinder movieFinder) {
 			this.movieFinder = movieFinder;
 		}
 
@@ -7331,7 +7331,7 @@ you should use the `@Named` annotation, as the following example shows:
 		private lateinit var movieFinder: MovieFinder
 
 		@Inject
-		fun setMovieFinder(@Named("main") movieFinder: MovieFinder) {
+		fun setMovieFinder(@Named("com.Li.spring.main") movieFinder: MovieFinder) {
 			this.movieFinder = movieFinder
 		}
 
@@ -7668,7 +7668,7 @@ XML-free usage of the Spring container, as the following example shows:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		MyService myService = ctx.getBean(MyService.class);
 		myService.doStuff();
@@ -7679,7 +7679,7 @@ XML-free usage of the Spring container, as the following example shows:
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(AppConfig::class.java)
 		val myService = ctx.getBean<MyService>()
 		myService.doStuff()
@@ -7693,7 +7693,7 @@ as input to the constructor, as the following example shows:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(MyServiceImpl.class, Dependency1.class, Dependency2.class);
 		MyService myService = ctx.getBean(MyService.class);
 		myService.doStuff();
@@ -7704,7 +7704,7 @@ as input to the constructor, as the following example shows:
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(MyServiceImpl::class.java, Dependency1::class.java, Dependency2::class.java)
 		val myService = ctx.getBean<MyService>()
 		myService.doStuff()
@@ -7726,7 +7726,7 @@ example shows how to do so:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 		ctx.register(AppConfig.class, OtherConfig.class);
 		ctx.register(AdditionalConfig.class);
@@ -7740,7 +7740,7 @@ example shows how to do so:
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext()
 		ctx.register(AppConfig::class.java, OtherConfig::class.java)
 		ctx.register(AdditionalConfig::class.java)
@@ -7801,7 +7801,7 @@ following example shows:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 		ctx.scan("com.acme");
 		ctx.refresh();
@@ -7811,7 +7811,7 @@ following example shows:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext()
 		ctx.scan("com.acme")
 		ctx.refresh()
@@ -8686,7 +8686,7 @@ following example shows:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigB.class);
 
 		// now both beans A and B will be available...
@@ -8699,7 +8699,7 @@ following example shows:
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(ConfigB::class.java)
 
 		// now both beans A and B will be available...
@@ -8763,7 +8763,7 @@ classes, each depending on beans declared in the others:
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
 		// everything wires up across configuration classes...
 		TransferService transferService = ctx.getBean(TransferService.class);
@@ -8804,7 +8804,7 @@ classes, each depending on beans declared in the others:
 	}
 
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(SystemTestConfig::class.java)
 		// everything wires up across configuration classes...
 		val transferService = ctx.getBean<TransferService>()
@@ -8873,7 +8873,7 @@ The following example shows how one bean can be autowired to another bean:
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
 		// everything wires up across configuration classes...
 		TransferService transferService = ctx.getBean(TransferService.class);
@@ -8916,7 +8916,7 @@ The following example shows how one bean can be autowired to another bean:
 		}
 	}
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(SystemTestConfig::class.java)
 		// everything wires up across configuration classes...
 		val transferService = ctx.getBean<TransferService>()
@@ -9024,7 +9024,7 @@ abstract class-based `@Configuration` classes. Consider the following example:
 
 	}
 
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
 		TransferService transferService = ctx.getBean(TransferService.class);
 		transferService.transfer(100.00, "A123", "C456");
@@ -9074,7 +9074,7 @@ abstract class-based `@Configuration` classes. Consider the following example:
 
 	}
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(SystemTestConfig::class.java)
 		val transferService = ctx.getBean<TransferService>()
 		transferService.transfer(100.00, "A123", "C456")
@@ -9254,7 +9254,7 @@ jdbc.password=
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:/com/acme/system-test-config.xml");
 		TransferService transferService = ctx.getBean(TransferService.class);
 		// ...
@@ -9263,7 +9263,7 @@ jdbc.password=
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("classpath:/com/acme/system-test-config.xml")
 		val transferService = ctx.getBean<TransferService>()
 		// ...
@@ -9313,7 +9313,7 @@ the container, it is still likely necessary to use at least some XML. In these
 scenarios, you can use `@ImportResource` and define only as much XML as you need. Doing
 so achieves a "`Java-centric`" approach to configuring the container and keeps XML to a
 bare minimum. The following example (which includes a configuration class, an XML file
-that defines a bean, a properties file, and the `main` class) shows how to use
+that defines a bean, a properties file, and the `com.Li.spring.main` class) shows how to use
 the `@ImportResource` annotation to achieve "`Java-centric`" configuration that uses XML
 as needed:
 
@@ -9381,7 +9381,7 @@ jdbc.password=
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		TransferService transferService = ctx.getBean(TransferService.class);
 		// ...
@@ -9392,7 +9392,7 @@ jdbc.password=
 ----
 	import org.springframework.beans.factory.getBean
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = AnnotationConfigApplicationContext(AppConfig::class.java)
 		val transferService = ctx.getBean<TransferService>()
 		// ...
@@ -10268,7 +10268,7 @@ implementations and so can be cast to the `MessageSource` interface.
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(String[] args) {
+	public static void com.Li.spring.main(String[] args) {
 		MessageSource resources = new ClassPathXmlApplicationContext("beans.xml");
 		String message = resources.getMessage("message", null, "Default", Locale.ENGLISH);
 		System.out.println(message);
@@ -10277,7 +10277,7 @@ implementations and so can be cast to the `MessageSource` interface.
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val resources = ClassPathXmlApplicationContext("beans.xml")
 		val message = resources.getMessage("message", null, "Default", Locale.ENGLISH)
 		println(message)
@@ -10378,7 +10378,7 @@ argument.required=Ebagum lad, the ''{0}'' argument is required, I say, required.
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	public static void main(final String[] args) {
+	public static void com.Li.spring.main(final String[] args) {
 		MessageSource resources = new ClassPathXmlApplicationContext("beans.xml");
 		String message = resources.getMessage("argument.required",
 			new Object [] {"userDao"}, "Required", Locale.UK);
@@ -10388,7 +10388,7 @@ argument.required=Ebagum lad, the ''{0}'' argument is required, I say, required.
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val resources = ClassPathXmlApplicationContext("beans.xml")
 		val message = resources.getMessage("argument.required",
 				arrayOf("userDao"), "Required", Locale.UK)

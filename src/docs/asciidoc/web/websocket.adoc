@@ -1160,7 +1160,7 @@ is configured for managing subscriptions and broadcasting messages:
 
 image::images/message-flow-broker-relay.png[]
 
-The main difference between the two preceding diagrams is the use of the "`broker relay`" for passing
+The com.Li.spring.main difference between the two preceding diagrams is the use of the "`broker relay`" for passing
 messages up to the external STOMP broker over TCP and for passing messages down from the
 broker to subscribed clients.
 
@@ -2517,7 +2517,7 @@ SockJS Task Scheduler:: Statistics from the thread pool of the SockJS task sched
 [[websocket-stomp-testing]]
 === Testing
 
-There are two main approaches to testing applications when you use Spring's STOMP-over-WebSocket
+There are two com.Li.spring.main approaches to testing applications when you use Spring's STOMP-over-WebSocket
 support. The first is to write server-side tests to verify the functionality
 of controllers and their annotated message-handling methods. The second is to write
 full end-to-end tests that involve running a client and a server.

@@ -1899,7 +1899,7 @@ call `proceed` multiple times. The following listing shows the basic aspect impl
 Note that the aspect implements the `Ordered` interface so that we can set the precedence of
 the aspect higher than the transaction advice (we want a fresh transaction each time we
 retry). The `maxRetries` and `order` properties are both configured by Spring. The
-main action happens in the `doConcurrentOperation` around advice. Notice that, for the
+com.Li.spring.main action happens in the `doConcurrentOperation` around advice. Notice that, for the
 moment, we apply the retry logic to each `businessService()`. We try to proceed,
 and if we fail with a `PessimisticLockingFailureException`, we try again, unless
 we have exhausted all of our retry attempts.
@@ -2521,7 +2521,7 @@ Consider the following driver script:
 
 	public final class Boot {
 
-		public static void main(final String[] args) throws Exception {
+		public static void com.Li.spring.main(final String[] args) throws Exception {
 			BeanFactory ctx = new ClassPathXmlApplicationContext("x/y/plain.xml");
 			PersonService person = (PersonService) ctx.getBean("personService");
 			person.getPerson("Pengo", 12);
@@ -2531,7 +2531,7 @@ Consider the following driver script:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("x/y/plain.xml")
 		val person = ctx.getBean("personService") as PersonService
 		person.getPerson("Pengo", 12)
@@ -2797,7 +2797,7 @@ call `proceed` multiple times. The following listing shows the basic aspect impl
 Note that the aspect implements the `Ordered` interface so that we can set the precedence of
 the aspect higher than the transaction advice (we want a fresh transaction each time we
 retry). The `maxRetries` and `order` properties are both configured by Spring. The
-main action happens in the `doConcurrentOperation` around advice method. We try to
+com.Li.spring.main action happens in the `doConcurrentOperation` around advice method. We try to
 proceed. If we fail with a `PessimisticLockingFailureException`, we try again,
 unless we have exhausted all of our retry attempts.
 
@@ -3093,7 +3093,7 @@ image::images/aop-proxy-plain-pojo-call.png[]
 ----
 	public class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			Pojo pojo = new SimplePojo();
 			// this is a direct method call on the 'pojo' reference
 			pojo.foo();
@@ -3103,7 +3103,7 @@ image::images/aop-proxy-plain-pojo-call.png[]
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val pojo = SimplePojo()
 		// this is a direct method call on the 'pojo' reference
 		pojo.foo()
@@ -3120,7 +3120,7 @@ image::images/aop-proxy-call.png[]
 ----
 	public class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			ProxyFactory factory = new ProxyFactory(new SimplePojo());
 			factory.addInterface(Pojo.class);
 			factory.addAdvice(new RetryAdvice());
@@ -3134,7 +3134,7 @@ image::images/aop-proxy-call.png[]
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-fun main() {
+fun com.Li.spring.main() {
 	val factory = ProxyFactory(SimplePojo())
 	factory.addInterface(Pojo::class.java)
 	factory.addAdvice(RetryAdvice())
@@ -3145,7 +3145,7 @@ fun main() {
 }
 ----
 
-The key thing to understand here is that the client code inside the `main(..)` method
+The key thing to understand here is that the client code inside the `com.Li.spring.main(..)` method
 of the `Main` class has a reference to the proxy. This means that method calls on that
 object reference are calls on the proxy. As a result, the proxy can delegate to all of
 the interceptors (advice) that are relevant to that particular method call. However,
@@ -3203,7 +3203,7 @@ following example shows:
 ----
 	public class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			ProxyFactory factory = new ProxyFactory(new SimplePojo());
 			factory.addInterface(Pojo.class);
 			factory.addAdvice(new RetryAdvice());
@@ -3218,7 +3218,7 @@ following example shows:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	fun main() {
+	fun com.Li.spring.main() {
 		val factory = ProxyFactory(SimplePojo())
 		factory.addInterface(Pojo::class.java)
 		factory.addAdvice(RetryAdvice())
@@ -3824,7 +3824,7 @@ the following example:
 
 Now that all the required artifacts (the aspect, the `META-INF/aop.xml`
 file, and the Spring configuration) are in place, we can create the following
-driver class with a `main(..)` method to demonstrate the LTW in action:
+driver class with a `com.Li.spring.main(..)` method to demonstrate the LTW in action:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -3835,7 +3835,7 @@ driver class with a `main(..)` method to demonstrate the LTW in action:
 
 	public final class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml", Main.class);
 
 			EntitlementCalculationService entitlementCalculationService =
@@ -3853,7 +3853,7 @@ driver class with a `main(..)` method to demonstrate the LTW in action:
 
 	import org.springframework.context.support.ClassPathXmlApplicationContext
 
-	fun main() {
+	fun com.Li.spring.main() {
 		val ctx = ClassPathXmlApplicationContext("beans.xml")
 
 		val entitlementCalculationService = ctx.getBean("entitlementCalculationService") as EntitlementCalculationService
@@ -3910,7 +3910,7 @@ result:
 
 	public final class Main {
 
-		public static void main(String[] args) {
+		public static void com.Li.spring.main(String[] args) {
 			new ClassPathXmlApplicationContext("beans.xml", Main.class);
 
 			EntitlementCalculationService entitlementCalculationService =
@@ -3928,7 +3928,7 @@ result:
 
 	import org.springframework.context.support.ClassPathXmlApplicationContext
 
-	fun main(args: Array<String>) {
+	fun com.Li.spring.main(args: Array<String>) {
 		ClassPathXmlApplicationContext("beans.xml")
 
 		val entitlementCalculationService = StubEntitlementCalculationService()
