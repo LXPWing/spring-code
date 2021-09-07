@@ -540,15 +540,19 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				registerBeanPostProcessors(beanFactory);
 
 				// Initialize message source for this context.
+				//初始化国际化功能
 				initMessageSource();
 
 				// Initialize event multicaster for this context.
+				//初始化事件多播功能（事件派发功能）
 				initApplicationEventMulticaster();
 
 				// Initialize other special beans in specific context sub classes.
+				// 子类增强处理逻辑
 				onRefresh();
 
 				// Check for listener beans and register them.
+				//注册监听器
 				registerListeners();
 
 				// Instantiate all remaining (non-lazy-init) singletons.
@@ -556,6 +560,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				finishBeanFactoryInitialization(beanFactory);
 
 				// Last step: publish corresponding event.
+				// 清理
 				finishRefresh();
 			}
 
