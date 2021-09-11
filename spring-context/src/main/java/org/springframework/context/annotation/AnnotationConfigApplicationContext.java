@@ -85,8 +85,10 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 		//初始化reader,scanner
+		//创建DefaultListableBeanFactory
 		this();
 		//注册底层基础组件
+		//如果有配置类就注册配置类BeanDefinition
 		register(componentClasses);
 		//初始组件
 		refresh();

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @author : xingpeng
  * @date : 2021-08-30 11:48
  **/
-@ComponentScan("com.Li.spring.processor")
+@ComponentScan("com.Li.spring")
 @Configuration
 public class MyConfig {
 	public MyConfig(){
