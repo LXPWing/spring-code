@@ -83,7 +83,8 @@ final class PostProcessorRegistrationDelegate {
 			List<BeanDefinitionRegistryPostProcessor> currentRegistryProcessors = new ArrayList<>();
 
 			// First, invoke the BeanDefinitionRegistryPostProcessors that implement PriorityOrdered.
-			//对implement PriorityOrdered接口的进行排序
+			//对implement PriorityOrdered接口的进行排序（BeanDefinitionRegistryPostProcessors类型）
+			//注册ConfigurationAnnotationProcessor后置处理器（对配置类有效）
 			String[] postProcessorNames =
 					beanFactory.getBeanNamesForType(BeanDefinitionRegistryPostProcessor.class, true, false);
 			for (String ppName : postProcessorNames) {
@@ -94,6 +95,7 @@ final class PostProcessorRegistrationDelegate {
 			}
 			sortPostProcessors(currentRegistryProcessors, beanFactory);
 			registryProcessors.addAll(currentRegistryProcessors);
+			//调用BeanDefintionRegistryPostProcessors （配置类在此通过后置处理器开始解析）
 			invokeBeanDefinitionRegistryPostProcessors(currentRegistryProcessors, registry);
 			currentRegistryProcessors.clear();
 
