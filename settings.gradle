@@ -37,3 +37,5 @@ rootProject.children.each {project ->
 	project.buildFileName = "${project.name}.gradle"
 }
 include 'test-lxp'
+include 'springMVC-test'
+
