@@ -89,7 +89,7 @@ public class ReflectiveMethodInvocation implements ProxyMethodInvocation, Clonea
 	 * Index from 0 of the current interceptor we're invoking.
 	 * -1 until we invoke: then the current interceptor.
 	 */
-	private int currentInterceptorIndex = -1;
+	private int currentInterceptorIndex = -1;  //当前拦截器索引
 
 
 	/**
@@ -163,6 +163,7 @@ public class ReflectiveMethodInvocation implements ProxyMethodInvocation, Clonea
 			return invokeJoinpoint();
 		}
 
+		//获取增强器
 		Object interceptorOrInterceptionAdvice =
 				this.interceptorsAndDynamicMethodMatchers.get(++this.currentInterceptorIndex);
 		if (interceptorOrInterceptionAdvice instanceof InterceptorAndDynamicMethodMatcher) {
