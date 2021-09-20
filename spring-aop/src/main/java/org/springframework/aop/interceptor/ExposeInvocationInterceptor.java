@@ -90,7 +90,7 @@ public final class ExposeInvocationInterceptor implements MethodInterceptor, Pri
 	@Override
 	public Object invoke(MethodInvocation mi) throws Throwable {
 		MethodInvocation oldInvocation = invocation.get();
-		invocation.set(mi);
+		invocation.set(mi);//把当前对象（什么都封装的cglibaopproxy对象）放到threadload中进行线程共享
 		try {
 			return mi.proceed();
 		}
