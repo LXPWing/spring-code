@@ -49,7 +49,7 @@ public class AfterReturningAdviceInterceptor implements MethodInterceptor, After
 		this.advice = advice;
 	}
 
-
+	//返回通知拦截器方法调用
 	@Override
 	public Object invoke(MethodInvocation mi) throws Throwable {
 		Object retVal = mi.proceed();

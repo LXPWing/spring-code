@@ -49,7 +49,7 @@ public class MethodBeforeAdviceInterceptor implements MethodInterceptor, BeforeA
 		this.advice = advice;
 	}
 
-
+	//前置通知拦截器方法调用
 	@Override
 	public Object invoke(MethodInvocation mi) throws Throwable {
 		this.advice.before(mi.getMethod(), mi.getArguments(), mi.getThis());

@@ -56,6 +56,7 @@ public class AspectJAfterThrowingAdvice extends AbstractAspectJAdvice
 		setThrowingNameNoCheck(name);
 	}
 
+	//异常通知拦截器方法调用
 	@Override
 	public Object invoke(MethodInvocation mi) throws Throwable {
 		try {

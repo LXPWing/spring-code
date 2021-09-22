@@ -777,6 +777,7 @@ class CglibAopProxy implements AopProxy, Serializable {
 		 * Gives a marginal performance improvement versus using reflection to
 		 * invoke the target when invoking public methods.
 		 */
+		//执行对象真正方法
 		@Override
 		protected Object invokeJoinpoint() throws Throwable {
 			if (this.methodProxy != null) {

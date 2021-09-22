@@ -40,7 +40,7 @@ public class AspectJAfterAdvice extends AbstractAspectJAdvice
 		super(aspectJBeforeAdviceMethod, pointcut, aif);
 	}
 
-
+	//后置通知拦截器方法调用
 	@Override
 	public Object invoke(MethodInvocation mi) throws Throwable {
 		try {
