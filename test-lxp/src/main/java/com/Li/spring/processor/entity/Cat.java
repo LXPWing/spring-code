@@ -12,17 +12,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cat implements ApplicationContextAware {
     private String name;
+
     private Integer age;
+
     private ApplicationContextAware applicationContextAware;
+
     public Cat() {
         System.out.println("这里是Cat");
     }
-
-
-//    public Cat(String name, Integer age) {
-//        this.name = name;
-//        this.age = age;
-//    }
 
     public String getName() {
         return name;
