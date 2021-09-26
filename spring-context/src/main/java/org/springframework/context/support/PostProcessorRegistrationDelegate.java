@@ -146,6 +146,7 @@ final class PostProcessorRegistrationDelegate {
 			invokeBeanFactoryPostProcessors(beanFactoryPostProcessors, beanFactory);
 		}
 		//以上是对implement BeanDefinitionRegistryPostProcessors接口类的增强
+		
 		//以下是对implement BeanFactoryPostProcessors 接口类的增强
 		// Do not initialize FactoryBeans here: We need to leave all regular beans
 		// uninitialized to let the bean factory post-processors apply to them!
