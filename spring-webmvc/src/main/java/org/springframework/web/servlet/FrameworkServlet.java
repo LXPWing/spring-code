@@ -528,6 +528,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		long startTime = System.currentTimeMillis();
 
 		try {
+			//刷新容器
 			this.webApplicationContext = initWebApplicationContext();
 			initFrameworkServlet();
 		}

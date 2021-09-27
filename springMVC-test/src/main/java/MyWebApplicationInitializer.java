@@ -21,7 +21,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
         ServletRegistration.Dynamic registration = container.addServlet("app", new DispatcherServlet());
         registration.setLoadOnStartup(1);
         //映射路径
-        registration.addMapping("/app/*");
+        registration.addMapping("/world");
     }
 
 }
