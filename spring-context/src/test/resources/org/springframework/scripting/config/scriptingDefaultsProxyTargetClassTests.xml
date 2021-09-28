@@ -12,6 +12,6 @@
 
 	<lang:defaults refresh-check-delay="5000" proxy-target-class="true"/>
 
-	<lang:groovy id="testBean" name="/url" script-source="classpath:org/springframework/scripting/config/TestBean.groovy"/>
+	<lang:groovy id="testBean" name="/url" script-source="classpath:org/springframework/scripting/com.Li.config/TestBean.groovy"/>
 
 </beans>

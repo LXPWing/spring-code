@@ -112,7 +112,7 @@ import org.springframework.web.util.WebUtils;
  * If not explicitly specified, the context implementation is supposed to build a
  * default location from the namespace of the servlet.
  *
- * <p>Note: In case of multiple config locations, later bean definitions will
+ * <p>Note: In case of multiple com.Li.config locations, later bean definitions will
  * override ones defined in earlier loaded files, at least when using Spring's
  * default ApplicationContext implementation. This can be leveraged to
  * deliberately override certain bean definitions via an extra XML file.
@@ -183,7 +183,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	@Nullable
 	private String namespace;
 
-	/** Explicit context config location. */
+	/** Explicit context com.Li.config location. */
 	@Nullable
 	private String contextConfigLocation;
 
@@ -347,7 +347,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 
 	/**
 	 * Set a custom namespace for this servlet,
-	 * to be used for building a default context config location.
+	 * to be used for building a default context com.Li.config location.
 	 */
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
@@ -362,7 +362,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	}
 
 	/**
-	 * Set the context config location explicitly, instead of relying on the default
+	 * Set the context com.Li.config location explicitly, instead of relying on the default
 	 * location built from the namespace. This location string can consist of
 	 * multiple locations separated by any number of commas and spaces.
 	 */
@@ -371,7 +371,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	}
 
 	/**
-	 * Return the explicit context config location, if any.
+	 * Return the explicit context com.Li.config location, if any.
 	 */
 	@Nullable
 	public String getContextConfigLocation() {
@@ -528,7 +528,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		long startTime = System.currentTimeMillis();
 
 		try {
-			//刷新容器
+			// 刷新web-ioc容器
 			this.webApplicationContext = initWebApplicationContext();
 			initFrameworkServlet();
 		}
@@ -561,8 +561,8 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	 */
 	protected WebApplicationContext initWebApplicationContext() {
 		WebApplicationContext rootContext =
-				WebApplicationContextUtils.getWebApplicationContext(getServletContext());
-		WebApplicationContext wac = null; //先获取之前的WebApplication 
+				WebApplicationContextUtils.getWebApplicationContext(getServletContext());  //父容器
+		WebApplicationContext wac = null; //先获取之前的WebApplication,用来判断父子容器的
 
 		if (this.webApplicationContext != null) {
 			// A context instance was injected at construction time -> use it
@@ -590,6 +590,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		}
 		if (wac == null) {
 			// No context instance is defined for this servlet -> create a local one
+			// 刷新容器
 			wac = createWebApplicationContext(rootContext);
 		}
 
@@ -667,6 +668,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		if (configLocation != null) {
 			wac.setConfigLocation(configLocation);
 		}
+		//刷新容器
 		configureAndRefreshWebApplicationContext(wac);
 
 		return wac;
@@ -701,6 +703,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 
 		postProcessWebApplicationContext(wac);
 		applyInitializers(wac);
+		//刷新容器
 		wac.refresh();
 	}
 
@@ -987,6 +990,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	 * <p>The actual event handling is performed by the abstract
 	 * {@link #doService} template method.
 	 */
+	//request同一请求处理
 	protected final void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -1185,6 +1189,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	 * ApplicationListener endpoint that receives events from this servlet's WebApplicationContext
 	 * only, delegating to {@code onApplicationEvent} on the FrameworkServlet instance.
 	 */
+	//事件回调
 	private class ContextRefreshListener implements ApplicationListener<ContextRefreshedEvent> {
 
 		@Override

@@ -8,8 +8,8 @@
 	<jdbc:embedded-database id="dataSource" type="HSQL"/>
 
 	<jdbc:initialize-database data-source="dataSource">
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-schema.sql" encoding="ISO-8859-1"/>
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-test-data-endings.sql" separator="@@"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-schema.sql" encoding="ISO-8859-1"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-test-data-endings.sql" separator="@@"/>
 	</jdbc:initialize-database>
 
 </beans>

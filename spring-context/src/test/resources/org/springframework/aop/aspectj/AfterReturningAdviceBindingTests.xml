@@ -5,7 +5,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 				http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="afterReturningAdviceBindingTests" ref="testAspect">
 			<aop:after-returning method="oneIntArg" pointcut="execution(* setAge(int)) and args(age)"/>
 			<aop:after-returning method="oneObjectArg" pointcut="execution(* getAge()) and this(bean)"/>
@@ -26,7 +26,7 @@
 					pointcut="execution(* getSpouse())"/>
 			<aop:after-returning method="oneInt" returning="result" pointcut="execution(* haveBirthday())"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="testAspect" class="org.springframework.aop.aspectj.AfterReturningAdviceBindingTestAspect"/>
 

@@ -42,7 +42,7 @@ import org.springframework.web.jsf.FacesContextUtils;
  * and is able to resolve "webApplicationContext.mySpringManagedBusinessObject"
  * dereferences to Spring-defined beans in that application context.
  *
- * <p>Configure this resolver in your {@code faces-config.xml} file as follows:
+ * <p>Configure this resolver in your {@code faces-com.Li.config.xml} file as follows:
  *
  * <pre class="code">
  * &lt;application>

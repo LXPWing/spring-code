@@ -5,7 +5,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 				http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="beanNameMatchingTest" ref="counterAspect">
 			<aop:pointcut id="bean1Operation" expression="execution(* set*(..)) and bean(myBean) and !bean(foo)"/>
 			<aop:before pointcut-ref="bean1Operation" method="increment()"/>
@@ -19,7 +19,7 @@
 			<aop:pointcut id="factoryBean2Operation" expression="bean(&amp;testFactoryBean2)"/>
 			<aop:before pointcut-ref="factoryBean2Operation" method="increment()"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="tb1" name="testBean1" class="org.springframework.beans.testfixture.beans.TestBean">
 		<qualifier value="myBean"/>
@@ -33,7 +33,7 @@
 		</property>
 	</bean>
 
-	<bean id="testFactoryBean1" class="org.springframework.beans.factory.config.MapFactoryBean">
+	<bean id="testFactoryBean1" class="org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="myKey" value="myValue"/>
@@ -41,7 +41,7 @@
 		</property>
 	</bean>
 
-	<bean id="testFactoryBean2" class="org.springframework.beans.factory.config.MapFactoryBean">
+	<bean id="testFactoryBean2" class="org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="myKey" value="myValue"/>
@@ -51,9 +51,9 @@
 
 	<bean id="counterAspect" class="org.springframework.aop.aspectj.Counter"/>
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor pointcut="bean(*This) and !bean(dont*)" advice-ref="testInterceptor"/>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="interceptThis" class="org.springframework.beans.testfixture.beans.TestBean"/>
 

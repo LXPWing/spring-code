@@ -127,7 +127,7 @@ import org.springframework.util.StringValueResolver;
  * default names (inferred from the field name / property name).
  *
  * <p><b>NOTE:</b> A default CommonAnnotationBeanPostProcessor will be registered
- * by the "context:annotation-config" and "context:component-scan" XML tags.
+ * by the "context:annotation-com.Li.config" and "context:component-scan" XML tags.
  * Remove or turn off the default annotation configuration there if you intend
  * to specify a custom CommonAnnotationBeanPostProcessor bean definition!
  * <p><b>NOTE:</b> Annotation injection will be performed <i>before</i> XML injection; thus

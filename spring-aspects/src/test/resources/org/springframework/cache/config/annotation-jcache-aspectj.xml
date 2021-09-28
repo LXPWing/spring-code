@@ -29,7 +29,7 @@
 		<property name="name" value="default"/>
 	</bean>
 
-	<bean id="cacheableService" class="org.springframework.cache.config.AnnotatedJCacheableService">
+	<bean id="cacheableService" class="org.springframework.cache.com.Li.config.AnnotatedJCacheableService">
 		<constructor-arg ref="defaultCache"/>
 	</bean>
 

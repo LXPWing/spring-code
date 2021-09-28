@@ -343,11 +343,11 @@ The following table summarizes the strategy for converting `String` objects to `
 | Prefix| Example| Explanation
 
 | classpath:
-| `classpath:com/myapp/config.xml`
+| `classpath:com/myapp/com.Li.config.xml`
 | Loaded from the classpath.
 
 | file:
-| `file:///data/config.xml`
+| `file:///data/com.Li.config.xml`
 | Loaded as a `URL` from the filesystem. See also <<resources-filesystemresource-caveats>>.
 
 | http:
@@ -355,7 +355,7 @@ The following table summarizes the strategy for converting `String` objects to `
 | Loaded as a `URL`.
 
 | (none)
-| `/data/config.xml`
+| `/data/com.Li.config.xml`
 | Depends on the underlying `ApplicationContext`.
 |===
 

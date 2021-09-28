@@ -21,7 +21,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<value>location=file:///tmp</value>
 		</property>
@@ -41,5 +41,5 @@
 		</mvc:resource-chain>
 	</mvc:resources>
 
-	<bean id="resourceCache" class="org.springframework.web.servlet.config.MvcNamespaceTests$TestCacheManager"/>
+	<bean id="resourceCache" class="org.springframework.web.servlet.com.Li.config.MvcNamespaceTests$TestCacheManager"/>
 </beans>

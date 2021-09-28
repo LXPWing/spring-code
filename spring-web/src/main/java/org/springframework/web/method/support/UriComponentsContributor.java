@@ -43,7 +43,7 @@ public interface UriComponentsContributor {
 	 * Process the given method argument and either update the
 	 * {@link UriComponentsBuilder} or add to the map with URI variables
 	 * to use to expand the URI after all arguments are processed.
-	 * @param parameter the controller method parameter (never {@code null})
+	 * @param parameter the com.Li.controller method parameter (never {@code null})
 	 * @param value the argument value (possibly {@code null})
 	 * @param builder the builder to update (never {@code null})
 	 * @param uriVariables a map to add URI variables to (never {@code null})

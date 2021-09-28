@@ -58,7 +58,7 @@ public abstract class AbstractServletHandlerMethodTests {
 	}
 
 	/**
-	 * Initialize a DispatcherServlet instance registering zero or more controller classes.
+	 * Initialize a DispatcherServlet instance registering zero or more com.Li.controller classes.
 	 */
 	protected WebApplicationContext initServletWithControllers(final Class<?>... controllerClasses)
 			throws ServletException {
@@ -67,7 +67,7 @@ public abstract class AbstractServletHandlerMethodTests {
 	}
 
 	/**
-	 * Initialize a DispatcherServlet instance registering zero or more controller classes
+	 * Initialize a DispatcherServlet instance registering zero or more com.Li.controller classes
 	 * and also providing additional bean definitions through a callback.
 	 */
 	@SuppressWarnings("serial")

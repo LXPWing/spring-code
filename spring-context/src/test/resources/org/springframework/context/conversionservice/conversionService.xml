@@ -52,6 +52,6 @@
 		<constructor-arg value="222"/>
 	</bean>
 
-	<context:annotation-config />
+	<context:annotation-com.Li.config />
 
 </beans>

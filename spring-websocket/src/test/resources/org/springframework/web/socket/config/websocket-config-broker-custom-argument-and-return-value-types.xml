@@ -10,21 +10,21 @@
 		</websocket:stomp-endpoint>
 		<websocket:simple-broker prefix="/topic"/>
 		<websocket:argument-resolvers>
-			<bean class="org.springframework.web.socket.config.CustomArgumentResolver" />
+			<bean class="org.springframework.web.socket.com.Li.config.CustomArgumentResolver" />
 			<ref bean="myArgumentResolver" />
 		</websocket:argument-resolvers>
 		<websocket:return-value-handlers>
-			<bean class="org.springframework.web.socket.config.CustomReturnValueHandler" />
+			<bean class="org.springframework.web.socket.com.Li.config.CustomReturnValueHandler" />
 			<ref bean="myReturnValueHandler" />
 		</websocket:return-value-handlers>
 	</websocket:message-broker>
 
-	<bean id="myHandler" class="org.springframework.web.socket.config.TestHandshakeHandler"/>
+	<bean id="myHandler" class="org.springframework.web.socket.com.Li.config.TestHandshakeHandler"/>
 
-	<bean id="myInterceptor" class="org.springframework.web.socket.config.TestChannelInterceptor"/>
+	<bean id="myInterceptor" class="org.springframework.web.socket.com.Li.config.TestChannelInterceptor"/>
 
-	<bean id="myArgumentResolver" class="org.springframework.web.socket.config.CustomArgumentResolver" />
+	<bean id="myArgumentResolver" class="org.springframework.web.socket.com.Li.config.CustomArgumentResolver" />
 
-	<bean id="myReturnValueHandler" class="org.springframework.web.socket.config.CustomReturnValueHandler" />
+	<bean id="myReturnValueHandler" class="org.springframework.web.socket.com.Li.config.CustomReturnValueHandler" />
 
 </beans>

@@ -229,7 +229,7 @@ public class ExceptionHandlerExceptionResolver extends AbstractHandlerMethodExce
 	}
 
 	/**
-	 * Add one or more components to be invoked after the execution of a controller
+	 * Add one or more components to be invoked after the execution of a com.Li.controller
 	 * method annotated with {@code @ResponseBody} or returning {@code ResponseEntity}
 	 * but before the body is written to the response with the selected
 	 * {@code HttpMessageConverter}.
@@ -438,7 +438,7 @@ public class ExceptionHandlerExceptionResolver extends AbstractHandlerMethodExce
 
 	/**
 	 * Find an {@code @ExceptionHandler} method for the given exception. The default
-	 * implementation searches methods in the class hierarchy of the controller first
+	 * implementation searches methods in the class hierarchy of the com.Li.controller first
 	 * and if not found, it continues searching for additional {@code @ExceptionHandler}
 	 * methods assuming some {@linkplain ControllerAdvice @ControllerAdvice}
 	 * Spring-managed beans were detected.
@@ -453,7 +453,7 @@ public class ExceptionHandlerExceptionResolver extends AbstractHandlerMethodExce
 		Class<?> handlerType = null;
 
 		if (handlerMethod != null) {
-			// Local exception handler methods on the controller class itself.
+			// Local exception handler methods on the com.Li.controller class itself.
 			// To be invoked through the proxy, even in case of an interface-based proxy.
 			handlerType = handlerMethod.getBeanType();
 			ExceptionHandlerMethodResolver resolver = this.exceptionHandlerCache.get(handlerType);

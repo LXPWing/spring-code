@@ -665,11 +665,11 @@ write the following:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor
 			pointcut="com.xyz.myapp.CommonPointcuts.businessService()"
 			advice-ref="tx-advice"/>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<tx:advice id="tx-advice">
 		<tx:attributes>
@@ -678,7 +678,7 @@ write the following:
 	</tx:advice>
 ----
 
-The `<aop:config>` and `<aop:advisor>` elements are discussed in <<aop-schema>>. The
+The `<aop:com.Li.config>` and `<aop:advisor>` elements are discussed in <<aop-schema>>. The
 transaction elements are discussed in <<data-access.adoc#transaction, Transaction Management>>.
 
 
@@ -1975,15 +1975,15 @@ XML Schema-based configuration>>. See <<core.adoc#xsd-schemas-aop, the AOP schem
 for how to import the tags in the `aop` namespace.
 
 Within your Spring configurations, all aspect and advisor elements must be placed within
-an `<aop:config>` element (you can have more than one `<aop:config>` element in an
-application context configuration). An `<aop:config>` element can contain pointcut,
+an `<aop:com.Li.config>` element (you can have more than one `<aop:com.Li.config>` element in an
+application context configuration). An `<aop:com.Li.config>` element can contain pointcut,
 advisor, and aspect elements (note that these must be declared in that order).
 
-WARNING: The `<aop:config>` style of configuration makes heavy use of Spring's
+WARNING: The `<aop:com.Li.config>` style of configuration makes heavy use of Spring's
 <<aop-autoproxy, auto-proxying>> mechanism. This can cause issues (such as advice
 not being woven) if you already use explicit auto-proxying through the use of
 `BeanNameAutoProxyCreator` or something similar. The recommended usage pattern is to
-use either only the `<aop:config>` style or only the `AutoProxyCreator` style and
+use either only the `<aop:com.Li.config>` style or only the `AutoProxyCreator` style and
 never mix them.
 
 
@@ -2000,11 +2000,11 @@ by using the `ref` attribute, as the following example shows:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="myAspect" ref="aBean">
 			...
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="aBean" class="...">
 		...
@@ -2019,7 +2019,7 @@ dependency injected just like any other Spring bean.
 [[aop-schema-pointcuts]]
 === Declaring a Pointcut
 
-You can declare a named pointcut inside an `<aop:config>` element, letting the pointcut
+You can declare a named pointcut inside an `<aop:com.Li.config>` element, letting the pointcut
 definition be shared across several aspects and advisors.
 
 A pointcut that represents the execution of any business service in the service layer can
@@ -2027,12 +2027,12 @@ be defined as follows:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:pointcut id="businessService"
 			expression="execution(* com.xyz.myapp.service.*.*(..))"/>
 
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 Note that the pointcut expression itself is using the same AspectJ pointcut expression
@@ -2042,12 +2042,12 @@ pointcut expression. Another way of defining the above pointcut would be as foll
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:pointcut id="businessService"
 			expression="com.xyz.myapp.CommonPointcuts.businessService()"/>
 
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 Assume that you have a `CommonPointcuts` aspect as described in <<aop-common-pointcuts>>.
@@ -2057,7 +2057,7 @@ as the following example shows:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:aspect id="myAspect" ref="aBean">
 
@@ -2067,7 +2067,7 @@ as the following example shows:
 			...
 		</aop:aspect>
 
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 In much the same way as an @AspectJ aspect, pointcuts declared by using the schema based
@@ -2076,7 +2076,7 @@ collects the `this` object as the join point context and passes it to the advice
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:aspect id="myAspect" ref="aBean">
 
@@ -2088,7 +2088,7 @@ collects the `this` object as the join point context and passes it to the advice
 			...
 		</aop:aspect>
 
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 The advice must be declared to receive the collected join point context by including
@@ -2116,7 +2116,7 @@ follows:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:aspect id="myAspect" ref="aBean">
 
@@ -2127,7 +2127,7 @@ follows:
 
 			...
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 Note that pointcuts defined in this way are referred to by their XML `id` and cannot be
@@ -2163,7 +2163,7 @@ Before advice runs before a matched method execution. It is declared inside an
 	</aop:aspect>
 ----
 
-Here, `dataAccessOperation` is the `id` of a pointcut defined at the top (`<aop:config>`)
+Here, `dataAccessOperation` is the `id` of a pointcut defined at the top (`<aop:com.Li.config>`)
 level. To define the pointcut inline instead, replace the `pointcut-ref` attribute with
 a `pointcut` attribute, as follows:
 
@@ -2494,7 +2494,7 @@ preceding advice for a particular join point:
 		<!-- this is the actual advice itself -->
 		<bean id="profiler" class="x.y.SimpleProfiler"/>
 
-		<aop:config>
+		<aop:com.Li.config>
 			<aop:aspect ref="profiler">
 
 				<aop:pointcut id="theExecutionOfSomePersonServiceMethod"
@@ -2505,7 +2505,7 @@ preceding advice for a particular join point:
 					method="profile"/>
 
 			</aop:aspect>
-		</aop:config>
+		</aop:com.Li.config>
 
 	</beans>
 ----
@@ -2672,7 +2672,7 @@ namespace support in Spring. The following example shows an advisor:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:pointcut id="businessService"
 			expression="execution(* com.xyz.myapp.service.*.*(..))"/>
@@ -2681,7 +2681,7 @@ namespace support in Spring. The following example shows an advisor:
 			pointcut-ref="businessService"
 			advice-ref="tx-advice"/>
 
-	</aop:config>
+	</aop:com.Li.config>
 
 	<tx:advice id="tx-advice">
 		<tx:attributes>
@@ -2808,7 +2808,7 @@ The corresponding Spring configuration is as follows:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:aspect id="concurrentOperationRetry" ref="concurrentOperationExecutor">
 
@@ -2821,7 +2821,7 @@ The corresponding Spring configuration is as follows:
 
 		</aop:aspect>
 
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="concurrentOperationExecutor"
 		class="com.xyz.myapp.service.impl.ConcurrentOperationExecutor">
@@ -3008,13 +3008,13 @@ you can do so. However, you should consider the following issues:
   corresponding debug log entries from Spring's AOP support.
 
 To force the use of CGLIB proxies, set the value of the `proxy-target-class` attribute
-of the `<aop:config>` element to true, as follows:
+of the `<aop:com.Li.config>` element to true, as follows:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<aop:config proxy-target-class="true">
+	<aop:com.Li.config proxy-target-class="true">
 		<!-- other beans defined here... -->
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 To force CGLIB proxying when you use the @AspectJ auto-proxy support, set the
@@ -3028,14 +3028,14 @@ as follows:
 
 [NOTE]
 ====
-Multiple `<aop:config/>` sections are collapsed into a single unified auto-proxy creator
+Multiple `<aop:com.Li.config/>` sections are collapsed into a single unified auto-proxy creator
 at runtime, which applies the _strongest_ proxy settings that any of the
-`<aop:config/>` sections (typically from different XML bean definition files) specified.
+`<aop:com.Li.config/>` sections (typically from different XML bean definition files) specified.
 This also applies to the `<tx:annotation-driven/>` and `<aop:aspectj-autoproxy/>`
 elements.
 
 To be clear, using `proxy-target-class="true"` on `<tx:annotation-driven/>`,
-`<aop:aspectj-autoproxy/>`, or `<aop:config/>` elements forces the use of CGLIB
+`<aop:aspectj-autoproxy/>`, or `<aop:com.Li.config/>` elements forces the use of CGLIB
 proxies _for all three of them_.
 ====
 
@@ -3239,7 +3239,7 @@ it is not a proxy-based AOP framework.
 [[aop-aspectj-programmatic]]
 == Programmatic Creation of @AspectJ Proxies
 
-In addition to declaring aspects in your configuration by using either `<aop:config>`
+In addition to declaring aspects in your configuration by using either `<aop:com.Li.config>`
 or `<aop:aspectj-autoproxy>`, it is also possible to programmatically create proxies
 that advise target objects. For the full details of Spring's AOP API, see the
 <<aop-api, next chapter>>. Here, we want to focus on the ability to automatically
@@ -3397,7 +3397,7 @@ annotation. You can specify either `@Configurable(autowire=Autowire.BY_TYPE)` or
 `@Configurable(autowire=Autowire.BY_NAME` for autowiring by type or by name,
 respectively. As an alternative, it is preferable to specify explicit, annotation-driven
 dependency injection for your `@Configurable` beans through `@Autowired` or `@Inject`
-at the field or method level (see <<beans-annotation-config>> for further details).
+at the field or method level (see <<beans-annotation-com.Li.config>> for further details).
 
 Finally, you can enable Spring dependency checking for the object references in the newly
 created and configured object by using the `dependencyCheck` attribute (for example,

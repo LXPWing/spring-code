@@ -141,7 +141,7 @@ public class SimpleAsyncTaskExecutor extends CustomizableThreadCreator
 	 * Set the maximum number of parallel accesses allowed.
 	 * -1 indicates no concurrency limit at all.
 	 * <p>In principle, this limit can be changed at runtime,
-	 * although it is generally designed as a config time setting.
+	 * although it is generally designed as a com.Li.config time setting.
 	 * NOTE: Do not switch between -1 and any concrete limit at runtime,
 	 * as this will lead to inconsistent concurrency counts: A limit
 	 * of -1 effectively turns off concurrency counting completely.

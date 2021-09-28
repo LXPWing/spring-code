@@ -62,7 +62,7 @@ import org.springframework.util.Assert;
  * configured value is not {@code null}.
  *
  * <p>Note: A default RequiredAnnotationBeanPostProcessor will be registered
- * by the "context:annotation-config" and "context:component-scan" XML tags.
+ * by the "context:annotation-com.Li.config" and "context:component-scan" XML tags.
  * Remove or turn off the default annotation configuration there if you intend
  * to specify a custom RequiredAnnotationBeanPostProcessor bean definition.
  *

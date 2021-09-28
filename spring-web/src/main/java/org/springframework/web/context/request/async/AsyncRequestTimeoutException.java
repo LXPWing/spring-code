@@ -21,7 +21,7 @@ package org.springframework.web.context.request.async;
  * Alternatively an applications can register a
  * {@link DeferredResultProcessingInterceptor} or a
  * {@link CallableProcessingInterceptor} to handle the timeout through
- * the MVC Java config or the MVC XML namespace or directly through properties
+ * the MVC Java com.Li.config or the MVC XML namespace or directly through properties
  * of the {@code RequestMappingHandlerAdapter}.
  *
  * <p>By default the exception will be handled as a 503 error.

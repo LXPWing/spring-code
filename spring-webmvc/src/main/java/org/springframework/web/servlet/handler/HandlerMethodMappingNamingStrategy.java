@@ -28,7 +28,7 @@ import org.springframework.web.method.HandlerMethod;
  * {@link org.springframework.web.servlet.handler.AbstractHandlerMethodMapping#getHandlerMethodsForMappingName(String)
  * AbstractHandlerMethodMapping#getHandlerMethodsForMappingName}.
  *
- * <p>Applications can build a URL to a controller method by name with the help
+ * <p>Applications can build a URL to a com.Li.controller method by name with the help
  * of the static method
  * {@link org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder#fromMappingName(String)
  * MvcUriComponentsBuilder#fromMappingName} or in JSPs through the "mvcUrl"

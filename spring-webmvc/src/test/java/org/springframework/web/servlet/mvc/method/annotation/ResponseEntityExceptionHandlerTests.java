@@ -233,7 +233,7 @@ public class ResponseEntityExceptionHandlerTests {
 	@Test
 	public void controllerAdviceWithinDispatcherServlet() throws Exception {
 		StaticWebApplicationContext ctx = new StaticWebApplicationContext();
-		ctx.registerSingleton("controller", ExceptionThrowingController.class);
+		ctx.registerSingleton("com.Li.controller", ExceptionThrowingController.class);
 		ctx.registerSingleton("exceptionHandler", ApplicationExceptionHandler.class);
 		ctx.refresh();
 
@@ -249,7 +249,7 @@ public class ResponseEntityExceptionHandlerTests {
 	@Test
 	public void controllerAdviceWithNestedExceptionWithinDispatcherServlet() throws Exception {
 		StaticWebApplicationContext ctx = new StaticWebApplicationContext();
-		ctx.registerSingleton("controller", NestedExceptionThrowingController.class);
+		ctx.registerSingleton("com.Li.controller", NestedExceptionThrowingController.class);
 		ctx.registerSingleton("exceptionHandler", ApplicationExceptionHandler.class);
 		ctx.refresh();
 

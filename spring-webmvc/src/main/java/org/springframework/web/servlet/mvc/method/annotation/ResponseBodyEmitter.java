@@ -28,7 +28,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 
 /**
- * A controller method return value type for asynchronous request processing
+ * A com.Li.controller method return value type for asynchronous request processing
  * where one or more objects are written to the response.
  *
  * <p>While {@link org.springframework.web.context.request.async.DeferredResult}

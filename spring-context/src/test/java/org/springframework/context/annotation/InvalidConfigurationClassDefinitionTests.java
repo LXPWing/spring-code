@@ -40,7 +40,7 @@ public class InvalidConfigurationClassDefinitionTests {
 
 		BeanDefinition configBeanDef = rootBeanDefinition(Config.class).getBeanDefinition();
 		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-		beanFactory.registerBeanDefinition("config", configBeanDef);
+		beanFactory.registerBeanDefinition("com.Li.config", configBeanDef);
 
 		ConfigurationClassPostProcessor pp = new ConfigurationClassPostProcessor();
 		assertThatExceptionOfType(BeanDefinitionParsingException.class).isThrownBy(() ->

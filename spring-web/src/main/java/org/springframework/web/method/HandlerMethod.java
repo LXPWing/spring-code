@@ -427,7 +427,7 @@ public class HandlerMethod {
 
 	/**
 	 * Assert that the target bean class is an instance of the class where the given
-	 * method is declared. In some cases the actual controller instance at request-
+	 * method is declared. In some cases the actual com.Li.controller instance at request-
 	 * processing time may be a JDK dynamic proxy (lazy initialization, prototype
 	 * beans, and others). {@code @Controller}'s that require proxying should prefer
 	 * class-based proxy mechanisms.
@@ -437,8 +437,8 @@ public class HandlerMethod {
 		Class<?> targetBeanClass = targetBean.getClass();
 		if (!methodDeclaringClass.isAssignableFrom(targetBeanClass)) {
 			String text = "The mapped handler method class '" + methodDeclaringClass.getName() +
-					"' is not an instance of the actual controller bean class '" +
-					targetBeanClass.getName() + "'. If the controller requires proxying " +
+					"' is not an instance of the actual com.Li.controller bean class '" +
+					targetBeanClass.getName() + "'. If the com.Li.controller requires proxying " +
 					"(e.g. due to @Transactional), please use class-based proxying.";
 			throw new IllegalStateException(formatInvokeError(text, args));
 		}

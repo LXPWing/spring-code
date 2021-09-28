@@ -97,7 +97,7 @@ public interface WebFluxConfigurer {
 
 	/**
 	 * Add custom {@link Converter Converters} and {@link Formatter Formatters} for
-	 * performing type conversion and formatting of annotated controller method arguments.
+	 * performing type conversion and formatting of annotated com.Li.controller method arguments.
 	 */
 	default void addFormatters(FormatterRegistry registry) {
 	}
@@ -106,7 +106,7 @@ public interface WebFluxConfigurer {
 	 * Provide a custom {@link Validator}.
 	 * <p>By default a validator for standard bean validation is created if
 	 * bean validation API is present on the classpath.
-	 * <p>The configured validator is used for validating annotated controller
+	 * <p>The configured validator is used for validating annotated com.Li.controller
 	 * method arguments.
 	 */
 	@Nullable
@@ -116,7 +116,7 @@ public interface WebFluxConfigurer {
 
 	/**
 	 * Provide a custom {@link MessageCodesResolver} to use for data binding in
-	 * annotated controller method arguments instead of the one created by
+	 * annotated com.Li.controller method arguments instead of the one created by
 	 * default in {@link org.springframework.validation.DataBinder}.
 	 */
 	@Nullable

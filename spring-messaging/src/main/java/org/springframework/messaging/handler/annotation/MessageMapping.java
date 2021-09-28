@@ -93,10 +93,10 @@ import org.springframework.messaging.Message;
  * "Annotated Responders"</a>.
  * </ul>
  *
- * <p><b>NOTE:</b> When using controller interfaces (e.g. for AOP proxying),
+ * <p><b>NOTE:</b> When using com.Li.controller interfaces (e.g. for AOP proxying),
  * make sure to consistently put <i>all</i> your mapping annotations - such as
  * {@code @MessageMapping} and {@code @SubscribeMapping} - on
- * the controller <i>interface</i> rather than on the implementation class.
+ * the com.Li.controller <i>interface</i> rather than on the implementation class.
  *
  * @author Rossen Stoyanchev
  * @since 4.0

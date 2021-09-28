@@ -88,7 +88,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * A test fixture with a controller with all supported method signature styles
+ * A test fixture with a com.Li.controller with all supported method signature styles
  * and arguments. A convenient place to test or confirm a problem with a
  * specific argument or return value type.
  *

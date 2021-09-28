@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
 				<prop key="testBean.name">Rob Harrop</prop>
@@ -13,7 +13,7 @@
 		</property>
 	</bean>
 
-	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.CustomScopeConfigurer">
 		<property name="scopes">
 			<map>
 				<entry key="${scopeName}">

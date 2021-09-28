@@ -62,7 +62,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping {
 	 * Set whether to lazily initialize handlers. Only applicable to
 	 * singleton handlers, as prototypes are always lazily initialized.
 	 * Default is "false", as eager initialization allows for more efficiency
-	 * through referencing the controller objects directly.
+	 * through referencing the com.Li.controller objects directly.
 	 * <p>If you want to allow your controllers to be lazily initialized,
 	 * make them "lazy-init" and set this flag to true. Just making them
 	 * "lazy-init" will not work, as they are initialized through the

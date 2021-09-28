@@ -506,7 +506,7 @@ Router functions are evaluated in order: if the first route does not match, the
 second is evaluated, and so on.
 Therefore, it makes sense to declare more specific routes before general ones.
 Note that this behavior is different from the annotation-based programming model, where the
-"most specific" controller method is picked automatically.
+"most specific" com.Li.controller method is picked automatically.
 
 When using the router function builder, all defined routes are composed into one
 `RouterFunction` that is returned from `build()`.
@@ -651,7 +651,7 @@ You can then use the returned `HttpHandler` with a number of server adapters by 
 
 A more typical option, also used by Spring Boot, is to run with a
 <<web-reactive.adoc#webflux-dispatcher-handler, `DispatcherHandler`>>-based setup through the
-<<web-reactive.adoc#webflux-config>>, which uses Spring configuration to declare the
+<<web-reactive.adoc#webflux-com.Li.config>>, which uses Spring configuration to declare the
 components required to process requests. The WebFlux Java configuration declares the following
 infrastructure components to support functional endpoints:
 

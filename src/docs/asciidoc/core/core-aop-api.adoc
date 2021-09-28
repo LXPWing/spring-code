@@ -1741,7 +1741,7 @@ need to define an advisor similar to the following:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<bean id="poolConfigAdvisor" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	<bean id="poolConfigAdvisor" class="org.springframework.beans.factory.com.Li.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="poolTargetSource"/>
 		<property name="targetMethod" value="getPoolingConfigMixin"/>
 	</bean>

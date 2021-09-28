@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks a constructor, field, setter method, or config method as to be autowired by
+ * Marks a constructor, field, setter method, or com.Li.config method as to be autowired by
  * Spring's dependency injection facilities. This is an alternative to the JSR-330
  * {@link javax.inject.Inject} annotation, adding required-vs-optional semantics.
  *
@@ -43,14 +43,14 @@ import java.lang.annotation.Target;
  * even if not annotated. An annotated constructor does not have to be public.
  *
  * <h3>Autowired Fields</h3>
- * <p>Fields are injected right after construction of a bean, before any config methods
- * are invoked. Such a config field does not have to be public.
+ * <p>Fields are injected right after construction of a bean, before any com.Li.config methods
+ * are invoked. Such a com.Li.config field does not have to be public.
  *
  * <h3>Autowired Methods</h3>
  * <p>Config methods may have an arbitrary name and any number of arguments; each of
  * those arguments will be autowired with a matching bean in the Spring container.
  * Bean property setter methods are effectively just a special case of such a general
- * config method. Such config methods do not have to be public.
+ * com.Li.config method. Such com.Li.config methods do not have to be public.
  *
  * <h3>Autowired Parameters</h3>
  * <p>Although {@code @Autowired} can technically be declared on individual method

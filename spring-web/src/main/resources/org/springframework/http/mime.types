@@ -435,8 +435,8 @@ application/vnd.cinderella			cdy
 application/vnd.claymore			cla
 application/vnd.cloanto.rp9			rp9
 application/vnd.clonk.c4group			c4g c4d c4f c4p c4u
-application/vnd.cluetrust.cartomobile-config		c11amc
-application/vnd.cluetrust.cartomobile-config-pkg	c11amz
+application/vnd.cluetrust.cartomobile-com.Li.config		c11amc
+application/vnd.cluetrust.cartomobile-com.Li.config-pkg	c11amz
 # application/vnd.coffeescript
 # application/vnd.collection+json
 # application/vnd.collection.doc+json
@@ -819,7 +819,7 @@ application/vnd.noblenet-web			nnw
 # application/vnd.nokia.catalogs
 # application/vnd.nokia.conml+wbxml
 # application/vnd.nokia.conml+xml
-# application/vnd.nokia.iptv.config+xml
+# application/vnd.nokia.iptv.com.Li.config+xml
 # application/vnd.nokia.isds-radio-presets
 # application/vnd.nokia.landmark+wbxml
 # application/vnd.nokia.landmark+xml
@@ -871,7 +871,7 @@ application/vnd.oasis.opendocument.text-web		oth
 # application/vnd.oipf.ueprofile+xml
 # application/vnd.oipf.userprofile+xml
 application/vnd.olpc-sugar			xo
-# application/vnd.oma-scws-config
+# application/vnd.oma-scws-com.Li.config
 # application/vnd.oma-scws-http-request
 # application/vnd.oma-scws-http-response
 # application/vnd.oma.bcast.associated-procedure-parameter+xml
@@ -1514,7 +1514,7 @@ audio/vnd.rip					rip
 # audio/vnd.sealedmedia.softseal.mpeg
 # audio/vnd.vmx.cvsd
 # audio/vorbis
-# audio/vorbis-config
+# audio/vorbis-com.Li.config
 audio/webm					weba
 audio/x-aac					aac
 audio/x-aiff					aif aiff aifc

@@ -161,7 +161,7 @@ public abstract class AbstractJCacheAnnotationTests {
 	public void cacheWithPartialKey() {
 		Object first = service.cacheWithPartialKey(this.keyItem, true);
 		Object second = service.cacheWithPartialKey(this.keyItem, false);
-		// second argument not used, see config
+		// second argument not used, see com.Li.config
 		assertThat(second).isSameAs(first);
 	}
 

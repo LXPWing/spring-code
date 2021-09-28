@@ -78,18 +78,18 @@ import org.springframework.util.StringUtils;
  *	 &lt;resourceadapter-version&gt;1.0&lt;/resourceadapter-version&gt;
  *	 &lt;resourceadapter&gt;
  *		 &lt;resourceadapter-class&gt;org.springframework.jca.context.SpringContextResourceAdapter&lt;/resourceadapter-class&gt;
- *		 &lt;config-property&gt;
- *			 &lt;config-property-name&gt;ContextConfigLocation&lt;/config-property-name&gt;
- *			 &lt;config-property-type&gt;java.lang.String&lt;/config-property-type&gt;
- *			 &lt;config-property-value&gt;META-INF/applicationContext.xml&lt;/config-property-value&gt;
- *		 &lt;/config-property&gt;
+ *		 &lt;com.Li.config-property&gt;
+ *			 &lt;com.Li.config-property-name&gt;ContextConfigLocation&lt;/com.Li.config-property-name&gt;
+ *			 &lt;com.Li.config-property-type&gt;java.lang.String&lt;/com.Li.config-property-type&gt;
+ *			 &lt;com.Li.config-property-value&gt;META-INF/applicationContext.xml&lt;/com.Li.config-property-value&gt;
+ *		 &lt;/com.Li.config-property&gt;
  *	 &lt;/resourceadapter&gt;
  * &lt;/connector&gt;</pre>
  *
- * Note that "META-INF/applicationContext.xml" is the default context config
+ * Note that "META-INF/applicationContext.xml" is the default context com.Li.config
  * location, so it doesn't have to specified unless you intend to specify
- * different/additional config files. So in the default case, you may remove
- * the entire {@code config-property} section above.
+ * different/additional com.Li.config files. So in the default case, you may remove
+ * the entire {@code com.Li.config-property} section above.
  *
  * <p><b>For simple deployment needs, all you need to do is the following:</b>
  * Package all application classes into a RAR file (which is just a standard
@@ -110,7 +110,7 @@ public class SpringContextResourceAdapter implements ResourceAdapter {
 
 	/**
 	 * Any number of these characters are considered delimiters between
-	 * multiple context config paths in a single String value.
+	 * multiple context com.Li.config paths in a single String value.
 	 * @see #setContextConfigLocation
 	 */
 	public static final String CONFIG_LOCATION_DELIMITERS = ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS;
@@ -134,7 +134,7 @@ public class SpringContextResourceAdapter implements ResourceAdapter {
 	 * resource adapter's deployment unit. This can be a delimited
 	 * String that consists of multiple resource location, separated
 	 * by commas, semicolons, whitespace, or line breaks.
-	 * <p>This can be specified as "ContextConfigLocation" config
+	 * <p>This can be specified as "ContextConfigLocation" com.Li.config
 	 * property in the {@code ra.xml} deployment descriptor.
 	 * <p>The default is "classpath:META-INF/applicationContext.xml".
 	 */
@@ -185,7 +185,7 @@ public class SpringContextResourceAdapter implements ResourceAdapter {
 		// Set ResourceAdapter's ClassLoader as bean class loader.
 		applicationContext.setClassLoader(getClass().getClassLoader());
 
-		// Extract individual config locations.
+		// Extract individual com.Li.config locations.
 		String[] configLocations =
 				StringUtils.tokenizeToStringArray(getContextConfigLocation(), CONFIG_LOCATION_DELIMITERS);
 
@@ -199,7 +199,7 @@ public class SpringContextResourceAdapter implements ResourceAdapter {
 	 * Load the bean definitions into the given registry,
 	 * based on the specified configuration files.
 	 * @param registry the registry to load into
-	 * @param configLocations the parsed config locations
+	 * @param configLocations the parsed com.Li.config locations
 	 * @see #setContextConfigLocation
 	 */
 	protected void loadBeanDefinitions(BeanDefinitionRegistry registry, String[] configLocations) {

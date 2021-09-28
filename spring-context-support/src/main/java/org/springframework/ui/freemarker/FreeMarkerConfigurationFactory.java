@@ -106,7 +106,7 @@ public class FreeMarkerConfigurationFactory {
 
 
 	/**
-	 * Set the location of the FreeMarker config file.
+	 * Set the location of the FreeMarker com.Li.config file.
 	 * Alternatively, you can specify all setting locally.
 	 * @see #setFreemarkerSettings
 	 * @see #setTemplateLoaderPath
@@ -250,14 +250,14 @@ public class FreeMarkerConfigurationFactory {
 	/**
 	 * Prepare the FreeMarker Configuration and return it.
 	 * @return the FreeMarker Configuration object
-	 * @throws IOException if the config file wasn't found
+	 * @throws IOException if the com.Li.config file wasn't found
 	 * @throws TemplateException on FreeMarker initialization failure
 	 */
 	public Configuration createConfiguration() throws IOException, TemplateException {
 		Configuration config = newConfiguration();
 		Properties props = new Properties();
 
-		// Load config file if specified.
+		// Load com.Li.config file if specified.
 		if (this.configLocation != null) {
 			if (logger.isDebugEnabled()) {
 				logger.debug("Loading FreeMarker configuration from " + this.configLocation);
@@ -319,7 +319,7 @@ public class FreeMarkerConfigurationFactory {
 	 * new feature in FreeMarker 2.3.21), or for using a mock object for testing.
 	 * <p>Called by {@code createConfiguration()}.
 	 * @return the Configuration object
-	 * @throws IOException if a config file wasn't found
+	 * @throws IOException if a com.Li.config file wasn't found
 	 * @throws TemplateException on FreeMarker initialization failure
 	 * @see #createConfiguration()
 	 */
@@ -407,7 +407,7 @@ public class FreeMarkerConfigurationFactory {
 	 * performed its default initialization.
 	 * <p>Called by {@code createConfiguration()}.
 	 * @param config the current Configuration object
-	 * @throws IOException if a config file wasn't found
+	 * @throws IOException if a com.Li.config file wasn't found
 	 * @throws TemplateException on FreeMarker initialization failure
 	 * @see #createConfiguration()
 	 */

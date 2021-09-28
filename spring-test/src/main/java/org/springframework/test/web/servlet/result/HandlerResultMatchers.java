@@ -41,10 +41,10 @@ import static org.springframework.test.util.AssertionErrors.fail;
  * <p>An instance of this class is typically accessed via
  * {@link MockMvcResultMatchers#handler}.
  *
- * <p><strong>Note:</strong> Expectations that assert the controller method
+ * <p><strong>Note:</strong> Expectations that assert the com.Li.controller method
  * used to process the request work only for requests processed with
  * {@link RequestMappingHandlerMapping} and {@link RequestMappingHandlerAdapter}
- * which is used by default with the Spring MVC Java config and XML namespace.
+ * which is used by default with the Spring MVC Java com.Li.config and XML namespace.
  *
  * @author Rossen Stoyanchev
  * @author Sam Brannen
@@ -78,10 +78,10 @@ public class HandlerResultMatchers {
 	}
 
 	/**
-	 * Assert the controller method used to process the request.
-	 * <p>The expected method is specified through a "mock" controller method
+	 * Assert the com.Li.controller method used to process the request.
+	 * <p>The expected method is specified through a "mock" com.Li.controller method
 	 * invocation similar to {@link MvcUriComponentsBuilder#fromMethodCall(Object)}.
-	 * <p>For example, given this controller:
+	 * <p>For example, given this com.Li.controller:
 	 * <pre class="code">
 	 * &#064;RestController
 	 * public class SimpleController {
@@ -98,8 +98,8 @@ public class HandlerResultMatchers {
 	 * mockMvc.perform(get("/"))
 	 *     .andExpect(handler().methodCall(on(SimpleController.class).handle()));
 	 * </pre>
-	 * @param obj either the value returned from a "mock" controller invocation
-	 * or the "mock" controller itself after an invocation
+	 * @param obj either the value returned from a "mock" com.Li.controller invocation
+	 * or the "mock" com.Li.controller itself after an invocation
 	 */
 	public ResultMatcher methodCall(Object obj) {
 		return result -> {
@@ -116,7 +116,7 @@ public class HandlerResultMatchers {
 	}
 
 	/**
-	 * Assert the name of the controller method used to process the request
+	 * Assert the name of the com.Li.controller method used to process the request
 	 * using the given Hamcrest {@link Matcher}.
 	 */
 	public ResultMatcher methodName(Matcher<? super String> matcher) {
@@ -127,7 +127,7 @@ public class HandlerResultMatchers {
 	}
 
 	/**
-	 * Assert the name of the controller method used to process the request.
+	 * Assert the name of the com.Li.controller method used to process the request.
 	 */
 	public ResultMatcher methodName(String name) {
 		return result -> {
@@ -137,7 +137,7 @@ public class HandlerResultMatchers {
 	}
 
 	/**
-	 * Assert the controller method used to process the request.
+	 * Assert the com.Li.controller method used to process the request.
 	 */
 	public ResultMatcher method(Method method) {
 		return result -> {

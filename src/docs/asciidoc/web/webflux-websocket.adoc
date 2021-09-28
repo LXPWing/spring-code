@@ -329,7 +329,7 @@ into the attributes of the `WebSocketSession`.
 
 
 
-[[webflux-websocket-server-config]]
+[[webflux-websocket-server-com.Li.config]]
 === Server Configation
 [.small]#<<web.adoc#websocket-server-runtime-configuration, Same as in the Servlet stack>>#
 

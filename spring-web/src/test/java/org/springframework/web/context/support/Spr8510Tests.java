@@ -29,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /**
  * Tests the interaction between a WebApplicationContext and ContextLoaderListener with
- * regard to config location precedence, overriding and defaulting in programmatic
+ * regard to com.Li.config location precedence, overriding and defaulting in programmatic
  * configuration use cases, e.g. with Spring 3.1's WebApplicationInitializer.
  *
  * @author Chris Beams
@@ -113,7 +113,7 @@ public class Spr8510Tests {
 	}
 
 	/**
-	 * If context config locations have been specified neither against the application
+	 * If context com.Li.config locations have been specified neither against the application
 	 * context nor the context loader listener, then fall back to default values.
 	 */
 	@Test

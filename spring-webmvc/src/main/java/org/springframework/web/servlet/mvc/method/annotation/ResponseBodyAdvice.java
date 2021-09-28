@@ -25,7 +25,7 @@ import org.springframework.lang.Nullable;
 
 /**
  * Allows customizing the response after the execution of an {@code @ResponseBody}
- * or a {@code ResponseEntity} controller method but before the body is written
+ * or a {@code ResponseEntity} com.Li.controller method but before the body is written
  * with an {@code HttpMessageConverter}.
  *
  * <p>Implementations may be registered directly with
@@ -40,7 +40,7 @@ import org.springframework.lang.Nullable;
 public interface ResponseBodyAdvice<T> {
 
 	/**
-	 * Whether this component supports the given controller method return type
+	 * Whether this component supports the given com.Li.controller method return type
 	 * and the selected {@code HttpMessageConverter} type.
 	 * @param returnType the return type
 	 * @param converterType the selected converter type
@@ -53,7 +53,7 @@ public interface ResponseBodyAdvice<T> {
 	 * Invoked after an {@code HttpMessageConverter} is selected and just before
 	 * its write method is invoked.
 	 * @param body the body to be written
-	 * @param returnType the return type of the controller method
+	 * @param returnType the return type of the com.Li.controller method
 	 * @param selectedContentType the content type selected through content negotiation
 	 * @param selectedConverterType the converter type selected to write to the response
 	 * @param request the current request

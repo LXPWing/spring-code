@@ -76,10 +76,10 @@ import java.lang.annotation.Target;
  * &#064;ContextConfiguration("file:src/main/webapp/WEB-INF/applicationContext.xml")
  * public abstract class AbstractWebTests {}
  *
- * &#064;ContextHierarchy(&#064;ContextConfiguration("/spring/soap-ws-config.xml"))
+ * &#064;ContextHierarchy(&#064;ContextConfiguration("/spring/soap-ws-com.Li.config.xml"))
  * public class SoapWebServiceTests extends AbstractWebTests {}
  *
- * &#064;ContextHierarchy(&#064;ContextConfiguration("/spring/rest-ws-config.xml"))
+ * &#064;ContextHierarchy(&#064;ContextConfiguration("/spring/rest-ws-com.Li.config.xml"))
  * public class RestWebServiceTests extends AbstractWebTests {}</pre>
  *
  * <h4>Class Hierarchy with Merged Context Hierarchy Configuration</h4>
@@ -90,23 +90,23 @@ import java.lang.annotation.Target;
  * the Spring TestContext Framework to merge the context configuration for the
  * {@code child} hierarchy level, simply by ensuring that the names declared via
  * {@link ContextConfiguration#name} are both {@code "child"}. The result is that
- * three application contexts will be loaded: one for {@code "/app-config.xml"},
- * one for {@code "/user-config.xml"}, and one for <code>{"/user-config.xml",
- * "/order-config.xml"}</code>. As with the previous example, the application
- * context loaded from {@code "/app-config.xml"} will be set as the parent context
- * for the contexts loaded from {@code "/user-config.xml"} and <code>{"/user-config.xml",
- * "/order-config.xml"}</code>.
+ * three application contexts will be loaded: one for {@code "/app-com.Li.config.xml"},
+ * one for {@code "/user-com.Li.config.xml"}, and one for <code>{"/user-com.Li.config.xml",
+ * "/order-com.Li.config.xml"}</code>. As with the previous example, the application
+ * context loaded from {@code "/app-com.Li.config.xml"} will be set as the parent context
+ * for the contexts loaded from {@code "/user-com.Li.config.xml"} and <code>{"/user-com.Li.config.xml",
+ * "/order-com.Li.config.xml"}</code>.
  *
  * <pre class="code">
  * &#064;RunWith(SpringRunner.class)
  * &#064;ContextHierarchy({
- *     &#064;ContextConfiguration(name = "parent", locations = "/app-config.xml"),
- *     &#064;ContextConfiguration(name = "child",  locations = "/user-config.xml")
+ *     &#064;ContextConfiguration(name = "parent", locations = "/app-com.Li.config.xml"),
+ *     &#064;ContextConfiguration(name = "child",  locations = "/user-com.Li.config.xml")
  * })
  * public class BaseTests {}
  *
  * &#064;ContextHierarchy(
- *     &#064;ContextConfiguration(name = "child",  locations = "/order-config.xml")
+ *     &#064;ContextConfiguration(name = "child",  locations = "/order-com.Li.config.xml")
  * )
  * public class ExtendedTests extends BaseTests {}</pre>
  *
@@ -115,19 +115,19 @@ import java.lang.annotation.Target;
  * <em>override</em> the configuration for a given named level in a context hierarchy
  * by setting the {@link ContextConfiguration#inheritLocations} flag to {@code false}.
  * Consequently, the application context for {@code ExtendedTests} will be loaded
- * only from {@code "/test-user-config.xml"} and will have its parent set to the
- * context loaded from {@code "/app-config.xml"}.
+ * only from {@code "/test-user-com.Li.config.xml"} and will have its parent set to the
+ * context loaded from {@code "/app-com.Li.config.xml"}.
  *
  * <pre class="code">
  * &#064;RunWith(SpringRunner.class)
  * &#064;ContextHierarchy({
- *     &#064;ContextConfiguration(name = "parent", locations = "/app-config.xml"),
- *     &#064;ContextConfiguration(name = "child",  locations = "/user-config.xml")
+ *     &#064;ContextConfiguration(name = "parent", locations = "/app-com.Li.config.xml"),
+ *     &#064;ContextConfiguration(name = "child",  locations = "/user-com.Li.config.xml")
  * })
  * public class BaseTests {}
  *
  * &#064;ContextHierarchy(
- *     &#064;ContextConfiguration(name = "child",  locations = "/test-user-config.xml", inheritLocations = false)
+ *     &#064;ContextConfiguration(name = "child",  locations = "/test-user-com.Li.config.xml", inheritLocations = false)
  * )
  * public class ExtendedTests extends BaseTests {}</pre>
  *

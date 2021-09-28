@@ -7,7 +7,7 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:util="http://www.springframework.org/schema/util">
 
-	<context:annotation-config/>
+	<context:annotation-com.Li.config/>
 
 	<util:properties id="myProps" location="classpath:org/springframework/context/annotation/configuration/AutowiredConfigurationTests-custom.properties"/>
 

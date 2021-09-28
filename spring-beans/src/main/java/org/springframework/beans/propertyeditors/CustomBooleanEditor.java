@@ -25,7 +25,7 @@ import org.springframework.util.StringUtils;
  * Property editor for Boolean/boolean properties.
  *
  * <p>This is not meant to be used as system PropertyEditor but rather as
- * locale-specific Boolean editor within custom controller code, to parse
+ * locale-specific Boolean editor within custom com.Li.controller code, to parse
  * UI-caused boolean strings into boolean properties of beans and check
  * them in the UI form.
  *

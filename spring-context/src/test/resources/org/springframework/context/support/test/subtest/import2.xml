@@ -8,7 +8,7 @@
 	</bean>
 
 	<!-- Returns void (null) -->
-	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	<bean class="org.springframework.beans.factory.com.Li.config.MethodInvokingFactoryBean">
 		<property name="staticMethod" value="java.lang.System.gc"/>
 	</bean>
 

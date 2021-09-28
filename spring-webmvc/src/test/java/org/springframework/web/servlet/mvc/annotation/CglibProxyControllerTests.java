@@ -87,7 +87,7 @@ public class CglibProxyControllerTests {
 			@Override
 			protected WebApplicationContext createWebApplicationContext(@Nullable WebApplicationContext parent) {
 				GenericWebApplicationContext wac = new GenericWebApplicationContext();
-				wac.registerBeanDefinition("controller", new RootBeanDefinition(controllerClass));
+				wac.registerBeanDefinition("com.Li.controller", new RootBeanDefinition(controllerClass));
 				DefaultAdvisorAutoProxyCreator autoProxyCreator = new DefaultAdvisorAutoProxyCreator();
 				autoProxyCreator.setProxyTargetClass(true);
 				autoProxyCreator.setBeanFactory(wac.getBeanFactory());

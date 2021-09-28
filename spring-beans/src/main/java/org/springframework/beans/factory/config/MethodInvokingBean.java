@@ -47,14 +47,14 @@ import org.springframework.util.ClassUtils;
  * which uses this class to call a static initialization method:
  *
  * <pre class="code">
- * &lt;bean id="myObject" class="org.springframework.beans.factory.config.MethodInvokingBean">
+ * &lt;bean id="myObject" class="org.springframework.beans.factory.com.Li.config.MethodInvokingBean">
  *   &lt;property name="staticMethod" value="com.whatever.MyClass.init"/>
  * &lt;/bean></pre>
  *
  * <p>An example of calling an instance method to start some server bean:
  *
  * <pre class="code">
- * &lt;bean id="myStarter" class="org.springframework.beans.factory.config.MethodInvokingBean">
+ * &lt;bean id="myStarter" class="org.springframework.beans.factory.com.Li.config.MethodInvokingBean">
  *   &lt;property name="targetObject" ref="myServer"/>
  *   &lt;property name="targetMethod" value="start"/>
  * &lt;/bean></pre>

@@ -40,6 +40,6 @@ public abstract class TaskManagementConfigUtils {
 	 * The bean name of the internally managed AspectJ async execution aspect.
 	 */
 	public static final String ASYNC_EXECUTION_ASPECT_BEAN_NAME =
-			"org.springframework.scheduling.config.internalAsyncExecutionAspect";
+			"org.springframework.scheduling.com.Li.config.internalAsyncExecutionAspect";
 
 }

@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
  *
  * <p>Can be thrown at any time during handler processing.
  * This includes any template methods of pre-built controllers.
- * For example, a form controller might abort to a specific error page
+ * For example, a form com.Li.controller might abort to a specific error page
  * if certain parameters do not allow to proceed with the normal workflow.
  *
  * @author Juergen Hoeller

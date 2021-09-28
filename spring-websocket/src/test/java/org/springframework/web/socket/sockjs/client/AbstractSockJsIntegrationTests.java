@@ -128,7 +128,7 @@ public abstract class AbstractSockJsIntegrationTests {
 			this.server.undeployConfig();
 		}
 		catch (Throwable t) {
-			logger.error("Failed to undeploy application config", t);
+			logger.error("Failed to undeploy application com.Li.config", t);
 		}
 		try {
 			this.server.stop();

@@ -29,13 +29,13 @@ public abstract class TransactionManagementConfigUtils {
 	 * The bean name of the internally managed transaction advisor (used when mode == PROXY).
 	 */
 	public static final String TRANSACTION_ADVISOR_BEAN_NAME =
-			"org.springframework.transaction.config.internalTransactionAdvisor";
+			"org.springframework.transaction.com.Li.config.internalTransactionAdvisor";
 
 	/**
 	 * The bean name of the internally managed transaction aspect (used when mode == ASPECTJ).
 	 */
 	public static final String TRANSACTION_ASPECT_BEAN_NAME =
-			"org.springframework.transaction.config.internalTransactionAspect";
+			"org.springframework.transaction.com.Li.config.internalTransactionAspect";
 
 	/**
 	 * The class name of the AspectJ transaction management aspect.
@@ -54,7 +54,7 @@ public abstract class TransactionManagementConfigUtils {
 	 * @since 5.1
 	 */
 	public static final String JTA_TRANSACTION_ASPECT_BEAN_NAME =
-			"org.springframework.transaction.config.internalJtaTransactionAspect";
+			"org.springframework.transaction.com.Li.config.internalJtaTransactionAspect";
 
 	/**
 	 * The class name of the AspectJ transaction management aspect.
@@ -74,6 +74,6 @@ public abstract class TransactionManagementConfigUtils {
 	 * The bean name of the internally managed TransactionalEventListenerFactory.
 	 */
 	public static final String TRANSACTIONAL_EVENT_LISTENER_FACTORY_BEAN_NAME =
-			"org.springframework.transaction.config.internalTransactionalEventListenerFactory";
+			"org.springframework.transaction.com.Li.config.internalTransactionalEventListenerFactory";
 
 }

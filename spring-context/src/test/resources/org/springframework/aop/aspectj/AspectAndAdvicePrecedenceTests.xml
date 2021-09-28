@@ -5,7 +5,7 @@
 			 xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-	<aop:config>
+	<aop:com.Li.config>
 
 		<aop:advisor id="lowPrecedenceAdvisor"
 			advice-ref="lowPrecedenceSpringAdvice"
@@ -73,7 +73,7 @@
 								
 		</aop:aspect>
 
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="highPrecedenceSpringAdvice" class="org.springframework.aop.aspectj.SimpleSpringBeforeAdvice"/>
 

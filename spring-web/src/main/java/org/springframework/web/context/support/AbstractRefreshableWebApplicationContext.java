@@ -85,7 +85,7 @@ public abstract class AbstractRefreshableWebApplicationContext extends AbstractR
 	@Nullable
 	private ServletContext servletContext;
 
-	/** Servlet config that this context runs in, if any. */
+	/** Servlet com.Li.config that this context runs in, if any. */
 	@Nullable
 	private ServletConfig servletConfig;
 

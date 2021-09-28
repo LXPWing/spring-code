@@ -10,7 +10,7 @@
 		<property name="multiple" value="2"/>
 	</bean>
 
-	<bean id="factoryBean" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	<bean id="factoryBean" class="org.springframework.beans.factory.com.Li.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="adrian"/>
 		<property name="targetMethod" value="toString"/>
 	</bean>

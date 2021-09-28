@@ -164,7 +164,7 @@ public class JndiObjectFactoryBean extends JndiObjectLocator
 	 * Default is none.
 	 * <p>This can be an arbitrary bean reference or literal value.
 	 * It is typically used for literal values in scenarios where the JNDI environment
-	 * might define specific config settings but those are not required to be present.
+	 * might define specific com.Li.config settings but those are not required to be present.
 	 * <p>Note: This is only supported for lookup on startup.
 	 * If specified together with {@link #setExpectedType}, the specified value
 	 * needs to be either of that type or convertible to it.

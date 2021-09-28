@@ -9,7 +9,7 @@
  
   <bean id="topsyTurvyTarget" class="org.springframework.aop.aspectj.TopsyTurvyTargetImpl"/>
 
-  <aop:config>
+  <aop:com.Li.config>
     <aop:aspect id="myAspect" ref="topsyTurvyAspect">
       <aop:before pointcut-ref="pc1"
                   method="before"/>
@@ -27,6 +27,6 @@
         implement-interface="org.springframework.beans.factory.BeanNameAware"
         default-impl="org.springframework.aop.aspectj.DeclarationOrderIndependenceTests$BeanNameAwareMixin"/>         
     </aop:aspect>
-  </aop:config>
+  </aop:com.Li.config>
  
 </beans>

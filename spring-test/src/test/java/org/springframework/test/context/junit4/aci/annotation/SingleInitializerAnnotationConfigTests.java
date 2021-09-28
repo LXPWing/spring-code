@@ -55,7 +55,7 @@ public class SingleInitializerAnnotationConfigTests {
 	public void activeBeans() {
 		assertThat(foo).isEqualTo("foo");
 		assertThat(bar).isEqualTo("foo");
-		assertThat(baz).isEqualTo("global config");
+		assertThat(baz).isEqualTo("global com.Li.config");
 	}
 
 }

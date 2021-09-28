@@ -99,7 +99,7 @@ public class WebFluxConfigurationSupport implements ApplicationContextAware {
 		this.applicationContext = applicationContext;
 		if (applicationContext != null) {
 				Assert.state(!applicationContext.containsBean("mvcContentNegotiationManager"),
-						"The Java/XML config for Spring MVC and Spring WebFlux cannot both be enabled, " +
+						"The Java/XML com.Li.config for Spring MVC and Spring WebFlux cannot both be enabled, " +
 						"e.g. via @EnableWebMvc and @EnableWebFlux, in the same application.");
 		}
 	}
@@ -294,7 +294,7 @@ public class WebFluxConfigurationSupport implements ApplicationContextAware {
 	}
 
 	/**
-	 * Configure resolvers for custom controller method arguments.
+	 * Configure resolvers for custom com.Li.controller method arguments.
 	 */
 	protected void configureArgumentResolvers(ArgumentResolverConfigurer configurer) {
 	}

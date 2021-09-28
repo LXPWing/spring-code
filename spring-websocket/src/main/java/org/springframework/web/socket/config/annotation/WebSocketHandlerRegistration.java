@@ -30,7 +30,7 @@ public interface WebSocketHandlerRegistration {
 
 	/**
 	 * Add more handlers that will share the same configuration (interceptors, SockJS
-	 * config, etc).
+	 * com.Li.config, etc).
 	 */
 	WebSocketHandlerRegistration addHandler(WebSocketHandler handler, String... paths);
 

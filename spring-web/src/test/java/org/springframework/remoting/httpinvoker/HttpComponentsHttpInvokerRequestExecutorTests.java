@@ -133,7 +133,7 @@ public class HttpComponentsHttpInvokerRequestExecutorTests {
 		assertThat(requestConfig.getConnectionRequestTimeout()).isEqualTo(-1);
 		assertThat(requestConfig.getSocketTimeout()).isEqualTo(5000);
 
-		// Update the Http client so that it returns an updated  config
+		// Update the Http client so that it returns an updated  com.Li.config
 		RequestConfig updatedDefaultConfig = RequestConfig.custom()
 				.setConnectTimeout(1234).build();
 		given(configurable.getConfig()).willReturn(updatedDefaultConfig);
@@ -157,7 +157,7 @@ public class HttpComponentsHttpInvokerRequestExecutorTests {
 
 		HttpInvokerClientConfiguration config = mockHttpInvokerClientConfiguration("https://fake-service");
 		HttpPost httpPost = executor.createHttpPost(config);
-		assertThat(httpPost.getConfig()).as("custom request config should not be set").isNull();
+		assertThat(httpPost.getConfig()).as("custom request com.Li.config should not be set").isNull();
 	}
 
 	private HttpInvokerClientConfiguration mockHttpInvokerClientConfiguration(String serviceUrl) {

@@ -75,7 +75,7 @@ public interface ConfigurableWebApplicationContext extends WebApplicationContext
 
 	/**
 	 * Set the namespace for this web application context,
-	 * to be used for building a default context config location.
+	 * to be used for building a default context com.Li.config location.
 	 * The root web application context does not have a namespace.
 	 */
 	void setNamespace(@Nullable String namespace);
@@ -87,7 +87,7 @@ public interface ConfigurableWebApplicationContext extends WebApplicationContext
 	String getNamespace();
 
 	/**
-	 * Set the config locations for this web application context in init-param style,
+	 * Set the com.Li.config locations for this web application context in init-param style,
 	 * i.e. with distinct locations separated by commas, semicolons or whitespace.
 	 * <p>If not set, the implementation is supposed to use a default for the
 	 * given namespace or the root web application context, as appropriate.
@@ -95,14 +95,14 @@ public interface ConfigurableWebApplicationContext extends WebApplicationContext
 	void setConfigLocation(String configLocation);
 
 	/**
-	 * Set the config locations for this web application context.
+	 * Set the com.Li.config locations for this web application context.
 	 * <p>If not set, the implementation is supposed to use a default for the
 	 * given namespace or the root web application context, as appropriate.
 	 */
 	void setConfigLocations(String... configLocations);
 
 	/**
-	 * Return the config locations for this web application context,
+	 * Return the com.Li.config locations for this web application context,
 	 * or {@code null} if none specified.
 	 */
 	@Nullable

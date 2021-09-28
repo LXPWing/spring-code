@@ -13,8 +13,8 @@
 	</jdbc:initialize-database>
 
 	<util:properties id="properties">
-		<prop key="schema.scripts">classpath:org/springframework/jdbc/config/db-schema.sql</prop>
-		<prop key="insert.scripts">classpath*:org/springframework/jdbc/config/*-data.sql</prop>
+		<prop key="schema.scripts">classpath:org/springframework/jdbc/com.Li.config/db-schema.sql</prop>
+		<prop key="insert.scripts">classpath*:org/springframework/jdbc/com.Li.config/*-data.sql</prop>
 		<prop key="data.source.init">true</prop>
 	</util:properties>
 

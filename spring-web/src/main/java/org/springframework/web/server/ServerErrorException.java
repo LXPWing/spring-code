@@ -24,7 +24,7 @@ import org.springframework.lang.Nullable;
 
 /**
  * Exception for an {@link HttpStatus#INTERNAL_SERVER_ERROR} that exposes extra
- * information about a controller method that failed, or a controller method
+ * information about a com.Li.controller method that failed, or a com.Li.controller method
  * argument that could not be resolved.
  *
  * @author Rossen Stoyanchev

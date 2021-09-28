@@ -35,7 +35,7 @@ public abstract class LangNamespaceUtils {
 	 * registered in the {@link BeanDefinitionRegistry}.
 	 */
 	private static final String SCRIPT_FACTORY_POST_PROCESSOR_BEAN_NAME =
-			"org.springframework.scripting.config.scriptFactoryPostProcessor";
+			"org.springframework.scripting.com.Li.config.scriptFactoryPostProcessor";
 
 
 	/**

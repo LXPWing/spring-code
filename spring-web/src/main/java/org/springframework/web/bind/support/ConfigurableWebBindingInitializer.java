@@ -27,7 +27,7 @@ import org.springframework.web.bind.WebDataBinder;
 /**
  * Convenient {@link WebBindingInitializer} for declarative configuration
  * in a Spring application context. Allows for reusing pre-configured
- * initializers with multiple controller/handlers.
+ * initializers with multiple com.Li.controller/handlers.
  *
  * @author Juergen Hoeller
  * @since 2.5
@@ -101,7 +101,7 @@ public class ConfigurableWebBindingInitializer implements WebBindingInitializer 
 
 	/**
 	 * Set the strategy to use for resolving errors into message codes.
-	 * Applies the given strategy to all data binders used by this controller.
+	 * Applies the given strategy to all data binders used by this com.Li.controller.
 	 * <p>Default is {@code null}, i.e. using the default strategy of
 	 * the data binder.
 	 * @see org.springframework.validation.DataBinder#setMessageCodesResolver

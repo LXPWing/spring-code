@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.on;
 
 /**
- * Examples of expectations on the controller type and controller method.
+ * Examples of expectations on the com.Li.controller type and com.Li.controller method.
  *
  * @author Rossen Stoyanchev
  * @author Sam Brannen

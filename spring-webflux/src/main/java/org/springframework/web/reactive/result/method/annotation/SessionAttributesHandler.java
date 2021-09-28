@@ -48,7 +48,7 @@ class SessionAttributesHandler {
 	 * Create a new session attributes handler. Session attribute names and types
 	 * are extracted from the {@code @SessionAttributes} annotation, if present,
 	 * on the given type.
-	 * @param handlerType the controller type
+	 * @param handlerType the com.Li.controller type
 	 */
 	public SessionAttributesHandler(Class<?> handlerType) {
 		SessionAttributes ann = AnnotatedElementUtils.findMergedAnnotation(handlerType, SessionAttributes.class);
@@ -61,7 +61,7 @@ class SessionAttributesHandler {
 
 
 	/**
-	 * Whether the controller represented by this instance has declared any
+	 * Whether the com.Li.controller represented by this instance has declared any
 	 * session attributes through an {@link SessionAttributes} annotation.
 	 */
 	public boolean hasSessionAttributes() {
@@ -70,7 +70,7 @@ class SessionAttributesHandler {
 
 	/**
 	 * Whether the attribute name or type match the names and types specified
-	 * via {@code @SessionAttributes} on the underlying controller.
+	 * via {@code @SessionAttributes} on the underlying com.Li.controller.
 	 * <p>Attributes successfully resolved through this method are "remembered"
 	 * and subsequently used in {@link #retrieveAttributes(WebSession)}
 	 * and also {@link #cleanupAttributes(WebSession)}.

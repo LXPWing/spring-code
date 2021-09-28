@@ -57,7 +57,7 @@ public final class MockMvcBuilders {
 	 * programmatically.
 	 * <p>This allows full control over the instantiation and initialization of
 	 * controllers and their dependencies, similar to plain unit tests while
-	 * also making it possible to test one controller at a time.
+	 * also making it possible to test one com.Li.controller at a time.
 	 * <p>When this builder is used, the minimum infrastructure required by the
 	 * {@link org.springframework.web.servlet.DispatcherServlet DispatcherServlet}
 	 * to serve requests with annotated controllers is created automatically
@@ -65,7 +65,7 @@ public final class MockMvcBuilders {
 	 * what MVC Java configuration provides except using builder-style methods.
 	 * <p>If the Spring MVC configuration of an application is relatively
 	 * straight-forward &mdash; for example, when using the MVC namespace in
-	 * XML or MVC Java config &mdash; then using this builder might be a good
+	 * XML or MVC Java com.Li.config &mdash; then using this builder might be a good
 	 * option for testing a majority of controllers. In such cases, a much
 	 * smaller number of tests can be used to focus on testing and verifying
 	 * the actual Spring MVC configuration.

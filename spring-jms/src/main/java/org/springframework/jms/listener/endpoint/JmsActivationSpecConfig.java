@@ -220,7 +220,7 @@ public class JmsActivationSpecConfig {
 	 * A specified lower limit will effectively be ignored.
 	 * <p>This property is primarily supported for configuration compatibility with
 	 * {@link org.springframework.jms.listener.DefaultMessageListenerContainer}.
-	 * For this activation config, generally use {@link #setMaxConcurrency} instead.
+	 * For this activation com.Li.config, generally use {@link #setMaxConcurrency} instead.
 	 */
 	public void setConcurrency(String concurrency) {
 		try {

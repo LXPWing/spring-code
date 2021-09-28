@@ -26,7 +26,7 @@ import org.springframework.util.CollectionUtils;
 /**
  * Holder for both Model and View in the web MVC framework.
  * Note that these are entirely distinct. This class merely holds
- * both to make it possible for a controller to return both model
+ * both to make it possible for a com.Li.controller to return both model
  * and view in a single return value.
  *
  * <p>Represents a model and view returned by a handler, to be resolved

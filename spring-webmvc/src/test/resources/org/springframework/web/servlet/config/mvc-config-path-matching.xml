@@ -14,8 +14,8 @@
                 path-matcher="pathMatcher" />
     </mvc:annotation-driven>
 
-    <bean id="pathMatcher" class="org.springframework.web.servlet.config.TestPathMatcher" />
-    <bean id="pathHelper" class="org.springframework.web.servlet.config.TestPathHelper" />
+    <bean id="pathMatcher" class="org.springframework.web.servlet.com.Li.config.TestPathMatcher" />
+    <bean id="pathHelper" class="org.springframework.web.servlet.com.Li.config.TestPathHelper" />
     <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
         <property name="mediaTypes">
             <value>

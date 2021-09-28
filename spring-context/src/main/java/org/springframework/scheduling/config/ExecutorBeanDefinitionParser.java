@@ -35,7 +35,7 @@ public class ExecutorBeanDefinitionParser extends AbstractSingleBeanDefinitionPa
 
 	@Override
 	protected String getBeanClassName(Element element) {
-		return "org.springframework.scheduling.config.TaskExecutorFactoryBean";
+		return "org.springframework.scheduling.com.Li.config.TaskExecutorFactoryBean";
 	}
 
 	@Override

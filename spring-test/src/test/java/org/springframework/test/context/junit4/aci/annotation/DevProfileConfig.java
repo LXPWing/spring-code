@@ -30,6 +30,6 @@ class DevProfileConfig {
 
 	@Bean
 	public String baz() {
-		return "dev profile config";
+		return "dev profile com.Li.config";
 	}
 }

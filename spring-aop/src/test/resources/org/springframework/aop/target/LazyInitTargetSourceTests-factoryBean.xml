@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="target1" class="org.springframework.beans.factory.config.SetFactoryBean" lazy-init="true">
+	<bean id="target1" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean" lazy-init="true">
 		<property name="sourceSet">
 			<set>
 				<value>10</value>
@@ -23,7 +23,7 @@
 		</property>
 	</bean>
 
-	<bean id="target2" class="org.springframework.beans.factory.config.SetFactoryBean" lazy-init="true">
+	<bean id="target2" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean" lazy-init="true">
 		<property name="sourceSet">
 			<set>
 				<value>20</value>

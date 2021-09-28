@@ -234,7 +234,7 @@ public class TilesConfigurer implements ServletContextAware, InitializingBean, D
 	 * <p>Specify {@link SimpleSpringPreparerFactory} to autowire
 	 * {@link org.apache.tiles.preparer.ViewPreparer} instances based on specified
 	 * preparer classes, applying Spring's container callbacks as well as applying
-	 * configured Spring BeanPostProcessors. If Spring's context-wide annotation-config
+	 * configured Spring BeanPostProcessors. If Spring's context-wide annotation-com.Li.config
 	 * has been activated, annotations in ViewPreparer classes will be automatically
 	 * detected and applied.
 	 * <p>Specify {@link SpringBeanPreparerFactory} to operate on specified preparer

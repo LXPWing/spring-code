@@ -131,12 +131,12 @@ Configuration-wise, you can define `SpringBeanFacesELResolver` in your JSF
 [source,xml,indent=0]
 [subs="verbatim,quotes"]
 ----
-	<faces-config>
+	<faces-com.Li.config>
 		<application>
 			<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
 			...
 		</application>
-	</faces-config>
+	</faces-com.Li.config>
 ----
 
 
@@ -145,7 +145,7 @@ Configuration-wise, you can define `SpringBeanFacesELResolver` in your JSF
 === Using `FacesContextUtils`
 
 A custom `ELResolver` works well when mapping your properties to beans in
-`faces-config.xml`, but, at times, you may need to explicitly grab a bean.
+`faces-com.Li.config.xml`, but, at times, you may need to explicitly grab a bean.
 The {api-spring-framework}/web/jsf/FacesContextUtils.html[`FacesContextUtils`]
 class makes this easy. It is similar to `WebApplicationContextUtils`, except that
 it takes a `FacesContext` parameter rather than a `ServletContext` parameter.

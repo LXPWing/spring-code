@@ -148,7 +148,7 @@ public class ContentNegotiationManagerFactoryBean
 	 * for {@code /hotels.pdf} will be interpreted as a request for
 	 * {@code "application/pdf"} regardless of the 'Accept' header.
 	 * @deprecated as of 5.2.4. See class-level note on the deprecation of path
-	 * extension config options. As there is no replacement for this method,
+	 * extension com.Li.config options. As there is no replacement for this method,
 	 * for the time being it's necessary to continue using it in order to set it
 	 * to {@code false}. In 5.3 when {@code false} becomes the default, use of
 	 * this property will no longer be necessary.
@@ -170,7 +170,7 @@ public class ContentNegotiationManagerFactoryBean
 	 * <p><strong>Note:</strong> Mappings registered here may be accessed via
 	 * {@link ContentNegotiationManager#getMediaTypeMappings()} and may be used
 	 * not only in the parameter and path extension strategies. For example,
-	 * with the Spring MVC config, e.g. {@code @EnableWebMvc} or
+	 * with the Spring MVC com.Li.config, e.g. {@code @EnableWebMvc} or
 	 * {@code <mvc:annotation-driven>}, the media type mappings are also plugged
 	 * in to:
 	 * <ul>
@@ -214,7 +214,7 @@ public class ContentNegotiationManagerFactoryBean
 	 * {@code HttpMediaTypeNotAcceptableException} if there is no match.
 	 * <p>By default this is set to {@code true}.
 	 * @deprecated as of 5.2.4. See class-level note on the deprecation of path
-	 * extension config options.
+	 * extension com.Li.config options.
 	 */
 	@Deprecated
 	public void setIgnoreUnknownPathExtensions(boolean ignore) {

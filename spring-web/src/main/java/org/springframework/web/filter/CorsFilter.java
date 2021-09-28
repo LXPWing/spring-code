@@ -39,7 +39,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
  * {@link CorsConfigurationSource} (for example an {@link UrlBasedCorsConfigurationSource}
  * instance.
  *
- * <p>This is an alternative to Spring MVC Java config and XML namespace CORS configuration,
+ * <p>This is an alternative to Spring MVC Java com.Li.config and XML namespace CORS configuration,
  * useful for applications depending only on spring-web (not on spring-webmvc) or for
  * security constraints requiring CORS checks to be performed at {@link javax.servlet.Filter}
  * level.

@@ -1,5 +1,7 @@
-package controller;
+package com.Li.controller;
 
+import com.Li.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,16 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
  * @date : 2021-09-27 21:00
  **/
 @RestController
-@RequestMapping("/")
 public class HelloWorld {
+
+	@Autowired
+	HelloService helloService;
 
 	public HelloWorld(){
 		System.out.println("初始化HelloWorld组件");
 	}
 
-	@RequestMapping("world")
+	@RequestMapping("/world")
 	public String sayHello(){
-		return "Hello";
+		return helloService.say("MVC");
 	}
 
 }

@@ -45,7 +45,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * particularly convenient syntax requiring no extra artifact for the aspect.
  *
  * <p>Currently it is assumed that the user is bootstrapping Configuration class processing via XML (using
- * annotation-config or component-scan), and thus will also use {@code <aop:aspectj-autoproxy/>} to enable
+ * annotation-com.Li.config or component-scan), and thus will also use {@code <aop:aspectj-autoproxy/>} to enable
  * processing of the Aspect annotation.
  *
  * @author Chris Beams
@@ -66,10 +66,10 @@ public class ConfigurationClassAspectIntegrationTests {
 	private void assertAdviceWasApplied(Class<?> configClass) {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		new XmlBeanDefinitionReader(factory).loadBeanDefinitions(
-				new ClassPathResource("aspectj-autoproxy-config.xml", ConfigurationClassAspectIntegrationTests.class));
+				new ClassPathResource("aspectj-autoproxy-com.Li.config.xml", ConfigurationClassAspectIntegrationTests.class));
 		GenericApplicationContext ctx = new GenericApplicationContext(factory);
 		ctx.addBeanFactoryPostProcessor(new ConfigurationClassPostProcessor());
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(configClass));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(configClass));
 		ctx.refresh();
 
 		TestBean testBean = ctx.getBean("testBean", TestBean.class);

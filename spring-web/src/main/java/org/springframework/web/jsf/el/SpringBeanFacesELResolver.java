@@ -33,7 +33,7 @@ import org.springframework.web.jsf.FacesContextUtils;
  * JSF {@code ELResolver} that delegates to the Spring root {@code WebApplicationContext},
  * resolving name references to Spring-defined beans.
  *
- * <p>Configure this resolver in your {@code faces-config.xml} file as follows:
+ * <p>Configure this resolver in your {@code faces-com.Li.config.xml} file as follows:
  *
  * <pre class="code">
  * &lt;application>

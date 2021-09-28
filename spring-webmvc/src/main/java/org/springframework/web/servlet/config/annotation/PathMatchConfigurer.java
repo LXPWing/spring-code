@@ -69,7 +69,7 @@ public class PathMatchConfigurer {
 	 * @see #registeredSuffixPatternMatch
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link RequestMappingHandlerMapping} on the deprecation of path extension
-	 * config options. As there is no replacement for this method, for the time
+	 * com.Li.config options. As there is no replacement for this method, for the time
 	 * being it's necessary to set it to {@code false}. In 5.3 when {@code false}
 	 * becomes the default, use of this property will no longer be necessary.
 	 */
@@ -89,7 +89,7 @@ public class PathMatchConfigurer {
 	 * @see WebMvcConfigurer#configureContentNegotiation
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link RequestMappingHandlerMapping} on the deprecation of path extension
-	 * config options.
+	 * com.Li.config options.
 	 */
 	@Deprecated
 	public PathMatchConfigurer setUseRegisteredSuffixPatternMatch(Boolean registeredSuffixPatternMatch) {
@@ -129,14 +129,14 @@ public class PathMatchConfigurer {
 	}
 
 	/**
-	 * Configure a path prefix to apply to matching controller methods.
+	 * Configure a path prefix to apply to matching com.Li.controller methods.
 	 * <p>Prefixes are used to enrich the mappings of every {@code @RequestMapping}
-	 * method whose controller type is matched by the corresponding
+	 * method whose com.Li.controller type is matched by the corresponding
 	 * {@code Predicate}. The prefix for the first matching predicate is used.
 	 * <p>Consider using {@link org.springframework.web.method.HandlerTypePredicate
 	 * HandlerTypePredicate} to group controllers.
 	 * @param prefix the prefix to apply
-	 * @param predicate a predicate for matching controller types
+	 * @param predicate a predicate for matching com.Li.controller types
 	 * @since 5.1
 	 */
 	public PathMatchConfigurer addPathPrefix(String prefix, Predicate<Class<?>> predicate) {
@@ -152,7 +152,7 @@ public class PathMatchConfigurer {
 	 * Whether to use registered suffixes for pattern matching.
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link RequestMappingHandlerMapping} on the deprecation of path extension
-	 * config options.
+	 * com.Li.config options.
 	 */
 	@Nullable
 	@Deprecated
@@ -164,7 +164,7 @@ public class PathMatchConfigurer {
 	 * Whether to use registered suffixes for pattern matching.
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link RequestMappingHandlerMapping} on the deprecation of path extension
-	 * config options.
+	 * com.Li.config options.
 	 */
 	@Nullable
 	@Deprecated

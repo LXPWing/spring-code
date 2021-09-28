@@ -158,7 +158,7 @@ public class BeanAnnotationAttributePropagationTests {
 
 	private AbstractBeanDefinition beanDef(Class<?> configClass) {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-		factory.registerBeanDefinition("config", new RootBeanDefinition(configClass));
+		factory.registerBeanDefinition("com.Li.config", new RootBeanDefinition(configClass));
 		ConfigurationClassPostProcessor pp = new ConfigurationClassPostProcessor();
 		pp.postProcessBeanFactory(factory);
 		return (AbstractBeanDefinition) factory.getBeanDefinition("foo");

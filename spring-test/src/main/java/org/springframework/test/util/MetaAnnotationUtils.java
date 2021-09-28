@@ -257,7 +257,7 @@ public abstract class MetaAnnotationUtils {
 	 * </ul>
 	 * <p><pre style="code">
 	 * &#064;Transactional
-	 * &#064;ContextConfiguration({"/test-datasource.xml", "/repository-config.xml"})
+	 * &#064;ContextConfiguration({"/test-datasource.xml", "/repository-com.Li.config.xml"})
 	 * public class TransactionalTests { }
 	 * </pre>
 	 * <p>Given the following example, if we are searching for the {@code @Transactional}
@@ -271,7 +271,7 @@ public abstract class MetaAnnotationUtils {
 	 * </ul>
 	 * <p><pre style="code">
 	 * &#064;Transactional
-	 * &#064;ContextConfiguration({"/test-datasource.xml", "/repository-config.xml"})
+	 * &#064;ContextConfiguration({"/test-datasource.xml", "/repository-com.Li.config.xml"})
 	 * &#064;Retention(RetentionPolicy.RUNTIME)
 	 * public &#064;interface RepositoryTests { }
 	 *

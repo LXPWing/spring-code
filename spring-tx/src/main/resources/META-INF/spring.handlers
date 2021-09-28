@@ -1,1 +1,1 @@
-http\://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler
+http\://www.springframework.org/schema/tx=org.springframework.transaction.com.Li.config.TxNamespaceHandler

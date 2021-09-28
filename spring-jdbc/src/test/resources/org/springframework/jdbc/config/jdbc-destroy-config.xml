@@ -8,9 +8,9 @@
 	<jdbc:embedded-database id="dataSource" type="HSQL"/>
 
 	<jdbc:initialize-database data-source="dataSource">
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-schema.sql" execution="INIT"/>
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-test-data.sql" execution="INIT"/>
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-drops.sql" execution="DESTROY"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-schema.sql" execution="INIT"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-test-data.sql" execution="INIT"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-drops.sql" execution="DESTROY"/>
 	</jdbc:initialize-database>
 
 </beans>

@@ -230,7 +230,7 @@ public interface CodecConfigurer {
 		 * <p>The properties are applied every time {@link #getReaders()} or
 		 * {@link #getWriters()} are used to obtain the list of configured
 		 * readers or writers.
-		 * @param codec the codec to register and apply default config to
+		 * @param codec the codec to register and apply default com.Li.config to
 		 * @since 5.1.13
 		 */
 		void registerWithDefaultConfig(Object codec);
@@ -244,7 +244,7 @@ public interface CodecConfigurer {
 		 * {@link #getWriters()} are used to obtain the list of configured
 		 * readers or writers.
 		 * @param codec the codec to register
-		 * @param configConsumer consumer of the default config
+		 * @param configConsumer consumer of the default com.Li.config
 		 * @since 5.1.13
 		 */
 		void registerWithDefaultConfig(Object codec, Consumer<DefaultCodecConfig> configConsumer);

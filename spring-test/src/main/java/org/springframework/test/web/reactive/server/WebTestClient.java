@@ -175,13 +175,13 @@ public interface WebTestClient {
 	 * Use this server setup to test one `@Controller` at a time.
 	 * This option loads the default configuration of
 	 * {@link org.springframework.web.reactive.config.EnableWebFlux @EnableWebFlux}.
-	 * There are builder methods to customize the Java config. The resulting
+	 * There are builder methods to customize the Java com.Li.config. The resulting
 	 * WebFlux application will be tested without an HTTP server using a mock
 	 * request and response.
-	 * @param controllers one or more controller instances to tests
+	 * @param controllers one or more com.Li.controller instances to tests
 	 * (specified {@code Class} will be turned into instance)
-	 * @return chained API to customize server and client config; use
-	 * {@link MockServerSpec#configureClient()} to transition to client config
+	 * @return chained API to customize server and client com.Li.config; use
+	 * {@link MockServerSpec#configureClient()} to transition to client com.Li.config
 	 */
 	static ControllerSpec bindToController(Object... controllers) {
 		return new DefaultControllerSpec(controllers);
@@ -193,8 +193,8 @@ public interface WebTestClient {
 	 * {@code RouterFunctions#toWebHandler}. The resulting WebFlux application
 	 * will be tested without an HTTP server using a mock request and response.
 	 * @param routerFunction the RouterFunction to test
-	 * @return chained API to customize server and client config; use
-	 * {@link MockServerSpec#configureClient()} to transition to client config
+	 * @return chained API to customize server and client com.Li.config; use
+	 * {@link MockServerSpec#configureClient()} to transition to client com.Li.config
 	 */
 	static RouterFunctionSpec bindToRouterFunction(RouterFunction<?> routerFunction) {
 		return new DefaultRouterFunctionSpec(routerFunction);
@@ -211,8 +211,8 @@ public interface WebTestClient {
 	 * in order to efficiently load and inject the Spring configuration into the
 	 * test class.
 	 * @param applicationContext the Spring context
-	 * @return chained API to customize server and client config; use
-	 * {@link MockServerSpec#configureClient()} to transition to client config
+	 * @return chained API to customize server and client com.Li.config; use
+	 * {@link MockServerSpec#configureClient()} to transition to client com.Li.config
 	 */
 	static MockServerSpec<?> bindToApplicationContext(ApplicationContext applicationContext) {
 		return new ApplicationContextSpec(applicationContext);
@@ -221,8 +221,8 @@ public interface WebTestClient {
 	/**
 	 * Integration testing with a "mock" server targeting the given WebHandler.
 	 * @param webHandler the handler to test
-	 * @return chained API to customize server and client config; use
-	 * {@link MockServerSpec#configureClient()} to transition to client config
+	 * @return chained API to customize server and client com.Li.config; use
+	 * {@link MockServerSpec#configureClient()} to transition to client com.Li.config
 	 */
 	static MockServerSpec<?> bindToWebHandler(WebHandler webHandler) {
 		return new DefaultMockServerSpec(webHandler);
@@ -236,7 +236,7 @@ public interface WebTestClient {
 	 *         .baseUrl("http://localhost:8080")
 	 *         .build();
 	 * </pre>
-	 * @return chained API to customize client config
+	 * @return chained API to customize client com.Li.config
 	 */
 	static Builder bindToServer() {
 		return new DefaultWebTestClientBuilder();
@@ -249,7 +249,7 @@ public interface WebTestClient {
 	 *         .baseUrl("http://localhost:8080")
 	 *         .build();
 	 * </pre>
-	 * @return chained API to customize client config
+	 * @return chained API to customize client com.Li.config
 	 * @since 5.0.2
 	 */
 	static Builder bindToServer(ClientHttpConnector connector) {
@@ -298,7 +298,7 @@ public interface WebTestClient {
 
 
 	/**
-	 * Specification for customizing controller configuration equivalent to, and
+	 * Specification for customizing com.Li.controller configuration equivalent to, and
 	 * internally delegating to, a {@link WebFluxConfigurer}.
 	 */
 	interface ControllerSpec extends MockServerSpec<ControllerSpec> {
@@ -328,7 +328,7 @@ public interface WebTestClient {
 		ControllerSpec pathMatching(Consumer<PathMatchConfigurer> consumer);
 
 		/**
-		 * Configure resolvers for custom controller method arguments.
+		 * Configure resolvers for custom com.Li.controller method arguments.
 		 * @see WebFluxConfigurer#configureHttpMessageCodecs
 		 */
 		ControllerSpec argumentResolvers(Consumer<ArgumentResolverConfigurer> configurer);

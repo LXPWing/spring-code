@@ -38,7 +38,7 @@ import org.springframework.beans.testfixture.beans.TestBean;
 import org.springframework.beans.testfixture.beans.factory.DummyFactory;
 
 /**
- * Types used by {@link XmlBeanFactoryTests} and its attendant XML config files.
+ * Types used by {@link XmlBeanFactoryTests} and its attendant XML com.Li.config files.
  *
  * @author Chris Beams
  */

@@ -117,7 +117,7 @@ public class WebMvcConfigurationSupportExtensionTests {
 	public void setUp() {
 		this.context = new StaticWebApplicationContext();
 		this.context.setServletContext(new MockServletContext(new FileSystemResourceLoader()));
-		this.context.registerSingleton("controller", TestController.class);
+		this.context.registerSingleton("com.Li.controller", TestController.class);
 		this.context.registerSingleton("userController", UserController.class);
 
 		this.config = new TestWebMvcConfigurationSupport();
@@ -358,7 +358,7 @@ public class WebMvcConfigurationSupportExtensionTests {
 	/**
 	 * Since WebMvcConfigurationSupport does not implement WebMvcConfigurer, the purpose
 	 * of this test class is also to ensure the two are in sync with each other. Effectively
-	 * that ensures that application config classes that use the combo {@code @EnableWebMvc}
+	 * that ensures that application com.Li.config classes that use the combo {@code @EnableWebMvc}
 	 * plus WebMvcConfigurer can switch to extending WebMvcConfigurationSupport directly for
 	 * more advanced configuration needs.
 	 */

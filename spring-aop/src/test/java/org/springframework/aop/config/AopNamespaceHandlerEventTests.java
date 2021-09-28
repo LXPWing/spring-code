@@ -72,7 +72,7 @@ public class AopNamespaceHandlerEventTests {
 		assertThat(condition).as("No holder with nested components").isTrue();
 
 		CompositeComponentDefinition compositeDef = (CompositeComponentDefinition) componentDefinitions[0];
-		assertThat(compositeDef.getName()).isEqualTo("aop:config");
+		assertThat(compositeDef.getName()).isEqualTo("aop:com.Li.config");
 
 		ComponentDefinition[] nestedComponentDefs = compositeDef.getNestedComponents();
 		assertThat(nestedComponentDefs.length).as("Incorrect number of inner components").isEqualTo(2);
@@ -96,7 +96,7 @@ public class AopNamespaceHandlerEventTests {
 		boolean condition1 = componentDefinitions[0] instanceof CompositeComponentDefinition;
 		assertThat(condition1).as("No holder with nested components").isTrue();
 		CompositeComponentDefinition compositeDef = (CompositeComponentDefinition) componentDefinitions[0];
-		assertThat(compositeDef.getName()).isEqualTo("aop:config");
+		assertThat(compositeDef.getName()).isEqualTo("aop:com.Li.config");
 
 		ComponentDefinition[] nestedComponentDefs = compositeDef.getNestedComponents();
 		assertThat(nestedComponentDefs.length).as("Incorrect number of inner components").isEqualTo(3);
@@ -127,7 +127,7 @@ public class AopNamespaceHandlerEventTests {
 		boolean condition1 = componentDefinitions[0] instanceof CompositeComponentDefinition;
 		assertThat(condition1).as("No holder with nested components").isTrue();
 		CompositeComponentDefinition compositeDef = (CompositeComponentDefinition) componentDefinitions[0];
-		assertThat(compositeDef.getName()).isEqualTo("aop:config");
+		assertThat(compositeDef.getName()).isEqualTo("aop:com.Li.config");
 
 		ComponentDefinition[] nestedComponentDefs = compositeDef.getNestedComponents();
 		assertThat(nestedComponentDefs.length).as("Incorrect number of inner components").isEqualTo(2);
@@ -158,7 +158,7 @@ public class AopNamespaceHandlerEventTests {
 		boolean condition = componentDefinitions[0] instanceof CompositeComponentDefinition;
 		assertThat(condition).as("No holder with nested components").isTrue();
 		CompositeComponentDefinition compositeDef = (CompositeComponentDefinition) componentDefinitions[0];
-		assertThat(compositeDef.getName()).isEqualTo("aop:config");
+		assertThat(compositeDef.getName()).isEqualTo("aop:com.Li.config");
 
 		ComponentDefinition[] nestedComponentDefs = compositeDef.getNestedComponents();
 		assertThat(nestedComponentDefs.length).as("Incorrect number of inner components").isEqualTo(2);

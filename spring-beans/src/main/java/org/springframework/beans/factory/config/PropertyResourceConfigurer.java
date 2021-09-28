@@ -29,7 +29,7 @@ import org.springframework.util.ObjectUtils;
 
 /**
  * Allows for configuration of individual bean property values from a property resource,
- * i.e. a properties file. Useful for custom config files targeted at system
+ * i.e. a properties file. Useful for custom com.Li.config files targeted at system
  * administrators that override bean properties configured in the application context.
  *
  * <p>Two concrete implementations are provided in the distribution:

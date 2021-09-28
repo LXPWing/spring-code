@@ -48,7 +48,7 @@ public class GenericXmlContextLoader extends AbstractGenericContextLoader {
 
 	/**
 	 * Returns {@code "-context.xml"} in order to support detection of a
-	 * default XML config file.
+	 * default XML com.Li.config file.
 	 */
 	@Override
 	protected String getResourceSuffix() {

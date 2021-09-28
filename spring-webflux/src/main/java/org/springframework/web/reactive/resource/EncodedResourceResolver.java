@@ -119,7 +119,7 @@ public class EncodedResourceResolver extends AbstractResourceResolver {
 	}
 
 	/**
-	 * Java config friendly alternative to {@link #setExtensions(Map)}.
+	 * Java com.Li.config friendly alternative to {@link #setExtensions(Map)}.
 	 * @param coding the content coding
 	 * @param extension the associated file extension
 	 */

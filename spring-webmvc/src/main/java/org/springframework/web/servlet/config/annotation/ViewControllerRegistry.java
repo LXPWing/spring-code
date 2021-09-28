@@ -56,15 +56,15 @@ public class ViewControllerRegistry {
 
 
 	/**
-	 * Map a view controller to the given URL path (or pattern) in order to render
+	 * Map a view com.Li.controller to the given URL path (or pattern) in order to render
 	 * a response with a pre-configured status code and view.
 	 * <p>Patterns like {@code "/admin/**"} or {@code "/articles/{articlename:\\w+}"}
 	 * are allowed. See {@link org.springframework.util.AntPathMatcher} for more details on the
 	 * syntax.
 	 * <p><strong>Note:</strong> If an {@code @RequestMapping} method is mapped
-	 * to a URL for any HTTP method then a view controller cannot handle the
+	 * to a URL for any HTTP method then a view com.Li.controller cannot handle the
 	 * same URL. For this reason it is recommended to avoid splitting URL
-	 * handling across an annotated controller and a view controller.
+	 * handling across an annotated com.Li.controller and a view com.Li.controller.
 	 */
 	public ViewControllerRegistration addViewController(String urlPath) {
 		ViewControllerRegistration registration = new ViewControllerRegistration(urlPath);
@@ -74,7 +74,7 @@ public class ViewControllerRegistry {
 	}
 
 	/**
-	 * Map a view controller to the given URL path (or pattern) in order to redirect
+	 * Map a view com.Li.controller to the given URL path (or pattern) in order to redirect
 	 * to another URL. By default the redirect URL is expected to be relative to
 	 * the current ServletContext, i.e. as relative to the web application root.
 	 * @since 4.1
@@ -87,7 +87,7 @@ public class ViewControllerRegistry {
 	}
 
 	/**
-	 * Map a simple controller to the given URL path (or pattern) in order to
+	 * Map a simple com.Li.controller to the given URL path (or pattern) in order to
 	 * set the response status to the given code without rendering a body.
 	 * @since 4.1
 	 */
@@ -112,7 +112,7 @@ public class ViewControllerRegistry {
 
 	/**
 	 * Return the {@code HandlerMapping} that contains the registered view
-	 * controller mappings, or {@code null} for no registrations.
+	 * com.Li.controller mappings, or {@code null} for no registrations.
 	 * @since 4.3.12
 	 */
 	@Nullable

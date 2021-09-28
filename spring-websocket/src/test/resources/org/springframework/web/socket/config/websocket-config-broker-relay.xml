@@ -17,6 +17,6 @@
 									  user-registry-broadcast="/topic/simp-user-registry"/>
 	</websocket:message-broker>
 
-	<bean id="myHandler" class="org.springframework.web.socket.config.TestWebSocketHandler"/>
+	<bean id="myHandler" class="org.springframework.web.socket.com.Li.config.TestWebSocketHandler"/>
 
 </beans>

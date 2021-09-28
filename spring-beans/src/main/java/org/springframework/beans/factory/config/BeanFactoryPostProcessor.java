@@ -23,7 +23,7 @@ import org.springframework.beans.BeansException;
  * bean definitions, adapting the bean property values of the context's underlying
  * bean factory.
  *
- * <p>Useful for custom config files targeted at system administrators that
+ * <p>Useful for custom com.Li.config files targeted at system administrators that
  * override bean properties configured in the application context. See
  * {@link PropertyResourceConfigurer} and its concrete implementations for
  * out-of-the-box solutions that address such configuration needs.

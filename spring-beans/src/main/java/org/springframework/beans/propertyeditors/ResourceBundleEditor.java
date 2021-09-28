@@ -51,7 +51,7 @@ import org.springframework.util.StringUtils;
  * might contain a {@link org.springframework.beans.factory.config.CustomEditorConfigurer}
  * definition such that the conversion can be effected transparently:
  *
- * <pre class="code"> &lt;bean class="org.springframework.beans.factory.config.CustomEditorConfigurer"&gt;
+ * <pre class="code"> &lt;bean class="org.springframework.beans.factory.com.Li.config.CustomEditorConfigurer"&gt;
  *    &lt;property name="customEditors"&gt;
  *        &lt;map&gt;
  *            &lt;entry key="java.util.ResourceBundle"&gt;

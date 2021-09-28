@@ -40,8 +40,8 @@ import org.springframework.web.context.ContextLoader;
  * classes, but also plain {@link org.springframework.stereotype.Component @Component}
  * classes and JSR-330 compliant classes using {@code javax.inject} annotations.
  *
- * <p>Allows for registering classes one by one (specifying class names as config
- * location) as well as for classpath scanning (specifying base packages as config location).
+ * <p>Allows for registering classes one by one (specifying class names as com.Li.config
+ * location) as well as for classpath scanning (specifying base packages as com.Li.config location).
  *
  * <p>This is essentially the equivalent of
  * {@link org.springframework.context.annotation.AnnotationConfigApplicationContext
@@ -240,7 +240,7 @@ public class AnnotationConfigWebApplicationContext extends AbstractRefreshableWe
 				}
 				catch (ClassNotFoundException ex) {
 					if (logger.isTraceEnabled()) {
-						logger.trace("Could not load class for config location [" + configLocation +
+						logger.trace("Could not load class for com.Li.config location [" + configLocation +
 								"] - trying package scan. " + ex);
 					}
 					int count = scanner.scan(configLocation);

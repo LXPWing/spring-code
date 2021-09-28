@@ -19,7 +19,7 @@
 			<websocket:executor core-pool-size="101" max-pool-size="201" keep-alive-seconds="601"/>
 			<websocket:interceptors>
 				<ref bean="myInterceptor"/>
-				<bean class="org.springframework.web.socket.config.TestChannelInterceptor"/>
+				<bean class="org.springframework.web.socket.com.Li.config.TestChannelInterceptor"/>
 			</websocket:interceptors>
 		</websocket:client-outbound-channel>
 		<websocket:broker-channel>
@@ -27,10 +27,10 @@
 		</websocket:broker-channel>
 	</websocket:message-broker>
 
-	<bean id="myHandler" class="org.springframework.web.socket.config.TestHandshakeHandler"/>
+	<bean id="myHandler" class="org.springframework.web.socket.com.Li.config.TestHandshakeHandler"/>
 
-	<bean id="myInterceptor" class="org.springframework.web.socket.config.TestChannelInterceptor"/>
+	<bean id="myInterceptor" class="org.springframework.web.socket.com.Li.config.TestChannelInterceptor"/>
 
-	<bean id="myValidator" class="org.springframework.web.socket.config.TestValidator"/>
+	<bean id="myValidator" class="org.springframework.web.socket.com.Li.config.TestValidator"/>
 
 </beans>

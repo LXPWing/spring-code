@@ -12,7 +12,7 @@
 	<bean class="org.springframework.jms.annotation.AbstractJmsAnnotationDrivenTests$DefaultBean"/>
 
 	<bean id="jmsListenerContainerFactory"
-		  class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
+		  class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
 
 
 </beans>

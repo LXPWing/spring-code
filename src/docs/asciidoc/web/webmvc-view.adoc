@@ -118,7 +118,7 @@ properties, as the following example shows:
 ----
 
 Your templates need to be stored in the directory specified by the `FreeMarkerConfigurer`
-shown in the preceding example. Given the preceding configuration, if your controller
+shown in the preceding example. Given the preceding configuration, if your com.Li.controller
 returns a view name of `welcome`, the resolver looks for the
 `/WEB-INF/freemarker/welcome.ftl` template.
 
@@ -182,7 +182,7 @@ directly, the file is called `spring.ftl` and is in the
 ==== Simple Binding
 
 In your HTML forms based on FreeMarker templates that act as a form view for a Spring MVC
-controller, you can use code similar to the next example to bind to field values and
+com.Li.controller, you can use code similar to the next example to bind to field values and
 display error messages for each input field in similar fashion to the JSP equivalent. The
 following example shows a `personForm` view:
 
@@ -209,7 +209,7 @@ following example shows a `personForm` view:
 ----
 
 `<@spring.bind>` requires a 'path' argument, which consists of the name of your command
-object (it is 'command', unless you changed it in your controller configuration) followed
+object (it is 'command', unless you changed it in your com.Li.controller configuration) followed
 by a period and the name of the field on the command object to which you wish to bind. You
 can also use nested fields, such as `command.address.street`. The `bind` macro assumes the
 default HTML escaping behavior specified by the `ServletContext` parameter
@@ -295,7 +295,7 @@ The parameters to any of the above macros have consistent meanings:
   and bound to the command object. Map objects stored against the keys are the labels
   displayed on the form to the user and may be different from the corresponding values
   posted back by the form. Usually, such a map is supplied as reference data by the
-  controller. You can use any `Map` implementation, depending on required behavior.
+  com.Li.controller. You can use any `Map` implementation, depending on required behavior.
   For strictly sorted maps, you can use a `SortedMap` (such as a `TreeMap`) with a
   suitable `Comparator` and, for arbitrary Maps that should return values in insertion
   order, use a `LinkedHashMap` or a `LinkedMap` from `commons-collections`.
@@ -688,7 +688,7 @@ The following example shows the same arrangement in XML:
 	</mvc:script-template-configurer>
 ----
 
-The controller would look no different for the Java and XML configurations, as the following example shows:
+The com.Li.controller would look no different for the Java and XML configurations, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -910,7 +910,7 @@ familiar and intuitive to use. The tag-generated HTML is HTML 4.01/XHTML 1.0 com
 
 Unlike other form/input tag libraries, Spring's form tag library is integrated with
 Spring Web MVC, giving the tags access to the command object and reference data your
-controller deals with. As we show in the following examples, the form tags make
+com.Li.controller deals with. As we show in the following examples, the form tags make
 JSPs easier to develop, read, and maintain.
 
 We go through the form tags and look at an example of how each tag is used. We have
@@ -944,7 +944,7 @@ be accessed by inner tags. All the other tags in this library are nested tags of
 
 Assume that we have a domain object called `User`. It is a JavaBean with properties
 such as `firstName` and `lastName`. We can use it as the form-backing object of our
-form controller, which returns `form.jsp`. The following example shows what `form.jsp` could
+form com.Li.controller, which returns `form.jsp`. The following example shows what `form.jsp` could
 look like:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
@@ -969,7 +969,7 @@ look like:
 ----
 
 The `firstName` and `lastName` values are retrieved from the command object placed in
-the `PageContext` by the page controller. Keep reading to see more complex examples of
+the `PageContext` by the page com.Li.controller. Keep reading to see more complex examples of
 how inner tags are used with the `form` tag.
 
 The following listing shows the generated HTML, which looks like a standard form:
@@ -1428,8 +1428,8 @@ If we choose to submit the `house` value as a hidden one, the HTML would be as f
 ==== The `errors` Tag
 
 This tag renders field errors in an HTML `span` element. It provides access to the errors
-created in your controller or those that were created by any validators associated with
-your controller.
+created in your com.Li.controller or those that were created by any validators associated with
+your com.Li.controller.
 
 Assume that we want to display all error messages for the `firstName` and `lastName`
 fields once we submit the form. We have a validator for instances of the `User` class
@@ -2001,7 +2001,7 @@ A simple PDF view for a word list could extend
 	}
 ----
 
-A controller can return such a view either from an external view definition
+A com.Li.controller can return such a view either from an external view definition
 (referencing it by name) or as a `View` instance from the handler method.
 
 
@@ -2090,8 +2090,8 @@ XSLT in a Spring Web MVC application.
 
 This example is a trivial Spring application that creates a list of words in the
 `Controller` and adds them to the model map. The map is returned, along with the view
-name of our XSLT view. See <<mvc-controller>> for details of Spring Web MVC's
-`Controller` interface. The XSLT controller turns the list of words into a simple XML
+name of our XSLT view. See <<mvc-com.Li.controller>> for details of Spring Web MVC's
+`Controller` interface. The XSLT com.Li.controller turns the list of words into a simple XML
 document ready for transformation.
 
 
@@ -2142,7 +2142,7 @@ The following example shows how to do so:
 
 We also need a Controller that encapsulates our word-generation logic.
 
-The controller logic is encapsulated in a `@Controller` class, with the
+The com.Li.controller logic is encapsulated in a `@Controller` class, with the
 handler method being defined as follows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]

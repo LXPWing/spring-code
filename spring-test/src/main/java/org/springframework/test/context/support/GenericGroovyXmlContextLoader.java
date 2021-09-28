@@ -50,7 +50,7 @@ public class GenericGroovyXmlContextLoader extends GenericXmlContextLoader {
 
 	/**
 	 * Returns {@code "-context.xml"} and {@code "Context.groovy"} in order to
-	 * support detection of a default XML config file or Groovy script.
+	 * support detection of a default XML com.Li.config file or Groovy script.
 	 */
 	@Override
 	protected String[] getResourceSuffixes() {

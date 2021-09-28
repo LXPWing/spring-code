@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect ref="thisAsClassCounter">
 			<aop:before method="increment"
 				pointcut="this(org.springframework.aop.aspectj.TestImpl)" />
@@ -42,7 +42,7 @@
 				pointcut="this(org.springframework.aop.aspectj.TestInterface) and target(org.springframework.aop.aspectj.TestImpl)" />
 		</aop:aspect>
 
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="thisAsClassCounter" class="org.springframework.aop.aspectj.Counter" />
 	<bean id="thisAsInterfaceCounter" class="org.springframework.aop.aspectj.Counter" />

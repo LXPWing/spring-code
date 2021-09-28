@@ -7,12 +7,12 @@
 	</bean>
 
 	<bean id="baz" class="java.lang.String">
-		<constructor-arg value="global config" />
+		<constructor-arg value="global com.Li.config" />
 	</bean>
 
 	<beans profile="dev">
 		<bean id="baz" class="java.lang.String">
-			<constructor-arg value="dev profile config" />
+			<constructor-arg value="dev profile com.Li.config" />
 		</bean>
 	</beans>
 

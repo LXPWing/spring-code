@@ -208,7 +208,7 @@ public class GroovyScriptFactory implements ScriptFactory, BeanFactoryAware, Bea
 	}
 
 	/**
-	 * Groovy scripts do not need a config interface,
+	 * Groovy scripts do not need a com.Li.config interface,
 	 * since they expose their setters as public methods.
 	 */
 	@Override

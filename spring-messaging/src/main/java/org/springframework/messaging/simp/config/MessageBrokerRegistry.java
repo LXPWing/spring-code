@@ -192,7 +192,7 @@ public class MessageBrokerRegistry {
 	 * <p>Note that the configured PathMatcher is only used for matching the
 	 * portion of the destination after the configured prefix. For example given
 	 * application destination prefix "/app" and destination "/app/price.stock.**",
-	 * the message might be mapped to a controller with "price" and "stock.**"
+	 * the message might be mapped to a com.Li.controller with "price" and "stock.**"
 	 * as its type and method-level mappings respectively.
 	 * <p>When the simple broker is enabled, the PathMatcher configured here is
 	 * also used to match message destinations when brokering messages.

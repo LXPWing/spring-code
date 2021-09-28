@@ -117,7 +117,7 @@ the Servlet API but with non-blocking contracts.
 
 On that foundation, Spring WebFlux provides a choice of two programming models:
 
-* <<webflux-controller>>: Consistent with Spring MVC and based on the same annotations
+* <<webflux-com.Li.controller>>: Consistent with Spring MVC and based on the same annotations
 from the `spring-web` module. Both Spring MVC and WebFlux controllers support reactive
 (Reactor and RxJava) return types, and, as a result, it is not easy to tell them apart. One notable
 difference is that WebFlux also supports reactive `@RequestBody` arguments.
@@ -172,7 +172,7 @@ most of a non-blocking web stack.
 
 * If you have a Spring MVC application with calls to remote services, try the reactive `WebClient`.
 You can return reactive types (Reactor, RxJava, <<webflux-reactive-libraries, or other>>)
-directly from Spring MVC controller methods. The greater the latency per call or the
+directly from Spring MVC com.Li.controller methods. The greater the latency per call or the
 interdependency among calls, the more dramatic the benefits. Spring MVC controllers
 can call other reactive components too.
 
@@ -195,7 +195,7 @@ non-Servlet runtimes such as Netty and Undertow. All servers are adapted to a lo
 
 Spring WebFlux does not have built-in support to start or stop a server. However, it is
 easy to <<webflux-web-handler-api, assemble>> an application from Spring configuration and
-<<webflux-config, WebFlux infrastructure>> and <<webflux-httphandler, run it>> with a few
+<<webflux-com.Li.config, WebFlux infrastructure>> and <<webflux-httphandler, run it>> with a few
 lines of code.
 
 Spring Boot has a WebFlux starter that automates these steps. By default, the starter uses
@@ -618,7 +618,7 @@ multipart requests. It is enabled through the `ServerCodecConfigurer` bean
 (see the <<webflux-web-handler-api, Web Handler API>>).
 
 To parse multipart data in streaming fashion, you can use the `Flux<Part>` returned from an
-`HttpMessageReader<Part>` instead. For example, in an annotated controller, use of
+`HttpMessageReader<Part>` instead. For example, in an annotated com.Li.controller, use of
 `@RequestPart` implies `Map`-like access to individual parts by name and, hence, requires
 parsing multipart data in full. By contrast, you can use `@RequestBody` to decode the
 content to `Flux<Part>` without collecting to a `MultiValueMap`.
@@ -661,7 +661,7 @@ filters, and `ForwardedHeaderTransformer` is used instead.
 
 In the <<webflux-web-handler-api>>, you can use a `WebFilter` to apply interception-style
 logic before and after the rest of the processing chain of filters and the target
-`WebHandler`. When using the <<webflux-config>>, registering a `WebFilter` is as simple
+`WebHandler`. When using the <<webflux-com.Li.config>>, registering a `WebFilter` is as simple
 as declaring it as a Spring bean and (optionally) expressing precedence by using `@Order` on
 the bean declaration or by implementing `Ordered`.
 
@@ -684,7 +684,7 @@ See the section on <<webflux-cors>> and the <<webflux-cors.adoc#webflux-cors-web
 
 In the <<webflux-web-handler-api>>, you can use a `WebExceptionHandler` to handle
 exceptions from the chain of `WebFilter` instances and the target `WebHandler`. When using the
-<<webflux-config>>, registering a `WebExceptionHandler` is as simple as declaring it as a
+<<webflux-com.Li.config>>, registering a `WebExceptionHandler` is as simple as declaring it as a
 Spring bean and (optionally) expressing precedence by using `@Order` on the bean declaration or
 by implementing `Ordered`.
 
@@ -703,7 +703,7 @@ The following table describes the available `WebExceptionHandler` implementation
 | Extension of `ResponseStatusExceptionHandler` that can also determine the HTTP status
   code of a `@ResponseStatus` annotation on any exception.
 
-  This handler is declared in the <<webflux-config>>.
+  This handler is declared in the <<webflux-com.Li.config>>.
 
 |===
 
@@ -738,7 +738,7 @@ server-sent events, and others.
 
 `ClientCodecConfigurer` and `ServerCodecConfigurer` are typically used to configure and
 customize the codecs to use in an application. See the section on configuring
-<<webflux-config-message-codecs>>.
+<<webflux-com.Li.config-message-codecs>>.
 
 [[webflux-codecs-jackson]]
 ==== Jackson JSON
@@ -823,7 +823,7 @@ for repeated, map-like access to parts, or otherwise rely on the
 `Decoder` and `HttpMessageReader` implementations that buffer some or all of the input
 stream can be configured with a limit on the maximum number of bytes to buffer in memory.
 In some cases buffering occurs because input is aggregated and represented as a single
-object — for example, a controller method with `@RequestBody byte[]`,
+object — for example, a com.Li.controller method with `@RequestBody byte[]`,
 `x-www-form-urlencoded` data, and so on. Buffering can also occur with streaming, when
 splitting the input stream — for example, delimited text, a stream of JSON objects, and
 so on. For those streaming cases, the limit applies to the number of bytes associated
@@ -832,7 +832,7 @@ with one object in the stream.
 To configure buffer sizes, you can check if a given `Decoder` or `HttpMessageReader`
 exposes a `maxInMemorySize` property and if so the Javadoc will have details about default
 values. On the server side, `ServerCodecConfigurer` provides a single place from where to
-set all codecs, see <<webflux-config-message-codecs>>. On the client side, the limit for
+set all codecs, see <<webflux-com.Li.config-message-codecs>>. On the client side, the limit for
 all codecs can be changed in
 <<web-reactive.adoc#webflux-client-builder-maxinmemorysize, WebClient.Builder>>.
 
@@ -1001,7 +1001,7 @@ The following example shows how to do so for client-side requests:
 == `DispatcherHandler`
 [.small]#<<web.adoc#mvc-servlet, Web MVC>>#
 
-Spring WebFlux, similarly to Spring MVC, is designed around the front controller pattern,
+Spring WebFlux, similarly to Spring MVC, is designed around the front com.Li.controller pattern,
 where a central `WebHandler`, the `DispatcherHandler`, provides a shared algorithm for
 request processing, while actual work is performed by configurable, delegate components.
 This model is flexible and supports diverse workflows.
@@ -1070,7 +1070,7 @@ there are also some other beans detected at a lower level (see
 
 | `HandlerAdapter`
 | Help the `DispatcherHandler` to invoke a handler mapped to a request regardless of
-  how the handler is actually invoked. For example, invoking an annotated controller
+  how the handler is actually invoked. For example, invoking an annotated com.Li.controller
   requires resolving annotations. The com.Li.spring.main purpose of a `HandlerAdapter` is to shield the
   `DispatcherHandler` from such details.
 
@@ -1082,17 +1082,17 @@ there are also some other beans detected at a lower level (see
 
 
 
-[[webflux-framework-config]]
+[[webflux-framework-com.Li.config]]
 === WebFlux Config
-[.small]#<<web.adoc#mvc-servlet-config, Web MVC>>#
+[.small]#<<web.adoc#mvc-servlet-com.Li.config, Web MVC>>#
 
 Applications can declare the infrastructure beans (listed under
 <<webflux-web-handler-api-special-beans, Web Handler API>> and
 <<webflux-special-bean-types, `DispatcherHandler`>>) that are required to process requests.
-However, in most cases, the <<webflux-config>> is the best starting point. It declares the
+However, in most cases, the <<webflux-com.Li.config>> is the best starting point. It declares the
 required beans and provides a higher-level configuration callback API to customize it.
 
-NOTE: Spring Boot relies on the WebFlux config to configure Spring WebFlux and also provides
+NOTE: Spring Boot relies on the WebFlux com.Li.config to configure Spring WebFlux and also provides
 many extra convenient options.
 
 
@@ -1117,7 +1117,7 @@ processing by writing to the response directly or by using a view to render.
 The return value from the invocation of a handler, through a `HandlerAdapter`, is wrapped
 as a `HandlerResult`, along with some additional context, and passed to the first
 `HandlerResultHandler` that claims support for it. The following table shows the available
-`HandlerResultHandler` implementations, all of which are declared in the <<webflux-config>>:
+`HandlerResultHandler` implementations, all of which are declared in the <<webflux-com.Li.config>>:
 
 [cols="1,2,1", options="header"]
 |===
@@ -1166,7 +1166,7 @@ By contrast, support for the same in Spring MVC is built on a `HandlerExceptionR
 This generally should not matter. However, keep in mind that, in WebFlux, you cannot use a
 `@ControllerAdvice` to handle exceptions that occur before a handler is chosen.
 
-See also <<webflux-ann-controller-exceptions>> in the "`Annotated Controller`" section or
+See also <<webflux-ann-com.Li.controller-exceptions>> in the "`Annotated Controller`" section or
 <<webflux-exception-handler>> in the WebHandler API section.
 
 
@@ -1212,7 +1212,7 @@ value or no value (if empty), while multi-value reactive types (for example, `Fl
 collected and resolved to `List<T>`.
 
 To configure view resolution is as simple as adding a `ViewResolutionResultHandler` bean
-to your Spring configuration. <<webflux-config-view-resolvers, WebFlux Config>> provides a
+to your Spring configuration. <<webflux-com.Li.config-view-resolvers, WebFlux Config>> provides a
 dedicated configuration API for view resolution.
 
 See <<webflux-view>> for more on the view technologies integrated with Spring WebFlux.
@@ -1226,8 +1226,8 @@ The special `redirect:` prefix in a view name lets you perform a redirect. The
 `UrlBasedViewResolver` (and sub-classes) recognize this as an instruction that a
 redirect is needed. The rest of the view name is the redirect URL.
 
-The net effect is the same as if the controller had returned a `RedirectView` or
-`Rendering.redirectTo("abc").build()`, but now the controller itself can
+The net effect is the same as if the com.Li.controller had returned a `RedirectView` or
+`Rendering.redirectTo("abc").build()`, but now the com.Li.controller itself can
 operate in terms of logical view names. A view name such as
 `redirect:/some/resource` is relative to the current application, while a view name such as
 `redirect:https://example.com/arbitrary/path` redirects to an absolute URL.
@@ -1244,15 +1244,15 @@ that supports the requested media type(s) is used.
 In order to support media types such as JSON and XML, Spring WebFlux provides
 `HttpMessageWriterView`, which is a special `View` that renders through an
 <<webflux-codecs, HttpMessageWriter>>. Typically, you would configure these as default
-views through the <<webflux-config-view-resolvers, WebFlux Configuration>>. Default views are
+views through the <<webflux-com.Li.config-view-resolvers, WebFlux Configuration>>. Default views are
 always selected and used if they match the requested media type.
 
 
 
 
-[[webflux-controller]]
+[[webflux-com.Li.controller]]
 == Annotated Controllers
-[.small]#<<web.adoc#mvc-controller, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.controller, Web MVC>>#
 
 Spring WebFlux provides an annotation-based programming model, where `@Controller` and
 `@RestController` components use annotations to express request mappings, request input,
@@ -1288,11 +1288,11 @@ In the preceding example, the method returns a `String` to be written to the res
 
 
 
-[[webflux-ann-controller]]
+[[webflux-ann-com.Li.controller]]
 === `@Controller`
-[.small]#<<web.adoc#mvc-ann-controller, Web MVC>>#
+[.small]#<<web.adoc#mvc-ann-com.Li.controller, Web MVC>>#
 
-You can define controller beans by using a standard Spring bean definition.
+You can define com.Li.controller beans by using a standard Spring bean definition.
 The `@Controller` stereotype allows for auto-detection and is aligned with Spring general support
 for detecting `@Component` classes in the classpath and auto-registering bean definitions
 for them. It also acts as a stereotype for the annotated class, indicating its role as
@@ -1326,7 +1326,7 @@ your Java configuration, as the following example shows:
 <1> Scan the `org.example.web` package.
 
 `@RestController` is a <<core.adoc#beans-meta-annotations, composed annotation>> that is
-itself meta-annotated with `@Controller` and `@ResponseBody`, indicating a controller whose
+itself meta-annotated with `@Controller` and `@ResponseBody`, indicating a com.Li.controller whose
 every method inherits the type-level `@ResponseBody` annotation and, therefore, writes
 directly to the response body versus view resolution and rendering with an HTML template.
 
@@ -1350,7 +1350,7 @@ There are also HTTP method specific shortcut variants of `@RequestMapping`:
 * `@PatchMapping`
 
 The preceding annotations are <<webflux-ann-requestmapping-composed>> that are provided
-because, arguably, most controller methods should be mapped to a specific HTTP method versus
+because, arguably, most com.Li.controller methods should be mapped to a specific HTTP method versus
 using `@RequestMapping`, which, by default, matches to all HTTP methods. At the same time, a
 `@RequestMapping` is still needed at the class level to express shared mappings.
 
@@ -1594,7 +1594,7 @@ TIP: `MediaType` provides constants for commonly used media types -- for example
 [.small]#<<web.adoc#mvc-ann-requestmapping-produces, Web MVC>>#
 
 You can narrow the request mapping based on the `Accept` request header and the list of
-content types that a controller method produces, as the following example shows:
+content types that a com.Li.controller method produces, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -1710,7 +1710,7 @@ attributes with a narrower, more specific purpose.
 
 `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`, and `@PatchMapping` are
 examples of composed annotations. They are provided, because, arguably, most
-controller methods should be mapped to a specific HTTP method versus using `@RequestMapping`,
+com.Li.controller methods should be mapped to a specific HTTP method versus using `@RequestMapping`,
 which, by default, matches to all HTTP methods. If you need an example of composed
 annotations, look at how those are declared.
 
@@ -1782,14 +1782,14 @@ under different URLs. The following example shows how to do so:
 [.small]#<<web.adoc#mvc-ann-methods, Web MVC>>#
 
 `@RequestMapping` handler methods have a flexible signature and can choose from a range of
-supported controller method arguments and return values.
+supported com.Li.controller method arguments and return values.
 
 
 [[webflux-ann-arguments]]
 ==== Method Arguments
 [.small]#<<web.adoc#mvc-ann-arguments, Web MVC>>#
 
-The following table shows the supported controller method arguments.
+The following table shows the supported com.Li.controller method arguments.
 
 Reactive types (Reactor, RxJava, <<webflux-reactive-libraries, or other>>) are
 supported on arguments that require blocking I/O (for example, reading the request body) to
@@ -1909,7 +1909,7 @@ and others) and is equivalent to `required=false`.
 ==== Return Values
 [.small]#<<web.adoc#mvc-ann-return-types, Web MVC>>#
 
-The following table shows the supported controller method return values. Note that reactive
+The following table shows the supported com.Li.controller method return values. Note that reactive
 types from libraries such as Reactor, RxJava, <<webflux-reactive-libraries, or other>> are
 generally supported for all return values.
 
@@ -1959,7 +1959,7 @@ generally supported for all return values.
 | A method with a `void`, possibly asynchronous (for example, `Mono<Void>`), return type (or a `null` return
   value) is considered to have fully handled the response if it also has a `ServerHttpResponse`,
   a `ServerWebExchange` argument, or an `@ResponseStatus` annotation. The same is also true
-  if the controller has made a positive ETag or `lastModified` timestamp check.
+  if the com.Li.controller has made a positive ETag or `lastModified` timestamp check.
   // TODO: See <<webflux-caching-etag-lastmodified>> for details.
 
   If none of the above is true, a `void` return type can also indicate "`no response body`" for
@@ -1983,7 +1983,7 @@ generally supported for all return values.
 ==== Type Conversion
 [.small]#<<web.adoc#mvc-ann-typeconversion, Web MVC>>#
 
-Some annotated controller method arguments that represent String-based request input (for example,
+Some annotated com.Li.controller method arguments that represent String-based request input (for example,
 `@RequestParam`, `@RequestHeader`, `@PathVariable`, `@MatrixVariable`, and `@CookieValue`)
 can require type conversion if the argument is declared as something other than `String`.
 
@@ -2010,7 +2010,7 @@ values can also be specified through repeated variable names -- for example,
 Unlike Spring MVC, in WebFlux, the presence or absence of matrix variables in a URL does
 not affect request mappings. In other words, you are not required to use a URI variable
 to mask variable content. That said, if you want to access matrix variables from a
-controller method, you need to add a URI variable to the path segment where matrix
+com.Li.controller method, you need to add a URI variable to the path segment where matrix
 variables are expected. The following example shows how to do so:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2133,7 +2133,7 @@ To get all matrix variables, use a `MultiValueMap`, as the following example sho
 [.small]#<<web.adoc#mvc-ann-requestparam, Web MVC>>#
 
 You can use the `@RequestParam` annotation to bind query parameters to a method argument in a
-controller. The following code snippet shows the usage:
+com.Li.controller. The following code snippet shows the usage:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -2208,7 +2208,7 @@ with `@RequestParam`.
 [.small]#<<web.adoc#mvc-ann-requestheader, Web MVC>>#
 
 You can use the `@RequestHeader` annotation to bind a request header to a method argument in a
-controller.
+com.Li.controller.
 
 The following example shows a request with headers:
 
@@ -2269,7 +2269,7 @@ example, a method parameter annotated with `@RequestHeader("Accept")` may be of 
 [.small]#<<web.adoc#mvc-ann-cookievalue, Web MVC>>#
 
 You can use the `@CookieValue` annotation to bind the value of an HTTP cookie to a method argument
-in a controller.
+in a com.Li.controller.
 
 The following example shows a request with a cookie:
 
@@ -2348,7 +2348,7 @@ where necessary. For more on data binding (and validation), see
 <<webflux-ann-initbinder>>.
 
 Data binding can result in errors. By default, a `WebExchangeBindException` is raised, but,
-to check for such errors in the controller method, you can add a `BindingResult` argument
+to check for such errors in the com.Li.controller method, you can add a `BindingResult` argument
 immediately next to the `@ModelAttribute`, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2458,7 +2458,7 @@ with `@ModelAttribute`.
 
 `@SessionAttributes` is used to store model attributes in the `WebSession` between
 requests. It is a type-level annotation that declares session attributes used by a
-specific controller. This typically lists the names of model attributes or types of
+specific com.Li.controller. This typically lists the names of model attributes or types of
 model attributes that should be transparently stored in the session for subsequent
 requests to access.
 
@@ -2488,7 +2488,7 @@ Consider the following example:
 
 On the first request, when a model attribute with the name, `pet`, is added to the model,
 it is automatically promoted to and saved in the `WebSession`. It remains there until
-another controller method uses a `SessionStatus` method argument to clear the storage,
+another com.Li.controller method uses a `SessionStatus` method argument to clear the storage,
 as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2542,7 +2542,7 @@ as the following example shows:
 [.small]#<<web.adoc#mvc-ann-sessionattribute, Web MVC>>#
 
 If you need access to pre-existing session attributes that are managed globally
-(that is, outside the controller -- for example, by a filter) and may or may not be present,
+(that is, outside the com.Li.controller -- for example, by a filter) and may or may not be present,
 you can use the `@SessionAttribute` annotation on a method parameter, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2566,9 +2566,9 @@ you can use the `@SessionAttribute` annotation on a method parameter, as the fol
 <1> Using `@SessionAttribute`.
 
 For use cases that require adding or removing session attributes, consider injecting
-`WebSession` into the controller method.
+`WebSession` into the com.Li.controller method.
 
-For temporary storage of model attributes in the session as part of a controller
+For temporary storage of model attributes in the session as part of a com.Li.controller
 workflow, consider using `SessionAttributes`, as described in
 <<webflux-ann-sessionattributes>>.
 
@@ -2607,7 +2607,7 @@ as the following example shows:
 [.small]#<<web.adoc#mvc-multipart-forms, Web MVC>>#
 
 As explained in <<webflux-multipart>>, `ServerWebExchange` provides access to multipart
-content. The best way to handle a file upload form (for example, from a browser) in a controller
+content. The best way to handle a file upload form (for example, from a browser) in a com.Li.controller
 is through data binding to a <<webflux-ann-modelattrib-method-args, command object>>,
 as the following example shows:
 
@@ -2729,7 +2729,7 @@ You can use `@RequestPart` in combination with `javax.validation.Valid` or Sprin
 `@Validated` annotation, which causes Standard Bean Validation to be applied. Validation
 errors lead to a `WebExchangeBindException` that results in a 400 (BAD_REQUEST) response.
 The exception contains a `BindingResult` with the error details and can also be handled
-in the controller method by declaring the argument with an async wrapper and then using
+in the com.Li.controller method by declaring the argument with an async wrapper and then using
 error related operators:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2844,14 +2844,14 @@ and fully non-blocking reading and (client-to-server) streaming.
 	}
 ----
 
-You can use the <<webflux-config-message-codecs>> option of the <<webflux-config>> to
+You can use the <<webflux-com.Li.config-message-codecs>> option of the <<webflux-com.Li.config>> to
 configure or customize message readers.
 
 You can use `@RequestBody` in combination with `javax.validation.Valid` or Spring's
 `@Validated` annotation, which causes Standard Bean Validation to be applied. Validation
 errors cause a `WebExchangeBindException`, which results in a 400 (BAD_REQUEST) response.
 The exception contains a `BindingResult` with error details and can be handled in the
-controller method by declaring the argument with an async wrapper and then using error
+com.Li.controller method by declaring the argument with an async wrapper and then using error
 related operators:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -2926,7 +2926,7 @@ example shows how to do so:
 ----
 
 `@ResponseBody` is also supported at the class level, in which case it is inherited by
-all controller methods. This is the effect of `@RestController`, which is nothing more
+all com.Li.controller methods. This is the effect of `@RestController`, which is nothing more
 than a meta-annotation marked with `@Controller` and `@ResponseBody`.
 
 `@ResponseBody` supports reactive types, which means you can return Reactor or RxJava
@@ -2937,7 +2937,7 @@ For additional details, see <<webflux-codecs-streaming>> and
 You can combine `@ResponseBody` methods with JSON serialization views.
 See <<webflux-ann-jackson>> for details.
 
-You can use the <<webflux-config-message-codecs>> option of the <<webflux-config>> to
+You can use the <<webflux-com.Li.config-message-codecs>> option of the <<webflux-com.Li.config>> to
 configure or customize message writing.
 
 
@@ -2985,7 +2985,7 @@ Spring offers support for the Jackson JSON library.
 Spring WebFlux provides built-in support for
 https://www.baeldung.com/jackson-json-view-annotation[Jackson's Serialization Views],
 which allows rendering only a subset of all fields in an `Object`. To use it with
-`@ResponseBody` or `ResponseEntity` controller methods, you can use Jackson's
+`@ResponseBody` or `ResponseEntity` com.Li.controller methods, you can use Jackson's
 `@JsonView` annotation to activate a serialization view class, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -3052,7 +3052,7 @@ which allows rendering only a subset of all fields in an `Object`. To use it wit
 ----
 
 NOTE: `@JsonView` allows an array of view classes but you can only specify only one per
-controller method. Use a composite interface if you need to activate multiple views.
+com.Li.controller method. Use a composite interface if you need to activate multiple views.
 
 
 
@@ -3070,10 +3070,10 @@ to initialize the model prior to any `@RequestMapping` method invocation.
 * On a `@RequestMapping` method to mark its return value as a model attribute.
 
 This section discusses `@ModelAttribute` methods, or the second item from the preceding list.
-A controller can have any number of `@ModelAttribute` methods. All such methods are
-invoked before `@RequestMapping` methods in the same controller. A `@ModelAttribute`
+A com.Li.controller can have any number of `@ModelAttribute` methods. All such methods are
+invoked before `@RequestMapping` methods in the same com.Li.controller. A `@ModelAttribute`
 method can also be shared across controllers through `@ControllerAdvice`. See the section on
-<<webflux-ann-controller-advice>> for more details.
+<<webflux-ann-com.Li.controller-advice>> for more details.
 
 `@ModelAttribute` methods have flexible method signatures. They support many of the same
 arguments as `@RequestMapping` methods (except for `@ModelAttribute` itself and anything
@@ -3204,12 +3204,12 @@ initialize instances of `WebDataBinder`. Those, in turn, are used to:
 
 * Bind request parameters (that is, form data or query) to a model object.
 * Convert `String`-based request values (such as request parameters, path variables,
-headers, cookies, and others) to the target type of controller method arguments.
+headers, cookies, and others) to the target type of com.Li.controller method arguments.
 * Format model object values as `String` values when rendering HTML forms.
 
-`@InitBinder` methods can register controller-specific `java.bean.PropertyEditor` or
+`@InitBinder` methods can register com.Li.controller-specific `java.bean.PropertyEditor` or
 Spring `Converter` and `Formatter` components. In addition, you can use the
-<<webflux-config-conversion, WebFlux Java configuration>> to register `Converter` and
+<<webflux-com.Li.config-conversion, WebFlux Java configuration>> to register `Converter` and
 `Formatter` types in a globally shared `FormattingConversionService`.
 
 `@InitBinder` methods support many of the same arguments that `@RequestMapping` methods
@@ -3254,7 +3254,7 @@ The following example uses the `@InitBinder` annotation:
 
 Alternatively, when using a `Formatter`-based setup through a shared
 `FormattingConversionService`, you could re-use the same approach and register
-controller-specific `Formatter` instances, as the following example shows:
+com.Li.controller-specific `Formatter` instances, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -3290,12 +3290,12 @@ controller-specific `Formatter` instances, as the following example shows:
 
 
 
-[[webflux-ann-controller-exceptions]]
+[[webflux-ann-com.Li.controller-exceptions]]
 === Managing Exceptions
 [.small]#<<web.adoc#mvc-ann-exceptionhandler, Web MVC>>#
 
-`@Controller` and <<webflux-ann-controller-advice, @ControllerAdvice>> classes can have
-`@ExceptionHandler` methods to handle exceptions from controller methods. The following
+`@Controller` and <<webflux-ann-com.Li.controller-advice, @ControllerAdvice>> classes can have
+`@ExceptionHandler` methods to handle exceptions from com.Li.controller methods. The following
 example includes such a handler method:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -3369,9 +3369,9 @@ an HTTP status code.
 
 
 
-[[webflux-ann-controller-advice]]
+[[webflux-ann-com.Li.controller-advice]]
 === Controller Advice
-[.small]#<<web.adoc#mvc-ann-controller-advice, Web MVC>>#
+[.small]#<<web.adoc#mvc-ann-com.Li.controller-advice, Web MVC>>#
 
 Typically, the `@ExceptionHandler`, `@InitBinder`, and `@ModelAttribute` methods apply
 within the `@Controller` class (or class hierarchy) in which they are declared. If you
@@ -3538,7 +3538,7 @@ use case-oriented approach that focuses on the common scenarios, as the followin
 
 Controllers can add explicit support for HTTP caching. We recommend doing so, since the
 `lastModified` or `ETag` value for a resource needs to be calculated before it can be compared
-against conditional request headers. A controller can add an `ETag` and `Cache-Control`
+against conditional request headers. A com.Li.controller can add an `ETag` and `Cache-Control`
 settings to a `ResponseEntity`, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -3579,7 +3579,7 @@ The preceding example sends a 304 (NOT_MODIFIED) response with an empty body if 
 to the conditional request headers indicates the content has not changed. Otherwise, the
 `ETag` and `Cache-Control` headers are added to the response.
 
-You can also make the check against conditional request headers in the controller,
+You can also make the check against conditional request headers in the com.Li.controller,
 as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -3634,14 +3634,14 @@ to 412 (PRECONDITION_FAILED) to prevent concurrent modification.
 [.small]#<<web.adoc#mvc-caching-static-resources, Web MVC>>#
 
 You should serve static resources with a `Cache-Control` and conditional response headers
-for optimal performance. See the section on configuring <<webflux-config-static-resources>>.
+for optimal performance. See the section on configuring <<webflux-com.Li.config-static-resources>>.
 
 
 
 
-[[webflux-config]]
+[[webflux-com.Li.config]]
 == WebFlux Config
-[.small]#<<web.adoc#mvc-config, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config, Web MVC>>#
 
 The WebFlux Java configuration declares the components that are required to process
 requests with annotated controllers or functional endpoints, and it offers an API to
@@ -3652,15 +3652,15 @@ in <<webflux-special-bean-types>>.
 
 For more advanced customizations, not available in the configuration API, you can
 gain full control over the configuration through the
-<<webflux-config-advanced-java>>.
+<<webflux-com.Li.config-advanced-java>>.
 
 
 
-[[webflux-config-enable]]
+[[webflux-com.Li.config-enable]]
 === Enabling WebFlux Config
-[.small]#<<web.adoc#mvc-config-enable, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-enable, Web MVC>>#
 
-You can use the `@EnableWebFlux` annotation in your Java config, as the following example shows:
+You can use the `@EnableWebFlux` annotation in your Java com.Li.config, as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -3685,9 +3685,9 @@ available on the classpath -- for JSON, XML, and others.
 
 
 
-[[webflux-config-customize]]
-=== WebFlux config API
-[.small]#<<web.adoc#mvc-config-customize, Web MVC>>#
+[[webflux-com.Li.config-customize]]
+=== WebFlux com.Li.config API
+[.small]#<<web.adoc#mvc-com.Li.config-customize, Web MVC>>#
 
 In your Java configuration, you can implement the `WebFluxConfigurer` interface,
 as the following example shows:
@@ -3716,14 +3716,14 @@ class WebConfig : WebFluxConfigurer {
 
 
 
-[[webflux-config-conversion]]
+[[webflux-com.Li.config-conversion]]
 === Conversion, formatting
-[.small]#<<web.adoc#mvc-config-conversion, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-conversion, Web MVC>>#
 
 By default, formatters for various number and date types are installed, along with support
 for customization via `@NumberFormat` and `@DateTimeFormat` on fields.
 
-To register custom formatters and converters in Java config, use the following:
+To register custom formatters and converters in Java com.Li.config, use the following:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -3793,9 +3793,9 @@ use `FormatterRegistrar` implementations.
 
 
 
-[[webflux-config-validation]]
+[[webflux-com.Li.config-validation]]
 === Validation
-[.small]#<<web.adoc#mvc-config-validation, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-validation, Web MVC>>#
 
 By default, if <<core.adoc#validation-beanvalidation-overview, Bean Validation>> is present
 on the classpath (for example, the Hibernate Validator), the `LocalValidatorFactoryBean`
@@ -3864,13 +3864,13 @@ as the following example shows:
 
 
 TIP: If you need to have a `LocalValidatorFactoryBean` injected somewhere, create a bean and
-mark it with `@Primary` in order to avoid conflict with the one declared in the MVC config.
+mark it with `@Primary` in order to avoid conflict with the one declared in the MVC com.Li.config.
 
 
 
-[[webflux-config-content-negotiation]]
+[[webflux-com.Li.config-content-negotiation]]
 === Content Type Resolvers
-[.small]#<<web.adoc#mvc-config-content-negotiation, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-content-negotiation, Web MVC>>#
 
 You can configure how Spring WebFlux determines the requested media types for
 `@Controller` instances from the request. By default, only the `Accept` header is checked,
@@ -3906,9 +3906,9 @@ The following example shows how to customize the requested content type resoluti
 
 
 
-[[webflux-config-message-codecs]]
+[[webflux-com.Li.config-message-codecs]]
 === HTTP message codecs
-[.small]#<<web.adoc#mvc-config-message-converters, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-message-converters, Web MVC>>#
 
 The following example shows how to customize how the request and response body are read and written:
 
@@ -3957,9 +3957,9 @@ It also automatically registers the following well-known modules if they are det
 
 
 
-[[webflux-config-view-resolvers]]
+[[webflux-com.Li.config-view-resolvers]]
 === View Resolvers
-[.small]#<<web.adoc#mvc-config-view-resolvers, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-view-resolvers, Web MVC>>#
 
 The following example shows how to configure view resolution:
 
@@ -4114,9 +4114,9 @@ See <<webflux-view>> for more on the view technologies that are integrated with 
 
 
 
-[[webflux-config-static-resources]]
+[[webflux-com.Li.config-static-resources]]
 === Static Resources
-[.small]#<<web.adoc#mvc-config-static-resources, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-static-resources, Web MVC>>#
 
 This option provides a convenient way to serve static resources from a list of
 {api-spring-framework}/core/io/Resource.html[`Resource`]-based locations.
@@ -4229,12 +4229,12 @@ without versions -- for example, from `/jquery/jquery.min.js` to
 
 
 
-[[webflux-config-path-matching]]
+[[webflux-com.Li.config-path-matching]]
 === Path Matching
-[.small]#<<web.adoc#mvc-config-path-matching, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-path-matching, Web MVC>>#
 
 You can customize options related to path matching. For details on the individual options, see the
-{api-spring-framework}/web/reactive/config/PathMatchConfigurer.html[`PathMatchConfigurer`] javadoc.
+{api-spring-framework}/web/reactive/com.Li.config/PathMatchConfigurer.html[`PathMatchConfigurer`] javadoc.
 The following example shows how to use `PathMatchConfigurer`:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -4287,9 +4287,9 @@ reliance on it.
 
 
 
-[[webflux-config-advanced-java]]
+[[webflux-com.Li.config-advanced-java]]
 === Advanced Configuration Mode
-[.small]#<<web.adoc#mvc-config-advanced-java, Web MVC>>#
+[.small]#<<web.adoc#mvc-com.Li.config-advanced-java, Web MVC>>#
 
 `@EnableWebFlux` imports `DelegatingWebFluxConfiguration` that:
 

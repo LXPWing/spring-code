@@ -257,7 +257,7 @@ public class SimpAnnotationMethodMessageHandler extends AbstractMethodMessageHan
 	/**
 	 * Configure a {@link MessageHeaderInitializer} to pass on to
 	 * {@link HandlerMethodReturnValueHandler HandlerMethodReturnValueHandlers}
-	 * that send messages from controller return values.
+	 * that send messages from com.Li.controller return values.
 	 * <p>By default, this property is not set.
 	 */
 	public void setHeaderInitializer(@Nullable MessageHeaderInitializer headerInitializer) {

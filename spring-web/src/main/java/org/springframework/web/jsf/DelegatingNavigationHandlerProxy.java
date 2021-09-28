@@ -27,7 +27,7 @@ import org.springframework.web.context.WebApplicationContext;
  * JSF NavigationHandler implementation that delegates to a NavigationHandler
  * bean obtained from the Spring root WebApplicationContext.
  *
- * <p>Configure this handler proxy in your {@code faces-config.xml} file
+ * <p>Configure this handler proxy in your {@code faces-com.Li.config.xml} file
  * as follows:
  *
  * <pre class="code">

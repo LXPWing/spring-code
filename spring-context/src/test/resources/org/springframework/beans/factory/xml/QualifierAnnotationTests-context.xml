@@ -5,9 +5,9 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 				http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-	<context:annotation-config/>
+	<context:annotation-com.Li.config/>
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
 				<prop key="myProp">larry</prop>
@@ -51,7 +51,7 @@
 		</qualifier>
 	</bean>
 
-	<bean id="testProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"/>
+	<bean id="testProperties" class="org.springframework.beans.factory.com.Li.config.PropertiesFactoryBean"/>
 
 	<bean id="thetaClient" class="org.springframework.beans.factory.xml.QualifierAnnotationTests$MultiQualifierClient"/>
 

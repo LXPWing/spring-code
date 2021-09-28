@@ -64,7 +64,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Test fixture for HandlersBeanDefinitionParser.
- * See test configuration files websocket-config-handlers-*.xml.
+ * See test configuration files websocket-com.Li.config-handlers-*.xml.
  *
  * @author Brian Clozel
  * @author Rossen Stoyanchev
@@ -76,7 +76,7 @@ public class HandlersBeanDefinitionParserTests {
 
 	@Test
 	public void webSocketHandlers() {
-		loadBeanDefinitions("websocket-config-handlers.xml");
+		loadBeanDefinitions("websocket-com.Li.config-handlers.xml");
 
 		Map<String, HandlerMapping> handlersMap = this.appContext.getBeansOfType(HandlerMapping.class);
 		assertThat(handlersMap).isNotNull();
@@ -118,7 +118,7 @@ public class HandlersBeanDefinitionParserTests {
 
 	@Test
 	public void webSocketHandlersAttributes() {
-		loadBeanDefinitions("websocket-config-handlers-attributes.xml");
+		loadBeanDefinitions("websocket-com.Li.config-handlers-attributes.xml");
 
 		HandlerMapping handlerMapping = this.appContext.getBean(HandlerMapping.class);
 		assertThat(handlerMapping).isNotNull();
@@ -153,7 +153,7 @@ public class HandlersBeanDefinitionParserTests {
 
 	@Test
 	public void sockJs() {
-		loadBeanDefinitions("websocket-config-handlers-sockjs.xml");
+		loadBeanDefinitions("websocket-com.Li.config-handlers-sockjs.xml");
 
 		SimpleUrlHandlerMapping handlerMapping = this.appContext.getBean(SimpleUrlHandlerMapping.class);
 		assertThat(handlerMapping).isNotNull();
@@ -196,7 +196,7 @@ public class HandlersBeanDefinitionParserTests {
 
 	@Test
 	public void sockJsAttributes() {
-		loadBeanDefinitions("websocket-config-handlers-sockjs-attributes.xml");
+		loadBeanDefinitions("websocket-com.Li.config-handlers-sockjs-attributes.xml");
 
 		SimpleUrlHandlerMapping handlerMapping = appContext.getBean(SimpleUrlHandlerMapping.class);
 		assertThat(handlerMapping).isNotNull();

@@ -271,7 +271,7 @@
 		</property>
 	</bean>
 
-	<bean id="listFactory" class="org.springframework.beans.factory.config.ListFactoryBean">
+	<bean id="listFactory" class="org.springframework.beans.factory.com.Li.config.ListFactoryBean">
 		<property name="sourceList">
 			<list>
 				<value>bar</value>
@@ -283,7 +283,7 @@
 		</property>
 	</bean>
 
-	<bean id="pListFactory" class="org.springframework.beans.factory.config.ListFactoryBean">
+	<bean id="pListFactory" class="org.springframework.beans.factory.com.Li.config.ListFactoryBean">
 		<property name="sourceList">
 			<list>
 				<value>bar</value>
@@ -298,7 +298,7 @@
 		</property>
 	</bean>
 
-	<bean id="setFactory" class="org.springframework.beans.factory.config.SetFactoryBean">
+	<bean id="setFactory" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<value>bar</value>
@@ -310,7 +310,7 @@
 		</property>
 	</bean>
 
-	<bean id="pSetFactory" class="org.springframework.beans.factory.config.SetFactoryBean">
+	<bean id="pSetFactory" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<value>bar</value>
@@ -325,7 +325,7 @@
 		</property>
 	</bean>
 
-	<bean id="mapFactory" class="org.springframework.beans.factory.config.MapFactoryBean">
+	<bean id="mapFactory" class="org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -337,7 +337,7 @@
 		</property>
 	</bean>
 
-	<bean id="pMapFactory" class="org.springframework.beans.factory.config.MapFactoryBean">
+	<bean id="pMapFactory" class="org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -363,7 +363,7 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="enumSetFactory" class="org.springframework.beans.factory.config.SetFactoryBean">
+	<bean id="enumSetFactory" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<description>My Set</description>

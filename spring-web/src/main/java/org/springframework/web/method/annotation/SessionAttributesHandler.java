@@ -32,14 +32,14 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 
 /**
- * Manages controller-specific session attributes declared via
+ * Manages com.Li.controller-specific session attributes declared via
  * {@link SessionAttributes @SessionAttributes}. Actual storage is
  * delegated to a {@link SessionAttributeStore} instance.
  *
- * <p>When a controller annotated with {@code @SessionAttributes} adds
+ * <p>When a com.Li.controller annotated with {@code @SessionAttributes} adds
  * attributes to its model, those attributes are checked against names and
  * types specified via {@code @SessionAttributes}. Matching model attributes
- * are saved in the HTTP session and remain there until the controller calls
+ * are saved in the HTTP session and remain there until the com.Li.controller calls
  * {@link SessionStatus#setComplete()}.
  *
  * @author Rossen Stoyanchev
@@ -61,7 +61,7 @@ public class SessionAttributesHandler {
 	 * Create a new session attributes handler. Session attribute names and types
 	 * are extracted from the {@code @SessionAttributes} annotation, if present,
 	 * on the given type.
-	 * @param handlerType the controller type
+	 * @param handlerType the com.Li.controller type
 	 * @param sessionAttributeStore used for session access
 	 */
 	public SessionAttributesHandler(Class<?> handlerType, SessionAttributeStore sessionAttributeStore) {
@@ -78,7 +78,7 @@ public class SessionAttributesHandler {
 
 
 	/**
-	 * Whether the controller represented by this instance has declared any
+	 * Whether the com.Li.controller represented by this instance has declared any
 	 * session attributes through an {@link SessionAttributes} annotation.
 	 */
 	public boolean hasSessionAttributes() {
@@ -87,7 +87,7 @@ public class SessionAttributesHandler {
 
 	/**
 	 * Whether the attribute name or type match the names and types specified
-	 * via {@code @SessionAttributes} on the underlying controller.
+	 * via {@code @SessionAttributes} on the underlying com.Li.controller.
 	 * <p>Attributes successfully resolved through this method are "remembered"
 	 * and subsequently used in {@link #retrieveAttributes(WebRequest)} and
 	 * {@link #cleanupAttributes(WebRequest)}.

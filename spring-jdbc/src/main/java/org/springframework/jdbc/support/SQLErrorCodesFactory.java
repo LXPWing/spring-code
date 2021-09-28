@@ -81,7 +81,7 @@ public class SQLErrorCodesFactory {
 
 
 	/**
-	 * Map to hold error codes for all databases defined in the config file.
+	 * Map to hold error codes for all databases defined in the com.Li.config file.
 	 * Key is the database product name, value is the SQLErrorCodes instance.
 	 */
 	private final Map<String, SQLErrorCodes> errorCodesMap;
@@ -131,7 +131,7 @@ public class SQLErrorCodesFactory {
 			}
 		}
 		catch (BeansException ex) {
-			logger.warn("Error loading SQL error codes from config file", ex);
+			logger.warn("Error loading SQL error codes from com.Li.config file", ex);
 			errorCodes = Collections.emptyMap();
 		}
 

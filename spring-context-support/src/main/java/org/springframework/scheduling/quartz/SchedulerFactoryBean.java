@@ -271,7 +271,7 @@ public class SchedulerFactoryBean extends SchedulerAccessor implements FactoryBe
 	}
 
 	/**
-	 * Set the location of the Quartz properties config file, for example
+	 * Set the location of the Quartz properties com.Li.config file, for example
 	 * as classpath resource "classpath:quartz.properties".
 	 * <p>Note: Can be omitted when all necessary properties are specified
 	 * locally via this bean, or when relying on Quartz' default configuration.
@@ -283,7 +283,7 @@ public class SchedulerFactoryBean extends SchedulerAccessor implements FactoryBe
 
 	/**
 	 * Set Quartz properties, like "org.quartz.threadPool.class".
-	 * <p>Can be used to override values in a Quartz properties config file,
+	 * <p>Can be used to override values in a Quartz properties com.Li.config file,
 	 * or to specify all necessary properties locally.
 	 * @see #setConfigLocation
 	 */
@@ -563,7 +563,7 @@ public class SchedulerFactoryBean extends SchedulerAccessor implements FactoryBe
 
 		if (this.configLocation != null) {
 			if (logger.isDebugEnabled()) {
-				logger.debug("Loading Quartz config from [" + this.configLocation + "]");
+				logger.debug("Loading Quartz com.Li.config from [" + this.configLocation + "]");
 			}
 			PropertiesLoaderUtils.fillProperties(mergedProps, this.configLocation);
 		}

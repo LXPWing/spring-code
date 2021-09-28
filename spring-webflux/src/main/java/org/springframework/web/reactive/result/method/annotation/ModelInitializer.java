@@ -67,7 +67,7 @@ class ModelInitializer {
 	 * Initialize the {@link org.springframework.ui.Model Model} based on a
 	 * (type-level) {@code @SessionAttributes} annotation and
 	 * {@code @ModelAttribute} methods.
-	 * @param handlerMethod the target controller method
+	 * @param handlerMethod the target com.Li.controller method
 	 * @param bindingContext the context containing the model
 	 * @param exchange the current exchange
 	 * @return a {@code Mono} for when the model is populated.

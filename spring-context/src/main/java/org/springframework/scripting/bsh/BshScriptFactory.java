@@ -110,7 +110,7 @@ public class BshScriptFactory implements ScriptFactory, BeanClassLoaderAware {
 	}
 
 	/**
-	 * BeanShell scripts do require a config interface.
+	 * BeanShell scripts do require a com.Li.config interface.
 	 */
 	@Override
 	public boolean requiresConfigInterface() {

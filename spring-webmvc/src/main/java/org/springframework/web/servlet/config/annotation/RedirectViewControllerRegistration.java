@@ -24,7 +24,7 @@ import org.springframework.web.servlet.mvc.ParameterizableViewController;
 import org.springframework.web.servlet.view.RedirectView;
 
 /**
- * Assist with the registration of a single redirect view controller.
+ * Assist with the registration of a single redirect view com.Li.controller.
  *
  * @author Rossen Stoyanchev
  * @since 4.1

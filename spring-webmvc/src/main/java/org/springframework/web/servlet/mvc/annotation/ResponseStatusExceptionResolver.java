@@ -39,7 +39,7 @@ import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
  *
  * <p>This exception resolver is enabled by default in the
  * {@link org.springframework.web.servlet.DispatcherServlet DispatcherServlet}
- * and the MVC Java config and the MVC namespace.
+ * and the MVC Java com.Li.config and the MVC namespace.
  *
  * <p>As of 4.2 this resolver also looks recursively for {@code @ResponseStatus}
  * present on cause exceptions, and as of 4.2.2 this resolver supports

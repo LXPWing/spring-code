@@ -44,7 +44,7 @@ import org.springframework.http.HttpStatus;
  * preferable to use a {@link org.springframework.http.ResponseEntity} as
  * a return type and avoid the use of {@code @ResponseStatus} altogether.
  *
- * <p>Note that a controller class may also be annotated with
+ * <p>Note that a com.Li.controller class may also be annotated with
  * {@code @ResponseStatus} and is then inherited by all {@code @RequestMapping}
  * methods.
  *

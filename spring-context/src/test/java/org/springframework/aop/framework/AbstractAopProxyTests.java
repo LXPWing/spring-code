@@ -912,7 +912,7 @@ public abstract class AbstractAopProxyTests {
 		pc.addAdvisor(advisor);
 		assertThat(pc.isOpaque()).as("Opaque defaults to false").isFalse();
 		pc.setOpaque(true);
-		assertThat(pc.isOpaque()).as("Opaque now true for this config").isTrue();
+		assertThat(pc.isOpaque()).as("Opaque now true for this com.Li.config").isTrue();
 		ITestBean proxied = (ITestBean) createProxy(pc);
 		proxied.setAge(10);
 		assertThat(proxied.getAge()).isEqualTo(10);

@@ -57,7 +57,7 @@ public class HttpComponentsAsyncClientHttpRequestFactoryTests extends AbstractAs
 		HttpComponentsAsyncClientHttpRequest request = (HttpComponentsAsyncClientHttpRequest)
 				factory.createAsyncRequest(uri, HttpMethod.GET);
 
-		assertThat(request.getHttpContext().getAttribute(HttpClientContext.REQUEST_CONFIG)).as("No custom config should be set with a custom HttpAsyncClient").isNull();
+		assertThat(request.getHttpContext().getAttribute(HttpClientContext.REQUEST_CONFIG)).as("No custom com.Li.config should be set with a custom HttpAsyncClient").isNull();
 	}
 
 	@Test
@@ -71,7 +71,7 @@ public class HttpComponentsAsyncClientHttpRequestFactoryTests extends AbstractAs
 		HttpComponentsAsyncClientHttpRequest request = (HttpComponentsAsyncClientHttpRequest)
 				factory.createAsyncRequest(uri, HttpMethod.GET);
 
-		assertThat(request.getHttpContext().getAttribute(HttpClientContext.REQUEST_CONFIG)).as("No custom config should be set with a custom HttpClient").isNull();
+		assertThat(request.getHttpContext().getAttribute(HttpClientContext.REQUEST_CONFIG)).as("No custom com.Li.config should be set with a custom HttpClient").isNull();
 
 		factory.setConnectionRequestTimeout(4567);
 		HttpComponentsAsyncClientHttpRequest request2 = (HttpComponentsAsyncClientHttpRequest)
@@ -81,7 +81,7 @@ public class HttpComponentsAsyncClientHttpRequestFactoryTests extends AbstractAs
 		RequestConfig requestConfig = (RequestConfig) requestConfigAttribute;
 
 		assertThat(requestConfig.getConnectionRequestTimeout()).isEqualTo(4567);
-		// No way to access the request config of the HTTP client so no way to "merge" our customizations
+		// No way to access the request com.Li.config of the HTTP client so no way to "merge" our customizations
 		assertThat(requestConfig.getConnectTimeout()).isEqualTo(-1);
 	}
 

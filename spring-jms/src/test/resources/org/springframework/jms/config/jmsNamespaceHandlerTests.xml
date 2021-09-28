@@ -21,7 +21,7 @@
 		<jms:listener destination="testDestination" ref="testBean3"/>
 	</jms:listener-container>
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
 				<prop key="concurrency">2-3</prop>
@@ -70,7 +70,7 @@
 
 	<bean id="testTransactionManager" class="org.springframework.transaction.testfixture.CallCountingTransactionManager"/>
 
-	<bean id="testErrorHandler" class="org.springframework.jms.config.JmsNamespaceHandlerTests$TestErrorHandler"/>
+	<bean id="testErrorHandler" class="org.springframework.jms.com.Li.config.JmsNamespaceHandlerTests$TestErrorHandler"/>
 
 	<bean id="testBackOff" class="org.springframework.util.backoff.FixedBackOff">
 		<property name="interval" value="1000"/>
@@ -80,7 +80,7 @@
 
 	<bean id="testBean2" class="org.springframework.beans.testfixture.beans.TestBean"/>
 
-	<bean id="testBean3" class="org.springframework.jms.config.JmsNamespaceHandlerTests$TestMessageListener"/>
+	<bean id="testBean3" class="org.springframework.jms.com.Li.config.JmsNamespaceHandlerTests$TestMessageListener"/>
 
 	<!-- TODO: remove this once issue with blocking on stop is resolved -->
 	<bean id="lifecycleProcessor" class="org.springframework.context.support.DefaultLifecycleProcessor">

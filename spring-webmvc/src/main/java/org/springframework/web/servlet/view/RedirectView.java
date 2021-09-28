@@ -70,7 +70,7 @@ import org.springframework.web.util.WebUtils;
  * paths which are to be considered relative to the web application root.
  *
  * <p><b>NOTE when using this redirect view in a Portlet environment:</b> Make sure
- * that your controller respects the Portlet {@code sendRedirect} constraints.
+ * that your com.Li.controller respects the Portlet {@code sendRedirect} constraints.
  *
  * @author Rod Johnson
  * @author Juergen Hoeller

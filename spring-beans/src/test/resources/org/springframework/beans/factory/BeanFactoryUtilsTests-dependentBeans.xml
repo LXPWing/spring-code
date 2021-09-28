@@ -28,7 +28,7 @@
 
 	<bean id="thread" class="java.lang.Thread"/>
 
-	<bean id="field" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+	<bean id="field" class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean">
 	   <property name="targetObject" ref="thread"/>
    	   <property name="targetField" value="MAX_PRIORITY"/>
 	 </bean>

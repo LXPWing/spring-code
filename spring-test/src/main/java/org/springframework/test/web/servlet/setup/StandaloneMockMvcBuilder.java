@@ -73,12 +73,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * A {@code MockMvcBuilder} that accepts {@code @Controller} registrations
  * thus allowing full control over the instantiation and initialization of
  * controllers and their dependencies similar to plain unit tests, and also
- * making it possible to test one controller at a time.
+ * making it possible to test one com.Li.controller at a time.
  *
  * <p>This builder creates the minimum infrastructure required by the
  * {@link DispatcherServlet} to serve requests with annotated controllers and
  * also provides methods for customization. The resulting configuration and
- * customization options are equivalent to using MVC Java config except
+ * customization options are equivalent to using MVC Java com.Li.config except
  * using builder style methods.
  *
  * <p>To configure view resolution, either select a "fixed" view to use for every
@@ -159,7 +159,7 @@ public class StandaloneMockMvcBuilder extends AbstractMockMvcBuilder<StandaloneM
 	 * Register one or more {@link org.springframework.web.bind.annotation.ControllerAdvice}
 	 * instances to be used in tests (specified {@code Class} will be turned into instance).
 	 * <p>Normally {@code @ControllerAdvice} are auto-detected as long as they're declared
-	 * as Spring beans. However since the standalone setup does not load any Spring config,
+	 * as Spring beans. However since the standalone setup does not load any Spring com.Li.config,
 	 * they need to be registered explicitly here instead much like controllers.
 	 * @since 4.2
 	 */
@@ -238,7 +238,7 @@ public class StandaloneMockMvcBuilder extends AbstractMockMvcBuilder<StandaloneM
 	}
 
 	/**
-	 * Provide custom resolvers for controller method arguments.
+	 * Provide custom resolvers for com.Li.controller method arguments.
 	 */
 	public StandaloneMockMvcBuilder setCustomArgumentResolvers(HandlerMethodArgumentResolver... argumentResolvers) {
 		this.customArgumentResolvers = Arrays.asList(argumentResolvers);
@@ -246,7 +246,7 @@ public class StandaloneMockMvcBuilder extends AbstractMockMvcBuilder<StandaloneM
 	}
 
 	/**
-	 * Provide custom handlers for controller method return values.
+	 * Provide custom handlers for com.Li.controller method return values.
 	 */
 	public StandaloneMockMvcBuilder setCustomReturnValueHandlers(HandlerMethodReturnValueHandler... handlers) {
 		this.customReturnValueHandlers = Arrays.asList(handlers);
@@ -312,7 +312,7 @@ public class StandaloneMockMvcBuilder extends AbstractMockMvcBuilder<StandaloneM
 	 * <p>The default value is {@code true}.
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link RequestMappingHandlerMapping} on the deprecation of path extension
-	 * config options.
+	 * com.Li.config options.
 	 */
 	@Deprecated
 	public StandaloneMockMvcBuilder setUseSuffixPatternMatch(boolean useSuffixPatternMatch) {

@@ -6,11 +6,11 @@
 				http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 				http://www.springframework.org/schema/lang https://www.springframework.org/schema/lang/spring-lang-2.5.xsd">
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect ref="getMessageAspect">
 			<aop:before method="before" pointcut="execution(* *..Messenger.*(..))"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<lang:groovy id="getMessageAspect" script-source="classpath:org/springframework/scripting/groovy/CallCounter.groovy"
 			init-method="init" destroy-method="destroy"/>

@@ -119,7 +119,7 @@ import org.springframework.util.Assert;
  * &lt;bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/&gt;</pre>
  *
  * Alternatively, check out your resource provider's ActivationSpec object,
- * which should support local transactions through a provider-specific config flag,
+ * which should support local transactions through a provider-specific com.Li.config flag,
  * e.g. ActiveMQActivationSpec's "useRAManagedTransaction" bean property.
  *
  * <pre class="code">

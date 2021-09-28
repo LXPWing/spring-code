@@ -46,10 +46,10 @@ import org.springframework.core.annotation.AliasFor;
  * Alternatively, consider using the attribute management capabilities of the
  * generic {@link org.springframework.web.context.request.WebRequest} interface.
  *
- * <p><b>NOTE:</b> When using controller interfaces (e.g. for AOP proxying),
+ * <p><b>NOTE:</b> When using com.Li.controller interfaces (e.g. for AOP proxying),
  * make sure to consistently put <i>all</i> your mapping annotations &mdash;
  * such as {@code @RequestMapping} and {@code @SessionAttributes} &mdash; on
- * the controller <i>interface</i> rather than on the implementation class.
+ * the com.Li.controller <i>interface</i> rather than on the implementation class.
  *
  * @author Juergen Hoeller
  * @author Sam Brannen

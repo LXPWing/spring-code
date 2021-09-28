@@ -32,7 +32,7 @@ import org.springframework.web.bind.support.SimpleSessionStatus;
  * Records model and view related decisions made by
  * {@link HandlerMethodArgumentResolver HandlerMethodArgumentResolvers} and
  * {@link HandlerMethodReturnValueHandler HandlerMethodReturnValueHandlers} during the course of invocation of
- * a controller method.
+ * a com.Li.controller method.
  *
  * <p>The {@link #setRequestHandled} flag can be used to indicate the request
  * has been handled directly and view resolution is not required.
@@ -75,13 +75,13 @@ public class ModelAndViewContainer {
 
 	/**
 	 * By default the content of the "default" model is used both during
-	 * rendering and redirect scenarios. Alternatively controller methods
+	 * rendering and redirect scenarios. Alternatively com.Li.controller methods
 	 * can declare an argument of type {@code RedirectAttributes} and use
 	 * it to provide attributes to prepare the redirect URL.
 	 * <p>Setting this flag to {@code true} guarantees the "default" model is
 	 * never used in a redirect scenario even if a RedirectAttributes argument
 	 * is not declared. Setting it to {@code false} means the "default" model
-	 * may be used in a redirect if the controller method doesn't declare a
+	 * may be used in a redirect if the com.Li.controller method doesn't declare a
 	 * RedirectAttributes argument.
 	 * <p>The default setting is {@code false}.
 	 */
@@ -181,7 +181,7 @@ public class ModelAndViewContainer {
 	}
 
 	/**
-	 * Whether the controller has returned a redirect instruction, e.g. a
+	 * Whether the com.Li.controller has returned a redirect instruction, e.g. a
 	 * "redirect:" prefixed view name, a RedirectView instance, etc.
 	 */
 	public void setRedirectModelScenario(boolean redirectModelScenario) {
@@ -252,7 +252,7 @@ public class ModelAndViewContainer {
 	/**
 	 * Whether the request has been handled fully within the handler, e.g.
 	 * {@code @ResponseBody} method, and therefore view resolution is not
-	 * necessary. This flag can also be set when controller methods declare an
+	 * necessary. This flag can also be set when com.Li.controller methods declare an
 	 * argument of type {@code ServletResponse} or {@code OutputStream}).
 	 * <p>The default value is {@code false}.
 	 */

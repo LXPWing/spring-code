@@ -352,9 +352,9 @@ example demonstrates how to automatically grow the list:
 	// Turn on:
 	// - auto null reference initialization
 	// - auto collection growing
-	SpelParserConfiguration config = new SpelParserConfiguration(true,true);
+	SpelParserConfiguration com.Li.config = new SpelParserConfiguration(true,true);
 
-	ExpressionParser parser = new SpelExpressionParser(config);
+	ExpressionParser parser = new SpelExpressionParser(com.Li.config);
 
 	Expression expression = parser.parseExpression("list[3]");
 
@@ -375,9 +375,9 @@ example demonstrates how to automatically grow the list:
 	// Turn on:
 	// - auto null reference initialization
 	// - auto collection growing
-	val config = SpelParserConfiguration(true, true)
+	val com.Li.config = SpelParserConfiguration(true, true)
 
-	val parser = SpelExpressionParser(config)
+	val parser = SpelExpressionParser(com.Li.config)
 
 	val expression = parser.parseExpression("list[3]")
 
@@ -459,10 +459,10 @@ following example shows how to do so:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	SpelParserConfiguration config = new SpelParserConfiguration(SpelCompilerMode.IMMEDIATE,
+	SpelParserConfiguration com.Li.config = new SpelParserConfiguration(SpelCompilerMode.IMMEDIATE,
 		this.getClass().getClassLoader());
 
-	SpelExpressionParser parser = new SpelExpressionParser(config);
+	SpelExpressionParser parser = new SpelExpressionParser(com.Li.config);
 
 	Expression expr = parser.parseExpression("payload");
 
@@ -473,10 +473,10 @@ following example shows how to do so:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	val config = SpelParserConfiguration(SpelCompilerMode.IMMEDIATE,
+	val com.Li.config = SpelParserConfiguration(SpelCompilerMode.IMMEDIATE,
 			this.javaClass.classLoader)
 
-	val parser = SpelExpressionParser(config)
+	val parser = SpelExpressionParser(com.Li.config)
 
 	val expr = parser.parseExpression("payload")
 

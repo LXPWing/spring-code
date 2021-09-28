@@ -8,7 +8,7 @@
 
 	<bean id="nopInterceptor" class="org.springframework.aop.testfixture.interceptor.NopInterceptor"/>
 
-	<bean id="exposeInvocation" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+	<bean id="exposeInvocation" class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean">
 		<property name="targetClass">
 			<value>org.springframework.aop.interceptor.ExposeInvocationInterceptor</value>
 		</property>

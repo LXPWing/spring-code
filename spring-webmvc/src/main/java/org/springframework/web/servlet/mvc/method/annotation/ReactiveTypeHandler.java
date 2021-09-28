@@ -188,7 +188,7 @@ class ReactiveTypeHandler {
 					String executorTypeName = this.taskExecutor.getClass().getSimpleName();
 					logger.warn("\n!!!\n" +
 							"Streaming through a reactive type requires an Executor to write to the response.\n" +
-							"Please, configure a TaskExecutor in the MVC config under \"async support\".\n" +
+							"Please, configure a TaskExecutor in the MVC com.Li.config under \"async support\".\n" +
 							"The " + executorTypeName + " currently in use is not suitable under load.\n" +
 							"-------------------------------\n" +
 							"Controller:\t" + returnType.getContainingClass().getName() + "\n" +

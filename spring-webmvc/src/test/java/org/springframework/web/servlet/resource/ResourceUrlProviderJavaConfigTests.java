@@ -37,7 +37,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Integration tests using {@link ResourceUrlEncodingFilter} and
- * {@link ResourceUrlProvider} with the latter configured in Spring MVC Java config.
+ * {@link ResourceUrlProvider} with the latter configured in Spring MVC Java com.Li.config.
  *
  * @author Rossen Stoyanchev
  */

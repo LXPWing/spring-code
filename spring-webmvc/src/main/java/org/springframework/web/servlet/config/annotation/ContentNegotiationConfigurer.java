@@ -131,7 +131,7 @@ public class ContentNegotiationConfigurer {
 	 * {@code "application/pdf"} regardless of the 'Accept' header.
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link ContentNegotiationManagerFactoryBean} on the deprecation of path
-	 * extension config options. As there is no replacement for this method,
+	 * extension com.Li.config options. As there is no replacement for this method,
 	 * for the time being it's necessary to continue using it in order to set it
 	 * to {@code false}. In 5.3 when {@code false} becomes the default, use of
 	 * this property will no longer be necessary.
@@ -192,7 +192,7 @@ public class ContentNegotiationConfigurer {
 	 * <p>By default this is set to {@code true}.
 	 * @deprecated as of 5.2.4. See class-level note in
 	 * {@link ContentNegotiationManagerFactoryBean} on the deprecation of path
-	 * extension config options.
+	 * extension com.Li.config options.
 	 */
 	@Deprecated
 	public ContentNegotiationConfigurer ignoreUnknownPathExtensions(boolean ignore) {

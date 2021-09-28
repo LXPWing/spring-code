@@ -54,7 +54,7 @@ public class HttpInvokerFactoryBeanIntegrationTests {
 	@SuppressWarnings("resource")
 	public void testNonLoadedConfigClass() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.registerBeanDefinition("config", new RootBeanDefinition(InvokerAutowiringConfig.class.getName()));
+		context.registerBeanDefinition("com.Li.config", new RootBeanDefinition(InvokerAutowiringConfig.class.getName()));
 		context.refresh();
 		MyBean myBean = context.getBean("myBean", MyBean.class);
 		assertThat(myBean.myService).isSameAs(context.getBean("myService"));

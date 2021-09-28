@@ -45,7 +45,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 /**
- * Examples of expectations on the content of the model prepared by the controller.
+ * Examples of expectations on the content of the model prepared by the com.Li.controller.
  *
  * @author Rossen Stoyanchev
  */

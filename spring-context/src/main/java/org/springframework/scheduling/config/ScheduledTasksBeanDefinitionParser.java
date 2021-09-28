@@ -49,7 +49,7 @@ public class ScheduledTasksBeanDefinitionParser extends AbstractSingleBeanDefini
 
 	@Override
 	protected String getBeanClassName(Element element) {
-		return "org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar";
+		return "org.springframework.scheduling.com.Li.config.ContextLifecycleScheduledTaskRegistrar";
 	}
 
 	@Override
@@ -147,7 +147,7 @@ public class ScheduledTasksBeanDefinitionParser extends AbstractSingleBeanDefini
 	private RuntimeBeanReference intervalTaskReference(String runnableBeanName,
 			String initialDelay, String interval, Element taskElement, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(
-				"org.springframework.scheduling.config.IntervalTask");
+				"org.springframework.scheduling.com.Li.config.IntervalTask");
 		builder.addConstructorArgReference(runnableBeanName);
 		builder.addConstructorArgValue(interval);
 		builder.addConstructorArgValue(StringUtils.hasLength(initialDelay) ? initialDelay : ZERO_INITIAL_DELAY);
@@ -157,7 +157,7 @@ public class ScheduledTasksBeanDefinitionParser extends AbstractSingleBeanDefini
 	private RuntimeBeanReference cronTaskReference(String runnableBeanName,
 			String cronExpression, Element taskElement, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(
-				"org.springframework.scheduling.config.CronTask");
+				"org.springframework.scheduling.com.Li.config.CronTask");
 		builder.addConstructorArgReference(runnableBeanName);
 		builder.addConstructorArgValue(cronExpression);
 		return beanReference(taskElement, parserContext, builder);
@@ -166,7 +166,7 @@ public class ScheduledTasksBeanDefinitionParser extends AbstractSingleBeanDefini
 	private RuntimeBeanReference triggerTaskReference(String runnableBeanName,
 			String triggerBeanName, Element taskElement, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(
-				"org.springframework.scheduling.config.TriggerTask");
+				"org.springframework.scheduling.com.Li.config.TriggerTask");
 		builder.addConstructorArgReference(runnableBeanName);
 		builder.addConstructorArgReference(triggerBeanName);
 		return beanReference(taskElement, parserContext, builder);

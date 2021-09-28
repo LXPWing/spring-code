@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Integration test class that verifies proper detection of a default
- * XML config file even though a suitable Groovy script exists.
+ * XML com.Li.config file even though a suitable Groovy script exists.
  *
  * @author Sam Brannen
  * @since 4.1

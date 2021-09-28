@@ -1,5 +1,5 @@
-http\://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler
-http\://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler
-http\://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler
-http\://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler
-http\://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler
+http\://www.springframework.org/schema/context=org.springframework.context.com.Li.config.ContextNamespaceHandler
+http\://www.springframework.org/schema/jee=org.springframework.ejb.com.Li.config.JeeNamespaceHandler
+http\://www.springframework.org/schema/lang=org.springframework.scripting.com.Li.config.LangNamespaceHandler
+http\://www.springframework.org/schema/task=org.springframework.scheduling.com.Li.config.TaskNamespaceHandler
+http\://www.springframework.org/schema/cache=org.springframework.cache.com.Li.config.CacheNamespaceHandler

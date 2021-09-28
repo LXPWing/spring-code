@@ -6,12 +6,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect ref="monitoringAspect">
 			<aop:before method="before" pointcut="execution(* increment*())" />
 			<aop:around method="around" pointcut="execution(* increment*())" />
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="monitoringAspect" class="org.springframework.aop.aspectj.JoinPointMonitorAspect">
 		<property name="counter" ref="counter"/>

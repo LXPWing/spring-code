@@ -66,7 +66,7 @@ import org.springframework.web.testfixture.http.server.reactive.bootstrap.Undert
 
 /**
  * Base class for WebSocket integration tests. Sub-classes must implement
- * {@link #getWebConfigClass()} to return Spring config class with (server-side)
+ * {@link #getWebConfigClass()} to return Spring com.Li.config class with (server-side)
  * handler mappings to {@code WebSocketHandler}'s.
  *
  * @author Rossen Stoyanchev

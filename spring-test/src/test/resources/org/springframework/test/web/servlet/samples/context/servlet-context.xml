@@ -11,7 +11,7 @@
         <constructor-arg ref="personDao"/>
     </bean>
 
-    <mvc:view-controller path="/" view-name="home" />
+    <mvc:view-com.Li.controller path="/" view-name="home" />
 
     <mvc:resources mapping="/resources/**" location="/resources/" />
 

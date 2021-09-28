@@ -62,7 +62,7 @@ import org.springframework.util.StringUtils;
  * If not explicitly specified, the context implementation is supposed to use a
  * default location (with XmlWebApplicationContext: "/WEB-INF/applicationContext.xml").
  *
- * <p>Note: In case of multiple config locations, later bean definitions will
+ * <p>Note: In case of multiple com.Li.config locations, later bean definitions will
  * override ones defined in previously loaded files, at least when using one of
  * Spring's default ApplicationContext implementations. This can be leveraged
  * to deliberately override certain bean definitions via an extra XML file.
@@ -94,7 +94,7 @@ public class ContextLoader {
 
 	/**
 	 * Name of servlet context parameter (i.e., {@value}) that can specify the
-	 * config location for the root context, falling back to the implementation's
+	 * com.Li.config location for the root context, falling back to the implementation's
 	 * default otherwise.
 	 * @see org.springframework.web.context.support.XmlWebApplicationContext#DEFAULT_CONFIG_LOCATION
 	 */
@@ -403,7 +403,7 @@ public class ContextLoader {
 
 	/**
 	 * Customize the {@link ConfigurableWebApplicationContext} created by this
-	 * ContextLoader after config locations have been supplied to the context
+	 * ContextLoader after com.Li.config locations have been supplied to the context
 	 * but before the context is <em>refreshed</em>.
 	 * <p>The default implementation {@linkplain #determineContextInitializerClasses(ServletContext)
 	 * determines} what (if any) context initializer classes have been specified through

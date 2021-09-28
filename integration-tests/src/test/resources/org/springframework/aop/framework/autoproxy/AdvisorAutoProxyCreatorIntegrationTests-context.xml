@@ -99,7 +99,7 @@
 
 	<bean id="tb" class="org.springframework.beans.testfixture.beans.TestBean"/>
 
-	<bean id="nullValueReturned" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	<bean id="nullValueReturned" class="org.springframework.beans.factory.com.Li.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="tb"/>
 		<property name="targetMethod" value="getSpouse"/>
 	</bean>

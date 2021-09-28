@@ -88,7 +88,7 @@ public class ConfigurationClassProcessingTests {
 	private void customBeanNameIsRespected(Class<?> testClass, Supplier<TestBean> testBeanSupplier, String beanName) {
 		GenericApplicationContext ac = new GenericApplicationContext();
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(ac);
-		ac.registerBeanDefinition("config", new RootBeanDefinition(testClass));
+		ac.registerBeanDefinition("com.Li.config", new RootBeanDefinition(testClass));
 		ac.refresh();
 
 		assertThat(ac.getBean(beanName)).isSameAs(testBeanSupplier.get());
@@ -126,7 +126,7 @@ public class ConfigurationClassProcessingTests {
 	public void configWithBeanWithProviderImplementation() {
 		GenericApplicationContext ac = new GenericApplicationContext();
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(ac);
-		ac.registerBeanDefinition("config", new RootBeanDefinition(ConfigWithBeanWithProviderImplementation.class));
+		ac.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ConfigWithBeanWithProviderImplementation.class));
 		ac.refresh();
 		assertThat(ConfigWithBeanWithProviderImplementation.testBean).isSameAs(ac.getBean("customName"));
 	}
@@ -135,7 +135,7 @@ public class ConfigurationClassProcessingTests {
 	public void configWithSetWithProviderImplementation() {
 		GenericApplicationContext ac = new GenericApplicationContext();
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(ac);
-		ac.registerBeanDefinition("config", new RootBeanDefinition(ConfigWithSetWithProviderImplementation.class));
+		ac.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ConfigWithSetWithProviderImplementation.class));
 		ac.refresh();
 		assertThat(ConfigWithSetWithProviderImplementation.set).isSameAs(ac.getBean("customName"));
 	}
@@ -290,7 +290,7 @@ public class ConfigurationClassProcessingTests {
 	@Test
 	public void configurationWithOverloadedBeanMismatch() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(OverloadedBeanMismatch.class));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(OverloadedBeanMismatch.class));
 		ctx.refresh();
 
 		TestBean tb = ctx.getBean(TestBean.class);
@@ -300,7 +300,7 @@ public class ConfigurationClassProcessingTests {
 	@Test
 	public void configurationWithOverloadedBeanMismatchWithAsm() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(OverloadedBeanMismatch.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(OverloadedBeanMismatch.class.getName()));
 		ctx.refresh();
 
 		TestBean tb = ctx.getBean(TestBean.class);

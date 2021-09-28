@@ -255,7 +255,7 @@ public class ViewResolutionResultHandler extends HandlerResultHandlerSupport imp
 	}
 
 	/**
-	 * Select a default view name when a controller did not specify it.
+	 * Select a default view name when a com.Li.controller did not specify it.
 	 * Use the request path the leading and trailing slash stripped.
 	 */
 	private String getDefaultViewName(ServerWebExchange exchange) {

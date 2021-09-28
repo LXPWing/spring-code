@@ -55,11 +55,11 @@ public interface ScriptFactory {
 	Class<?>[] getScriptInterfaces();
 
 	/**
-	 * Return whether the script requires a config interface to be
+	 * Return whether the script requires a com.Li.config interface to be
 	 * generated for it. This is typically the case for scripts that
 	 * do not determine Java signatures themselves, with no appropriate
-	 * config interface specified in {@code getScriptInterfaces()}.
-	 * @return whether the script requires a generated config interface
+	 * com.Li.config interface specified in {@code getScriptInterfaces()}.
+	 * @return whether the script requires a generated com.Li.config interface
 	 * @see #getScriptInterfaces()
 	 */
 	boolean requiresConfigInterface();
@@ -72,7 +72,7 @@ public interface ScriptFactory {
 	 * @param scriptSource the actual ScriptSource to retrieve
 	 * the script source text from (never {@code null})
 	 * @param actualInterfaces the actual interfaces to expose,
-	 * including script interfaces as well as a generated config interface
+	 * including script interfaces as well as a generated com.Li.config interface
 	 * (if applicable; may be {@code null})
 	 * @return the scripted Java object
 	 * @throws IOException if script retrieval failed

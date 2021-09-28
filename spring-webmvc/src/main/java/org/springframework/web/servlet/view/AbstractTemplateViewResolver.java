@@ -56,7 +56,7 @@ public abstract class AbstractTemplateViewResolver extends UrlBasedViewResolver 
 
 	/**
 	 * Set whether HttpServletRequest attributes are allowed to override (hide)
-	 * controller generated model attributes of the same name. Default is "false",
+	 * com.Li.controller generated model attributes of the same name. Default is "false",
 	 * which causes an exception to be thrown if request attributes of the same
 	 * name as model attributes are found.
 	 * @see AbstractTemplateView#setAllowRequestOverride
@@ -76,7 +76,7 @@ public abstract class AbstractTemplateViewResolver extends UrlBasedViewResolver 
 
 	/**
 	 * Set whether HttpSession attributes are allowed to override (hide)
-	 * controller generated model attributes of the same name. Default is "false",
+	 * com.Li.controller generated model attributes of the same name. Default is "false",
 	 * which causes an exception to be thrown if session attributes of the same
 	 * name as model attributes are found.
 	 * @see AbstractTemplateView#setAllowSessionOverride

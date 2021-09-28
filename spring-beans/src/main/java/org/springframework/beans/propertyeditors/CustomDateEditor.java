@@ -29,7 +29,7 @@ import org.springframework.util.StringUtils;
  * supporting a custom {@code java.text.DateFormat}.
  *
  * <p>This is not meant to be used as system PropertyEditor but rather
- * as locale-specific date editor within custom controller code,
+ * as locale-specific date editor within custom com.Li.controller code,
  * parsing user-entered number strings into Date properties of beans
  * and rendering them in the UI form.
  *

@@ -80,7 +80,7 @@ import org.springframework.util.StringUtils;
  *    public MyService getService();
  *}</pre>
  *
- * <p>A sample config in an XML-based
+ * <p>A sample com.Li.config in an XML-based
  * {@link org.springframework.beans.factory.BeanFactory} might look as follows:
  *
  * <pre class="code">&lt;beans>
@@ -90,7 +90,7 @@ import org.springframework.util.StringUtils;
  *
  *   &lt;!-- will lookup the above 'myService' bean by *TYPE* -->
  *   &lt;bean id="myServiceFactory"
- *            class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+ *            class="org.springframework.beans.factory.com.Li.config.ServiceLocatorFactoryBean">
  *     &lt;property name="serviceLocatorInterface" value="a.b.c.ServiceFactory"/>
  *   &lt;/bean>
  *
@@ -132,7 +132,7 @@ import org.springframework.util.StringUtils;
  *    public MyService getService (String serviceName);
  *}</pre>
  *
- * <p>A sample config in an XML-based
+ * <p>A sample com.Li.config in an XML-based
  * {@link org.springframework.beans.factory.BeanFactory} might look as follows:
  *
  * <pre class="code">&lt;beans>
@@ -142,7 +142,7 @@ import org.springframework.util.StringUtils;
  *   &lt;bean id="anotherService" class="a.b.c.AnotherService" singleton="false"/>
  *
  *   &lt;bean id="myServiceFactory"
- *            class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+ *            class="org.springframework.beans.factory.com.Li.config.ServiceLocatorFactoryBean">
  *     &lt;property name="serviceLocatorInterface" value="a.b.c.ServiceFactory"/>
  *   &lt;/bean>
  *

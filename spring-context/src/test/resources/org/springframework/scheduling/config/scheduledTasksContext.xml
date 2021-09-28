@@ -19,8 +19,8 @@
 
 	<task:scheduler id="testScheduler"/>
 
-	<bean id="testBean" class="org.springframework.scheduling.config.ScheduledTasksBeanDefinitionParserTests$TestBean"/>
+	<bean id="testBean" class="org.springframework.scheduling.com.Li.config.ScheduledTasksBeanDefinitionParserTests$TestBean"/>
 
-	<bean id="customTrigger" class="org.springframework.scheduling.config.ScheduledTasksBeanDefinitionParserTests$TestTrigger"/>
+	<bean id="customTrigger" class="org.springframework.scheduling.com.Li.config.ScheduledTasksBeanDefinitionParserTests$TestTrigger"/>
 
 </beans>

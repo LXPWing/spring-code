@@ -50,7 +50,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.util.xml.DomUtils;
 
 /**
- * {@link BeanDefinitionParser} for the {@code <aop:config>} tag.
+ * {@link BeanDefinitionParser} for the {@code <aop:com.Li.config>} tag.
  *
  * @author Rob Harrop
  * @author Juergen Hoeller
@@ -125,7 +125,7 @@ class ConfigBeanDefinitionParser implements BeanDefinitionParser {
 
 	/**
 	 * Configures the auto proxy creator needed to support the {@link BeanDefinition BeanDefinitions}
-	 * created by the '{@code <aop:config/>}' tag. Will force class proxying if the
+	 * created by the '{@code <aop:com.Li.config/>}' tag. Will force class proxying if the
 	 * '{@code proxy-target-class}' attribute is set to '{@code true}'.
 	 * @see AopNamespaceUtils
 	 */

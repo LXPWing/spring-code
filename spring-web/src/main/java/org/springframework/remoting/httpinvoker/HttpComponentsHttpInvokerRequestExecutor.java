@@ -235,7 +235,7 @@ public class HttpComponentsHttpInvokerRequestExecutor extends AbstractHttpInvoke
 
 	/**
 	 * Create a {@link RequestConfig} for the given configuration. Can return {@code null}
-	 * to indicate that no custom request config should be set and the defaults of the
+	 * to indicate that no custom request com.Li.config should be set and the defaults of the
 	 * {@link HttpClient} should be used.
 	 * <p>The default implementation tries to merge the defaults of the client with the
 	 * local customizations of the instance, if any.

@@ -5,19 +5,19 @@
 
 	<bean id="prototypeTarget" class="java.util.Date" scope="prototype"/>
 
-	<bean id="prototypeFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+	<bean id="prototypeFactory" class="org.springframework.beans.factory.com.Li.config.ObjectFactoryCreatingFactoryBean">
 		<property name="targetBeanName" value="prototypeTarget"/>
 	</bean>
 
-	<bean id="factoryTestBean" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBeanTests$FactoryTestBean">
+	<bean id="factoryTestBean" class="org.springframework.beans.factory.com.Li.config.ObjectFactoryCreatingFactoryBeanTests$FactoryTestBean">
 		<property name="objectFactory" ref="prototypeFactory"/>
 	</bean>
 
-	<bean id="prototypeProvider" class="org.springframework.beans.factory.config.ProviderCreatingFactoryBean">
+	<bean id="prototypeProvider" class="org.springframework.beans.factory.com.Li.config.ProviderCreatingFactoryBean">
 		<property name="targetBeanName" value="prototypeTarget"/>
 	</bean>
 
-	<bean id="providerTestBean" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBeanTests$ProviderTestBean">
+	<bean id="providerTestBean" class="org.springframework.beans.factory.com.Li.config.ObjectFactoryCreatingFactoryBeanTests$ProviderTestBean">
 		<property name="provider" ref="prototypeProvider"/>
 	</bean>
 

@@ -121,7 +121,7 @@ public @interface CrossOrigin {
 	/**
 	 * The list of supported HTTP request methods.
 	 * <p>By default the supported methods are the same as the ones to which a
-	 * controller method is mapped.
+	 * com.Li.controller method is mapped.
 	 */
 	RequestMethod[] methods() default {};
 

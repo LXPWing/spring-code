@@ -7,6 +7,6 @@
 
 	<mvc:annotation-driven message-codes-resolver="messageCodesResolver"/>
 
-	<bean id="messageCodesResolver" class="org.springframework.web.servlet.config.TestMessageCodesResolver"/>
+	<bean id="messageCodesResolver" class="org.springframework.web.servlet.com.Li.config.TestMessageCodesResolver"/>
 
 </beans>

@@ -8,12 +8,12 @@
 
 	<bean id="counter" class="org.springframework.aop.aspectj.Counter"/>
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect ref="monitoringAspect">
 			<aop:before method="before" pointcut="execution(* increment*())" />
 			<aop:around method="around" pointcut="execution(* increment*())" />
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="monitoringAspect" class="org.springframework.aop.aspectj.JoinPointMonitorAspect" lazy-init="true">
 		<property name="counter" ref="counter"/>

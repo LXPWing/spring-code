@@ -44,7 +44,7 @@ class JcaListenerContainerParser extends AbstractListenerContainerParser {
 			PropertyValues commonContainerProperties, PropertyValues specificContainerProperties) {
 
 		RootBeanDefinition factoryDef = new RootBeanDefinition();
-		factoryDef.setBeanClassName("org.springframework.jms.config.DefaultJcaListenerContainerFactory");
+		factoryDef.setBeanClassName("org.springframework.jms.com.Li.config.DefaultJcaListenerContainerFactory");
 
 		factoryDef.getPropertyValues().addPropertyValues(commonContainerProperties);
 		factoryDef.getPropertyValues().addPropertyValues(specificContainerProperties);

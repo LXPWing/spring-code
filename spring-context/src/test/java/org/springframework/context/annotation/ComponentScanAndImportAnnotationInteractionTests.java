@@ -59,7 +59,7 @@ public class ComponentScanAndImportAnnotationInteractionTests {
 	@Test
 	public void componentScanViaImportUsingAsm() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(Config3.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(Config3.class.getName()));
 		ctx.refresh();
 		ctx.getBean(SimpleComponent.class);
 	}
@@ -75,7 +75,7 @@ public class ComponentScanAndImportAnnotationInteractionTests {
 	@Test
 	public void circularImportViaComponentScan() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(ImportingConfig.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ImportingConfig.class.getName()));
 		ctx.refresh();
 		ctx.getBean(SimpleComponent.class);
 	}

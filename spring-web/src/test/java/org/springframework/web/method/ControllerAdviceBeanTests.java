@@ -184,8 +184,8 @@ public class ControllerAdviceBeanTests {
 	@Test
 	public void assignableTypesSupport() {
 		ControllerAdviceBean bean = new ControllerAdviceBean(new AssignableTypesSupport());
-		assertApplicable("controller implements assignable", bean, ImplementationController.class);
-		assertApplicable("controller inherits assignable", bean, InheritanceController.class);
+		assertApplicable("com.Li.controller implements assignable", bean, ImplementationController.class);
+		assertApplicable("com.Li.controller inherits assignable", bean, InheritanceController.class);
 		assertNotApplicable("not assignable", bean, AnnotatedController.class);
 		assertNotApplicable("not assignable", bean, String.class);
 	}
@@ -193,8 +193,8 @@ public class ControllerAdviceBeanTests {
 	@Test
 	public void multipleMatch() {
 		ControllerAdviceBean bean = new ControllerAdviceBean(new MultipleSelectorsSupport());
-		assertApplicable("controller implements assignable", bean, ImplementationController.class);
-		assertApplicable("controller is annotated", bean, AnnotatedController.class);
+		assertApplicable("com.Li.controller implements assignable", bean, ImplementationController.class);
+		assertApplicable("com.Li.controller is annotated", bean, AnnotatedController.class);
 		assertNotApplicable("should not match", bean, InheritanceController.class);
 	}
 

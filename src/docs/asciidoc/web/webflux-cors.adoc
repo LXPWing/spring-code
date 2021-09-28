@@ -75,12 +75,12 @@ To learn more from the source or to make advanced customizations, see:
 
 
 
-[[webflux-cors-controller]]
+[[webflux-cors-com.Li.controller]]
 == `@CrossOrigin`
-[.small]#<<web.adoc#mvc-cors-controller, Web MVC>>#
+[.small]#<<web.adoc#mvc-cors-com.Li.controller, Web MVC>>#
 
 The {api-spring-framework}/web/bind/annotation/CrossOrigin.html[`@CrossOrigin`]
-annotation enables cross-origin requests on annotated controller methods, as the
+annotation enables cross-origin requests on annotated com.Li.controller methods, as the
 following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -126,7 +126,7 @@ By default, `@CrossOrigin` allows:
 
 * All origins.
 * All headers.
-* All HTTP methods to which the controller method is mapped.
+* All HTTP methods to which the com.Li.controller method is mapped.
 
 
 `allowedCredentials` is not enabled by default, since that establishes a trust level
@@ -232,7 +232,7 @@ as the following example shows:
 == Global Configuration
 [.small]#<<web.adoc#mvc-cors-global, Web MVC>>#
 
-In addition to fine-grained, controller method-level configuration, you probably want to
+In addition to fine-grained, com.Li.controller method-level configuration, you probably want to
 define some global CORS configuration, too. You can set URL-based `CorsConfiguration`
 mappings individually on any `HandlerMapping`. Most applications, however, use the
 WebFlux Java configuration to do that.
@@ -319,18 +319,18 @@ To configure the filter, you can declare a `CorsWebFilter` bean and pass a
 	@Bean
 	CorsWebFilter corsFilter() {
 
-		CorsConfiguration config = new CorsConfiguration();
+		CorsConfiguration com.Li.config = new CorsConfiguration();
 
 		// Possibly...
-		// config.applyPermitDefaultValues()
+		// com.Li.config.applyPermitDefaultValues()
 
-		config.setAllowCredentials(true);
-		config.addAllowedOrigin("https://domain1.com");
-		config.addAllowedHeader("*");
-		config.addAllowedMethod("*");
+		com.Li.config.setAllowCredentials(true);
+		com.Li.config.addAllowedOrigin("https://domain1.com");
+		com.Li.config.addAllowedHeader("*");
+		com.Li.config.addAllowedMethod("*");
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", config);
+		source.registerCorsConfiguration("/**", com.Li.config);
 
 		return new CorsWebFilter(source);
 	}
@@ -341,18 +341,18 @@ To configure the filter, you can declare a `CorsWebFilter` bean and pass a
 	@Bean
 	fun corsFilter(): CorsWebFilter {
 
-		val config = CorsConfiguration()
+		val com.Li.config = CorsConfiguration()
 
 		// Possibly...
-		// config.applyPermitDefaultValues()
+		// com.Li.config.applyPermitDefaultValues()
 
-		config.allowCredentials = true
-		config.addAllowedOrigin("https://domain1.com")
-		config.addAllowedHeader("*")
-		config.addAllowedMethod("*")
+		com.Li.config.allowCredentials = true
+		com.Li.config.addAllowedOrigin("https://domain1.com")
+		com.Li.config.addAllowedHeader("*")
+		com.Li.config.addAllowedMethod("*")
 
 		val source = UrlBasedCorsConfigurationSource().apply {
-			registerCorsConfiguration("/**", config)
+			registerCorsConfiguration("/**", com.Li.config)
 		}
 		return CorsWebFilter(source)
 	}

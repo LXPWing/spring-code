@@ -17,7 +17,7 @@
 
 	<bean class="org.springframework.jms.annotation.AbstractJmsAnnotationDrivenTests$ValidationBean"/>
 
-	<bean id="defaultFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
+	<bean id="defaultFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
 
 
 </beans>

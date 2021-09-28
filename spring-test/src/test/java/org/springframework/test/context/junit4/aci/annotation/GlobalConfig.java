@@ -33,6 +33,6 @@ class GlobalConfig {
 
 	@Bean
 	public String baz() {
-		return "global config";
+		return "global com.Li.config";
 	}
 }

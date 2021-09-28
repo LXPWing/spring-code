@@ -70,9 +70,9 @@ public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMappi
 
 
 	/**
-	 * Configure path prefixes to apply to controller methods.
+	 * Configure path prefixes to apply to com.Li.controller methods.
 	 * <p>Prefixes are used to enrich the mappings of every {@code @RequestMapping}
-	 * method whose controller type is matched by a corresponding
+	 * method whose com.Li.controller type is matched by a corresponding
 	 * {@code Predicate} in the map. The prefix for the first matching predicate
 	 * is used, assuming the input map has predictable order.
 	 * <p>Consider using {@link org.springframework.web.method.HandlerTypePredicate

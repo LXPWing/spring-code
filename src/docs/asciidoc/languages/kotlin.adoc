@@ -761,7 +761,7 @@ Therefore, if you wish to use the `@Value` annotation in Kotlin, you need to esc
 character by writing pass:q[`@Value("\${property}")`].
 
 NOTE: If you use Spring Boot, you should probably use
-https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-typesafe-configuration-properties[`@ConfigurationProperties`]
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-com.Li.config.html#boot-features-external-com.Li.config-typesafe-configuration-properties[`@ConfigurationProperties`]
 instead of `@Value` annotations.
 
 As an alternative, you can customize the property placeholder prefix by declaring the

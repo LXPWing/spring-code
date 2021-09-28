@@ -318,7 +318,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 	 * to always being invoked at the end after all other return value
 	 * handlers have been given a chance.
 	 * <p>A {@code HandlerMethodReturnValueHandler} provides better access to
-	 * the return type and controller method information and can be ordered
+	 * the return type and com.Li.controller method information and can be ordered
 	 * freely relative to other return value handlers.
 	 */
 	public void setModelAndViewResolvers(@Nullable List<ModelAndViewResolver> modelAndViewResolvers) {
@@ -396,7 +396,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 	}
 
 	/**
-	 * Set the default {@link AsyncTaskExecutor} to use when a controller method
+	 * Set the default {@link AsyncTaskExecutor} to use when a com.Li.controller method
 	 * return a {@link Callable}. Controller methods can override this default on
 	 * a per-request basis by returning an {@link WebAsyncTask}.
 	 * <p>By default a {@link SimpleAsyncTaskExecutor} instance is used.
@@ -438,7 +438,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 
 	/**
 	 * Configure the registry for reactive library types to be supported as
-	 * return values from controller methods.
+	 * return values from com.Li.controller methods.
 	 * @since 5.0.5
 	 */
 	public void setReactiveAdapterRegistry(ReactiveAdapterRegistry reactiveAdapterRegistry) {
@@ -455,13 +455,13 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 
 	/**
 	 * By default the content of the "default" model is used both during
-	 * rendering and redirect scenarios. Alternatively a controller method
+	 * rendering and redirect scenarios. Alternatively a com.Li.controller method
 	 * can declare a {@link RedirectAttributes} argument and use it to provide
 	 * attributes for a redirect.
 	 * <p>Setting this flag to {@code true} guarantees the "default" model is
 	 * never used in a redirect scenario even if a RedirectAttributes argument
 	 * is not declared. Setting it to {@code false} means the "default" model
-	 * may be used in a redirect if the controller method doesn't declare a
+	 * may be used in a redirect if the com.Li.controller method doesn't declare a
 	 * RedirectAttributes argument.
 	 * <p>The default setting is {@code false} but new applications should
 	 * consider setting it to {@code true}.
@@ -502,7 +502,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 	}
 
 	/**
-	 * Set if controller execution should be synchronized on the session,
+	 * Set if com.Li.controller execution should be synchronized on the session,
 	 * to serialize parallel invocations from the same client.
 	 * <p>More specifically, the execution of the {@code handleRequestInternal}
 	 * method will get synchronized if this flag is "true". The best available

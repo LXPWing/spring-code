@@ -97,7 +97,7 @@ class HandlerMethodAnnotationDetectionTests {
 
 	private void setUp(Class<?> controllerType, boolean useAutoProxy) {
 		GenericWebApplicationContext context = new GenericWebApplicationContext();
-		context.registerBeanDefinition("controller", new RootBeanDefinition(controllerType));
+		context.registerBeanDefinition("com.Li.controller", new RootBeanDefinition(controllerType));
 		context.registerBeanDefinition("handlerMapping", new RootBeanDefinition(RequestMappingHandlerMapping.class));
 		context.registerBeanDefinition("handlerAdapter", new RootBeanDefinition(RequestMappingHandlerAdapter.class));
 		context.registerBeanDefinition("exceptionResolver", new RootBeanDefinition(ExceptionHandlerExceptionResolver.class));
@@ -116,7 +116,7 @@ class HandlerMethodAnnotationDetectionTests {
 	}
 
 
-	@ParameterizedTest(name = "[{index}] controller [{0}], auto-proxy [{1}]")
+	@ParameterizedTest(name = "[{index}] com.Li.controller [{0}], auto-proxy [{1}]")
 	@MethodSource("handlerTypes")
 	void testRequestMappingMethod(Class<?> controllerType, boolean useAutoProxy) throws Exception {
 		setUp(controllerType, useAutoProxy);

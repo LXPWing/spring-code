@@ -49,7 +49,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @since 3.2
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-// Note: the ordering of the config classes is intentionally: global, two, one.
+// Note: the ordering of the com.Li.config classes is intentionally: global, two, one.
 // Note: the ordering of the initializers is intentionally: two, one.
 @ContextConfiguration(classes = { GlobalConfig.class, ConfigTwo.class, ConfigOne.class }, initializers = {
 	OrderedTwoInitializer.class, OrderedOneInitializer.class })

@@ -98,7 +98,7 @@ public class ModelAndViewMethodReturnValueHandlerTests {
 
 		assertThat(mavContainer.getView().getClass()).isEqualTo(RedirectView.class);
 		assertThat(mavContainer.getModel().get("attrName")).isEqualTo("attrValue");
-		assertThat(mavContainer.getModel()).as("RedirectAttributes should be used if controller redirects").isSameAs(redirectAttributes);
+		assertThat(mavContainer.getModel()).as("RedirectAttributes should be used if com.Li.controller redirects").isSameAs(redirectAttributes);
 	}
 
 	@Test
@@ -141,7 +141,7 @@ public class ModelAndViewMethodReturnValueHandlerTests {
 		ModelMap model = mavContainer.getModel();
 		assertThat(mavContainer.getView()).isEqualTo(null);
 		assertThat(mavContainer.getModel().isEmpty()).isTrue();
-		assertThat(model).as("RedirectAttributes should not be used if controller doesn't redirect").isNotSameAs(redirectAttributes);
+		assertThat(model).as("RedirectAttributes should not be used if com.Li.controller doesn't redirect").isNotSameAs(redirectAttributes);
 	}
 
 	@Test  // SPR-14045

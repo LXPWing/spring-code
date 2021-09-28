@@ -13,7 +13,7 @@
 		<websocket:mapping path="/test" handler="testHandler"/>
 	</websocket:handlers>
 
-	<bean id="testHandler" class="org.springframework.web.socket.config.TestWebSocketHandler"/>
-	<bean id="fooHandler" class="org.springframework.web.socket.config.FooWebSocketHandler"/>
+	<bean id="testHandler" class="org.springframework.web.socket.com.Li.config.TestWebSocketHandler"/>
+	<bean id="fooHandler" class="org.springframework.web.socket.com.Li.config.FooWebSocketHandler"/>
 
 </beans>

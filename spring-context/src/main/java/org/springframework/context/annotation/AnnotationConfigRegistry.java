@@ -17,7 +17,7 @@
 package org.springframework.context.annotation;
 
 /**
- * Common interface for annotation config application contexts,
+ * Common interface for annotation com.Li.config application contexts,
  * defining {@link #register} and {@link #scan} methods.
  *
  * @author Juergen Hoeller

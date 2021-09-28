@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * <p>When declared as a class-level annotation on an integration test class,
  * {@code @SqlConfig} serves as <strong><em>global</em></strong> configuration
  * for all SQL scripts within the test class hierarchy. When declared directly
- * via the {@link Sql#config config} attribute of the {@code @Sql} annotation,
+ * via the {@link Sql#config com.Li.config} attribute of the {@code @Sql} annotation,
  * {@code @SqlConfig} serves as <strong><em>local</em></strong> configuration
  * for the SQL scripts declared within the enclosing {@code @Sql} annotation.
  *

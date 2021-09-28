@@ -94,7 +94,7 @@ public class ContextNamespaceHandlerTests {
 	@Test
 	public void propertyPlaceholderLocationWithSystemPropertyForOneLocation() {
 		System.setProperty("properties",
-				"classpath*:/org/springframework/context/config/test-*.properties");
+				"classpath*:/org/springframework/context/com.Li.config/test-*.properties");
 		try {
 			ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 					"contextNamespaceHandlerTests-location-placeholder.xml", getClass());
@@ -110,9 +110,9 @@ public class ContextNamespaceHandlerTests {
 	@Test
 	public void propertyPlaceholderLocationWithSystemPropertyForMultipleLocations() {
 		System.setProperty("properties",
-				"classpath*:/org/springframework/context/config/test-*.properties," +
-				"classpath*:/org/springframework/context/config/empty-*.properties," +
-				"classpath*:/org/springframework/context/config/missing-*.properties");
+				"classpath*:/org/springframework/context/com.Li.config/test-*.properties," +
+				"classpath*:/org/springframework/context/com.Li.config/empty-*.properties," +
+				"classpath*:/org/springframework/context/com.Li.config/missing-*.properties");
 		try {
 			ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 					"contextNamespaceHandlerTests-location-placeholder.xml", getClass());

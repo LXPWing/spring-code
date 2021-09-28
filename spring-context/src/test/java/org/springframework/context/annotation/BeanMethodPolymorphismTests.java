@@ -58,7 +58,7 @@ public class BeanMethodPolymorphismTests {
 	@Test
 	public void beanMethodOverridingOnASM() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(OverridingConfig.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(OverridingConfig.class.getName()));
 		ctx.setAllowBeanDefinitionOverriding(false);
 		ctx.refresh();
 		assertThat(ctx.getDefaultListableBeanFactory().containsSingleton("testBean")).isFalse();
@@ -80,7 +80,7 @@ public class BeanMethodPolymorphismTests {
 	@Test
 	public void beanMethodOverridingWithNarrowedReturnTypeOnASM() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(NarrowedOverridingConfig.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(NarrowedOverridingConfig.class.getName()));
 		ctx.setAllowBeanDefinitionOverriding(false);
 		ctx.refresh();
 		assertThat(ctx.getDefaultListableBeanFactory().containsSingleton("testBean")).isFalse();

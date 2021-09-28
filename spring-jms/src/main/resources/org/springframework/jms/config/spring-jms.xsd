@@ -32,13 +32,13 @@
 			<xsd:attribute name="registry" type="xsd:string" use="optional">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	Specifies the org.springframework.jms.config.JmsListenerEndpointRegistry instance to
+	Specifies the org.springframework.jms.com.Li.config.JmsListenerEndpointRegistry instance to
 	use to register annotated jms listener endpoints. If not provided, a default instance
 	will be used by default.
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.jms.config.JmsListenerEndpointRegistry"/>
+							<tool:expected-type type="org.springframework.jms.com.Li.config.JmsListenerEndpointRegistry"/>
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -46,7 +46,7 @@
 			<xsd:attribute name="container-factory" type="xsd:string" use="optional">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	Specifies the org.springframework.jms.config.JmsListenerContainerFactory instance to
+	Specifies the org.springframework.jms.com.Li.config.JmsListenerContainerFactory instance to
 	use to create the container for a jms listener endpoint that does not define a specific
 	factory. This permits in practice to omit the "containerFactory" attribute of the JmsListener
 	annotation. This attribute is not required as each endpoint may define the factory to use and,
@@ -55,7 +55,7 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.jms.config.JmsListenerContainerFactory"/>
+							<tool:expected-type type="org.springframework.jms.com.Li.config.JmsListenerContainerFactory"/>
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -87,7 +87,7 @@
 	is determined by this parent element. This variant builds standard JMS
 	listener containers, operating against a specified JMS ConnectionFactory. When
 	a factory-id attribute is present, the configuration defined by this element is
-	exposed as a org.springframework.jms.config.JmsListenerContainerFactory. It is
+	exposed as a org.springframework.jms.com.Li.config.JmsListenerContainerFactory. It is
 	therefore possible to only define this element without any child to just expose
 	a container factory.
 			]]></xsd:documentation>
@@ -104,7 +104,7 @@
 			<xsd:attribute name="factory-id" type="xsd:string">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	Expose the settings defined by this element as a org.springframework.jms.config.JmsListenerContainerFactory
+	Expose the settings defined by this element as a org.springframework.jms.com.Li.config.JmsListenerContainerFactory
 	so that they can be reused with other endpoints.
 				]]></xsd:documentation>
 				</xsd:annotation>
@@ -381,7 +381,7 @@
 	containers, operating against a specified JCA ResourceAdapter (which needs to be
 	provided by the JMS message broker, e.g. ActiveMQ). When a factory-id attribute is
 	present, the configuration defined by this element is exposed as a bean of type
-	org.springframework.jms.config.JmsListenerContainerFactory. It is therefore possible
+	org.springframework.jms.com.Li.config.JmsListenerContainerFactory. It is therefore possible
 	to only define this element without any child to just expose a container factory.
 			]]></xsd:documentation>
 			<xsd:appinfo>
@@ -398,7 +398,7 @@
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Expose the settings defined by this element as a bean of type
-	org.springframework.jms.config.JmsListenerContainerFactory
+	org.springframework.jms.com.Li.config.JmsListenerContainerFactory
 	so that they can be reused with other endpoints.
 				]]></xsd:documentation>
 				</xsd:annotation>

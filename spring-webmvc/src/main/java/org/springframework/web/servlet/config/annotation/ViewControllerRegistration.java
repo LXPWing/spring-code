@@ -24,7 +24,7 @@ import org.springframework.web.servlet.RequestToViewNameTranslator;
 import org.springframework.web.servlet.mvc.ParameterizableViewController;
 
 /**
- * Assist with the registration of a single view controller.
+ * Assist with the registration of a single view com.Li.controller.
  *
  * @author Rossen Stoyanchev
  * @author Keith Donald
@@ -54,7 +54,7 @@ public class ViewControllerRegistration {
 
 	/**
 	 * Set the view name to return. Optional.
-	 * <p>If not specified, the view controller will return {@code null} as the
+	 * <p>If not specified, the view com.Li.controller will return {@code null} as the
 	 * view name in which case the configured {@link RequestToViewNameTranslator}
 	 * will select the view name. The {@code DefaultRequestToViewNameTranslator}
 	 * for example translates "/foo/bar" to "foo/bar".

@@ -116,7 +116,7 @@ public class BindStatus {
 		if (this.errors != null) {
 			// Usual case: A BindingResult is available as request attribute.
 			// Can determine error codes and messages for the given expression.
-			// Can use a custom PropertyEditor, as registered by a form controller.
+			// Can use a custom PropertyEditor, as registered by a form com.Li.controller.
 			if (this.expression != null) {
 				if ("*".equals(this.expression)) {
 					this.objectErrors = this.errors.getAllErrors();

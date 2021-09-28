@@ -8,16 +8,16 @@
        		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-2.5.xsd
        		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-	<context:annotation-config/>
+	<context:annotation-com.Li.config/>
 
 	<tx:annotation-driven proxy-target-class="true" order="0"/>
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor advice-ref="txCheckingInterceptor" pointcut="execution(* *..TransactionalService.*(..))" order="1"/>
-	</aop:config>
+	</aop:com.Li.config>
 
-	<bean id="txCheckingInterceptor" class="org.springframework.transaction.config.AnnotationDrivenTests$TransactionCheckingInterceptor"/>
+	<bean id="txCheckingInterceptor" class="org.springframework.transaction.com.Li.config.AnnotationDrivenTests$TransactionCheckingInterceptor"/>
 
-	<bean id="service" class="org.springframework.transaction.config.TransactionalService"/>
+	<bean id="service" class="org.springframework.transaction.com.Li.config.TransactionalService"/>
 
 </beans>

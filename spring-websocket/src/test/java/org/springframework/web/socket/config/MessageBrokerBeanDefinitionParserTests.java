@@ -94,7 +94,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /**
  * Test fixture for {@link MessageBrokerBeanDefinitionParser}.
- * Also see test configuration files websocket-config-broker-*.xml.
+ * Also see test configuration files websocket-com.Li.config-broker-*.xml.
  *
  * @author Brian Clozel
  * @author Artem Bilan
@@ -107,7 +107,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void simpleBroker() throws Exception {
-		loadBeanDefinitions("websocket-config-broker-simple.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-simple.xml");
 
 		HandlerMapping hm = this.appContext.getBean(HandlerMapping.class);
 		assertThat(hm).isInstanceOf(SimpleUrlHandlerMapping.class);
@@ -231,7 +231,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void stompBrokerRelay() {
-		loadBeanDefinitions("websocket-config-broker-relay.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-relay.xml");
 
 		HandlerMapping hm = this.appContext.getBean(HandlerMapping.class);
 		assertThat(hm).isNotNull();
@@ -319,7 +319,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void annotationMethodMessageHandler() {
-		loadBeanDefinitions("websocket-config-broker-simple.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-simple.xml");
 
 		SimpAnnotationMethodMessageHandler annotationMethodMessageHandler =
 				this.appContext.getBean(SimpAnnotationMethodMessageHandler.class);
@@ -355,7 +355,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void customChannels() {
-		loadBeanDefinitions("websocket-config-broker-customchannels.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-customchannels.xml");
 
 		SimpAnnotationMethodMessageHandler annotationMethodMessageHandler =
 				this.appContext.getBean(SimpAnnotationMethodMessageHandler.class);
@@ -384,7 +384,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test  // SPR-11623
 	public void customChannelsWithDefaultExecutor() {
-		loadBeanDefinitions("websocket-config-broker-customchannels-default-executor.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-customchannels-default-executor.xml");
 
 		testExecutor("clientInboundChannel", Runtime.getRuntime().availableProcessors() * 2, Integer.MAX_VALUE, 60);
 		testExecutor("clientOutboundChannel", Runtime.getRuntime().availableProcessors() * 2, Integer.MAX_VALUE, 60);
@@ -393,7 +393,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void customArgumentAndReturnValueTypes() {
-		loadBeanDefinitions("websocket-config-broker-custom-argument-and-return-value-types.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-custom-argument-and-return-value-types.xml");
 
 		SimpAnnotationMethodMessageHandler handler = this.appContext.getBean(SimpAnnotationMethodMessageHandler.class);
 
@@ -410,7 +410,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void messageConverters() {
-		loadBeanDefinitions("websocket-config-broker-converters.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-converters.xml");
 
 		CompositeMessageConverter compositeConverter = this.appContext.getBean(CompositeMessageConverter.class);
 		assertThat(compositeConverter).isNotNull();
@@ -421,7 +421,7 @@ public class MessageBrokerBeanDefinitionParserTests {
 
 	@Test
 	public void messageConvertersDefaultsOff() {
-		loadBeanDefinitions("websocket-config-broker-converters-defaults-off.xml");
+		loadBeanDefinitions("websocket-com.Li.config-broker-converters-defaults-off.xml");
 
 		CompositeMessageConverter compositeConverter = this.appContext.getBean(CompositeMessageConverter.class);
 		assertThat(compositeConverter).isNotNull();

@@ -93,7 +93,7 @@ public class HandlerResult {
 
 	/**
 	 * Return the type of the value returned from the handler -- e.g. the return
-	 * type declared on a controller method's signature. Also see
+	 * type declared on a com.Li.controller method's signature. Also see
 	 * {@link #getReturnTypeSource()} to obtain the underlying
 	 * {@link MethodParameter} for the return type.
 	 */

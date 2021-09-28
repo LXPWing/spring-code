@@ -75,12 +75,12 @@ To learn more from the source or make advanced customizations, check the code be
 
 
 
-[[mvc-cors-controller]]
+[[mvc-cors-com.Li.controller]]
 == `@CrossOrigin`
-[.small]#<<web-reactive.adoc#webflux-cors-controller, WebFlux>>#
+[.small]#<<web-reactive.adoc#webflux-cors-com.Li.controller, WebFlux>>#
 
 The {api-spring-framework}/web/bind/annotation/CrossOrigin.html[`@CrossOrigin`]
-annotation enables cross-origin requests on annotated controller methods,
+annotation enables cross-origin requests on annotated com.Li.controller methods,
 as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -126,7 +126,7 @@ By default, `@CrossOrigin` allows:
 
 * All origins.
 * All headers.
-* All HTTP methods to which the controller method is mapped.
+* All HTTP methods to which the com.Li.controller method is mapped.
 
 `allowedCredentials` is not enabled by default, since that establishes a trust level
 that exposes sensitive user-specific information (such as cookies and CSRF tokens) and
@@ -226,7 +226,7 @@ as the following example shows:
 == Global Configuration
 [.small]#<<web-reactive.adoc#webflux-cors-global, WebFlux>>#
 
-In addition to fine-grained, controller method level configuration, you probably want to
+In addition to fine-grained, com.Li.controller method level configuration, you probably want to
 define some global CORS configuration, too. You can set URL-based `CorsConfiguration`
 mappings individually on any `HandlerMapping`. Most applications, however, use the
 MVC Java configuration or the MVC XML namespace to do that.
@@ -250,7 +250,7 @@ should only be used where appropriate.
 === Java Configuration
 [.small]#<<web-reactive.adoc#webflux-cors-global, WebFlux>>#
 
-To enable CORS in the MVC Java config, you can use the `CorsRegistry` callback,
+To enable CORS in the MVC Java com.Li.config, you can use the `CorsRegistry` callback,
 as the following example shows:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -341,36 +341,36 @@ To configure the filter, pass a
 [source,java,indent=0,subs="verbatim",role="primary"]
 .Java
 ----
-	CorsConfiguration config = new CorsConfiguration();
+	CorsConfiguration com.Li.config = new CorsConfiguration();
 
 	// Possibly...
-	// config.applyPermitDefaultValues()
+	// com.Li.config.applyPermitDefaultValues()
 
-	config.setAllowCredentials(true);
-	config.addAllowedOrigin("https://domain1.com");
-	config.addAllowedHeader("*");
-	config.addAllowedMethod("*");
+	com.Li.config.setAllowCredentials(true);
+	com.Li.config.addAllowedOrigin("https://domain1.com");
+	com.Li.config.addAllowedHeader("*");
+	com.Li.config.addAllowedMethod("*");
 
 	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-	source.registerCorsConfiguration("/**", config);
+	source.registerCorsConfiguration("/**", com.Li.config);
 
 	CorsFilter filter = new CorsFilter(source);
 ----
 [source,kotlin,indent=0,subs="verbatim",role="secondary"]
 .Kotlin
 ----
-	val config = CorsConfiguration()
+	val com.Li.config = CorsConfiguration()
 
 	// Possibly...
-	// config.applyPermitDefaultValues()
+	// com.Li.config.applyPermitDefaultValues()
 
-	config.allowCredentials = true
-	config.addAllowedOrigin("https://domain1.com")
-	config.addAllowedHeader("*")
-	config.addAllowedMethod("*")
+	com.Li.config.allowCredentials = true
+	com.Li.config.addAllowedOrigin("https://domain1.com")
+	com.Li.config.addAllowedHeader("*")
+	com.Li.config.addAllowedMethod("*")
 
 	val source = UrlBasedCorsConfigurationSource()
-	source.registerCorsConfiguration("/**", config)
+	source.registerCorsConfiguration("/**", com.Li.config)
 
 	val filter = CorsFilter(source)
 ----

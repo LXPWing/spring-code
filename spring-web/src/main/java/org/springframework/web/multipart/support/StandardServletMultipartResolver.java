@@ -33,7 +33,7 @@ import org.springframework.web.multipart.MultipartResolver;
  * without any extra configuration at the bean level (see below).
  *
  * <p><b>Note:</b> In order to use Servlet 3.0 based multipart parsing,
- * you need to mark the affected servlet with a "multipart-config" section in
+ * you need to mark the affected servlet with a "multipart-com.Li.config" section in
  * {@code web.xml}, or with a {@link javax.servlet.MultipartConfigElement}
  * in programmatic servlet registration, or (in case of a custom servlet class)
  * possibly with a {@link javax.servlet.annotation.MultipartConfig} annotation
@@ -76,7 +76,7 @@ public class StandardServletMultipartResolver implements MultipartResolver {
 		this.resolveLazily = resolveLazily;
 	}
 
-
+	//判断是否文件上传
 	@Override
 	public boolean isMultipart(HttpServletRequest request) {
 		return StringUtils.startsWithIgnoreCase(request.getContentType(), "multipart/");

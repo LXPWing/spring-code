@@ -75,7 +75,7 @@ import org.springframework.util.StringUtils;
  * while bean property values are applied to the generated scripted object.
  * Typically, constructor arguments include a script source locator and
  * potentially script interfaces, while bean property values include
- * references and config values to inject into the scripted object itself.
+ * references and com.Li.config values to inject into the scripted object itself.
  *
  * <p>The following {@link ScriptFactoryPostProcessor} will automatically
  * be applied to the two
@@ -492,16 +492,16 @@ public class ScriptFactoryPostProcessor extends InstantiationAwareBeanPostProces
 	}
 
 	/**
-	 * Create a config interface for the given bean definition, defining setter
+	 * Create a com.Li.config interface for the given bean definition, defining setter
 	 * methods for the defined property values as well as an init method and
 	 * a destroy method (if defined).
 	 * <p>This implementation creates the interface via CGLIB's InterfaceMaker,
 	 * determining the property types from the given interfaces (as far as possible).
 	 * @param bd the bean definition (property values etc) to create a
-	 * config interface for
+	 * com.Li.config interface for
 	 * @param interfaces the interfaces to check against (might define
 	 * getters corresponding to the setters we're supposed to generate)
-	 * @return the config interface
+	 * @return the com.Li.config interface
 	 * @see org.springframework.cglib.proxy.InterfaceMaker
 	 * @see org.springframework.beans.BeanUtils#findPropertyType
 	 */

@@ -27,7 +27,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 /**
- * Trivial controller that always returns a pre-configured view and optionally
+ * Trivial com.Li.controller that always returns a pre-configured view and optionally
  * sets the response status code. The view and status can be configured using
  * the provided configuration properties.
  *
@@ -99,14 +99,14 @@ public class ParameterizableViewController extends AbstractController {
 	}
 
 	/**
-	 * Configure the HTTP status code that this controller should set on the
+	 * Configure the HTTP status code that this com.Li.controller should set on the
 	 * response.
 	 * <p>When a "redirect:" prefixed view name is configured, there is no need
 	 * to set this property since RedirectView will do that. However this property
 	 * may still be used to override the 3xx status code of {@code RedirectView}.
 	 * For full control over redirecting provide a {@code RedirectView} instance.
 	 * <p>If the status code is 204 and no view is configured, the request is
-	 * fully handled within the controller.
+	 * fully handled within the com.Li.controller.
 	 * @since 4.1
 	 */
 	public void setStatusCode(@Nullable HttpStatus statusCode) {
@@ -125,7 +125,7 @@ public class ParameterizableViewController extends AbstractController {
 
 	/**
 	 * The property can be used to indicate the request is considered fully
-	 * handled within the controller and that no view should be used for rendering.
+	 * handled within the com.Li.controller and that no view should be used for rendering.
 	 * Useful in combination with {@link #setStatusCode}.
 	 * <p>By default this is set to {@code false}.
 	 * @since 4.1
@@ -135,7 +135,7 @@ public class ParameterizableViewController extends AbstractController {
 	}
 
 	/**
-	 * Whether the request is fully handled within the controller.
+	 * Whether the request is fully handled within the com.Li.controller.
 	 */
 	public boolean isStatusOnly() {
 		return this.statusOnly;

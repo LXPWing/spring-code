@@ -115,7 +115,7 @@ public class ControllerAdviceBean implements Ordered {
 		Assert.hasText(beanName, "Bean name must contain text");
 		Assert.notNull(beanFactory, "BeanFactory must not be null");
 		Assert.isTrue(beanFactory.containsBean(beanName), () -> "BeanFactory [" + beanFactory +
-				"] does not contain specified controller advice bean '" + beanName + "'");
+				"] does not contain specified com.Li.controller advice bean '" + beanName + "'");
 
 		this.beanOrName = beanName;
 		this.isSingleton = beanFactory.isSingleton(beanName);

@@ -630,7 +630,7 @@ public class EnvironmentSystemIntegrationTests {
 
 
 	/**
-	 * Mirrors the structure of beans and environment-specific config files in
+	 * Mirrors the structure of beans and environment-specific com.Li.config files in
 	 * EnvironmentSystemIntegrationTests-context.xml
 	 */
 	@Configuration

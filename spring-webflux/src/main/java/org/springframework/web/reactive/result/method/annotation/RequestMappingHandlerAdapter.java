@@ -110,14 +110,14 @@ public class RequestMappingHandlerAdapter implements HandlerAdapter, Application
 	}
 
 	/**
-	 * Configure resolvers for controller method arguments.
+	 * Configure resolvers for com.Li.controller method arguments.
 	 */
 	public void setArgumentResolverConfigurer(@Nullable ArgumentResolverConfigurer configurer) {
 		this.argumentResolverConfigurer = configurer;
 	}
 
 	/**
-	 * Return the configured resolvers for controller method arguments.
+	 * Return the configured resolvers for com.Li.controller method arguments.
 	 */
 	@Nullable
 	public ArgumentResolverConfigurer getArgumentResolverConfigurer() {

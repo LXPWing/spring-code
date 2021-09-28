@@ -6,12 +6,12 @@
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="ambiguousAdviceTest" ref="testAspect">
 			<aop:pointcut id="setter" expression="execution(* setName(..)) and args(name)"/>
 			<aop:before pointcut-ref="setter" method="myBeforeAdvice"/>
 		</aop:aspect>	
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="testAspect" class="org.springframework.aop.aspectj.OverloadedAdviceTestAspect"/>
 

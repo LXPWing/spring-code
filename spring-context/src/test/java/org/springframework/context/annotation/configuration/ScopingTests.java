@@ -78,7 +78,7 @@ public class ScopingTests {
 		if (customScope != null) {
 			beanFactory.registerScope(SCOPE, customScope);
 		}
-		beanFactory.registerBeanDefinition("config", new RootBeanDefinition(configClass));
+		beanFactory.registerBeanDefinition("com.Li.config", new RootBeanDefinition(configClass));
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(beanFactory);
 		ctx.refresh();
 		return ctx;

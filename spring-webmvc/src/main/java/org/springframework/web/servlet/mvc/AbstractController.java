@@ -27,7 +27,7 @@ import org.springframework.web.servlet.support.WebContentGenerator;
 import org.springframework.web.util.WebUtils;
 
 /**
- * Convenient superclass for controller implementations, using the Template Method
+ * Convenient superclass for com.Li.controller implementations, using the Template Method
  * design pattern.
  *
  * <p><b>Workflow
@@ -46,8 +46,8 @@ import org.springframework.web.util.WebUtils;
  * functionality to return {@link org.springframework.web.servlet.ModelAndView ModelAndView} objects.</li>
  * </ol>
  *
- * <p><b><a name="config">Exposed configuration properties</a>
- * (<a href="Controller.html#config">and those defined by interface</a>):</b><br>
+ * <p><b><a name="com.Li.config">Exposed configuration properties</a>
+ * (<a href="Controller.html#com.Li.config">and those defined by interface</a>):</b><br>
  * <table border="1">
  * <tr>
  * <td><b>name</b></td>
@@ -57,14 +57,14 @@ import org.springframework.web.util.WebUtils;
  * <tr>
  * <td>supportedMethods</td>
  * <td>GET,POST</td>
- * <td>comma-separated (CSV) list of methods supported by this controller,
+ * <td>comma-separated (CSV) list of methods supported by this com.Li.controller,
  * such as GET, POST and PUT</td>
  * </tr>
  * <tr>
  * <td>requireSession</td>
  * <td>false</td>
  * <td>whether a session should be required for requests to be able to
- * be handled by this controller. This ensures that derived controller
+ * be handled by this com.Li.controller. This ensures that derived com.Li.controller
  * can - without fear of null pointers - call request.getSession() to
  * retrieve a session. If no session can be found while processing
  * the request, a ServletException will be thrown</td>
@@ -109,7 +109,7 @@ public abstract class AbstractController extends WebContentGenerator implements 
 	/**
 	 * Create a new AbstractController.
 	 * @param restrictDefaultSupportedMethods {@code true} if this
-	 * controller should support HTTP methods GET, HEAD and POST by default,
+	 * com.Li.controller should support HTTP methods GET, HEAD and POST by default,
 	 * or {@code false} if it should be unrestricted
 	 * @since 4.3
 	 */
@@ -119,7 +119,7 @@ public abstract class AbstractController extends WebContentGenerator implements 
 
 
 	/**
-	 * Set if controller execution should be synchronized on the session,
+	 * Set if com.Li.controller execution should be synchronized on the session,
 	 * to serialize parallel invocations from the same client.
 	 * <p>More specifically, the execution of the {@code handleRequestInternal}
 	 * method will get synchronized if this flag is "true". The best available
@@ -142,7 +142,7 @@ public abstract class AbstractController extends WebContentGenerator implements 
 	}
 
 	/**
-	 * Return whether controller execution should be synchronized on the session.
+	 * Return whether com.Li.controller execution should be synchronized on the session.
 	 */
 	public final boolean isSynchronizeOnSession() {
 		return this.synchronizeOnSession;

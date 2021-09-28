@@ -42,7 +42,7 @@ import javax.servlet.ServletException;
  *   &lt;/servlet-class&gt;
  *   &lt;init-param>
  *     &lt;param-name>contextConfigLocation&lt;/param-name&gt;
- *     &lt;param-value>/WEB-INF/spring/dispatcher-config.xml&lt;/param-value&gt;
+ *     &lt;param-value>/WEB-INF/spring/dispatcher-com.Li.config.xml&lt;/param-value&gt;
  *   &lt;/init-param&gt;
  *   &lt;load-on-startup>1&lt;/load-on-startup&gt;
  * &lt;/servlet&gt;
@@ -61,7 +61,7 @@ import javax.servlet.ServletException;
  *    &#064;Override
  *    public void onStartup(ServletContext container) {
  *      XmlWebApplicationContext appContext = new XmlWebApplicationContext();
- *      appContext.setConfigLocation("/WEB-INF/spring/dispatcher-config.xml");
+ *      appContext.setConfigLocation("/WEB-INF/spring/dispatcher-com.Li.config.xml");
  *
  *      ServletRegistration.Dynamic dispatcher =
  *        container.addServlet("dispatcher", new DispatcherServlet(appContext));
@@ -95,7 +95,7 @@ import javax.servlet.ServletException;
  * <h2>A 100% code-based approach to configuration</h2>
  * In the example above, {@code WEB-INF/web.xml} was successfully replaced with code in
  * the form of a {@code WebApplicationInitializer}, but the actual
- * {@code dispatcher-config.xml} Spring configuration remained XML-based.
+ * {@code dispatcher-com.Li.config.xml} Spring configuration remained XML-based.
  * {@code WebApplicationInitializer} is a perfect fit for use with Spring's code-based
  * {@code @Configuration} classes. See @{@link
  * org.springframework.context.annotation.Configuration Configuration} Javadoc for

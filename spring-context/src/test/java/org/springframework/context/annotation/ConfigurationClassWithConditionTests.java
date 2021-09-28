@@ -91,7 +91,7 @@ public class ConfigurationClassWithConditionTests {
 	@Test
 	public void metaConditionalWithAsm() throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(ConfigurationWithMetaCondition.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ConfigurationWithMetaCondition.class.getName()));
 		ctx.refresh();
 		assertThat(ctx.containsBean("bean")).isTrue();
 	}
@@ -107,7 +107,7 @@ public class ConfigurationClassWithConditionTests {
 	@Test
 	public void nonConfigurationClassWithAsm() throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(NonConfigurationClass.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(NonConfigurationClass.class.getName()));
 		ctx.refresh();
 		assertThat(ctx.containsBean("bean1")).isFalse();
 	}
@@ -123,7 +123,7 @@ public class ConfigurationClassWithConditionTests {
 	@Test
 	public void methodConditionalWithAsm() throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-		ctx.registerBeanDefinition("config", new RootBeanDefinition(ConditionOnMethodConfiguration.class.getName()));
+		ctx.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ConditionOnMethodConfiguration.class.getName()));
 		ctx.refresh();
 		assertThat(ctx.containsBean("bean1")).isFalse();
 	}

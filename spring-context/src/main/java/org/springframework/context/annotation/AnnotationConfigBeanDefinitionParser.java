@@ -29,7 +29,7 @@ import org.springframework.beans.factory.xml.ParserContext;
 import org.springframework.lang.Nullable;
 
 /**
- * Parser for the &lt;context:annotation-config/&gt; element.
+ * Parser for the &lt;context:annotation-com.Li.config/&gt; element.
  *
  * @author Mark Fisher
  * @author Juergen Hoeller
@@ -48,7 +48,7 @@ public class AnnotationConfigBeanDefinitionParser implements BeanDefinitionParse
 		Set<BeanDefinitionHolder> processorDefinitions =
 				AnnotationConfigUtils.registerAnnotationConfigProcessors(parserContext.getRegistry(), source);
 
-		// Register component for the surrounding <context:annotation-config> element.
+		// Register component for the surrounding <context:annotation-com.Li.config> element.
 		CompositeComponentDefinition compDefinition = new CompositeComponentDefinition(element.getTagName(), source);
 		parserContext.pushContainingComponent(compDefinition);
 

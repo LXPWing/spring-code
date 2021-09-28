@@ -51,12 +51,12 @@ public abstract class AbstractAnnotationConfigDispatcherServletInitializer
 	 * Returns {@code null} if {@link #getRootConfigClasses()} returns {@code null}.
 	 */
 	@Override
-	@Nullable
+	@Nullable //重新爷爷类的创建根容器方法
 	protected WebApplicationContext createRootApplicationContext() {
-		Class<?>[] configClasses = getRootConfigClasses();
+		Class<?>[] configClasses = getRootConfigClasses(); //获取根配置
 		if (!ObjectUtils.isEmpty(configClasses)) {
 			AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-			context.register(configClasses);
+			context.register(configClasses); //创建一个ioc容器把根配置类注册进去
 			return context;
 		}
 		else {
@@ -72,7 +72,7 @@ public abstract class AbstractAnnotationConfigDispatcherServletInitializer
 	@Override
 	protected WebApplicationContext createServletApplicationContext() {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-		Class<?>[] configClasses = getServletConfigClasses();
+		Class<?>[] configClasses = getServletConfigClasses(); //获取web应用配置
 		if (!ObjectUtils.isEmpty(configClasses)) {
 			context.register(configClasses);
 		}
@@ -92,7 +92,7 @@ public abstract class AbstractAnnotationConfigDispatcherServletInitializer
 	 * Specify {@code @Configuration} and/or {@code @Component} classes for the
 	 * {@linkplain #createServletApplicationContext() Servlet application context}.
 	 * @return the configuration for the Servlet application context, or
-	 * {@code null} if all configuration is specified through root config classes.
+	 * {@code null} if all configuration is specified through root com.Li.config classes.
 	 */
 	@Nullable
 	protected abstract Class<?>[] getServletConfigClasses();

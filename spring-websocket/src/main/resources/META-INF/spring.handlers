@@ -1,1 +1,1 @@
-http\://www.springframework.org/schema/websocket=org.springframework.web.socket.config.WebSocketNamespaceHandler
+http\://www.springframework.org/schema/websocket=org.springframework.web.socket.com.Li.config.WebSocketNamespaceHandler

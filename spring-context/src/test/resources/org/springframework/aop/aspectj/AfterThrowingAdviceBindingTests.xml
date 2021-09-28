@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="afterThrowingAdviceBindingTests" ref="testAspect">
 			<aop:after-throwing
 			    method="noArgs"
@@ -33,7 +33,7 @@
 				pointcut="execution(* exceptional(..))"
 			/>		
 	</aop:aspect>	
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="testAspect" class="org.springframework.aop.aspectj.AfterThrowingAdviceBindingTestAspect"/>
 

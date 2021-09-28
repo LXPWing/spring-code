@@ -12,7 +12,7 @@
 		<property name="maxSize"><value>25</value></property>
 	</bean>
 
-	<bean id="poolConfigAdvisor" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	<bean id="poolConfigAdvisor" class="org.springframework.beans.factory.com.Li.config.MethodInvokingFactoryBean">
 		<property name="targetObject"><ref bean="poolTargetSource" /></property>
 		<property name="targetMethod"><value>getPoolingConfigMixin</value></property>
 	</bean>

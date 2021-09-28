@@ -73,7 +73,7 @@ public class ResourceHandlerRegistryTests {
 				new ContentNegotiationManager(), new UrlPathHelper());
 
 		this.registration = this.registry.addResourceHandler("/resources/**");
-		this.registration.addResourceLocations("classpath:org/springframework/web/servlet/config/annotation/");
+		this.registration.addResourceLocations("classpath:org/springframework/web/servlet/com.Li.config/annotation/");
 		this.response = new MockHttpServletResponse();
 	}
 

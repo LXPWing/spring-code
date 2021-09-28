@@ -25,6 +25,6 @@
 		</websocket:broker-channel>
 	</websocket:message-broker>
 
-	<bean id="myInterceptor" class="org.springframework.web.socket.config.TestChannelInterceptor"/>
+	<bean id="myInterceptor" class="org.springframework.web.socket.com.Li.config.TestChannelInterceptor"/>
 
 </beans>

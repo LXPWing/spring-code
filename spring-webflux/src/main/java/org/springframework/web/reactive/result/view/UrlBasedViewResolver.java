@@ -51,7 +51,7 @@ import org.springframework.util.PatternMatchUtils;
  * <p>As a special feature, redirect URLs can be specified via the "redirect:"
  * prefix. E.g.: "redirect:myAction" will trigger a redirect to the given
  * URL, rather than resolution as standard view name. This is typically used
- * for redirecting to a controller URL after finishing a form workflow.
+ * for redirecting to a com.Li.controller URL after finishing a form workflow.
  *
  * <p>Note: This class does not support localized resolution, i.e. resolving
  * a symbolic view name to different resources depending on the current locale.
@@ -67,7 +67,7 @@ public class UrlBasedViewResolver extends ViewResolverSupport
 
 	/**
 	 * Prefix for special view names that specify a redirect URL (usually
-	 * to a controller after a form has been submitted and processed).
+	 * to a com.Li.controller after a form has been submitted and processed).
 	 * Such view names will not be resolved in the configured default
 	 * way but rather be treated as special shortcut.
 	 */

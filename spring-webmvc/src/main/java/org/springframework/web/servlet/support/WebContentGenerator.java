@@ -149,7 +149,7 @@ public abstract class WebContentGenerator extends WebApplicationObjectSupport {
 
 	/**
 	 * Set the HTTP methods that this content generator should support.
-	 * <p>Default is GET, HEAD and POST for simple form controller types;
+	 * <p>Default is GET, HEAD and POST for simple form com.Li.controller types;
 	 * unrestricted for general controllers and interceptors.
 	 */
 	public final void setSupportedMethods(@Nullable String... methods) {
@@ -347,7 +347,7 @@ public abstract class WebContentGenerator extends WebApplicationObjectSupport {
 
 	/**
 	 * An option to add 'must-revalidate' to every Cache-Control header.
-	 * This may be useful with annotated controller methods, which can
+	 * This may be useful with annotated com.Li.controller methods, which can
 	 * programmatically do a last-modified calculation as described in
 	 * {@link org.springframework.web.context.request.WebRequest#checkNotModified(long)}.
 	 * <p>Default is "false".

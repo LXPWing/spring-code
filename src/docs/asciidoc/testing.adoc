@@ -451,7 +451,7 @@ file:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	@ContextConfiguration("/test-config.xml") // <1>
+	@ContextConfiguration("/test-com.Li.config.xml") // <1>
 	class XmlApplicationContextTests {
 		// class body...
 	}
@@ -461,7 +461,7 @@ file:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	@ContextConfiguration("/test-config.xml") // <1>
+	@ContextConfiguration("/test-com.Li.config.xml") // <1>
 	class XmlApplicationContextTests {
 		// class body...
 	}
@@ -634,8 +634,8 @@ within a test class hierarchy):
 .Java
 ----
 	@ContextHierarchy({
-		@ContextConfiguration("/parent-config.xml"),
-		@ContextConfiguration("/child-config.xml")
+		@ContextConfiguration("/parent-com.Li.config.xml"),
+		@ContextConfiguration("/child-com.Li.config.xml")
 	})
 	class ContextHierarchyTests {
 		// class body...
@@ -645,8 +645,8 @@ within a test class hierarchy):
 .Kotlin
 ----
 	@ContextHierarchy(
-		ContextConfiguration("/parent-config.xml"),
-		ContextConfiguration("/child-config.xml"))
+		ContextConfiguration("/parent-com.Li.config.xml"),
+		ContextConfiguration("/child-com.Li.config.xml"))
 	class ContextHierarchyTests {
 		// class body...
 	}
@@ -1048,8 +1048,8 @@ as the following example shows.
 .Java
 ----
 	@ContextHierarchy({
-		@ContextConfiguration("/parent-config.xml"),
-		@ContextConfiguration("/child-config.xml")
+		@ContextConfiguration("/parent-com.Li.config.xml"),
+		@ContextConfiguration("/child-com.Li.config.xml")
 	})
 	class BaseTests {
 		// class body...
@@ -1070,8 +1070,8 @@ as the following example shows.
 .Kotlin
 ----
 	@ContextHierarchy(
-		ContextConfiguration("/parent-config.xml"),
-		ContextConfiguration("/child-config.xml"))
+		ContextConfiguration("/parent-com.Li.config.xml"),
+		ContextConfiguration("/child-com.Li.config.xml"))
 	open class BaseTests {
 		// class body...
 	}
@@ -1309,7 +1309,7 @@ configured with the `@Sql` annotation. The following example shows how to use it
 	@Test
 	@Sql(
 		scripts = "/test-user-data.sql",
-		config = @SqlConfig(commentPrefix = "`", separator = "@@") // <1>
+		com.Li.config = @SqlConfig(commentPrefix = "`", separator = "@@") // <1>
 	)
 	void userTest() {
 		// run code that relies on the test data
@@ -1321,7 +1321,7 @@ configured with the `@Sql` annotation. The following example shows how to use it
 .Kotlin
 ----
 	@Test
-	@Sql("/test-user-data.sql", config = SqlConfig(commentPrefix = "`", separator = "@@")) // <1>
+	@Sql("/test-user-data.sql", com.Li.config = SqlConfig(commentPrefix = "`", separator = "@@")) // <1>
 	fun userTest() {
 		// run code that relies on the test data
 	}
@@ -1426,7 +1426,7 @@ annotation. The following example shows how to declare an SQL group:
 ----
 	@Test
 	@SqlGroup({ // <1>
-		@Sql(scripts = "/test-schema.sql", config = @SqlConfig(commentPrefix = "`")),
+		@Sql(scripts = "/test-schema.sql", com.Li.config = @SqlConfig(commentPrefix = "`")),
 		@Sql("/test-user-data.sql")
 	)}
 	void userTest() {
@@ -1440,7 +1440,7 @@ annotation. The following example shows how to declare an SQL group:
 ----
 	@Test
 	@SqlGroup( // <1>
-		Sql("/test-schema.sql", config = SqlConfig(commentPrefix = "`")),
+		Sql("/test-schema.sql", com.Li.config = SqlConfig(commentPrefix = "`")),
 		Sql("/test-user-data.sql"))
 	fun userTest() {
 		// run code that uses the test schema and test data
@@ -1722,7 +1722,7 @@ location of a configuration file:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	@SpringJUnitConfig(locations = "/test-config.xml") // <1>
+	@SpringJUnitConfig(locations = "/test-com.Li.config.xml") // <1>
 	class XmlJUnitJupiterSpringTests {
 		// class body...
 	}
@@ -1732,7 +1732,7 @@ location of a configuration file:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	@SpringJUnitConfig(locations = ["/test-config.xml"]) // <1>
+	@SpringJUnitConfig(locations = ["/test-com.Li.config.xml"]) // <1>
 	class XmlJUnitJupiterSpringTests {
 		// class body...
 	}
@@ -1787,7 +1787,7 @@ location of a configuration file:
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
-	@SpringJUnitWebConfig(locations = "/test-config.xml") // <1>
+	@SpringJUnitWebConfig(locations = "/test-com.Li.config.xml") // <1>
 	class XmlJUnitJupiterSpringWebTests {
 		// class body...
 	}
@@ -1797,7 +1797,7 @@ location of a configuration file:
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
 .Kotlin
 ----
-	@SpringJUnitWebConfig(locations = ["/test-config.xml"]) // <1>
+	@SpringJUnitWebConfig(locations = ["/test-com.Li.config.xml"]) // <1>
 	class XmlJUnitJupiterSpringWebTests {
 		// class body...
 	}
@@ -1979,13 +1979,13 @@ Consider the following example:
 .Java
 ----
 	@RunWith(SpringRunner.class)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	public class OrderRepositoryTests { }
 
 	@RunWith(SpringRunner.class)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	public class UserRepositoryTests { }
@@ -1995,13 +1995,13 @@ Consider the following example:
 .Kotlin
 ----
 	@RunWith(SpringRunner::class)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	class OrderRepositoryTests { }
 
 	@RunWith(SpringRunner::class)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	class UserRepositoryTests { }
@@ -2016,7 +2016,7 @@ that centralizes the common test configuration for Spring, as follows:
 ----
 	@Target(ElementType.TYPE)
 	@Retention(RetentionPolicy.RUNTIME)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	public @interface TransactionalDevTestConfig { }
@@ -2027,7 +2027,7 @@ that centralizes the common test configuration for Spring, as follows:
 ----
 	@Target(AnnotationTarget.TYPE)
 	@Retention(AnnotationRetention.RUNTIME)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	annotation class TransactionalDevTestConfig { }
@@ -2068,13 +2068,13 @@ example:
 .Java
 ----
 	@ExtendWith(SpringExtension.class)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	class OrderRepositoryTests { }
 
 	@ExtendWith(SpringExtension.class)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	class UserRepositoryTests { }
@@ -2083,13 +2083,13 @@ example:
 .Kotlin
 ----
 	@ExtendWith(SpringExtension::class)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	class OrderRepositoryTests { }
 
 	@ExtendWith(SpringExtension::class)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	class UserRepositoryTests { }
@@ -2106,7 +2106,7 @@ as follows:
 	@Target(ElementType.TYPE)
 	@Retention(RetentionPolicy.RUNTIME)
 	@ExtendWith(SpringExtension.class)
-	@ContextConfiguration({"/app-config.xml", "/test-data-access-config.xml"})
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml"})
 	@ActiveProfiles("dev")
 	@Transactional
 	public @interface TransactionalDevTestConfig { }
@@ -2117,7 +2117,7 @@ as follows:
 	@Target(AnnotationTarget.TYPE)
 	@Retention(AnnotationRetention.RUNTIME)
 	@ExtendWith(SpringExtension::class)
-	@ContextConfiguration("/app-config.xml", "/test-data-access-config.xml")
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-data-access-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	@Transactional
 	annotation class TransactionalDevTestConfig { }
@@ -2266,7 +2266,7 @@ responsible for managing a single `TestContext` and signaling events to each reg
 ===== `TestExecutionListener`
 
 `TestExecutionListener` defines the API for reacting to test-execution events published by
-the `TestContextManager` with which the listener is registered. See <<testcontext-tel-config>>.
+the `TestContextManager` with which the listener is registered. See <<testcontext-tel-com.Li.config>>.
 
 ===== Context Loaders
 
@@ -2337,7 +2337,7 @@ directly but rather to extend `AbstractTestContextBootstrapper` or one of its co
 subclasses instead.
 
 
-[[testcontext-tel-config]]
+[[testcontext-tel-com.Li.config]]
 ==== `TestExecutionListener` Configuration
 
 Spring provides the following `TestExecutionListener` implementations that are registered
@@ -2358,7 +2358,7 @@ by default, exactly in the following order:
 * `EventPublishingTestExecutionListener`: Publishes test execution events to the test's
   `ApplicationContext` (see <<testcontext-test-execution-events>>).
 
-[[testcontext-tel-config-registering-tels]]
+[[testcontext-tel-com.Li.config-registering-tels]]
 ===== Registering `TestExecutionListener` Implementations
 
 You can register `TestExecutionListener` implementations for a test class and its
@@ -2367,7 +2367,7 @@ subclasses by using the `@TestExecutionListeners` annotation. See
 {api-spring-framework}/test/context/TestExecutionListeners.html[`@TestExecutionListeners`]
 for details and examples.
 
-[[testcontext-tel-config-automatic-discovery]]
+[[testcontext-tel-com.Li.config-automatic-discovery]]
 ===== Automatic Discovery of Default `TestExecutionListener` Implementations
 
 Registering `TestExecutionListener` implementations by using `@TestExecutionListeners` is
@@ -2383,11 +2383,11 @@ can contribute their own `TestExecutionListener` implementations to the list of 
 listeners in the same manner through their own `META-INF/spring.factories` properties
 file.
 
-[[testcontext-tel-config-ordering]]
+[[testcontext-tel-com.Li.config-ordering]]
 ===== Ordering `TestExecutionListener` Implementations
 
 When the TestContext framework discovers default `TestExecutionListener` implementations
-through the <<testcontext-tel-config-automatic-discovery, aforementioned>>
+through the <<testcontext-tel-com.Li.config-automatic-discovery, aforementioned>>
 `SpringFactoriesLoader` mechanism, the instantiated listeners are sorted by using
 Spring's `AnnotationAwareOrderComparator`, which honors Spring's `Ordered` interface and
 `@Order` annotation for ordering. `AbstractTestExecutionListener` and all default
@@ -2398,7 +2398,7 @@ by implementing `Ordered` or declaring `@Order`. See the javadoc for the `getOrd
 methods of the core default `TestExecutionListener` implementations for details on what
 values are assigned to each core listener.
 
-[[testcontext-tel-config-merging]]
+[[testcontext-tel-com.Li.config-merging]]
 ===== Merging `TestExecutionListener` Implementations
 
 If a custom `TestExecutionListener` is registered via `@TestExecutionListeners`, the
@@ -2448,7 +2448,7 @@ change from release to release -- for example, `SqlScriptsTestExecutionListener`
 introduced in Spring Framework 4.1, and `DirtiesContextBeforeModesTestExecutionListener`
 was introduced in Spring Framework 4.2. Furthermore, third-party frameworks like Spring
 Boot and Spring Security register their own default `TestExecutionListener`
-implementations by using the aforementioned <<testcontext-tel-config-automatic-discovery,
+implementations by using the aforementioned <<testcontext-tel-com.Li.config-automatic-discovery,
 automatic discovery mechanism>>.
 
 To avoid having to be aware of and re-declare all default listeners, you can set the
@@ -2456,7 +2456,7 @@ To avoid having to be aware of and re-declare all default listeners, you can set
 `MERGE_WITH_DEFAULTS` indicates that locally declared listeners should be merged with the
 default listeners. The merging algorithm ensures that duplicates are removed from the
 list and that the resulting set of merged listeners is sorted according to the semantics
-of `AnnotationAwareOrderComparator`, as described in <<testcontext-tel-config-ordering>>.
+of `AnnotationAwareOrderComparator`, as described in <<testcontext-tel-com.Li.config-ordering>>.
 If a listener implements `Ordered` or is annotated with `@Order`, it can influence the
 position in which it is merged with the defaults. Otherwise, locally declared listeners
 are appended to the list of default listeners when merged.
@@ -2660,7 +2660,7 @@ advanced use cases.
 * <<testcontext-ctx-management-xml>>
 * <<testcontext-ctx-management-groovy>>
 * <<testcontext-ctx-management-javaconfig>>
-* <<testcontext-ctx-management-mixed-config>>
+* <<testcontext-ctx-management-mixed-com.Li.config>>
 * <<testcontext-ctx-management-initializers>>
 * <<testcontext-ctx-management-inheritance>>
 * <<testcontext-ctx-management-env-profiles>>
@@ -2678,7 +2678,7 @@ your test class with `@ContextConfiguration` and configure the `locations` attri
 an array that contains the resource locations of XML configuration metadata. A plain or
 relative path (for example, `context.xml`) is treated as a classpath resource that is
 relative to the package in which the test class is defined. A path starting with a slash
-is treated as an absolute classpath location (for example, `/org/example/config.xml`). A
+is treated as an absolute classpath location (for example, `/org/example/com.Li.config.xml`). A
 path that represents a resource URL (i.e., a path prefixed with `classpath:`, `file:`,
 `http:`, etc.) is used _as is_.
 
@@ -2686,9 +2686,9 @@ path that represents a resource URL (i.e., a path prefixed with `classpath:`, `f
 .Java
 ----
 	@ExtendWith(SpringExtension.class)
-	// ApplicationContext will be loaded from "/app-config.xml" and
-	// "/test-config.xml" in the root of the classpath
-	@ContextConfiguration(locations={"/app-config.xml", "/test-config.xml"}) // <1>
+	// ApplicationContext will be loaded from "/app-com.Li.config.xml" and
+	// "/test-com.Li.config.xml" in the root of the classpath
+	@ContextConfiguration(locations={"/app-com.Li.config.xml", "/test-com.Li.config.xml"}) // <1>
 	class MyTest {
 		// class body...
 	}
@@ -2699,9 +2699,9 @@ path that represents a resource URL (i.e., a path prefixed with `classpath:`, `f
 .Kotlin
 ----
 	@ExtendWith(SpringExtension::class)
-	// ApplicationContext will be loaded from "/app-config.xml" and
-	// "/test-config.xml" in the root of the classpath
-	@ContextConfiguration("/app-config.xml", "/test-config.xml") // <1>
+	// ApplicationContext will be loaded from "/app-com.Li.config.xml" and
+	// "/test-com.Li.config.xml" in the root of the classpath
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-com.Li.config.xml") // <1>
 	class MyTest {
 		// class body...
 	}
@@ -2719,7 +2719,7 @@ demonstrated in the following example:
 .Java
 ----
 	@ExtendWith(SpringExtension.class)
-	@ContextConfiguration({"/app-config.xml", "/test-config.xml"}) <1>
+	@ContextConfiguration({"/app-com.Li.config.xml", "/test-com.Li.config.xml"}) <1>
 	class MyTest {
 		// class body...
 	}
@@ -2730,7 +2730,7 @@ demonstrated in the following example:
 .Kotlin
 ----
 	@ExtendWith(SpringExtension::class)
-	@ContextConfiguration("/app-config.xml", "/test-config.xml") // <1>
+	@ContextConfiguration("/app-com.Li.config.xml", "/test-com.Li.config.xml") // <1>
 	class MyTest {
 		// class body...
 	}
@@ -2866,8 +2866,8 @@ The following listing shows how to combine both in an integration test:
 ----
 	@ExtendWith(SpringExtension.class)
 	// ApplicationContext will be loaded from
-	// "/app-config.xml" and "/TestConfig.groovy"
-	@ContextConfiguration({ "/app-config.xml", "/TestConfig.groovy" })
+	// "/app-com.Li.config.xml" and "/TestConfig.groovy"
+	@ContextConfiguration({ "/app-com.Li.config.xml", "/TestConfig.groovy" })
 	class MyTest {
 		// class body...
 	}
@@ -2877,8 +2877,8 @@ The following listing shows how to combine both in an integration test:
 ----
 	@ExtendWith(SpringExtension::class)
 	// ApplicationContext will be loaded from
-	// "/app-config.xml" and "/TestConfig.groovy"
-	@ContextConfiguration("/app-config.xml", "/TestConfig.groovy")
+	// "/app-com.Li.config.xml" and "/TestConfig.groovy"
+	@ContextConfiguration("/app-com.Li.config.xml", "/TestConfig.groovy")
 	class MyTest {
 		// class body...
 	}
@@ -3013,7 +3013,7 @@ class:
 <1> Loading configuration information from the nested `Config` class.
 
 
-[[testcontext-ctx-management-mixed-config]]
+[[testcontext-ctx-management-mixed-com.Li.config]]
 ===== Mixing XML, Groovy Scripts, and Component Classes
 
 It may sometimes be desirable to mix XML configuration files, Groovy scripts, and
@@ -3145,25 +3145,25 @@ initializers, respectively, for the test class shadow and effectively replace th
 configuration defined by superclasses.
 
 In the next example, which uses XML resource locations, the `ApplicationContext` for
-`ExtendedTest` is loaded from `base-config.xml` and `extended-config.xml`, in that order.
-Beans defined in `extended-config.xml` can, therefore, override (that is, replace) those
-defined in `base-config.xml`. The following example shows how one class can extend
+`ExtendedTest` is loaded from `base-com.Li.config.xml` and `extended-com.Li.config.xml`, in that order.
+Beans defined in `extended-com.Li.config.xml` can, therefore, override (that is, replace) those
+defined in `base-com.Li.config.xml`. The following example shows how one class can extend
 another and use both its own configuration file and the superclass's configuration file:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
 ----
 	@ExtendWith(SpringExtension.class)
-	// ApplicationContext will be loaded from "/base-config.xml"
+	// ApplicationContext will be loaded from "/base-com.Li.config.xml"
 	// in the root of the classpath
-	@ContextConfiguration("/base-config.xml") <1>
+	@ContextConfiguration("/base-com.Li.config.xml") <1>
 	class BaseTest {
 		// class body...
 	}
 
-	// ApplicationContext will be loaded from "/base-config.xml" and
-	// "/extended-config.xml" in the root of the classpath
-	@ContextConfiguration("/extended-config.xml") <2>
+	// ApplicationContext will be loaded from "/base-com.Li.config.xml" and
+	// "/extended-com.Li.config.xml" in the root of the classpath
+	@ContextConfiguration("/extended-com.Li.config.xml") <2>
 	class ExtendedTest extends BaseTest {
 		// class body...
 	}
@@ -3175,16 +3175,16 @@ another and use both its own configuration file and the superclass's configurati
 .Kotlin
 ----
 	@ExtendWith(SpringExtension::class)
-	// ApplicationContext will be loaded from "/base-config.xml"
+	// ApplicationContext will be loaded from "/base-com.Li.config.xml"
 	// in the root of the classpath
-	@ContextConfiguration("/base-config.xml") // <1>
+	@ContextConfiguration("/base-com.Li.config.xml") // <1>
 	open class BaseTest {
 		// class body...
 	}
 
-	// ApplicationContext will be loaded from "/base-config.xml" and
-	// "/extended-config.xml" in the root of the classpath
-	@ContextConfiguration("/extended-config.xml") // <2>
+	// ApplicationContext will be loaded from "/base-com.Li.config.xml" and
+	// "/extended-com.Li.config.xml" in the root of the classpath
+	@ContextConfiguration("/extended-com.Li.config.xml") // <2>
 	class ExtendedTest : BaseTest() {
 		// class body...
 	}
@@ -3299,7 +3299,7 @@ Consider two examples with XML configuration and `@Configuration` classes:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<!-- app-config.xml -->
+	<!-- app-com.Li.config.xml -->
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:jdbc="http://www.springframework.org/schema/jdbc"
@@ -3323,9 +3323,9 @@ Consider two examples with XML configuration and `@Configuration` classes:
 		<beans profile="dev">
 			<jdbc:embedded-database id="dataSource">
 				<jdbc:script
-					location="classpath:com/bank/config/sql/schema.sql"/>
+					location="classpath:com/bank/com.Li.config/sql/schema.sql"/>
 				<jdbc:script
-					location="classpath:com/bank/config/sql/test-data.sql"/>
+					location="classpath:com/bank/com.Li.config/sql/test-data.sql"/>
 			</jdbc:embedded-database>
 		</beans>
 
@@ -3336,7 +3336,7 @@ Consider two examples with XML configuration and `@Configuration` classes:
 		<beans profile="default">
 			<jdbc:embedded-database id="dataSource">
 				<jdbc:script
-					location="classpath:com/bank/config/sql/schema.sql"/>
+					location="classpath:com/bank/com.Li.config/sql/schema.sql"/>
 			</jdbc:embedded-database>
 		</beans>
 
@@ -3347,8 +3347,8 @@ Consider two examples with XML configuration and `@Configuration` classes:
 .Java
 ----
 	@ExtendWith(SpringExtension.class)
-	// ApplicationContext will be loaded from "classpath:/app-config.xml"
-	@ContextConfiguration("/app-config.xml")
+	// ApplicationContext will be loaded from "classpath:/app-com.Li.config.xml"
+	@ContextConfiguration("/app-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	class TransferServiceTest {
 
@@ -3365,8 +3365,8 @@ Consider two examples with XML configuration and `@Configuration` classes:
 .Kotlin
 ----
 	@ExtendWith(SpringExtension::class)
-	// ApplicationContext will be loaded from "classpath:/app-config.xml"
-	@ContextConfiguration("/app-config.xml")
+	// ApplicationContext will be loaded from "classpath:/app-com.Li.config.xml"
+	@ContextConfiguration("/app-com.Li.config.xml")
 	@ActiveProfiles("dev")
 	class TransferServiceTest {
 
@@ -3381,8 +3381,8 @@ Consider two examples with XML configuration and `@Configuration` classes:
 ----
 
 When `TransferServiceTest` is run, its `ApplicationContext` is loaded from the
-`app-config.xml` configuration file in the root of the classpath. If you inspect
-`app-config.xml`, you can see that the `accountRepository` bean has a dependency on a
+`app-com.Li.config.xml` configuration file in the root of the classpath. If you inspect
+`app-com.Li.config.xml`, you can see that the `accountRepository` bean has a dependency on a
 `dataSource` bean. However, `dataSource` is not defined as a top-level bean. Instead,
 `dataSource` is defined three times: in the `production` profile, in the `dev` profile,
 and in the `default` profile.
@@ -3413,8 +3413,8 @@ integration test with `@Configuration` classes instead of XML:
 		public DataSource dataSource() {
 			return new EmbeddedDatabaseBuilder()
 				.setType(EmbeddedDatabaseType.HSQL)
-				.addScript("classpath:com/bank/config/sql/schema.sql")
-				.addScript("classpath:com/bank/config/sql/test-data.sql")
+				.addScript("classpath:com/bank/com.Li.config/sql/schema.sql")
+				.addScript("classpath:com/bank/com.Li.config/sql/test-data.sql")
 				.build();
 		}
 	}
@@ -3430,8 +3430,8 @@ integration test with `@Configuration` classes instead of XML:
 		fun dataSource(): DataSource {
 			return EmbeddedDatabaseBuilder()
 					.setType(EmbeddedDatabaseType.HSQL)
-					.addScript("classpath:com/bank/config/sql/schema.sql")
-					.addScript("classpath:com/bank/config/sql/test-data.sql")
+					.addScript("classpath:com/bank/com.Li.config/sql/schema.sql")
+					.addScript("classpath:com/bank/com.Li.config/sql/test-data.sql")
 					.build()
 		}
 	}
@@ -3477,7 +3477,7 @@ integration test with `@Configuration` classes instead of XML:
 		public DataSource dataSource() {
 			return new EmbeddedDatabaseBuilder()
 				.setType(EmbeddedDatabaseType.HSQL)
-				.addScript("classpath:com/bank/config/sql/schema.sql")
+				.addScript("classpath:com/bank/com.Li.config/sql/schema.sql")
 				.build();
 		}
 	}
@@ -3493,7 +3493,7 @@ integration test with `@Configuration` classes instead of XML:
 		fun dataSource(): DataSource {
 			return EmbeddedDatabaseBuilder()
 					.setType(EmbeddedDatabaseType.HSQL)
-					.addScript("classpath:com/bank/config/sql/schema.sql")
+					.addScript("classpath:com/bank/com.Li.config/sql/schema.sql")
 					.build()
 		}
 	}
@@ -4187,7 +4187,7 @@ The following example shows how to explicitly declare a resource base path with
 	@WebAppConfiguration("webapp")
 
 	// classpath resource
-	@ContextConfiguration("/spring/test-servlet-config.xml")
+	@ContextConfiguration("/spring/test-servlet-com.Li.config.xml")
 	class WacTests {
 		//...
 	}
@@ -4201,7 +4201,7 @@ The following example shows how to explicitly declare a resource base path with
 	@WebAppConfiguration("webapp")
 
 	// classpath resource
-	@ContextConfiguration("/spring/test-servlet-config.xml")
+	@ContextConfiguration("/spring/test-servlet-com.Li.config.xml")
 	class WacTests {
 		//...
 	}
@@ -4224,7 +4224,7 @@ annotations by specifying a Spring resource prefix:
 	@WebAppConfiguration("classpath:test-web-resources")
 
 	// file system resource
-	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-config.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-com.Li.config.xml")
 	class WacTests {
 		//...
 	}
@@ -4238,7 +4238,7 @@ annotations by specifying a Spring resource prefix:
 	@WebAppConfiguration("classpath:test-web-resources")
 
 	// file system resource
-	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-config.xml")
+	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/servlet-com.Li.config.xml")
 	class WacTests {
 		//...
 	}
@@ -4349,11 +4349,11 @@ framework uses the following configuration parameters to build the context cache
 * `propertySourceProperties` (from `@TestPropertySource`)
 * `resourceBasePath` (from `@WebAppConfiguration`)
 
-For example, if `TestClassA` specifies `{"app-config.xml", "test-config.xml"}` for the
+For example, if `TestClassA` specifies `{"app-com.Li.config.xml", "test-com.Li.config.xml"}` for the
 `locations` (or `value`) attribute of `@ContextConfiguration`, the TestContext framework
 loads the corresponding `ApplicationContext` and stores it in a `static` context cache
 under a key that is based solely on those locations. So, if `TestClassB` also defines
-`{"app-config.xml", "test-config.xml"}` for its locations (either explicitly or
+`{"app-com.Li.config.xml", "test-com.Li.config.xml"}` for its locations (either explicitly or
 implicitly through inheritance) but does not define `@WebAppConfiguration`, a different
 `ContextLoader`, different active profiles, different context initializers, different
 test property sources, or a different parent context, then the same `ApplicationContext`
@@ -4500,10 +4500,10 @@ configuration scenario:
 	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/applicationContext.xml")
 	public abstract class AbstractWebTests {}
 
-	@ContextHierarchy(@ContextConfiguration("/spring/soap-ws-config.xml"))
+	@ContextHierarchy(@ContextConfiguration("/spring/soap-ws-com.Li.config.xml"))
 	public class SoapWebServiceTests extends AbstractWebTests {}
 
-	@ContextHierarchy(@ContextConfiguration("/spring/rest-ws-config.xml"))
+	@ContextHierarchy(@ContextConfiguration("/spring/rest-ws-com.Li.config.xml"))
 	public class RestWebServiceTests extends AbstractWebTests {}
 ----
 [source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
@@ -4514,10 +4514,10 @@ configuration scenario:
 	@ContextConfiguration("file:src/com.Li.spring.main/webapp/WEB-INF/applicationContext.xml")
 	abstract class AbstractWebTests
 
-	@ContextHierarchy(ContextConfiguration("/spring/soap-ws-config.xml"))
+	@ContextHierarchy(ContextConfiguration("/spring/soap-ws-com.Li.config.xml"))
 	class SoapWebServiceTests : AbstractWebTests()
 
-	@ContextHierarchy(ContextConfiguration("/spring/rest-ws-config.xml"))
+	@ContextHierarchy(ContextConfiguration("/spring/rest-ws-com.Li.config.xml"))
 	class RestWebServiceTests : AbstractWebTests()
 
 ----
@@ -4531,10 +4531,10 @@ in the hierarchy, `parent` and `child`. `ExtendedTests` extends `BaseTests` and 
 the Spring TestContext Framework to merge the context configuration for the `child`
 hierarchy level, by ensuring that the names declared in the `name` attribute in
 `@ContextConfiguration` are both `child`. The result is that three application contexts
-are loaded: one for `/app-config.xml`, one for `/user-config.xml`, and one for
-`{"/user-config.xml", "/order-config.xml"}`. As with the previous example, the
-application context loaded from `/app-config.xml` is set as the parent context for the
-contexts loaded from `/user-config.xml` and `{"/user-config.xml", "/order-config.xml"}`.
+are loaded: one for `/app-com.Li.config.xml`, one for `/user-com.Li.config.xml`, and one for
+`{"/user-com.Li.config.xml", "/order-com.Li.config.xml"}`. As with the previous example, the
+application context loaded from `/app-com.Li.config.xml` is set as the parent context for the
+contexts loaded from `/user-com.Li.config.xml` and `{"/user-com.Li.config.xml", "/order-com.Li.config.xml"}`.
 The following listing shows this configuration scenario:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -4542,13 +4542,13 @@ The following listing shows this configuration scenario:
 ----
 	@ExtendWith(SpringExtension.class)
 	@ContextHierarchy({
-		@ContextConfiguration(name = "parent", locations = "/app-config.xml"),
-		@ContextConfiguration(name = "child", locations = "/user-config.xml")
+		@ContextConfiguration(name = "parent", locations = "/app-com.Li.config.xml"),
+		@ContextConfiguration(name = "child", locations = "/user-com.Li.config.xml")
 	})
 	class BaseTests {}
 
 	@ContextHierarchy(
-		@ContextConfiguration(name = "child", locations = "/order-config.xml")
+		@ContextConfiguration(name = "child", locations = "/order-com.Li.config.xml")
 	)
 	class ExtendedTests extends BaseTests {}
 ----
@@ -4558,12 +4558,12 @@ The following listing shows this configuration scenario:
 ----
 	@ExtendWith(SpringExtension::class)
 	@ContextHierarchy(
-		ContextConfiguration(name = "parent", locations = ["/app-config.xml"]),
-		ContextConfiguration(name = "child", locations = ["/user-config.xml"]))
+		ContextConfiguration(name = "parent", locations = ["/app-com.Li.config.xml"]),
+		ContextConfiguration(name = "child", locations = ["/user-com.Li.config.xml"]))
 	open class BaseTests {}
 
 	@ContextHierarchy(
-		ContextConfiguration(name = "child", locations = ["/order-config.xml"])
+		ContextConfiguration(name = "child", locations = ["/order-com.Li.config.xml"])
 	)
 	class ExtendedTests : BaseTests() {}
 ----
@@ -4574,8 +4574,8 @@ The following listing shows this configuration scenario:
 In contrast to the previous example, this example demonstrates how to override the
 configuration for a given named level in a context hierarchy by setting the
 `inheritLocations` flag in `@ContextConfiguration` to `false`. Consequently, the
-application context for `ExtendedTests` is loaded only from `/test-user-config.xml` and
-has its parent set to the context loaded from `/app-config.xml`. The following listing
+application context for `ExtendedTests` is loaded only from `/test-user-com.Li.config.xml` and
+has its parent set to the context loaded from `/app-com.Li.config.xml`. The following listing
 shows this configuration scenario:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -4583,15 +4583,15 @@ shows this configuration scenario:
 ----
 	@ExtendWith(SpringExtension.class)
 	@ContextHierarchy({
-		@ContextConfiguration(name = "parent", locations = "/app-config.xml"),
-		@ContextConfiguration(name = "child", locations = "/user-config.xml")
+		@ContextConfiguration(name = "parent", locations = "/app-com.Li.config.xml"),
+		@ContextConfiguration(name = "child", locations = "/user-com.Li.config.xml")
 	})
 	class BaseTests {}
 
 	@ContextHierarchy(
 		@ContextConfiguration(
 			name = "child",
-			locations = "/test-user-config.xml",
+			locations = "/test-user-com.Li.config.xml",
 			inheritLocations = false
 	))
 	class ExtendedTests extends BaseTests {}
@@ -4601,14 +4601,14 @@ shows this configuration scenario:
 ----
 	@ExtendWith(SpringExtension::class)
 	@ContextHierarchy(
-		ContextConfiguration(name = "parent", locations = ["/app-config.xml"]),
-		ContextConfiguration(name = "child", locations = ["/user-config.xml"]))
+		ContextConfiguration(name = "parent", locations = ["/app-com.Li.config.xml"]),
+		ContextConfiguration(name = "child", locations = ["/user-com.Li.config.xml"]))
 	open class BaseTests {}
 
 	@ContextHierarchy(
 			ContextConfiguration(
 					name = "child",
-					locations = ["/test-user-config.xml"],
+					locations = ["/test-user-com.Li.config.xml"],
 					inheritLocations = false
 			))
 	class ExtendedTests : BaseTests() {}
@@ -4683,7 +4683,7 @@ uses `@Autowired` for field injection:
 ----
 	@ExtendWith(SpringExtension.class)
 	// specifies the Spring configuration to load for this test fixture
-	@ContextConfiguration("repository-config.xml")
+	@ContextConfiguration("repository-com.Li.config.xml")
 	class HibernateTitleRepositoryTests {
 
 		// this instance will be dependency injected by type
@@ -4703,7 +4703,7 @@ uses `@Autowired` for field injection:
 ----
 	@ExtendWith(SpringExtension::class)
 	// specifies the Spring configuration to load for this test fixture
-	@ContextConfiguration("repository-config.xml")
+	@ContextConfiguration("repository-com.Li.config.xml")
 	class HibernateTitleRepositoryTests {
 
 		// this instance will be dependency injected by type
@@ -4726,7 +4726,7 @@ follows:
 ----
 	@ExtendWith(SpringExtension.class)
 	// specifies the Spring configuration to load for this test fixture
-	@ContextConfiguration("repository-config.xml")
+	@ContextConfiguration("repository-com.Li.config.xml")
 	class HibernateTitleRepositoryTests {
 
 		// this instance will be dependency injected by type
@@ -4750,7 +4750,7 @@ follows:
 ----
 	@ExtendWith(SpringExtension::class)
 	// specifies the Spring configuration to load for this test fixture
-	@ContextConfiguration("repository-config.xml")
+	@ContextConfiguration("repository-com.Li.config.xml")
 	class HibernateTitleRepositoryTests {
 
 		// this instance will be dependency injected by type
@@ -4770,7 +4770,7 @@ follows:
 ----
 
 The preceding code listings use the same XML context file referenced by the
-`@ContextConfiguration` annotation (that is, `repository-config.xml`). The following
+`@ContextConfiguration` annotation (that is, `repository-com.Li.config.xml`). The following
 shows this configuration:
 
 [source,xml,indent=0]
@@ -5294,7 +5294,7 @@ run within a transaction. In addition, methods annotated with `@BeforeTransactio
 `@AfterTransaction` are not run for test methods that are not configured to run within a
 transaction.
 
-[[testcontext-tx-mgr-config]]
+[[testcontext-tx-mgr-com.Li.config]]
 ===== Configuring a Transaction Manager
 
 `TransactionalTestExecutionListener` expects a `PlatformTransactionManager` bean to be
@@ -5701,7 +5701,7 @@ The following example shows how to use `@Sql` as a repeatable annotation with Ja
 .Java
 ----
 	@Test
-	@Sql(scripts = "/test-schema.sql", config = @SqlConfig(commentPrefix = "`"))
+	@Sql(scripts = "/test-schema.sql", com.Li.config = @SqlConfig(commentPrefix = "`"))
 	@Sql("/test-user-data.sql")
 	void userTest() {
 		// run code that uses the test schema and test data
@@ -5726,7 +5726,7 @@ other JVM languages such as Kotlin.
 ----
 	@Test
 	@SqlGroup({
-		@Sql(scripts = "/test-schema.sql", config = @SqlConfig(commentPrefix = "`")),
+		@Sql(scripts = "/test-schema.sql", com.Li.config = @SqlConfig(commentPrefix = "`")),
 		@Sql("/test-user-data.sql")
 	)}
 	void userTest() {
@@ -5738,7 +5738,7 @@ other JVM languages such as Kotlin.
 ----
 	@Test
 	@SqlGroup(
-		Sql("/test-schema.sql", config = SqlConfig(commentPrefix = "`")),
+		Sql("/test-schema.sql", com.Li.config = SqlConfig(commentPrefix = "`")),
 		Sql("/test-user-data.sql"))
 	fun userTest() {
 		// Run code that uses the test schema and test data
@@ -5759,11 +5759,11 @@ following example shows:
 	@Test
 	@Sql(
 		scripts = "create-test-data.sql",
-		config = @SqlConfig(transactionMode = ISOLATED)
+		com.Li.config = @SqlConfig(transactionMode = ISOLATED)
 	)
 	@Sql(
 		scripts = "delete-test-data.sql",
-		config = @SqlConfig(transactionMode = ISOLATED),
+		com.Li.config = @SqlConfig(transactionMode = ISOLATED),
 		executionPhase = AFTER_TEST_METHOD
 	)
 	void userTest() {
@@ -5777,9 +5777,9 @@ following example shows:
 	@Test
 	@SqlGroup(
 		Sql("create-test-data.sql",
-			config = SqlConfig(transactionMode = ISOLATED)),
+			com.Li.config = SqlConfig(transactionMode = ISOLATED)),
 		Sql("delete-test-data.sql",
-			config = SqlConfig(transactionMode = ISOLATED),
+			com.Li.config = SqlConfig(transactionMode = ISOLATED),
 			executionPhase = AFTER_TEST_METHOD))
 	fun userTest() {
 		// run code that needs the test data to be committed
@@ -5796,7 +5796,7 @@ Note that `ISOLATED` and `AFTER_TEST_METHOD` are statically imported from
 You can configure script parsing and error handling by using the `@SqlConfig` annotation.
 When declared as a class-level annotation on an integration test class, `@SqlConfig`
 serves as global configuration for all SQL scripts within the test class hierarchy. When
-declared directly by using the `config` attribute of the `@Sql` annotation, `@SqlConfig`
+declared directly by using the `com.Li.config` attribute of the `@Sql` annotation, `@SqlConfig`
 serves as local configuration for the SQL scripts declared within the enclosing `@Sql`
 annotation. Every attribute in `@SqlConfig` has an implicit default value, which is
 documented in the javadoc of the corresponding attribute. Due to the rules defined for
@@ -6516,12 +6516,12 @@ integration tests, see <<spring-mvc-test-vs-end-to-end-integration-tests>>.
 [[spring-mvc-test-server]]
 ==== Server-Side Tests
 
-You can write a plain unit test for a Spring MVC controller by using JUnit or TestNG. To
-do so, instantiate the controller, inject it with mocked or stubbed dependencies, and
+You can write a plain unit test for a Spring MVC com.Li.controller by using JUnit or TestNG. To
+do so, instantiate the com.Li.controller, inject it with mocked or stubbed dependencies, and
 call its methods (passing `MockHttpServletRequest`, `MockHttpServletResponse`, and
 others, as necessary). However, when writing such a unit test, much remains untested: for
 example, request mappings, data binding, type conversion, validation, and much more.
-Furthermore, other controller methods such as `@InitBinder`, `@ModelAttribute`, and
+Furthermore, other com.Li.controller methods such as `@InitBinder`, `@ModelAttribute`, and
 `@ExceptionHandler` may also be invoked as part of the request processing lifecycle.
 
 The goal of Spring MVC Test is to provide an effective way to test controllers by
@@ -6660,7 +6660,7 @@ configuration and injects a `WebApplicationContext` into the test to use to buil
 	}
 ----
 
-Your second option is to manually create a controller instance without loading Spring
+Your second option is to manually create a com.Li.controller instance without loading Spring
 configuration. Instead, basic default configuration, roughly comparable to that of the
 MVC JavaConfig or the MVC namespace, is automatically created. You can customize it to a
 degree. The following example shows how to do so:
@@ -6760,9 +6760,9 @@ expectations, as the following example shows:
 ----
 
 The `standaloneSetup`, on the other hand, is a little closer to a unit test. It tests one
-controller at a time. You can manually inject the controller with mock dependencies, and
+com.Li.controller at a time. You can manually inject the com.Li.controller with mock dependencies, and
 it does not involve loading Spring configuration. Such tests are more focused on style
-and make it easier to see which controller is being tested, whether any specific Spring
+and make it easier to see which com.Li.controller is being tested, whether any specific Spring
 MVC configuration is required to work, and so on. The `standaloneSetup` is also a very
 convenient way to write ad-hoc tests to verify specific behavior or to debug an issue.
 
@@ -6985,7 +6985,7 @@ properties of the response (for example, the response status, headers, and conte
 These are the most important results to assert.
 
 The second category of assertions goes beyond the response. These assertions let you
-inspect Spring MVC specific aspects, such as which controller method processed the
+inspect Spring MVC specific aspects, such as which com.Li.controller method processed the
 request, whether an exception was raised and handled, what the content of the model is,
 what view was selected, what flash attributes were added, and so on. They also let you
 inspect Servlet specific aspects, such as request and session attributes.
@@ -7146,7 +7146,7 @@ an async dispatch is made to complete processing on a Servlet container thread.
 
 In Spring MVC Test, async requests can be tested by asserting the produced async value
 first, then manually performing the async dispatch, and finally verifying the response.
-Below is an example test for controller methods that return `DeferredResult`, `Callable`,
+Below is an example test for com.Li.controller methods that return `DeferredResult`, `Callable`,
 or reactive type such as Reactor `Mono`:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
@@ -7264,7 +7264,7 @@ testing, but they are a little closer to it. For example, you can isolate the we
 by injecting mocked services into controllers, in which case you are testing the web
 layer only through the `DispatcherServlet` but with actual Spring configuration, as you
 might test the data access layer in isolation from the layers above it. Also, you can use
-the stand-alone setup, focusing on one controller at a time and manually providing the
+the stand-alone setup, focusing on one com.Li.controller at a time and manually providing the
 configuration required to make it work.
 
 Another important distinction when using Spring MVC Test is that, conceptually, such
@@ -7385,9 +7385,9 @@ naive attempt might resemble the following:
 	}
 ----
 
-This test has some obvious drawbacks. If we update our controller to use the parameter
+This test has some obvious drawbacks. If we update our com.Li.controller to use the parameter
 `message` instead of `text`, our form test continues to pass, even though the HTML form
-is out of synch with the controller. To resolve this we can combine our two tests, as
+is out of synch with the com.Li.controller. To resolve this we can combine our two tests, as
 follows:
 
 [[spring-mvc-test-server-htmlunit-mock-mvc-test]]

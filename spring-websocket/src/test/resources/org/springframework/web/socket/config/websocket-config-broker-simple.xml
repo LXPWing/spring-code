@@ -13,14 +13,14 @@
 		<!-- message-size=128*1024, send-buffer-size=1024*1024 -->
 		<websocket:transport message-size="131072" send-timeout="25000" send-buffer-size="1048576" time-to-first-message="30000">
 			<websocket:decorator-factories>
-				<bean class="org.springframework.web.socket.config.TestWebSocketHandlerDecoratorFactory" />
+				<bean class="org.springframework.web.socket.com.Li.config.TestWebSocketHandlerDecoratorFactory" />
 			</websocket:decorator-factories>
 		</websocket:transport>
 
 		<websocket:stomp-endpoint path=" /foo,/bar" allowed-origins="https://mydomain1.example,https://mydomain2.example">
 			<websocket:handshake-handler ref="myHandler"/>
 			<websocket:handshake-interceptors>
-				<bean class="org.springframework.web.socket.config.FooTestInterceptor"/>
+				<bean class="org.springframework.web.socket.com.Li.config.FooTestInterceptor"/>
 				<ref bean="barTestInterceptor"/>
 			</websocket:handshake-interceptors>
 		</websocket:stomp-endpoint>
@@ -28,7 +28,7 @@
 		<websocket:stomp-endpoint path="/test,/sockjs" allowed-origins="https://mydomain3.com,https://mydomain4.com">
 			<websocket:handshake-handler ref="myHandler"/>
 			<websocket:handshake-interceptors>
-				<bean class="org.springframework.web.socket.config.FooTestInterceptor"/>
+				<bean class="org.springframework.web.socket.com.Li.config.FooTestInterceptor"/>
 				<ref bean="barTestInterceptor"/>
 			</websocket:handshake-interceptors>
 			<websocket:sockjs/>
@@ -49,9 +49,9 @@
 		<property name="alwaysUseFullPath" value="true"/>
 	</bean>
 
-	<bean id="myHandler" class="org.springframework.web.socket.config.TestHandshakeHandler"/>
-	<bean id="barTestInterceptor" class="org.springframework.web.socket.config.BarTestInterceptor"/>
-	<bean id="errorHandler" class="org.springframework.web.socket.config.TestStompErrorHandler"/>
+	<bean id="myHandler" class="org.springframework.web.socket.com.Li.config.TestHandshakeHandler"/>
+	<bean id="barTestInterceptor" class="org.springframework.web.socket.com.Li.config.BarTestInterceptor"/>
+	<bean id="errorHandler" class="org.springframework.web.socket.com.Li.config.TestStompErrorHandler"/>
 	<bean id="scheduler" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler"/>
 
 </beans>

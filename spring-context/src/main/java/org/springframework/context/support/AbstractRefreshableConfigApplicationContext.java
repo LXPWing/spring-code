@@ -25,7 +25,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * {@link AbstractRefreshableApplicationContext} subclass that adds common handling
- * of specified config locations. Serves as base class for XML-based application
+ * of specified com.Li.config locations. Serves as base class for XML-based application
  * context implementations such as {@link ClassPathXmlApplicationContext} and
  * {@link FileSystemXmlApplicationContext}, as well as
  * {@link org.springframework.web.context.support.XmlWebApplicationContext}.
@@ -61,7 +61,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 
 
 	/**
-	 * Set the config locations for this application context in init-param style,
+	 * Set the com.Li.config locations for this application context in init-param style,
 	 * i.e. with distinct locations separated by commas, semicolons or whitespace.
 	 * <p>If not set, the implementation may use a default as appropriate.
 	 */
@@ -70,7 +70,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	}
 
 	/**
-	 * Set the config locations for this application context.
+	 * Set the com.Li.config locations for this application context.
 	 * <p>If not set, the implementation may use a default as appropriate.
 	 */
 	public void setConfigLocations(@Nullable String... locations) {
@@ -102,11 +102,11 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	}
 
 	/**
-	 * Return the default config locations to use, for the case where no
-	 * explicit config locations have been specified.
+	 * Return the default com.Li.config locations to use, for the case where no
+	 * explicit com.Li.config locations have been specified.
 	 * <p>The default implementation returns {@code null},
-	 * requiring explicit config locations.
-	 * @return an array of default config locations, if any
+	 * requiring explicit com.Li.config locations.
+	 * @return an array of default com.Li.config locations, if any
 	 * @see #setConfigLocations
 	 */
 	@Nullable
@@ -116,7 +116,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 
 	/**
 	 * Resolve the given path, replacing placeholders with corresponding
-	 * environment property values if necessary. Applied to config locations.
+	 * environment property values if necessary. Applied to com.Li.config locations.
 	 * @param path the original file path
 	 * @return the resolved file path
 	 * @see org.springframework.core.env.Environment#resolveRequiredPlaceholders(String)

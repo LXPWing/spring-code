@@ -28,7 +28,7 @@ import org.springframework.ui.Model;
 /**
  * Annotation that binds a method parameter or method return value
  * to a named model attribute, exposed to a web view. Supported
- * for controller classes with {@link RequestMapping @RequestMapping}
+ * for com.Li.controller classes with {@link RequestMapping @RequestMapping}
  * methods.
  *
  * <p>Can be used to expose command objects to a web view, using
@@ -36,7 +36,7 @@ import org.springframework.ui.Model;
  * parameters of an {@link RequestMapping @RequestMapping} method.
  *
  * <p>Can also be used to expose reference data to a web view
- * through annotating accessor methods in a controller class with
+ * through annotating accessor methods in a com.Li.controller class with
  * {@link RequestMapping @RequestMapping} methods. Such accessor
  * methods are allowed to have any arguments that
  * {@link RequestMapping @RequestMapping} methods support, returning

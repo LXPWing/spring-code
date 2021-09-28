@@ -88,7 +88,7 @@ public class FreeMarkerConfigurer extends FreeMarkerConfigurationFactory
 
 
 	/**
-	 * Set a preconfigured Configuration to use for the FreeMarker web config, e.g. a
+	 * Set a preconfigured Configuration to use for the FreeMarker web com.Li.config, e.g. a
 	 * shared one for web and email usage, set up via FreeMarkerConfigurationFactoryBean.
 	 * If this is not set, FreeMarkerConfigurationFactory's properties (inherited by
 	 * this class) have to be specified.

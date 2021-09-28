@@ -362,7 +362,7 @@ public final class WebAsyncManager {
 					String executorTypeName = executor.getClass().getSimpleName();
 					logger.warn("\n!!!\n" +
 							"An Executor is required to handle java.util.concurrent.Callable return values.\n" +
-							"Please, configure a TaskExecutor in the MVC config under \"async support\".\n" +
+							"Please, configure a TaskExecutor in the MVC com.Li.config under \"async support\".\n" +
 							"The " + executorTypeName + " currently in use is not suitable under load.\n" +
 							"-------------------------------\n" +
 							"Request URI: '" + formatRequestUri() + "'\n" +

@@ -99,7 +99,7 @@ public abstract class AbstractReactiveWebInitializer implements WebApplicationIn
 	/**
 	 * Specify {@link org.springframework.context.annotation.Configuration @Configuration}
 	 * and/or {@link org.springframework.stereotype.Component @Component}
-	 * classes that make up the application configuration. The config classes
+	 * classes that make up the application configuration. The com.Li.config classes
 	 * are given to {@linkplain #createApplicationContext()}.
 	 */
 	protected abstract Class<?>[] getConfigClasses();

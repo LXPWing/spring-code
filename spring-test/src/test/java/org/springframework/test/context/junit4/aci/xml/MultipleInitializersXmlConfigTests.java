@@ -48,7 +48,7 @@ public class MultipleInitializersXmlConfigTests {
 	public void activeBeans() {
 		assertThat(foo).isEqualTo("foo");
 		assertThat(bar).isEqualTo("foo");
-		assertThat(baz).isEqualTo("dev profile config");
+		assertThat(baz).isEqualTo("dev profile com.Li.config");
 	}
 
 }

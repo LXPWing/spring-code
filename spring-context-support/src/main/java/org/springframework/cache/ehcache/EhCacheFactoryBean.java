@@ -102,7 +102,7 @@ public class EhCacheFactoryBean extends CacheConfiguration implements FactoryBea
 	 * properly handle the shutdown of the CacheManager: Set up a separate
 	 * EhCacheManagerFactoryBean and pass a reference to this bean property.
 	 * <p>A separate EhCacheManagerFactoryBean is also necessary for loading
-	 * EhCache configuration from a non-default config location.
+	 * EhCache configuration from a non-default com.Li.config location.
 	 * @see EhCacheManagerFactoryBean
 	 * @see net.sf.ehcache.CacheManager#getInstance
 	 */

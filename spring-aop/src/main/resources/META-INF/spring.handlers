@@ -1,1 +1,1 @@
-http\://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler
+http\://www.springframework.org/schema/aop=org.springframework.aop.com.Li.config.AopNamespaceHandler

@@ -69,7 +69,7 @@ public interface WebSocketMessageBrokerConfigurer {
 	}
 
 	/**
-	 * Add resolvers to support custom controller method argument types.
+	 * Add resolvers to support custom com.Li.controller method argument types.
 	 * <p>This does not override the built-in support for resolving handler
 	 * method arguments. To customize the built-in support for argument
 	 * resolution, configure {@code SimpAnnotationMethodMessageHandler} directly.
@@ -80,7 +80,7 @@ public interface WebSocketMessageBrokerConfigurer {
 	}
 
 	/**
-	 * Add handlers to support custom controller method return value types.
+	 * Add handlers to support custom com.Li.controller method return value types.
 	 * <p>Using this option does not override the built-in support for handling
 	 * return values. To customize the built-in support for handling return
 	 * values, configure  {@code SimpAnnotationMethodMessageHandler} directly.

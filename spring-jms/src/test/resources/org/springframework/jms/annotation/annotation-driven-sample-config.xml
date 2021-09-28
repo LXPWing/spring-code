@@ -11,8 +11,8 @@
 
 	<bean class="org.springframework.jms.annotation.AbstractJmsAnnotationDrivenTests$SampleBean"/>
 
-	<bean id="jmsListenerContainerFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
-	<bean id="simpleFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
+	<bean id="jmsListenerContainerFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
+	<bean id="simpleFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
 
 
 </beans>

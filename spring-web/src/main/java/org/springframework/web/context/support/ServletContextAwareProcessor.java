@@ -49,7 +49,7 @@ public class ServletContextAwareProcessor implements BeanPostProcessor {
 
 
 	/**
-	 * Create a new ServletContextAwareProcessor without an initial context or config.
+	 * Create a new ServletContextAwareProcessor without an initial context or com.Li.config.
 	 * When this constructor is used the {@link #getServletContext()} and/or
 	 * {@link #getServletConfig()} methods should be overridden.
 	 */
@@ -64,14 +64,14 @@ public class ServletContextAwareProcessor implements BeanPostProcessor {
 	}
 
 	/**
-	 * Create a new ServletContextAwareProcessor for the given config.
+	 * Create a new ServletContextAwareProcessor for the given com.Li.config.
 	 */
 	public ServletContextAwareProcessor(ServletConfig servletConfig) {
 		this(null, servletConfig);
 	}
 
 	/**
-	 * Create a new ServletContextAwareProcessor for the given context and config.
+	 * Create a new ServletContextAwareProcessor for the given context and com.Li.config.
 	 */
 	public ServletContextAwareProcessor(@Nullable ServletContext servletContext, @Nullable ServletConfig servletConfig) {
 		this.servletContext = servletContext;

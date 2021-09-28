@@ -90,7 +90,7 @@ public interface WebMvcConfigurer {
 
 	/**
 	 * Add Spring MVC lifecycle interceptors for pre- and post-processing of
-	 * controller method invocations and resource handler requests.
+	 * com.Li.controller method invocations and resource handler requests.
 	 * Interceptors can be registered to apply to all requests or be limited
 	 * to a subset of URL patterns.
 	 */
@@ -115,7 +115,7 @@ public interface WebMvcConfigurer {
 	/**
 	 * Configure simple automated controllers pre-configured with the response
 	 * status code and/or a view to render the response body. This is useful in
-	 * cases where there is no need for custom controller logic -- e.g. render a
+	 * cases where there is no need for custom com.Li.controller logic -- e.g. render a
 	 * home page, perform simple site URL redirects, return a 404 status with
 	 * HTML content, a 204 with no content, and more.
 	 */
@@ -132,7 +132,7 @@ public interface WebMvcConfigurer {
 	}
 
 	/**
-	 * Add resolvers to support custom controller method argument types.
+	 * Add resolvers to support custom com.Li.controller method argument types.
 	 * <p>This does not override the built-in support for resolving handler
 	 * method arguments. To customize the built-in support for argument
 	 * resolution, configure {@link RequestMappingHandlerAdapter} directly.
@@ -142,7 +142,7 @@ public interface WebMvcConfigurer {
 	}
 
 	/**
-	 * Add handlers to support custom controller method return value types.
+	 * Add handlers to support custom com.Li.controller method return value types.
 	 * <p>Using this option does not override the built-in support for handling
 	 * return values. To customize the built-in support for handling return
 	 * values, configure RequestMappingHandlerAdapter directly.

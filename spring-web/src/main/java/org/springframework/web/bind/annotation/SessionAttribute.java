@@ -33,10 +33,10 @@ import org.springframework.core.annotation.AliasFor;
  *
  * <p>For use cases that require adding or removing session attributes consider
  * injecting {@code org.springframework.web.context.request.WebRequest} or
- * {@code javax.servlet.http.HttpSession} into the controller method.
+ * {@code javax.servlet.http.HttpSession} into the com.Li.controller method.
  *
  * <p>For temporary storage of model attributes in the session as part of the
- * workflow for a controller, consider using {@link SessionAttributes} instead.
+ * workflow for a com.Li.controller, consider using {@link SessionAttributes} instead.
  *
  * @author Rossen Stoyanchev
  * @since 4.3

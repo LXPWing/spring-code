@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 /**
- * Examples of expectations on the view name selected by the controller.
+ * Examples of expectations on the view name selected by the com.Li.controller.
  *
  * @author Rossen Stoyanchev
  */

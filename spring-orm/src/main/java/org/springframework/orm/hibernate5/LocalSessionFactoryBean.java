@@ -170,7 +170,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	}
 
 	/**
-	 * Set the location of a single Hibernate XML config file, for example as
+	 * Set the location of a single Hibernate XML com.Li.config file, for example as
 	 * classpath resource "classpath:hibernate.cfg.xml".
 	 * <p>Note: Can be omitted when all necessary properties and mapping
 	 * resources are specified locally via this bean.
@@ -181,7 +181,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	}
 
 	/**
-	 * Set the locations of multiple Hibernate XML config files, for example as
+	 * Set the locations of multiple Hibernate XML com.Li.config files, for example as
 	 * classpath resources "classpath:hibernate.cfg.xml,classpath:extension.cfg.xml".
 	 * <p>Note: Can be omitted when all necessary properties and mapping
 	 * resources are specified locally via this bean.
@@ -194,9 +194,9 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	/**
 	 * Set Hibernate mapping resources to be found in the class path,
 	 * like "example.hbm.xml" or "mypackage/example.hbm.xml".
-	 * Analogous to mapping entries in a Hibernate XML config file.
+	 * Analogous to mapping entries in a Hibernate XML com.Li.config file.
 	 * Alternative to the more generic setMappingLocations method.
-	 * <p>Can be used to add to mappings from a Hibernate XML config file,
+	 * <p>Can be used to add to mappings from a Hibernate XML com.Li.config file,
 	 * or to specify all mappings locally.
 	 * @see #setMappingLocations
 	 * @see Configuration#addResource
@@ -210,7 +210,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	 * resource "classpath:example.hbm.xml". Supports any resource location
 	 * via Spring's resource abstraction, for example relative paths like
 	 * "WEB-INF/mappings/example.hbm.xml" when running in an application context.
-	 * <p>Can be used to add to mappings from a Hibernate XML config file,
+	 * <p>Can be used to add to mappings from a Hibernate XML com.Li.config file,
 	 * or to specify all mappings locally.
 	 * @see Configuration#addInputStream
 	 */
@@ -223,7 +223,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	 * resource "/WEB-INF/mapping/example.hbm.xml". Supports any resource location
 	 * via Spring's resource abstraction, as long as the resource can be resolved
 	 * in the file system.
-	 * <p>Can be used to add to mappings from a Hibernate XML config file,
+	 * <p>Can be used to add to mappings from a Hibernate XML com.Li.config file,
 	 * or to specify all mappings locally.
 	 * @see Configuration#addCacheableFile(File)
 	 */
@@ -234,7 +234,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	/**
 	 * Set locations of jar files that contain Hibernate mapping resources,
 	 * like "WEB-INF/lib/example.hbm.jar".
-	 * <p>Can be used to add to mappings from a Hibernate XML config file,
+	 * <p>Can be used to add to mappings from a Hibernate XML com.Li.config file,
 	 * or to specify all mappings locally.
 	 * @see Configuration#addJar(File)
 	 */
@@ -245,7 +245,7 @@ public class LocalSessionFactoryBean extends HibernateExceptionTranslator
 	/**
 	 * Set locations of directories that contain Hibernate mapping resources,
 	 * like "WEB-INF/mappings".
-	 * <p>Can be used to add to mappings from a Hibernate XML config file,
+	 * <p>Can be used to add to mappings from a Hibernate XML com.Li.config file,
 	 * or to specify all mappings locally.
 	 * @see Configuration#addDirectory(File)
 	 */

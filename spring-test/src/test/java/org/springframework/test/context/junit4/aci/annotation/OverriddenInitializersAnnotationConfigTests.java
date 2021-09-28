@@ -40,6 +40,6 @@ public class OverriddenInitializersAnnotationConfigTests extends SingleInitializ
 	public void activeBeans() {
 		assertThat(foo).isEqualTo("foo");
 		assertThat(bar).isNull();
-		assertThat(baz).isEqualTo("dev profile config");
+		assertThat(baz).isEqualTo("dev profile com.Li.config");
 	}
 }

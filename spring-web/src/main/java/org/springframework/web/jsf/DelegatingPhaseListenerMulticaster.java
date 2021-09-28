@@ -31,7 +31,7 @@ import org.springframework.web.context.WebApplicationContext;
  * JSF PhaseListener implementation that delegates to one or more Spring-managed
  * PhaseListener beans coming from the Spring root WebApplicationContext.
  *
- * <p>Configure this listener multicaster in your {@code faces-config.xml} file
+ * <p>Configure this listener multicaster in your {@code faces-com.Li.config.xml} file
  * as follows:
  *
  * <pre class="code">

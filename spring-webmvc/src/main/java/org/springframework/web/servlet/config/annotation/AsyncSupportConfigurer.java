@@ -51,9 +51,9 @@ public class AsyncSupportConfigurer {
 	/**
 	 * The provided task executor is used to:
 	 * <ol>
-	 * <li>Handle {@link Callable} controller method return values.
+	 * <li>Handle {@link Callable} com.Li.controller method return values.
 	 * <li>Perform blocking writes when streaming to the response
-	 * through a reactive (e.g. Reactor, RxJava) controller method return value.
+	 * through a reactive (e.g. Reactor, RxJava) com.Li.controller method return value.
 	 * </ol>
 	 * <p>By default only a {@link SimpleAsyncTaskExecutor} is used. However when
 	 * using the above two use cases, it's recommended to configure an executor
@@ -81,7 +81,7 @@ public class AsyncSupportConfigurer {
 
 	/**
 	 * Configure lifecycle interceptors with callbacks around concurrent request
-	 * execution that starts when a controller returns a
+	 * execution that starts when a com.Li.controller returns a
 	 * {@link java.util.concurrent.Callable}.
 	 * @param interceptors the interceptors to register
 	 */
@@ -92,7 +92,7 @@ public class AsyncSupportConfigurer {
 
 	/**
 	 * Configure lifecycle interceptors with callbacks around concurrent request
-	 * execution that starts when a controller returns a {@link DeferredResult}.
+	 * execution that starts when a com.Li.controller returns a {@link DeferredResult}.
 	 * @param interceptors the interceptors to register
 	 */
 	public AsyncSupportConfigurer registerDeferredResultInterceptors(

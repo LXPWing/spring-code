@@ -156,7 +156,7 @@ import org.springframework.context.annotation.Import;
  *
  *     &lt;jms:annotation-driven container-factory="myJmsListenerContainerFactory"/&gt;
  *
- *     &lt;bean id="myJmsListenerContainerFactory" class="org.springframework.jms.config.DefaultJmsListenerContainerFactory"&gt;
+ *     &lt;bean id="myJmsListenerContainerFactory" class="org.springframework.jms.com.Li.config.DefaultJmsListenerContainerFactory"&gt;
  *           // factory settings
  *     &lt;/bean&gt;
  *
@@ -210,7 +210,7 @@ import org.springframework.context.annotation.Import;
  *         handler-method-factory="myJmsHandlerMethodFactory"/&gt;
  *
  *     &lt;bean id="myJmsListenerEndpointRegistry"
- *           class="org.springframework.jms.config.JmsListenerEndpointRegistry"&gt;
+ *           class="org.springframework.jms.com.Li.config.JmsListenerEndpointRegistry"&gt;
  *           // registry configuration
  *     &lt;/bean&gt;
  *

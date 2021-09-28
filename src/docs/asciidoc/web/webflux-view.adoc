@@ -90,7 +90,7 @@ The following example shows how to configure FreeMarker as a view technology:
 ----
 
 Your templates need to be stored in the directory specified by the `FreeMarkerConfigurer`,
-shown in the preceding example. Given the preceding configuration, if your controller
+shown in the preceding example. Given the preceding configuration, if your com.Li.controller
 returns the view name, `welcome`, the resolver looks for the
 `classpath:/templates/freemarker/welcome.ftl` template.
 
@@ -399,7 +399,7 @@ provides the `HttpMessageWriterView`, which you can use to plug in any of the av
 or `Jaxb2XmlEncoder`.
 
 Unlike other view technologies, `HttpMessageWriterView` does not require a `ViewResolver`
-but is instead <<webflux-config-view-resolvers, configured>> as a default view. You can
+but is instead <<webflux-com.Li.config-view-resolvers, configured>> as a default view. You can
 configure one or more such default views, wrapping different `HttpMessageWriter` instances
 or `Encoder` instances. The one that matches the requested content type is used at runtime.
 

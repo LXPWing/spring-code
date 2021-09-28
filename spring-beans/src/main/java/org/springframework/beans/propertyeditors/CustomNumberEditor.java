@@ -30,7 +30,7 @@ import org.springframework.util.StringUtils;
  * {@code decode} / {@code valueOf} / {@code toString} methods.
  *
  * <p>This is not meant to be used as system PropertyEditor but rather
- * as locale-specific number editor within custom controller code,
+ * as locale-specific number editor within custom com.Li.controller code,
  * parsing user-entered number strings into Number properties of beans
  * and rendering them in the UI form.
  *

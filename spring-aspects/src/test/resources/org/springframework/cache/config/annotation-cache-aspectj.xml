@@ -8,9 +8,9 @@
 
 
 	<!--
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor advice-ref="debugInterceptor" pointcut="execution(* *..CacheableService.*(..))" order="1"/>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="cacheAspect" class="org.springframework.cache.aspectj.AnnotationCacheAspect" factory-method="aspectOf">
 		<property name="cacheManager" ref="cacheManager"/>
@@ -54,8 +54,8 @@
 
 	<bean id="debugInterceptor" class="org.springframework.aop.interceptor.DebugInterceptor"/>
 
-	<bean id="service" class="org.springframework.cache.config.DefaultCacheableService"/>
+	<bean id="service" class="org.springframework.cache.com.Li.config.DefaultCacheableService"/>
 
-	<bean id="classService" class="org.springframework.cache.config.AnnotatedClassCacheableService"/>
+	<bean id="classService" class="org.springframework.cache.com.Li.config.AnnotatedClassCacheableService"/>
 
 </beans>

@@ -39,7 +39,7 @@ import org.springframework.web.socket.messaging.SubProtocolWebSocketHandler;
 /**
  * A central class for aggregating information about internal state and counters
  * from key infrastructure components of the setup that comes with
- * {@code @EnableWebSocketMessageBroker} for Java config and
+ * {@code @EnableWebSocketMessageBroker} for Java com.Li.config and
  * {@code <websocket:message-broker>} for XML.
  *
  * <p>By default aggregated information is logged every 30 minutes at INFO level.

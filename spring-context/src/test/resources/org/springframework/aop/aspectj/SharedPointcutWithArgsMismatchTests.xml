@@ -6,13 +6,13 @@
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="beforeAdviceBindingTests" ref="testAspect">
 		  <aop:pointcut id="foo" expression="execution(* foo(..)) and args(x)"/>
 		  <aop:before pointcut-ref="foo" method="doBefore(int)"/>
 		  <aop:before pointcut-ref="foo" method="doBefore(java.lang.String)"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="toBeAdvised" class="org.springframework.aop.aspectj.ToBeAdvised"/>
 

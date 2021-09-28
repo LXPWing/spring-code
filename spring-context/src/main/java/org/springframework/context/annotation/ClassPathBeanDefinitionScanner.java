@@ -234,7 +234,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	}
 
 	/**
-	 * Specify whether to register annotation config post-processors.
+	 * Specify whether to register annotation com.Li.config post-processors.
 	 * <p>The default is to register the post-processors. Turn this off
 	 * to be able to ignore the annotations or to process them differently.
 	 */
@@ -253,7 +253,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 
 		doScan(basePackages);
 
-		// Register annotation config processors, if necessary.
+		// Register annotation com.Li.config processors, if necessary.
 		if (this.includeAnnotationConfig) {
 			AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
 		}
@@ -264,7 +264,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	/**
 	 * Perform a scan within the specified base packages,
 	 * returning the registered bean definitions.
-	 * <p>This method does <i>not</i> register an annotation config processor
+	 * <p>This method does <i>not</i> register an annotation com.Li.config processor
 	 * but rather leaves this up to the caller.
 	 * @param basePackages the packages to check for annotated classes
 	 * @return set of beans registered if any for tooling registration purposes (never {@code null})

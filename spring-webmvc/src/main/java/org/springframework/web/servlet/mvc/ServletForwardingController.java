@@ -103,7 +103,7 @@ public class ServletForwardingController extends AbstractController implements B
 	/**
 	 * Set the name of the servlet to forward to,
 	 * i.e. the "servlet-name" of the target servlet in web.xml.
-	 * <p>Default is the bean name of this controller.
+	 * <p>Default is the bean name of this com.Li.controller.
 	 */
 	public void setServletName(String servletName) {
 		this.servletName = servletName;

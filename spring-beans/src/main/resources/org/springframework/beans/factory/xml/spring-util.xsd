@@ -39,7 +39,7 @@
 
 	<xsd:element name="list">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.ListFactoryBean">
+			<xsd:documentation source="java:org.springframework.beans.factory.com.Li.config.ListFactoryBean">
 	Builds a List instance of the specified type, populated with the specified content.
 			</xsd:documentation>
 			<xsd:appinfo>
@@ -80,7 +80,7 @@
 
 	<xsd:element name="set">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.SetFactoryBean">
+			<xsd:documentation source="java:org.springframework.beans.factory.com.Li.config.SetFactoryBean">
 	Builds a Set instance of the specified type, populated with the specified content.
 			</xsd:documentation>
 			<xsd:appinfo>
@@ -121,7 +121,7 @@
 
 	<xsd:element name="map">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.MapFactoryBean">
+			<xsd:documentation source="java:org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 	Builds a Map instance of the specified type, populated with the specified content.
 			</xsd:documentation>
 			<xsd:appinfo>
@@ -162,7 +162,7 @@
 
 	<xsd:element name="properties">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.PropertiesFactoryBean">
+			<xsd:documentation source="java:org.springframework.beans.factory.com.Li.config.PropertiesFactoryBean">
 	Loads a Properties instance from the resource location specified by the '<code>location</code>' attribute.
 			</xsd:documentation>
 			<xsd:appinfo>

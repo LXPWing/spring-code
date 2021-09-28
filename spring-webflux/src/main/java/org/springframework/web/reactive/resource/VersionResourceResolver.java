@@ -113,7 +113,7 @@ public class VersionResourceResolver extends AbstractResourceResolver {
 	 * <p>The version may be a random number, the current date, or a value
 	 * fetched from a git commit sha, a property file, or environment variable
 	 * and set with SpEL expressions in the configuration (e.g. see {@code @Value}
-	 * in Java config).
+	 * in Java com.Li.config).
 	 * <p>If not done already, variants of the given {@code pathPatterns}, prefixed with
 	 * the {@code version} will be also configured. For example, adding a {@code "/js/**"} path pattern
 	 * will also cofigure automatically a {@code "/v1.0.0/js/**"} with {@code "v1.0.0"} the

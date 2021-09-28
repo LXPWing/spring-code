@@ -97,7 +97,7 @@ public class AutowiredConfigurationTests {
 	public void testAutowiredSingleConstructorSupported() {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		new XmlBeanDefinitionReader(factory).loadBeanDefinitions(
-				new ClassPathResource("annotation-config.xml", AutowiredConstructorConfig.class));
+				new ClassPathResource("annotation-com.Li.config.xml", AutowiredConstructorConfig.class));
 		GenericApplicationContext ctx = new GenericApplicationContext(factory);
 		ctx.registerBeanDefinition("config1", new RootBeanDefinition(AutowiredConstructorConfig.class));
 		ctx.registerBeanDefinition("config2", new RootBeanDefinition(ColorConfig.class));
@@ -109,7 +109,7 @@ public class AutowiredConfigurationTests {
 	public void testObjectFactoryConstructorWithTypeVariable() {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		new XmlBeanDefinitionReader(factory).loadBeanDefinitions(
-				new ClassPathResource("annotation-config.xml", ObjectFactoryConstructorConfig.class));
+				new ClassPathResource("annotation-com.Li.config.xml", ObjectFactoryConstructorConfig.class));
 		GenericApplicationContext ctx = new GenericApplicationContext(factory);
 		ctx.registerBeanDefinition("config1", new RootBeanDefinition(ObjectFactoryConstructorConfig.class));
 		ctx.registerBeanDefinition("config2", new RootBeanDefinition(ColorConfig.class));
@@ -121,7 +121,7 @@ public class AutowiredConfigurationTests {
 	public void testAutowiredAnnotatedConstructorSupported() {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		new XmlBeanDefinitionReader(factory).loadBeanDefinitions(
-				new ClassPathResource("annotation-config.xml", MultipleConstructorConfig.class));
+				new ClassPathResource("annotation-com.Li.config.xml", MultipleConstructorConfig.class));
 		GenericApplicationContext ctx = new GenericApplicationContext(factory);
 		ctx.registerBeanDefinition("config1", new RootBeanDefinition(MultipleConstructorConfig.class));
 		ctx.registerBeanDefinition("config2", new RootBeanDefinition(ColorConfig.class));

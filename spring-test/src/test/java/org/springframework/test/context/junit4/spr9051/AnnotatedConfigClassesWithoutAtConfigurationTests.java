@@ -38,7 +38,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p><b>The Claims</b>:
  *
  * <blockquote>
- * When a {@code @ContextConfiguration} test class references a config class
+ * When a {@code @ContextConfiguration} test class references a com.Li.config class
  * missing an {@code @Configuration} annotation, {@code @Bean} dependencies are
  * wired successfully but the bean lifecycle is not applied (no init methods are
  * invoked, for example). Adding the missing {@code @Configuration} annotation

@@ -43,7 +43,7 @@ public class SpringConfiguredConfiguration {
 	 * The bean name used for the configurer aspect.
 	 */
 	public static final String BEAN_CONFIGURER_ASPECT_BEAN_NAME =
-			"org.springframework.context.config.internalBeanConfigurerAspect";
+			"org.springframework.context.com.Li.config.internalBeanConfigurerAspect";
 
 	@Bean(name = BEAN_CONFIGURER_ASPECT_BEAN_NAME)
 	@Role(BeanDefinition.ROLE_INFRASTRUCTURE)

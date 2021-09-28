@@ -808,10 +808,10 @@ configuration is explained in detail in the next few paragraphs:
 
 		<!-- ensure that the above transactional advice runs for any execution
 			of an operation defined by the FooService interface -->
-		<aop:config>
+		<aop:com.Li.config>
 			<aop:pointcut id="fooServiceOperation" expression="execution(* x.y.service.FooService.*(..))"/>
 			<aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
-		</aop:config>
+		</aop:com.Li.config>
 
 		<!-- don't forget the DataSource -->
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -846,7 +846,7 @@ wire in has the name `transactionManager`. If the `TransactionManager` bean that
 you want to wire in has any other name, you must use the `transaction-manager`
 attribute explicitly, as in the preceding example.
 
-The `<aop:config/>` definition ensures that the transactional advice defined by the
+The `<aop:com.Li.config/>` definition ensures that the transactional advice defined by the
 `txAdvice` bean runs at the appropriate points in the program. First, you define a
 pointcut that matches the execution of any operation defined in the `FooService` interface
 (`fooServiceOperation`). Then you associate the pointcut with the `txAdvice` by using an
@@ -863,10 +863,10 @@ service layer. The following example shows how to do so:
 
 [source,xml,indent=0,subs="verbatim"]
 ----
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:pointcut id="fooServiceMethods" expression="execution(* x.y.service.*.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceMethods"/>
-	</aop:config>
+	</aop:com.Li.config>
 ----
 
 NOTE: In the preceding example, it is assumed that all your service interfaces are defined
@@ -1192,14 +1192,14 @@ the default transactional configuration, you could write the following:
 			http://www.springframework.org/schema/aop
 			https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-		<aop:config>
+		<aop:com.Li.config>
 
 			<aop:pointcut id="serviceOperation"
 					expression="execution(* x.y.service..*Service.*(..))"/>
 
 			<aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
 
-		</aop:config>
+		</aop:com.Li.config>
 
 		<!-- these two beans will be transactional... -->
 		<bean id="fooService" class="x.y.service.DefaultFooService"/>
@@ -1239,7 +1239,7 @@ transactional settings:
 			http://www.springframework.org/schema/aop
 			https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-		<aop:config>
+		<aop:com.Li.config>
 
 			<aop:pointcut id="defaultServiceOperation"
 					expression="execution(* x.y.service.*Service.*(..))"/>
@@ -1251,7 +1251,7 @@ transactional settings:
 
 			<aop:advisor pointcut-ref="noTxServiceOperation" advice-ref="noTxAdvice"/>
 
-		</aop:config>
+		</aop:com.Li.config>
 
 		<!-- this bean will be transactional (see the 'defaultServiceOperation' pointcut) -->
 		<bean id="fooService" class="x.y.service.DefaultFooService"/>
@@ -2115,14 +2115,14 @@ transactional aspects applied to it in the desired order:
 
 		<tx:annotation-driven transaction-manager="txManager" order="200"/>
 
-		<aop:config>
+		<aop:com.Li.config>
 				<!-- this advice runs around the transactional advice -->
 				<aop:aspect id="profilingAspect" ref="profiler">
 					<aop:pointcut id="serviceMethodWithReturnValue"
 							expression="execution(!void x.y..*Service.*(..))"/>
 					<aop:around method="profile" pointcut-ref="serviceMethodWithReturnValue"/>
 				</aop:aspect>
-		</aop:config>
+		</aop:com.Li.config>
 
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -2167,7 +2167,7 @@ declarative approach:
 			<property name="order" value="1"/>
 		</bean>
 
-		<aop:config>
+		<aop:com.Li.config>
 			<aop:pointcut id="entryPointMethod" expression="execution(* x.y..*Service.*(..))"/>
 			<!-- runs after the profiling advice (c.f. the order attribute) -->
 
@@ -2180,7 +2180,7 @@ declarative approach:
 				<aop:around method="profile" pointcut-ref="serviceMethodWithReturnValue"/>
 			</aop:aspect>
 
-		</aop:config>
+		</aop:com.Li.config>
 
 		<tx:advice id="txAdvice" transaction-manager="txManager">
 			<tx:attributes>
@@ -7668,7 +7668,7 @@ injection of the default `EntityManagerFactory`, as the following example bean d
 ----
 
 As an alternative to explicitly defining a `PersistenceAnnotationBeanPostProcessor`,
-consider using the Spring `context:annotation-config` XML element in your application
+consider using the Spring `context:annotation-com.Li.config` XML element in your application
 context configuration. Doing so automatically registers all Spring standard
 post-processors for annotation-based configuration, including
 `CommonAnnotationBeanPostProcessor` and so on.
@@ -7679,8 +7679,8 @@ Consider the following example:
 ----
 	<beans>
 
-		<!-- post-processors for all standard config annotations -->
-		<context:annotation-config/>
+		<!-- post-processors for all standard com.Li.config annotations -->
+		<context:annotation-com.Li.config/>
 
 		<bean id="myProductDao" class="product.ProductDaoImpl"/>
 
@@ -8227,7 +8227,7 @@ This sample application produces the following `settings.xml` file:
 
 
 
-[[oxm-schema-based-config]]
+[[oxm-schema-based-com.Li.config]]
 === XML Configuration Namespace
 
 You can configure marshallers more concisely by using tags from the OXM namespace.

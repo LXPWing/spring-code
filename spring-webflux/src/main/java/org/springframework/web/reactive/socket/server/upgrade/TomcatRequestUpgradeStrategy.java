@@ -72,7 +72,7 @@ public class TomcatRequestUpgradeStrategy implements RequestUpgradeStrategy {
 
 
 	/**
-	 * Exposes the underlying config option on
+	 * Exposes the underlying com.Li.config option on
 	 * {@link javax.websocket.server.ServerContainer#setAsyncSendTimeout(long)}.
 	 */
 	public void setAsyncSendTimeout(Long timeoutInMillis) {
@@ -85,7 +85,7 @@ public class TomcatRequestUpgradeStrategy implements RequestUpgradeStrategy {
 	}
 
 	/**
-	 * Exposes the underlying config option on
+	 * Exposes the underlying com.Li.config option on
 	 * {@link javax.websocket.server.ServerContainer#setDefaultMaxSessionIdleTimeout(long)}.
 	 */
 	public void setMaxSessionIdleTimeout(Long timeoutInMillis) {
@@ -98,7 +98,7 @@ public class TomcatRequestUpgradeStrategy implements RequestUpgradeStrategy {
 	}
 
 	/**
-	 * Exposes the underlying config option on
+	 * Exposes the underlying com.Li.config option on
 	 * {@link javax.websocket.server.ServerContainer#setDefaultMaxTextMessageBufferSize(int)}.
 	 */
 	public void setMaxTextMessageBufferSize(Integer bufferSize) {
@@ -111,7 +111,7 @@ public class TomcatRequestUpgradeStrategy implements RequestUpgradeStrategy {
 	}
 
 	/**
-	 * Exposes the underlying config option on
+	 * Exposes the underlying com.Li.config option on
 	 * {@link javax.websocket.server.ServerContainer#setDefaultMaxBinaryMessageBufferSize(int)}.
 	 */
 	public void setMaxBinaryMessageBufferSize(Integer bufferSize) {

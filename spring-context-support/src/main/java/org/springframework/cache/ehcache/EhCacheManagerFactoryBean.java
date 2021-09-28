@@ -31,16 +31,16 @@ import org.springframework.lang.Nullable;
 
 /**
  * {@link FactoryBean} that exposes an EhCache {@link net.sf.ehcache.CacheManager}
- * instance (independent or shared), configured from a specified config location.
+ * instance (independent or shared), configured from a specified com.Li.config location.
  *
- * <p>If no config location is specified, a CacheManager will be configured from
+ * <p>If no com.Li.config location is specified, a CacheManager will be configured from
  * "ehcache.xml" in the root of the class path (that is, default EhCache initialization
  * - as defined in the EhCache docs - will apply).
  *
  * <p>Setting up a separate EhCacheManagerFactoryBean is also advisable when using
  * EhCacheFactoryBean, as it provides a (by default) independent CacheManager instance
  * and cares for proper shutdown of the CacheManager. EhCacheManagerFactoryBean is
- * also necessary for loading EhCache configuration from a non-default config location.
+ * also necessary for loading EhCache configuration from a non-default com.Li.config location.
  *
  * <p>Note: As of Spring 5.0, Spring's EhCache support requires EhCache 2.10 or higher.
  *
@@ -73,7 +73,7 @@ public class EhCacheManagerFactoryBean implements FactoryBean<CacheManager>, Ini
 
 
 	/**
-	 * Set the location of the EhCache config file. A typical value is "/WEB-INF/ehcache.xml".
+	 * Set the location of the EhCache com.Li.config file. A typical value is "/WEB-INF/ehcache.xml".
 	 * <p>Default is "ehcache.xml" in the root of the class path, or if not found,
 	 * "ehcache-failsafe.xml" in the EhCache jar (default EhCache initialization).
 	 * @see net.sf.ehcache.CacheManager#create(java.io.InputStream)

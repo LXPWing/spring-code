@@ -52,7 +52,7 @@ import org.springframework.web.util.UrlPathHelper;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Test fixture for the configuration in mvc-config-annotation-driven.xml.
+ * Test fixture for the configuration in mvc-com.Li.config-annotation-driven.xml.
  *
  * @author Rossen Stoyanchev
  * @author Brian Clozel
@@ -64,7 +64,7 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void testMessageCodesResolver() {
-		loadBeanDefinitions("mvc-config-message-codes-resolver.xml");
+		loadBeanDefinitions("mvc-com.Li.config-message-codes-resolver.xml");
 		RequestMappingHandlerAdapter adapter = this.appContext.getBean(RequestMappingHandlerAdapter.class);
 		assertThat(adapter).isNotNull();
 		Object initializer = adapter.getWebBindingInitializer();
@@ -78,7 +78,7 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void testPathMatchingConfiguration() {
-		loadBeanDefinitions("mvc-config-path-matching.xml");
+		loadBeanDefinitions("mvc-com.Li.config-path-matching.xml");
 		RequestMappingHandlerMapping hm = this.appContext.getBean(RequestMappingHandlerMapping.class);
 		assertThat(hm).isNotNull();
 		assertThat(hm.useSuffixPatternMatch()).isTrue();
@@ -92,7 +92,7 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void testMessageConverters() {
-		loadBeanDefinitions("mvc-config-message-converters.xml");
+		loadBeanDefinitions("mvc-com.Li.config-message-converters.xml");
 		verifyMessageConverters(this.appContext.getBean(RequestMappingHandlerAdapter.class), true);
 		verifyMessageConverters(this.appContext.getBean(ExceptionHandlerExceptionResolver.class), true);
 		verifyRequestResponseBodyAdvice(this.appContext.getBean(RequestMappingHandlerAdapter.class));
@@ -101,14 +101,14 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void testMessageConvertersWithoutDefaultRegistrations() {
-		loadBeanDefinitions("mvc-config-message-converters-defaults-off.xml");
+		loadBeanDefinitions("mvc-com.Li.config-message-converters-defaults-off.xml");
 		verifyMessageConverters(this.appContext.getBean(RequestMappingHandlerAdapter.class), false);
 		verifyMessageConverters(this.appContext.getBean(ExceptionHandlerExceptionResolver.class), false);
 	}
 
 	@Test
 	public void testArgumentResolvers() {
-		loadBeanDefinitions("mvc-config-argument-resolvers.xml");
+		loadBeanDefinitions("mvc-com.Li.config-argument-resolvers.xml");
 		testArgumentResolvers(this.appContext.getBean(RequestMappingHandlerAdapter.class));
 		testArgumentResolvers(this.appContext.getBean(ExceptionHandlerExceptionResolver.class));
 	}
@@ -129,7 +129,7 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void testReturnValueHandlers() {
-		loadBeanDefinitions("mvc-config-return-value-handlers.xml");
+		loadBeanDefinitions("mvc-com.Li.config-return-value-handlers.xml");
 		testReturnValueHandlers(this.appContext.getBean(RequestMappingHandlerAdapter.class));
 		testReturnValueHandlers(this.appContext.getBean(ExceptionHandlerExceptionResolver.class));
 	}
@@ -149,7 +149,7 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 
 	@Test
 	public void beanNameUrlHandlerMapping() {
-		loadBeanDefinitions("mvc-config.xml");
+		loadBeanDefinitions("mvc-com.Li.config.xml");
 		BeanNameUrlHandlerMapping mapping = this.appContext.getBean(BeanNameUrlHandlerMapping.class);
 		assertThat(mapping).isNotNull();
 		assertThat(mapping.getOrder()).isEqualTo(2);

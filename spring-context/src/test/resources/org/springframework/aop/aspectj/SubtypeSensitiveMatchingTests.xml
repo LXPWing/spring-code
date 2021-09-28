@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:aspect id="thisMatcher" ref="testAspect">
 		  <aop:before pointcut="execution(* *(..)) and this(java.io.Serializable)" method="toString"/>
 		</aop:aspect>
@@ -16,7 +16,7 @@
 		<aop:aspect id="argsMatcher" ref="testAspect">
 		  <aop:before pointcut="execution(* bar(..)) and args(java.io.Serializable)" method="toString"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<!--  should not be proxied -->
 	<bean id="testClassA" class="org.springframework.aop.aspectj.SubtypeMatchingTestClassA"/>

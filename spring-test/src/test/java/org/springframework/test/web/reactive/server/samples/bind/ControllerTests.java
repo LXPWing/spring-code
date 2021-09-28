@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Sample tests demonstrating "mock" server tests binding to an annotated
- * controller.
+ * com.Li.controller.
  *
  * @author Rossen Stoyanchev
  */

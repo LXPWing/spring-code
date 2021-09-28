@@ -41,7 +41,7 @@ import org.springframework.util.Assert;
  *
  * <p>Also a {@code HttpMessageReader} that pre-resolves decoding hints
  * from the extra information available on the server side such as the request
- * or controller method parameter annotations.
+ * or com.Li.controller method parameter annotations.
  *
  * @author Arjen Poutsma
  * @author Sebastien Deleuze
@@ -143,7 +143,7 @@ public class DecoderHttpMessageReader<T> implements HttpMessageReader<T> {
 
 	/**
 	 * Get additional hints for decoding for example based on the server request
-	 * or annotations from controller method parameters. By default, delegate to
+	 * or annotations from com.Li.controller method parameters. By default, delegate to
 	 * the decoder if it is an instance of {@link HttpMessageDecoder}.
 	 */
 	protected Map<String, Object> getReadHints(ResolvableType actualType,

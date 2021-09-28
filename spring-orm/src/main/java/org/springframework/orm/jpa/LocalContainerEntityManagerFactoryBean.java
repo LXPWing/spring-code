@@ -49,7 +49,7 @@ import org.springframework.util.ClassUtils;
  * configuration!
  *
  * <p>As with {@link LocalEntityManagerFactoryBean}, configuration settings
- * are usually read in from a {@code META-INF/persistence.xml} config file,
+ * are usually read in from a {@code META-INF/persistence.xml} com.Li.config file,
  * residing in the class path, according to the general JPA configuration contract.
  * However, this FactoryBean is more flexible in that you can override the location
  * of the {@code persistence.xml} file, specify the JDBC DataSources to link to,

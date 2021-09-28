@@ -103,7 +103,7 @@ import org.springframework.web.servlet.view.ViewResolverComposite;
 import org.springframework.web.util.UrlPathHelper;
 
 /**
- * This is the main class providing the configuration behind the MVC Java config.
+ * This is the main class providing the configuration behind the MVC Java com.Li.config.
  * It is typically imported by adding {@link EnableWebMvc @EnableWebMvc} to an
  * application {@link Configuration @Configuration} class. An alternative more
  * advanced option is to extend directly from this class and override methods as
@@ -114,11 +114,11 @@ import org.springframework.web.util.UrlPathHelper;
  * <p>This class registers the following {@link HandlerMapping HandlerMappings}:</p>
  * <ul>
  * <li>{@link RequestMappingHandlerMapping}
- * ordered at 0 for mapping requests to annotated controller methods.
+ * ordered at 0 for mapping requests to annotated com.Li.controller methods.
  * <li>{@link HandlerMapping}
  * ordered at 1 to map URL paths directly to view names.
  * <li>{@link BeanNameUrlHandlerMapping}
- * ordered at 2 to map URL paths to controller bean names.
+ * ordered at 2 to map URL paths to com.Li.controller bean names.
  * <li>{@link HandlerMapping}
  * ordered at {@code Integer.MAX_VALUE-1} to serve static resource requests.
  * <li>{@link HandlerMapping}
@@ -128,7 +128,7 @@ import org.springframework.web.util.UrlPathHelper;
  * <p>Registers these {@link HandlerAdapter HandlerAdapters}:
  * <ul>
  * <li>{@link RequestMappingHandlerAdapter}
- * for processing requests with annotated controller methods.
+ * for processing requests with annotated com.Li.controller methods.
  * <li>{@link HttpRequestHandlerAdapter}
  * for processing requests with {@link HttpRequestHandler HttpRequestHandlers}.
  * <li>{@link SimpleControllerHandlerAdapter}
@@ -347,7 +347,7 @@ public class WebMvcConfigurationSupport implements ApplicationContextAware, Serv
 
 	/**
 	 * Override this method to add Spring MVC interceptors for
-	 * pre- and post-processing of controller invocation.
+	 * pre- and post-processing of com.Li.controller invocation.
 	 * @see InterceptorRegistry
 	 */
 	protected void addInterceptors(InterceptorRegistry registry) {
@@ -478,7 +478,7 @@ public class WebMvcConfigurationSupport implements ApplicationContextAware, Serv
 
 	/**
 	 * Return a {@link BeanNameUrlHandlerMapping} ordered at 2 to map URL
-	 * paths to controller bean names.
+	 * paths to com.Li.controller bean names.
 	 */
 	@Bean
 	public BeanNameUrlHandlerMapping beanNameHandlerMapping(
@@ -596,7 +596,7 @@ public class WebMvcConfigurationSupport implements ApplicationContextAware, Serv
 
 	/**
 	 * Returns a {@link RequestMappingHandlerAdapter} for processing requests
-	 * through annotated controller methods. Consider overriding one of these
+	 * through annotated com.Li.controller methods. Consider overriding one of these
 	 * other more fine-grained methods:
 	 * <ul>
 	 * <li>{@link #addArgumentResolvers} for adding custom argument resolvers.

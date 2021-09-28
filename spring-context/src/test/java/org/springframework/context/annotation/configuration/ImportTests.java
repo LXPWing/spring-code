@@ -64,7 +64,7 @@ public class ImportTests {
 		int configClasses = 2;
 		int beansInClasses = 2;
 		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-		beanFactory.registerBeanDefinition("config", new RootBeanDefinition(ConfigurationWithImportAnnotation.class.getName()));
+		beanFactory.registerBeanDefinition("com.Li.config", new RootBeanDefinition(ConfigurationWithImportAnnotation.class.getName()));
 		ConfigurationClassPostProcessor pp = new ConfigurationClassPostProcessor();
 		pp.postProcessBeanFactory(beanFactory);
 		assertThat(beanFactory.getBeanDefinitionCount()).isEqualTo(configClasses + beansInClasses);
@@ -171,7 +171,7 @@ public class ImportTests {
 	@Test
 	public void testImportAnnotationWithMultipleArgumentsResultingInOverriddenBeanDefinition() {
 		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-		beanFactory.registerBeanDefinition("config", new RootBeanDefinition(
+		beanFactory.registerBeanDefinition("com.Li.config", new RootBeanDefinition(
 				WithMultipleArgumentsThatWillCauseDuplication.class));
 		ConfigurationClassPostProcessor pp = new ConfigurationClassPostProcessor();
 		pp.postProcessBeanFactory(beanFactory);
@@ -338,14 +338,14 @@ public class ImportTests {
 		ctx.register(B.class);
 		ctx.refresh();
 		System.out.println(ctx.getBeanFactory());
-		assertThat(ctx.getBeanNamesForType(B.class)[0]).isEqualTo("config-b");
-		assertThat(ctx.getBeanNamesForType(A.class)[0]).isEqualTo("config-a");
+		assertThat(ctx.getBeanNamesForType(B.class)[0]).isEqualTo("com.Li.config-b");
+		assertThat(ctx.getBeanNamesForType(A.class)[0]).isEqualTo("com.Li.config-a");
 	}
 
-	@Configuration("config-a")
+	@Configuration("com.Li.config-a")
 	static class A { }
 
-	@Configuration("config-b")
+	@Configuration("com.Li.config-b")
 	@Import(A.class)
 	static class B { }
 

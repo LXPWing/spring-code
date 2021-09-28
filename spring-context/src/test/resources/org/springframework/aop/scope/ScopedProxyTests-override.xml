@@ -10,7 +10,7 @@
 		<property name="age" value="99"/>
 	</bean>
 
-	<bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyOverrideConfigurer">
 		<property name="properties">
 			<map>
 				<entry key="testBean.sex" value="male"/>

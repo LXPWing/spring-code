@@ -57,7 +57,7 @@ class ParallelExecutionSpringExtensionTests {
 		LauncherDiscoveryRequest request = request()//
 				.configurationParameter("junit.jupiter.conditions.deactivate", "org.junit.jupiter.engine.extension.DisabledCondition")//
 				.configurationParameter("junit.jupiter.execution.parallel.enabled", "true")//
-				.configurationParameter("junit.jupiter.execution.parallel.config.dynamic.factor", "10")//
+				.configurationParameter("junit.jupiter.execution.parallel.com.Li.config.dynamic.factor", "10")//
 				.selectors(selectClass(TestCase.class))//
 				.build();
 

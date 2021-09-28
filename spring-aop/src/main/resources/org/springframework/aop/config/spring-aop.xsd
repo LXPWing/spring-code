@@ -16,7 +16,7 @@
 		]]></xsd:documentation>
 	</xsd:annotation>
 
-	<xsd:element name="config">
+	<xsd:element name="com.Li.config">
 		<xsd:annotation>
 			<xsd:documentation><![CDATA[
 	A section (compartmentalization) of AOP-specific configuration (including

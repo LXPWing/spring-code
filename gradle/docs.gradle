@@ -229,10 +229,10 @@ task schemaZip(type: Zip) {
 			File xsdFile = module.sourceSets.main.resources.find {
 				(it.path.endsWith(schemas.get(key)) || it.path.endsWith(schemas.get(key).replaceAll('\\/','\\\\')))
 			}
-			assert xsdFile != null
-			into (shortName) {
-				from xsdFile.path
-			}
+//			assert xsdFile != null
+//			into (shortName) {
+//				from xsdFile.path
+//			}
 		}
 	}
 }

@@ -6,7 +6,7 @@
 				http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<context:property-placeholder
-			location="classpath*:/org/springframework/context/config/test-*.properties,classpath*:/org/springframework/context/config/empty-*.properties,classpath*:/org/springframework/context/config/missing-*.properties"
+			location="classpath*:/org/springframework/context/com.Li.config/test-*.properties,classpath*:/org/springframework/context/com.Li.config/empty-*.properties,classpath*:/org/springframework/context/com.Li.config/missing-*.properties"
 			file-encoding="ISO-8859-1" trim-values="true"/>
 
 	<bean id="foo" class="java.lang.String">

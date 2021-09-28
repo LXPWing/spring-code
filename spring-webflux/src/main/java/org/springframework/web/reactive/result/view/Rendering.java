@@ -30,7 +30,7 @@ import org.springframework.ui.Model;
  * in Spring MVC controllers.
  *
  * <p>Controllers typically return a {@link String} view name and rely on the
- * "implicit" model which can also be injected into the controller method.
+ * "implicit" model which can also be injected into the com.Li.controller method.
  * Or controllers may return model attribute(s) and rely on a default view name
  * being selected based on the request path.
  *

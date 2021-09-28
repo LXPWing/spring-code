@@ -649,7 +649,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		 * @see #setRegisteredSuffixPatternMatch(boolean)
 		 * @deprecated as of 5.2.4. See class-level note in
 		 * {@link RequestMappingHandlerMapping} on the deprecation of path
-		 * extension config options.
+		 * extension com.Li.config options.
 		 */
 		@Deprecated
 		public void setSuffixPatternMatch(boolean suffixPatternMatch) {
@@ -660,7 +660,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		 * Return whether to apply suffix pattern matching in PatternsRequestCondition.
 		 * @deprecated as of 5.2.4. See class-level note in
 		 * {@link RequestMappingHandlerMapping} on the deprecation of path
-		 * extension config options.
+		 * extension com.Li.config options.
 		 */
 		@Deprecated
 		public boolean useSuffixPatternMatch() {
@@ -675,7 +675,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		 * obtain the registered file extensions.
 		 * @deprecated as of 5.2.4. See class-level note in
 		 * {@link RequestMappingHandlerMapping} on the deprecation of path
-		 * extension config options; note also that in 5.3 the default for this
+		 * extension com.Li.config options; note also that in 5.3 the default for this
 		 * property switches from {@code false} to {@code true}.
 		 */
 		@Deprecated
@@ -689,7 +689,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		 * file extensions only.
 		 * @deprecated as of 5.2.4. See class-level note in
 		 * {@link RequestMappingHandlerMapping} on the deprecation of path
-		 * extension config options.
+		 * extension com.Li.config options.
 		 */
 		@Deprecated
 		public boolean useRegisteredSuffixPatternMatch() {
@@ -702,7 +702,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		 * from the configured {@code contentNegotiationManager}.
 		 * @deprecated as of 5.2.4. See class-level note in
 		 * {@link RequestMappingHandlerMapping} on the deprecation of path
-		 * extension config options.
+		 * extension com.Li.config options.
 		 */
 		@Nullable
 		@Deprecated

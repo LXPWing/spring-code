@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
  * &lt;/bean&gt;
  *
  * &lt;!-- will result in 12, which is the value of property 'age' of the inner bean --&gt;
- * &lt;bean id="propertyPath1" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"&gt;
+ * &lt;bean id="propertyPath1" class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"&gt;
  *   &lt;property name="targetObject"&gt;
  *     &lt;bean class="org.springframework.beans.TestBean"&gt;
  *       &lt;property name="age" value="12"/&gt;
@@ -59,13 +59,13 @@ import org.springframework.util.StringUtils;
  * &lt;/bean&gt;
  *
  * &lt;!-- will result in 11, which is the value of property 'spouse.age' of bean 'tb' --&gt;
- * &lt;bean id="propertyPath2" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"&gt;
+ * &lt;bean id="propertyPath2" class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"&gt;
  *   &lt;property name="targetBeanName" value="tb"/&gt;
  *   &lt;property name="propertyPath" value="spouse.age"/&gt;
  * &lt;/bean&gt;
  *
  * &lt;!-- will result in 10, which is the value of property 'age' of bean 'tb' --&gt;
- * &lt;bean id="tb.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/&gt;</pre>
+ * &lt;bean id="tb.age" class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"/&gt;</pre>
  *
  * <p>If you are using Spring 2.0 and XML Schema support in your configuration file(s),
  * you can also use the following style of configuration for property path access.

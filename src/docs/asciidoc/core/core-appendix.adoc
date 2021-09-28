@@ -48,7 +48,7 @@ Consider the following bean definition:
 	<bean id="..." class="...">
 		<property name="isolation">
 			<bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE"
-					class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+					class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean" />
 		</property>
 	</bean>
 ----
@@ -74,19 +74,19 @@ developer's intent ("`inject this constant value`"), and it reads better:
 [[xsd-schemas-util-frfb]]
 ===== Setting a Bean Property or Constructor Argument from a Field Value
 
-{api-spring-framework}/beans/factory/config/FieldRetrievingFactoryBean.html[`FieldRetrievingFactoryBean`]
+{api-spring-framework}/beans/factory/com.Li.config/FieldRetrievingFactoryBean.html[`FieldRetrievingFactoryBean`]
 is a `FactoryBean` that retrieves a `static` or non-static field value. It is typically
 used for retrieving `public` `static` `final` constants, which may then be used to set a
 property value or constructor argument for another bean.
 
 The following example shows how a `static` field is exposed, by using the
-{api-spring-framework}/beans/factory/config/FieldRetrievingFactoryBean.html#setStaticField(java.lang.String)[`staticField`]
+{api-spring-framework}/beans/factory/com.Li.config/FieldRetrievingFactoryBean.html#setStaticField(java.lang.String)[`staticField`]
 property:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<bean id="myField"
-			class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+			class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean">
 		<property name="staticField" value="java.sql.Connection.TRANSACTION_SERIALIZABLE"/>
 	</bean>
 ----
@@ -97,7 +97,7 @@ name, as the following example shows:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE"
-			class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean"/>
+			class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean"/>
 ----
 
 This does mean that there is no longer any choice in what the bean `id` is (so any other
@@ -110,14 +110,14 @@ to be specified for the bean reference, as the following example shows:
 	<bean id="..." class="...">
 		<property name="isolation">
 			<bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE"
-					class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+					class="org.springframework.beans.factory.com.Li.config.FieldRetrievingFactoryBean" />
 		</property>
 	</bean>
 ----
 
 You can also access a non-static (instance) field of another bean, as
 described in the API documentation for the
-{api-spring-framework}/beans/factory/config/FieldRetrievingFactoryBean.html[`FieldRetrievingFactoryBean`]
+{api-spring-framework}/beans/factory/com.Li.config/FieldRetrievingFactoryBean.html[`FieldRetrievingFactoryBean`]
 class.
 
 Injecting enumeration values into beans as either property or constructor arguments is
@@ -201,7 +201,7 @@ Consider the following example:
 	</bean>
 
 	<!-- results in 10, which is the value of property 'age' of bean 'testBean' -->
-	<bean id="testBean.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
+	<bean id="testBean.age" class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"/>
 ----
 
 The preceding configuration uses a Spring `FactoryBean` implementation (the
@@ -254,7 +254,7 @@ The following example shows a path being used against another bean, by name:
 
 	<!-- results in 11, which is the value of property 'spouse.age' of bean 'person' -->
 	<bean id="theAge"
-			class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+			class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean">
 		<property name="targetBeanName" value="person"/>
 		<property name="propertyPath" value="spouse.age"/>
 	</bean>
@@ -266,7 +266,7 @@ In the following example, a path is evaluated against an inner bean:
 ----
 	<!-- results in 12, which is the value of property 'age' of the inner bean -->
 	<bean id="theAge"
-			class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+			class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean">
 		<property name="targetObject">
 			<bean class="org.springframework.beans.TestBean">
 				<property name="age" value="12"/>
@@ -283,7 +283,7 @@ The following example shows the shortcut form:
 ----
 	<!-- results in 10, which is the value of property 'age' of bean 'person' -->
 	<bean id="person.age"
-			class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
+			class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"/>
 ----
 
 This form does mean that there is no choice in the name of the bean. Any reference to it
@@ -295,7 +295,7 @@ bean, there is no need to refer to it at all, as the following example shows:
 	<bean id="..." class="...">
 		<property name="age">
 			<bean id="person.age"
-					class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
+					class="org.springframework.beans.factory.com.Li.config.PropertyPathFactoryBean"/>
 		</property>
 	</bean>
 ----
@@ -313,7 +313,7 @@ Consider the following example:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- creates a java.util.Properties instance with values loaded from the supplied location -->
-	<bean id="jdbcConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	<bean id="jdbcConfiguration" class="org.springframework.beans.factory.com.Li.config.PropertiesFactoryBean">
 		<property name="location" value="classpath:com/foo/jdbc-production.properties"/>
 	</bean>
 ----
@@ -339,7 +339,7 @@ Consider the following example:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- creates a java.util.List instance with values loaded from the supplied 'sourceList' -->
-	<bean id="emails" class="org.springframework.beans.factory.config.ListFactoryBean">
+	<bean id="emails" class="org.springframework.beans.factory.com.Li.config.ListFactoryBean">
 		<property name="sourceList">
 			<list>
 				<value>pechorin@hero.org</value>
@@ -394,7 +394,7 @@ Consider the following example:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- creates a java.util.Map instance with values loaded from the supplied 'sourceMap' -->
-	<bean id="emails" class="org.springframework.beans.factory.config.MapFactoryBean">
+	<bean id="emails" class="org.springframework.beans.factory.com.Li.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="pechorin" value="pechorin@hero.org"/>
@@ -449,7 +449,7 @@ Consider the following example:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- creates a java.util.Set instance with values loaded from the supplied 'sourceSet' -->
-	<bean id="emails" class="org.springframework.beans.factory.config.SetFactoryBean">
+	<bean id="emails" class="org.springframework.beans.factory.com.Li.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<value>pechorin@hero.org</value>
@@ -563,12 +563,12 @@ is a convenience mechanism that sets up a <<core.adoc#beans-factory-placeholderc
 
 
 [[xsd-schemas-context-ac]]
-==== Using `<annotation-config/>`
+==== Using `<annotation-com.Li.config/>`
 
 This element activates the Spring infrastructure to detect annotations in bean classes:
 
 * Spring's <<core.adoc#beans-factory-metadata, `@Configuration`>> model
-* <<core.adoc#beans-annotation-config, `@Autowired`/`@Inject`>>, `@Value`, and `@Lookup`
+* <<core.adoc#beans-annotation-com.Li.config, `@Autowired`/`@Inject`>>, `@Value`, and `@Lookup`
 * JSR-250's `@Resource`, `@PostConstruct`, and `@PreDestroy` (if available)
 * JAX-WS's `@WebServiceRef` and EJB 3's `@EJB` (if available)
 * JPA's `@PersistenceContext` and `@PersistenceUnit` (if available)
@@ -588,7 +588,7 @@ element for that purpose. Similarly, Spring's
 [[xsd-schemas-context-component-scan]]
 ==== Using `<component-scan/>`
 
-This element is detailed in the section on <<core.adoc#beans-annotation-config,
+This element is detailed in the section on <<core.adoc#beans-annotation-com.Li.config,
 annotation-based container configuration>>.
 
 
@@ -1266,7 +1266,7 @@ listing shows our custom `BeanDefinitionParser` implementation:
 ----
 	package com.foo;
 
-	import org.springframework.beans.factory.config.BeanDefinition;
+	import org.springframework.beans.factory.com.Li.config.BeanDefinition;
 	import org.springframework.beans.factory.support.AbstractBeanDefinition;
 	import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 	import org.springframework.beans.factory.support.ManagedList;
@@ -1315,7 +1315,7 @@ listing shows our custom `BeanDefinitionParser` implementation:
 ----
 	package com.foo
 
-	import org.springframework.beans.factory.config.BeanDefinition
+	import org.springframework.beans.factory.com.Li.config.BeanDefinition
 	import org.springframework.beans.factory.support.AbstractBeanDefinition
 	import org.springframework.beans.factory.support.BeanDefinitionBuilder
 	import org.springframework.beans.factory.support.ManagedList
@@ -1497,7 +1497,7 @@ The following listing shows our `BeanDefinitionDecorator` implementation:
 ----
 	package com.foo;
 
-	import org.springframework.beans.factory.config.BeanDefinitionHolder;
+	import org.springframework.beans.factory.com.Li.config.BeanDefinitionHolder;
 	import org.springframework.beans.factory.support.AbstractBeanDefinition;
 	import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 	import org.springframework.beans.factory.xml.BeanDefinitionDecorator;
@@ -1551,7 +1551,7 @@ The following listing shows our `BeanDefinitionDecorator` implementation:
 ----
 	package com.foo
 
-	import org.springframework.beans.factory.config.BeanDefinitionHolder
+	import org.springframework.beans.factory.com.Li.config.BeanDefinitionHolder
 	import org.springframework.beans.factory.support.AbstractBeanDefinition
 	import org.springframework.beans.factory.support.BeanDefinitionBuilder
 	import org.springframework.beans.factory.xml.BeanDefinitionDecorator

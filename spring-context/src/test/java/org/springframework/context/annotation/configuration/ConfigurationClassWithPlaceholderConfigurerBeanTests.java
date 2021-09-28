@@ -31,7 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * A configuration class that registers a non-static placeholder configurer {@code @Bean}
- * method cannot also have {@code @Value} fields. Logically, the config class must be
+ * method cannot also have {@code @Value} fields. Logically, the com.Li.config class must be
  * instantiated in order to invoke the placeholder configurer bean method, and it is a
  * chicken-and-egg problem to process the {@code @Value} field.
  *

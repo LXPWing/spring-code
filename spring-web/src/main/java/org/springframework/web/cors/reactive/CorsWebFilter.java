@@ -34,7 +34,7 @@ import org.springframework.web.server.WebFilterChain;
  * {@link CorsConfigurationSource} (for example an {@link UrlBasedCorsConfigurationSource}
  * instance.
  *
- * <p>This is an alternative to Spring WebFlux Java config CORS configuration,
+ * <p>This is an alternative to Spring WebFlux Java com.Li.config CORS configuration,
  * mostly useful for applications using the functional API.
  *
  * @author Sebastien Deleuze

@@ -14,7 +14,7 @@
 
 	<bean class="org.springframework.jms.annotation.AbstractJmsAnnotationDrivenTests$FullConfigurableBean"/>
 
-	<bean id="simpleFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
+	<bean id="simpleFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
 
 	<context:property-placeholder location="classpath:org/springframework/jms/annotation/jms-listener.properties"/>
 

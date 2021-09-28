@@ -49,7 +49,7 @@ import org.springframework.web.servlet.support.RequestContext;
  *
  * <p>Provides support for static attributes, to be made available to the view,
  * with a variety of ways to specify them. Static attributes will be merged
- * with the given dynamic attributes (the model that the controller returned)
+ * with the given dynamic attributes (the model that the com.Li.controller returned)
  * for each render operation.
  *
  * <p>Extends {@link WebApplicationObjectSupport}, which will be helpful to

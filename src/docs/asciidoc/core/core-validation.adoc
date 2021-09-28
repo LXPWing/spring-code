@@ -31,7 +31,7 @@ formatting UI field values. You can use these packages as simpler alternatives t
 Spring supports Java Bean Validation through setup infrastructure and an adaptor to
 Spring's own `Validator` contract. Applications can enable Bean Validation once globally,
 as described in <<validation-beanvalidation>>, and use it exclusively for all validation
-needs. In the web layer, applications can further register controller-local Spring
+needs. In the web layer, applications can further register com.Li.controller-local Spring
 `Validator` instances per `DataBinder`, as described in <<validation-binder>>, which can
 be useful for plugging in custom validation logic.
 
@@ -722,7 +722,7 @@ Finally, the following example shows how to use `CustomEditorConfigurer` to regi
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.CustomEditorConfigurer">
 		<property name="customEditors">
 			<map>
 				<entry key="example.ExoticType" value="example.ExoticTypeEditor"/>
@@ -796,7 +796,7 @@ The next example shows how to configure a `CustomEditorConfigurer` and inject an
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
-	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.CustomEditorConfigurer">
 		<property name="propertyEditorRegistrars">
 			<list>
 				<ref bean="customPropertyEditorRegistrar"/>
@@ -1145,7 +1145,7 @@ creating common `ConversionService` configurations.
 
 
 
-[[core-convert-Spring-config]]
+[[core-convert-Spring-com.Li.config]]
 === Configuring a `ConversionService`
 
 A `ConversionService` is a stateless object designed to be instantiated at application
@@ -1185,7 +1185,7 @@ any of the `Converter`, `ConverterFactory`, or `GenericConverter` interfaces.
 ----
 
 It is also common to use a `ConversionService` within a Spring MVC application. See
-<<web.adoc#mvc-config-conversion, Conversion and Formatting>> in the Spring MVC chapter.
+<<web.adoc#mvc-com.Li.config-conversion, Conversion and Formatting>> in the Spring MVC chapter.
 
 In certain situations, you may wish to apply formatting during conversion. See
 <<format-FormatterRegistry-SPI>> for details on using `FormattingConversionServiceFactoryBean`.
@@ -1685,7 +1685,7 @@ converter and formatter registration.
 [[format-configuring-formatting-mvc]]
 === Configuring Formatting in Spring MVC
 
-See <<web.adoc#mvc-config-conversion, Conversion and Formatting>> in the Spring MVC chapter.
+See <<web.adoc#mvc-com.Li.config-conversion, Conversion and Formatting>> in the Spring MVC chapter.
 
 
 
@@ -1800,8 +1800,8 @@ Time):
 
 Note there are extra considerations when configuring date and time formats in web
 applications. Please see
-<<web.adoc#mvc-config-conversion, WebMVC Conversion and Formatting>> or
-<<web-reactive.adoc#webflux-config-conversion, WebFlux Conversion and Formatting>>.
+<<web.adoc#mvc-com.Li.config-conversion, WebMVC Conversion and Formatting>> or
+<<web-reactive.adoc#webflux-com.Li.config-conversion, WebFlux Conversion and Formatting>>.
 
 
 
@@ -2140,11 +2140,11 @@ You can also configure a `DataBinder` with multiple `Validator` instances throug
 `dataBinder.addValidators` and `dataBinder.replaceValidators`. This is useful when
 combining globally configured bean validation with a Spring `Validator` configured
 locally on a DataBinder instance. See
-<<web.adoc#mvc-config-validation,Spring MVC Validation Configuration>>.
+<<web.adoc#mvc-com.Li.config-validation,Spring MVC Validation Configuration>>.
 
 
 
 [[validation-mvc]]
 === Spring MVC 3 Validation
 
-See <<web.adoc#mvc-config-validation, Validation>> in the Spring MVC chapter.
+See <<web.adoc#mvc-com.Li.config-validation, Validation>> in the Spring MVC chapter.

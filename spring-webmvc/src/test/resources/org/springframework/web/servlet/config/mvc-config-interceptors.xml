@@ -24,6 +24,6 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
-    <bean id="pathMatcher" class="org.springframework.web.servlet.config.MvcNamespaceTests$TestPathMatcher"/>
+    <bean id="pathMatcher" class="org.springframework.web.servlet.com.Li.config.MvcNamespaceTests$TestPathMatcher"/>
 
 </beans>

@@ -72,12 +72,12 @@ import org.springframework.stereotype.Component;
  *
  * <pre class="code">
  * &lt;beans&gt;
- *    &lt;context:annotation-config/&gt;
+ *    &lt;context:annotation-com.Li.config/&gt;
  *    &lt;bean class="com.acme.AppConfig"/&gt;
  * &lt;/beans&gt;
  * </pre>
  *
- * <p>In the example above, {@code <context:annotation-config/>} is required in order to
+ * <p>In the example above, {@code <context:annotation-com.Li.config/>} is required in order to
  * enable {@link ConfigurationClassPostProcessor} and other annotation-related
  * post processors that facilitate handling {@code @Configuration} classes.
  *
@@ -294,7 +294,7 @@ import org.springframework.stereotype.Component;
  *
  * <pre class="code">
  * &#064;Configuration
- * &#064;ImportResource("classpath:/com/acme/database-config.xml")
+ * &#064;ImportResource("classpath:/com/acme/database-com.Li.config.xml")
  * public class AppConfig {
  *
  *     &#064Inject DataSource dataSource; // from XML

@@ -49,10 +49,10 @@ import org.springframework.web.context.support.StandardServletEnvironment;
 
 /**
  * Simple extension of {@link javax.servlet.http.HttpServlet} which treats
- * its config parameters ({@code init-param} entries within the
+ * its com.Li.config parameters ({@code init-param} entries within the
  * {@code servlet} tag in {@code web.xml}) as bean properties.
  *
- * <p>A handy superclass for any type of servlet. Type conversion of config
+ * <p>A handy superclass for any type of servlet. Type conversion of com.Li.config
  * parameters is automatic, with the corresponding setter method getting
  * invoked with the converted value. It is also possible for subclasses to
  * specify required properties. Parameters without matching bean property
@@ -94,7 +94,7 @@ public abstract class HttpServletBean extends HttpServlet implements Environment
 	/**
 	 * Subclasses can invoke this method to specify that this property
 	 * (which must match a JavaBean property they expose) is mandatory,
-	 * and must be supplied as a config parameter. This should be called
+	 * and must be supplied as a com.Li.config parameter. This should be called
 	 * from the constructor of a subclass.
 	 * <p>This method is only relevant in case of traditional initialization
 	 * driven by a ServletConfig instance.
@@ -140,7 +140,7 @@ public abstract class HttpServletBean extends HttpServlet implements Environment
 	}
 
 	/**
-	 * Map config parameters onto bean properties of this servlet, and
+	 * Map com.Li.config parameters onto bean properties of this servlet, and
 	 * invoke subclass initialization.
 	 * @throws ServletException if bean properties are invalid (or required
 	 * properties are missing), or if subclass initialization fails.

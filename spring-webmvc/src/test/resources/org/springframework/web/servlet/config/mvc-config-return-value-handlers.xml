@@ -7,11 +7,11 @@
 
 	<mvc:annotation-driven>
 		<mvc:return-value-handlers>
-			<bean class="org.springframework.web.servlet.config.TestHandlerMethodReturnValueHandler"/>
+			<bean class="org.springframework.web.servlet.com.Li.config.TestHandlerMethodReturnValueHandler"/>
 			<ref bean="customHandler" />
 		</mvc:return-value-handlers>
 	</mvc:annotation-driven>
 
-	<bean id="customHandler" class="org.springframework.web.servlet.config.TestHandlerMethodReturnValueHandler"/>
+	<bean id="customHandler" class="org.springframework.web.servlet.com.Li.config.TestHandlerMethodReturnValueHandler"/>
 
 </beans>

@@ -28,7 +28,7 @@ import org.springframework.core.annotation.AliasFor;
  * Annotation to bind a method parameter to a request attribute.
  *
  * <p>The main motivation is to provide convenient access to request attributes
- * from a controller method with an optional/required check and a cast to the
+ * from a com.Li.controller method with an optional/required check and a cast to the
  * target method parameter type.
  *
  * @author Rossen Stoyanchev

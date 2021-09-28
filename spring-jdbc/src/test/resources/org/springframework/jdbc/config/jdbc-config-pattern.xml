@@ -6,8 +6,8 @@
 		http://www.springframework.org/schema/jdbc https://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
 	<jdbc:embedded-database id="dataSource" type="HSQL">
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-schema.sql"/>
-		<jdbc:script location="classpath*:org/springframework/jdbc/config/*-data.sql"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-schema.sql"/>
+		<jdbc:script location="classpath*:org/springframework/jdbc/com.Li.config/*-data.sql"/>
 	</jdbc:embedded-database>
 	
 </beans>

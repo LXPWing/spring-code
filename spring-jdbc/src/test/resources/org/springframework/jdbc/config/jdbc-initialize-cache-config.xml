@@ -8,13 +8,13 @@
 	<jdbc:embedded-database id="dataSource" type="HSQL"/>
 
 	<jdbc:initialize-database data-source="dataSource">
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-schema.sql"/>
-		<jdbc:script location="classpath:org/springframework/jdbc/config/db-test-data.sql"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-schema.sql"/>
+		<jdbc:script location="classpath:org/springframework/jdbc/com.Li.config/db-test-data.sql"/>
 	</jdbc:initialize-database>
 
 	<!-- This cache relies on data created in the initialize-database element.  It works fine
 	if the bean definitions are registered in the right order.  (Could possibly be fixed later.) -->
-	<bean class="org.springframework.jdbc.config.InitializeDatabaseIntegrationTests$CacheData">
+	<bean class="org.springframework.jdbc.com.Li.config.InitializeDatabaseIntegrationTests$CacheData">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 

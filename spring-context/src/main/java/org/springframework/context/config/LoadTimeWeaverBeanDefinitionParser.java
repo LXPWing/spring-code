@@ -43,7 +43,7 @@ class LoadTimeWeaverBeanDefinitionParser extends AbstractSingleBeanDefinitionPar
 	 * @since 4.3.1
 	 */
 	public static final String ASPECTJ_WEAVING_ENABLER_BEAN_NAME =
-			"org.springframework.context.config.internalAspectJWeavingEnabler";
+			"org.springframework.context.com.Li.config.internalAspectJWeavingEnabler";
 
 	private static final String ASPECTJ_WEAVING_ENABLER_CLASS_NAME =
 			"org.springframework.context.weaving.AspectJWeavingEnabler";

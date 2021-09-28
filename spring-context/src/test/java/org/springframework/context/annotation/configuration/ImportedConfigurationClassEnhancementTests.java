@@ -50,7 +50,7 @@ public class ImportedConfigurationClassEnhancementTests {
 	private void autowiredConfigClassIsEnhanced(Class<?>... configClasses) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(configClasses);
 		Config config = ctx.getBean(Config.class);
-		assertThat(ClassUtils.isCglibProxy(config.autowiredConfig)).as("autowired config class has not been enhanced").isTrue();
+		assertThat(ClassUtils.isCglibProxy(config.autowiredConfig)).as("autowired com.Li.config class has not been enhanced").isTrue();
 	}
 
 

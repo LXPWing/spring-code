@@ -493,7 +493,7 @@ public class DispatcherServletTests {
 		MockHttpServletResponse response = new MockHttpServletResponse();
 		complexDispatcherServlet.service(request, response);
 
-		assertThat(response.getStatus() == HttpServletResponse.SC_NOT_FOUND).as("Matched through parent controller/handler pair: not response=" + response.getStatus()).isFalse();
+		assertThat(response.getStatus() == HttpServletResponse.SC_NOT_FOUND).as("Matched through parent com.Li.controller/handler pair: not response=" + response.getStatus()).isFalse();
 	}
 
 	@Test

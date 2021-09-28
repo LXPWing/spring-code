@@ -18,9 +18,9 @@
 		</websocket:sockjs>
 	</websocket:handlers>
 
-	<bean id="testHandler" class="org.springframework.web.socket.config.TestWebSocketHandler"/>
-	<bean id="testTaskScheduler" class="org.springframework.web.socket.config.TestTaskScheduler"/>
+	<bean id="testHandler" class="org.springframework.web.socket.com.Li.config.TestWebSocketHandler"/>
+	<bean id="testTaskScheduler" class="org.springframework.web.socket.com.Li.config.TestTaskScheduler"/>
 	<bean id="xhrStreamingTransportHandler" class="org.springframework.web.socket.sockjs.transport.handler.XhrStreamingTransportHandler"/>
-	<bean id="messageCodec" class="org.springframework.web.socket.config.TestMessageCodec" />
+	<bean id="messageCodec" class="org.springframework.web.socket.com.Li.config.TestMessageCodec" />
 
 </beans>

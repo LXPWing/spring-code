@@ -74,7 +74,7 @@
 							<xsd:documentation><![CDATA[
 	Specify a default literal value to fall back to if the JNDI lookup fails.
 	This is typically used for literal values in scenarios where the JNDI environment
-	might define specific config settings but those are not required to be present.
+	might define specific com.Li.config settings but those are not required to be present.
 
 	Default is none. Note: This is only supported for lookup on startup.
 							]]></xsd:documentation>

@@ -135,7 +135,7 @@ public class JmsMessageEndpointManager extends GenericMessageEndpointManager
 	/**
 	 * Specify the {@link JmsActivationSpecConfig} object that this endpoint manager
 	 * should use for activating its listener.
-	 * <p>This config object will be turned into a concrete JCA 1.5 ActivationSpec
+	 * <p>This com.Li.config object will be turned into a concrete JCA 1.5 ActivationSpec
 	 * object through a {@link #setActivationSpecFactory JmsActivationSpecFactory}.
 	 */
 	public void setActivationSpecConfig(@Nullable JmsActivationSpecConfig activationSpecConfig) {
@@ -215,7 +215,7 @@ public class JmsMessageEndpointManager extends GenericMessageEndpointManager
 		if (config != null) {
 			return config.isPubSubDomain();
 		}
-		throw new IllegalStateException("Could not determine pubSubDomain - no activation spec config is set");
+		throw new IllegalStateException("Could not determine pubSubDomain - no activation spec com.Li.config is set");
 	}
 
 	@Override
@@ -224,7 +224,7 @@ public class JmsMessageEndpointManager extends GenericMessageEndpointManager
 		if (config != null) {
 			return config.isReplyPubSubDomain();
 		}
-		throw new IllegalStateException("Could not determine reply pubSubDomain - no activation spec config is set");
+		throw new IllegalStateException("Could not determine reply pubSubDomain - no activation spec com.Li.config is set");
 	}
 
 	@Override
@@ -234,6 +234,6 @@ public class JmsMessageEndpointManager extends GenericMessageEndpointManager
 		if (config != null) {
 			return config.getReplyQosSettings();
 		}
-		throw new IllegalStateException("Could not determine reply qosSettings - no activation spec config is set");
+		throw new IllegalStateException("Could not determine reply qosSettings - no activation spec com.Li.config is set");
 	}
 }

@@ -8,6 +8,6 @@
 	<mvc:annotation-driven validator="validator"
 		ignore-default-model-on-redirect="true" enable-matrix-variables="true" />
 
-	<bean id="validator" class="org.springframework.web.servlet.config.MvcNamespaceTests$TestValidator" />
+	<bean id="validator" class="org.springframework.web.servlet.com.Li.config.MvcNamespaceTests$TestValidator" />
 
 </beans>

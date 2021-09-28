@@ -32,7 +32,7 @@ import javax.persistence.spi.PersistenceProvider;
  * definition is just a matter of configuration!
  *
  * <p>Configuration settings are usually read from a {@code META-INF/persistence.xml}
- * config file, residing in the class path, according to the JPA standalone bootstrap
+ * com.Li.config file, residing in the class path, according to the JPA standalone bootstrap
  * contract. Additionally, most JPA providers will require a special VM agent
  * (specified on JVM startup) that allows them to instrument application classes.
  * See the Java Persistence API specification and your provider documentation

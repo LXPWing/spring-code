@@ -18,7 +18,7 @@
 	 system and create the WebApplicationContext
 	 -->
 	<servlet>
-		<servlet-name>config</servlet-name>
+		<servlet-name>com.Li.config</servlet-name>
 		<servlet-class>org.springframework.framework.web.context.ContextLoaderServlet</servlet-class>
 		<init-param>
 			<param-name>contextClass</param-name>
@@ -47,14 +47,14 @@
   </servlet-mapping>
  
   <servlet-mapping>
-          	<servlet-name>config</servlet-name>
+          	<servlet-name>com.Li.config</servlet-name>
           	<url-pattern>/context/context.html</url-pattern>
   </servlet-mapping>
  
 
-<session-config>
+<session-com.Li.config>
 <session-timeout>60</session-timeout>
-</session-config>
+</session-com.Li.config>
 
 <welcome-file-list>
 	<!-- Simply doesn't work to a servlet -->
@@ -103,17 +103,17 @@
 </security-constraint>
 
 
- 	<login-config>
+ 	<login-com.Li.config>
  		<auth-method>FORM</auth-method>
  	
  		<!-- Used only for BASIC authentication: only included because ServletUnit needs it -->
  		<realm-name>ticket</realm-name>
  	
- 		<form-login-config>
+ 		<form-login-com.Li.config>
  			<form-login-page>login.jsp</form-login-page>
  			<form-error-page>loginError.jsp</form-error-page>
- 		</form-login-config>
- 	</login-config>
+ 		</form-login-com.Li.config>
+ 	</login-com.Li.config>
  
  
  	<security-role>

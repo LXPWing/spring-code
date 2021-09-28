@@ -124,7 +124,7 @@ public class StaticWebApplicationContext extends StaticApplicationContext
 	 */
 	@Override
 	public void setConfigLocation(String configLocation) {
-		throw new UnsupportedOperationException("StaticWebApplicationContext does not support config locations");
+		throw new UnsupportedOperationException("StaticWebApplicationContext does not support com.Li.config locations");
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class StaticWebApplicationContext extends StaticApplicationContext
 	 */
 	@Override
 	public void setConfigLocations(String... configLocations) {
-		throw new UnsupportedOperationException("StaticWebApplicationContext does not support config locations");
+		throw new UnsupportedOperationException("StaticWebApplicationContext does not support com.Li.config locations");
 	}
 
 	@Override

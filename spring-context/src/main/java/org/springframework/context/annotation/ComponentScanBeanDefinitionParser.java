@@ -60,7 +60,7 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
 
 	private static final String USE_DEFAULT_FILTERS_ATTRIBUTE = "use-default-filters";
 
-	private static final String ANNOTATION_CONFIG_ATTRIBUTE = "annotation-config";
+	private static final String ANNOTATION_CONFIG_ATTRIBUTE = "annotation-com.Li.config";
 
 	private static final String NAME_GENERATOR_ATTRIBUTE = "name-generator";
 
@@ -142,7 +142,7 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
 			compositeDef.addNestedComponent(new BeanComponentDefinition(beanDefHolder));
 		}
 
-		// Register annotation config processors, if necessary.
+		// Register annotation com.Li.config processors, if necessary.
 		boolean annotationConfig = true;
 		if (element.hasAttribute(ANNOTATION_CONFIG_ATTRIBUTE)) {
 			annotationConfig = Boolean.parseBoolean(element.getAttribute(ANNOTATION_CONFIG_ATTRIBUTE));

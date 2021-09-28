@@ -40,7 +40,7 @@ import org.springframework.util.ClassUtils;
  * PropertyEditorRegistrar can register any number of custom editors.
  *
  * <pre class="code">
- * &lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer"&gt;
+ * &lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.com.Li.config.CustomEditorConfigurer"&gt;
  *   &lt;property name="propertyEditorRegistrars"&gt;
  *     &lt;list&gt;
  *       &lt;bean class="mypackage.MyCustomDateEditorRegistrar"/&gt;
@@ -56,7 +56,7 @@ import org.springframework.util.ClassUtils;
  * them for each editing attempt then:
  *
  * <pre class="code">
- * &lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer"&gt;
+ * &lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.com.Li.config.CustomEditorConfigurer"&gt;
  *   &lt;property name="customEditors"&gt;
  *     &lt;map&gt;
  *       &lt;entry key="java.util.Date" value="mypackage.MyCustomDateEditor"/&gt;

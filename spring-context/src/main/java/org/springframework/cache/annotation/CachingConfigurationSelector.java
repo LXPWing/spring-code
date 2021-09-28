@@ -41,7 +41,7 @@ import org.springframework.util.StringUtils;
 public class CachingConfigurationSelector extends AdviceModeImportSelector<EnableCaching> {
 
 	private static final String PROXY_JCACHE_CONFIGURATION_CLASS =
-			"org.springframework.cache.jcache.config.ProxyJCacheConfiguration";
+			"org.springframework.cache.jcache.com.Li.config.ProxyJCacheConfiguration";
 
 	private static final String CACHE_ASPECT_CONFIGURATION_CLASS_NAME =
 			"org.springframework.cache.aspectj.AspectJCachingConfiguration";

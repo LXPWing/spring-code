@@ -181,7 +181,7 @@ public abstract class AbstractDelegatingSmartContextLoader implements SmartConte
 					"%s should NOT have detected default configuration classes for context configuration %s.",
 					name(getXmlLoader()), configAttributes));
 
-			// Now let the annotation config loader process the configuration.
+			// Now let the annotation com.Li.config loader process the configuration.
 			delegateProcessing(getAnnotationConfigLoader(), configAttributes);
 
 			if (configAttributes.hasClasses()) {
@@ -245,7 +245,7 @@ public abstract class AbstractDelegatingSmartContextLoader implements SmartConte
 		}
 
 		// If neither of the candidates supports the mergedConfig based on resources but
-		// ACIs or customizers were declared, then delegate to the annotation config
+		// ACIs or customizers were declared, then delegate to the annotation com.Li.config
 		// loader.
 		if (!mergedConfig.getContextInitializerClasses().isEmpty() || !mergedConfig.getContextCustomizers().isEmpty()) {
 			return delegateLoading(getAnnotationConfigLoader(), mergedConfig);

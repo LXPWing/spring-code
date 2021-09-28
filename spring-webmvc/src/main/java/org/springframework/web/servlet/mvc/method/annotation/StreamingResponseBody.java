@@ -20,13 +20,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * A controller method return value type for asynchronous request processing
+ * A com.Li.controller method return value type for asynchronous request processing
  * where the application can write directly to the response {@code OutputStream}
  * without holding up the Servlet container thread.
  *
  * <p><strong>Note:</strong> when using this option it is highly recommended to
  * configure explicitly the TaskExecutor used in Spring MVC for executing
- * asynchronous requests. Both the MVC Java config and the MVC namespaces provide
+ * asynchronous requests. Both the MVC Java com.Li.config and the MVC namespaces provide
  * options to configure asynchronous handling. If not using those, an application
  * can set the {@code taskExecutor} property of
  * {@link org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter

@@ -40,10 +40,10 @@ import java.lang.annotation.Target;
  * user and does not pass through the message broker. This is useful for
  * implementing a request-reply pattern.
  *
- * <p><b>NOTE:</b> When using controller interfaces (e.g. for AOP proxying),
+ * <p><b>NOTE:</b> When using com.Li.controller interfaces (e.g. for AOP proxying),
  * make sure to consistently put <i>all</i> your mapping annotations - such as
  * {@code @MessageMapping} and {@code @SubscribeMapping} - on
- * the controller <i>interface</i> rather than on the implementation class.
+ * the com.Li.controller <i>interface</i> rather than on the implementation class.
  *
  * @author Rossen Stoyanchev
  * @since 4.0

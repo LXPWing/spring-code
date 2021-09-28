@@ -87,7 +87,7 @@ class AnnotationDrivenJmsBeanDefinitionParser implements BeanDefinitionParser {
 
 	private static void registerDefaultEndpointRegistry(@Nullable Object source, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(
-				"org.springframework.jms.config.JmsListenerEndpointRegistry");
+				"org.springframework.jms.com.Li.config.JmsListenerEndpointRegistry");
 		builder.getRawBeanDefinition().setSource(source);
 		registerInfrastructureBean(parserContext, builder, JmsListenerConfigUtils.JMS_LISTENER_ENDPOINT_REGISTRY_BEAN_NAME);
 	}

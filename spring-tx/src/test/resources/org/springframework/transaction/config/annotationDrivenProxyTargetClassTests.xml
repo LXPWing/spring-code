@@ -6,11 +6,11 @@
 
 	<tx:annotation-driven proxy-target-class="true" order="0"/>
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor advice-ref="txCheckingInterceptor" pointcut="execution(* *..TransactionalService.*(..))" order="1"/>
-	</aop:config>
+	</aop:com.Li.config>
 
-	<bean id="txCheckingInterceptor" class="org.springframework.transaction.config.AnnotationDrivenTests$TransactionCheckingInterceptor"/>
+	<bean id="txCheckingInterceptor" class="org.springframework.transaction.com.Li.config.AnnotationDrivenTests$TransactionCheckingInterceptor"/>
 
 	<bean id="transactionManager1" class="org.springframework.transaction.testfixture.CallCountingTransactionManager">
 		<qualifier value="synch"/>
@@ -21,6 +21,6 @@
 		<qualifier value="noSynch"/>
 	</bean>
 
-	<bean id="service" class="org.springframework.transaction.config.TransactionalService"/>
+	<bean id="service" class="org.springframework.transaction.com.Li.config.TransactionalService"/>
 
 </beans>

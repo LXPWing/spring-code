@@ -1622,7 +1622,7 @@ public class ServletAnnotationControllerHandlerMethodTests extends AbstractServl
 		initServlet(wac -> {
 			RootBeanDefinition beanDef = new RootBeanDefinition(PrototypeController.class);
 			beanDef.setScope(BeanDefinition.SCOPE_PROTOTYPE);
-			wac.registerBeanDefinition("controller", beanDef);
+			wac.registerBeanDefinition("com.Li.controller", beanDef);
 		});
 
 		MockHttpServletRequest request = new MockHttpServletRequest("GET", "/");

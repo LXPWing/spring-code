@@ -5,7 +5,7 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 				http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-	<context:annotation-config/>
+	<context:annotation-com.Li.config/>
 
 	<import resource="classpath:/org/springframework/orm/jpa/multi-jpa-emf.xml"/>
 
@@ -15,7 +15,7 @@
 		<property name="generateDdl" value="true"/>
 	</bean>
 
-	<bean id="jpaProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	<bean id="jpaProperties" class="org.springframework.beans.factory.com.Li.config.PropertiesFactoryBean">
 		<property name="properties">
 			<props>
 				<prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</prop>

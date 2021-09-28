@@ -312,41 +312,41 @@ public class DispatcherServlet extends FrameworkServlet {
 	/** Perform cleanup of request attributes after include request?. */
 	private boolean cleanupAfterInclude = true;
 
-	//springMVC的核心九大组件（重点）
+	//springMVC的核心九大组件（重点）可以自定义是实现,spring也有默认实现 
 	/** MultipartResolver used by this servlet. */
-	@Nullable
+	@Nullable  //文件上传解析器
 	private MultipartResolver multipartResolver;
 
 	/** LocaleResolver used by this servlet. */
-	@Nullable
+	@Nullable //国际化解析器
 	private LocaleResolver localeResolver;
 
 	/** ThemeResolver used by this servlet. */
-	@Nullable
+	@Nullable //主题解析器
 	private ThemeResolver themeResolver;
 
 	/** List of HandlerMappings used by this servlet. */
-	@Nullable
+	@Nullable //Handle（处理器,能处理请求的人（Controller））的映射
 	private List<HandlerMapping> handlerMappings;
 
 	/** List of HandlerAdapters used by this servlet. */
-	@Nullable
+	@Nullable  //Handle（处理器,能处理请求的人（Controller））的适配器  （超级反射）
 	private List<HandlerAdapter> handlerAdapters;
-
+	                                                       
 	/** List of HandlerExceptionResolvers used by this servlet. */
 	@Nullable
 	private List<HandlerExceptionResolver> handlerExceptionResolvers;
 
 	/** RequestToViewNameTranslator used by this servlet. */
-	@Nullable
+	@Nullable //把请求转成视图名（我们要跳转的页面地址）的翻译器
 	private RequestToViewNameTranslator viewNameTranslator;
 
 	/** FlashMapManager used by this servlet. */
-	@Nullable
+	@Nullable //闪存管理器        
 	private FlashMapManager flashMapManager;
 
 	/** List of ViewResolvers used by this servlet. */
-	@Nullable
+	@Nullable //视图解析器
 	private List<ViewResolver> viewResolvers;
 
 
@@ -460,7 +460,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	/**
 	 * Set whether to throw a NoHandlerFoundException when no Handler was found for this request.
 	 * This exception can then be caught with a HandlerExceptionResolver or an
-	 * {@code @ExceptionHandler} controller method.
+	 * {@code @ExceptionHandler} com.Li.controller method.
 	 * <p>Note that if {@link org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler}
 	 * is used, then requests will always be forwarded to the default servlet and a
 	 * NoHandlerFoundException would never be thrown in that case.
@@ -479,10 +479,10 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * request attributes will be reset, but not model attributes for JSPs or special attributes
 	 * set by views (for example, JSTL's).
 	 * <p>Default is "true", which is strongly recommended. Views should not rely on request attributes
-	 * having been set by (dynamic) includes. This allows JSP views rendered by an included controller
+	 * having been set by (dynamic) includes. This allows JSP views rendered by an included com.Li.controller
 	 * to use any model attributes, even with the same names as in the main JSP, without causing side
 	 * effects. Only turn this off for special needs, for example to deliberately allow main JSPs to
-	 * access attributes from JSP views rendered by an included controller.
+	 * access attributes from JSP views rendered by an included com.Li.controller.
 	 */
 	public void setCleanupAfterInclude(boolean cleanupAfterInclude) {
 		this.cleanupAfterInclude = cleanupAfterInclude;
@@ -493,6 +493,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * This implementation calls {@link #initStrategies}.
 	 */
 	@Override
+	//通过事件回调触发九大核心组件创建
 	protected void onRefresh(ApplicationContext context) {
 		initStrategies(context);
 	}
@@ -521,6 +522,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 */
 	private void initMultipartResolver(ApplicationContext context) {
 		try {
+			//容器有就有,没有就是null
 			this.multipartResolver = context.getBean(MULTIPART_RESOLVER_BEAN_NAME, MultipartResolver.class);
 			if (logger.isTraceEnabled()) {
 				logger.trace("Detected " + this.multipartResolver);
@@ -915,14 +917,14 @@ public class DispatcherServlet extends FrameworkServlet {
 
 		// Keep a snapshot of the request attributes in case of an include,
 		// to be able to restore the original attributes after the include.
-		Map<String, Object> attributesSnapshot = null;
+		Map<String, Object> attributesSnapshot = null; //把request域的所有属性提前保存
 		if (WebUtils.isIncludeRequest(request)) {
 			attributesSnapshot = new HashMap<>();
 			Enumeration<?> attrNames = request.getAttributeNames();
 			while (attrNames.hasMoreElements()) {
 				String attrName = (String) attrNames.nextElement();
 				if (this.cleanupAfterInclude || attrName.startsWith(DEFAULT_STRATEGIES_PREFIX)) {
-					attributesSnapshot.put(attrName, request.getAttribute(attrName));
+					attributesSnapshot.put(attrName, request.getAttribute(attrName));  //快照所有属性
 				}
 			}
 		}
@@ -933,7 +935,7 @@ public class DispatcherServlet extends FrameworkServlet {
 		request.setAttribute(THEME_RESOLVER_ATTRIBUTE, this.themeResolver);
 		request.setAttribute(THEME_SOURCE_ATTRIBUTE, getThemeSource());
 
-		if (this.flashMapManager != null) {
+		if (this.flashMapManager != null) {  //闪存管理器（重定向携带数据）
 			FlashMap inputFlashMap = this.flashMapManager.retrieveAndUpdate(request, response);
 			if (inputFlashMap != null) {
 				request.setAttribute(INPUT_FLASH_MAP_ATTRIBUTE, Collections.unmodifiableMap(inputFlashMap));
@@ -1000,11 +1002,12 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * @param response current HTTP response
 	 * @throws Exception in case of any kind of processing failure
 	 */
+	//springMVC处理核心流程 
 	protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpServletRequest processedRequest = request;
 		HandlerExecutionChain mappedHandler = null;
 		boolean multipartRequestParsed = false;
-
+		//异步请求的支持（Servlet3.0以后才有,webflux）
 		WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
 
 		try {
@@ -1012,6 +1015,7 @@ public class DispatcherServlet extends FrameworkServlet {
 			Exception dispatchException = null;
 
 			try {
+				//检查当前文件上传（替换request）
 				processedRequest = checkMultipart(request);
 				multipartRequestParsed = (processedRequest != request);
 
@@ -1166,7 +1170,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * @see MultipartResolver#resolveMultipart
 	 */
 	protected HttpServletRequest checkMultipart(HttpServletRequest request) throws MultipartException {
-		if (this.multipartResolver != null && this.multipartResolver.isMultipart(request)) {
+		if (this.multipartResolver != null && this.multipartResolver.isMultipart(request)) { //文件上传解析器判断当前是否为文件上传请求
 			if (WebUtils.getNativeRequest(request, MultipartHttpServletRequest.class) != null) {
 				if (request.getDispatcherType().equals(DispatcherType.REQUEST)) {
 					logger.trace("Request already resolved to MultipartHttpServletRequest, e.g. by MultipartFilter");

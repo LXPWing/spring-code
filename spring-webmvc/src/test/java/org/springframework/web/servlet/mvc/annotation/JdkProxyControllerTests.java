@@ -85,7 +85,7 @@ public class JdkProxyControllerTests {
 			@Override
 			protected WebApplicationContext createWebApplicationContext(@Nullable WebApplicationContext parent) {
 				GenericWebApplicationContext wac = new GenericWebApplicationContext();
-				wac.registerBeanDefinition("controller", new RootBeanDefinition(controllerclass));
+				wac.registerBeanDefinition("com.Li.controller", new RootBeanDefinition(controllerclass));
 				DefaultAdvisorAutoProxyCreator autoProxyCreator = new DefaultAdvisorAutoProxyCreator();
 				autoProxyCreator.setBeanFactory(wac.getBeanFactory());
 				wac.getBeanFactory().addBeanPostProcessor(autoProxyCreator);

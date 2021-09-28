@@ -52,9 +52,9 @@ WebSocket handler to a specific URL, as the following example shows:
 [source,java,indent=0]
 [subs="verbatim,quotes"]
 ----
-	import org.springframework.web.socket.config.annotation.EnableWebSocket;
-	import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
-	import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+	import org.springframework.web.socket.com.Li.config.annotation.EnableWebSocket;
+	import org.springframework.web.socket.com.Li.config.annotation.WebSocketConfigurer;
+	import org.springframework.web.socket.com.Li.config.annotation.WebSocketHandlerRegistry;
 
 	@Configuration
 	@EnableWebSocket
@@ -193,7 +193,7 @@ understand. However, special considerations apply with regards to JSR-356 runtim
 The Java WebSocket API (JSR-356) provides two deployment mechanisms. The first
 involves a Servlet container classpath scan (a Servlet 3 feature) at startup.
 The other is a registration API to use at Servlet container initialization.
-Neither of these mechanism makes it possible to use a single "`front controller`"
+Neither of these mechanism makes it possible to use a single "`front com.Li.controller`"
 for all HTTP processing -- including WebSocket handshake and all other HTTP
 requests -- such as Spring MVC's `DispatcherServlet`.
 
@@ -258,14 +258,14 @@ Java initialization API. The following example shows how to do so:
 
 [[websocket-server-runtime-configuration]]
 === Server Configuration
-[.small]#<<web-reactive.adoc#webflux-websocket-server-config, WebFlux>>#
+[.small]#<<web-reactive.adoc#webflux-websocket-server-com.Li.config, WebFlux>>#
 
 Each underlying WebSocket engine exposes configuration properties that control
 runtime characteristics, such as the size of message buffer sizes, idle timeout,
 and others.
 
 For Tomcat, WildFly, and GlassFish, you can add a `ServletServerContainerFactoryBean` to your
-WebSocket Java config, as the following example shows:
+WebSocket Java com.Li.config, as the following example shows:
 
 [source,java,indent=0]
 [subs="verbatim,quotes"]
@@ -311,7 +311,7 @@ NOTE: For client-side WebSocket configuration, you should use `WebSocketContaine
 (XML) or `ContainerProvider.getWebSocketContainer()` (Java configuration).
 
 For Jetty, you need to supply a pre-configured Jetty `WebSocketServerFactory` and plug
-that into Spring's `DefaultHandshakeHandler` through your WebSocket Java config.
+that into Spring's `DefaultHandshakeHandler` through your WebSocket Java com.Li.config.
 The following example shows how to do so:
 
 [source,java,indent=0]
@@ -411,9 +411,9 @@ You can configure WebSocket and SockJS allowed origins, as the following example
 [source,java,indent=0]
 [subs="verbatim,quotes"]
 ----
-	import org.springframework.web.socket.config.annotation.EnableWebSocket;
-	import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
-	import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+	import org.springframework.web.socket.com.Li.config.annotation.EnableWebSocket;
+	import org.springframework.web.socket.com.Li.config.annotation.WebSocketConfigurer;
+	import org.springframework.web.socket.com.Li.config.annotation.WebSocketHandlerRegistry;
 
 	@Configuration
 	@EnableWebSocket
@@ -981,8 +981,8 @@ endpoints, over WebSocket with <<websocket-fallback>>, as the following example 
 [source,java,indent=0]
 [subs="verbatim,quotes"]
 ----
-	import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
-	import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+	import org.springframework.web.socket.com.Li.config.annotation.EnableWebSocketMessageBroker;
+	import org.springframework.web.socket.com.Li.config.annotation.StompEndpointRegistry;
 
 	@Configuration
 	@EnableWebSocketMessageBroker
@@ -994,9 +994,9 @@ endpoints, over WebSocket with <<websocket-fallback>>, as the following example 
 		}
 
 		@Override
-		public void configureMessageBroker(MessageBrokerRegistry config) {
-			config.setApplicationDestinationPrefixes("/app"); // <2>
-			config.enableSimpleBroker("/topic", "/queue"); // <3>
+		public void configureMessageBroker(MessageBrokerRegistry com.Li.config) {
+			com.Li.config.setApplicationDestinationPrefixes("/app"); // <2>
+			com.Li.config.enableSimpleBroker("/topic", "/queue"); // <3>
 		}
 	}
 ----
@@ -1084,7 +1084,7 @@ application.
 
 
 
-[[websocket-stomp-server-config]]
+[[websocket-stomp-server-com.Li.config]]
 === WebSocket Server
 
 To configure the underlying WebSocket server, the information in
@@ -1174,7 +1174,7 @@ to the message broker.
 An annotated `@Controller` that handles a STOMP message from a client may send a message to
 the message broker through the `brokerChannel`, and the broker broadcasts the
 message to matching subscribers through the `clientOutboundChannel`. The same
-controller can also do the same in response to HTTP requests, so a client can perform an
+com.Li.controller can also do the same in response to HTTP requests, so a client can perform an
 HTTP POST, and then a `@PostMapping` method can send a message to the message broker
 to broadcast to subscribed clients.
 
@@ -1251,7 +1251,7 @@ methods, as described in the following topics:
 You can use `@MessageMapping` to annotate methods that route messages based on their
 destination. It is supported at the method level as well as at the type level. At the type
 level, `@MessageMapping` is used to express shared mappings across all methods in a
-controller.
+com.Li.controller.
 
 By default, the mapping values are Ant-style path patterns (for example `/thing*`, `/thing/**`),
 including support for template variables (for example, pass:q[`/thing/{id}`]). The values can be
@@ -1345,7 +1345,7 @@ When is this useful? Assume that the broker is mapped to `/topic` and `/queue`, 
 application controllers are mapped to `/app`. In this setup, the broker stores all
 subscriptions to `/topic` and `/queue` that are intended for repeated broadcasts, and
 there is no need for the application to get involved. A client could also subscribe to
-some `/app` destination, and a controller could return a value in response to that
+some `/app` destination, and a com.Li.controller could return a value in response to that
 subscription without involving the broker without storing or using the subscription again
 (effectively a one-time request-reply exchange). One use case for this is populating a UI
 with initial data on startup.
@@ -1353,7 +1353,7 @@ with initial data on startup.
 When is this not useful? Do not try to map broker and controllers to the same destination
 prefix unless you want both to independently process messages, including subscriptions,
 for some reason. Inbound messages are handled in parallel. There are no guarantees whether
-a broker or a controller processes a given message first. If the goal is to be notified
+a broker or a com.Li.controller processes a given message first. If the goal is to be notified
 when a subscription is stored and ready for broadcasts, a client should ask for a
 receipt if the server supports it (simple broker does not). For example, with the Java
 <<websocket-stomp-client, STOMP client>>, you could do the following to add a receipt:
@@ -1414,7 +1414,7 @@ Typically, `@MessageExceptionHandler` methods apply within the `@Controller` cla
 (or class hierarchy) in which they are declared. If you want such methods to apply
 more globally (across controllers), you can declare them in a class marked with
 `@ControllerAdvice`. This is comparable to the
-<<web.adoc#mvc-ann-controller-advice, similar support>> available in Spring MVC.
+<<web.adoc#mvc-ann-com.Li.controller-advice, similar support>> available in Spring MVC.
 
 
 
@@ -1702,7 +1702,7 @@ The following example shows the XML configuration equivalent of the preceding ex
 	</beans>
 ----
 
-After that, a controller can use a dot (`.`) as the separator in `@MessageMapping` methods,
+After that, a com.Li.controller can use a dot (`.`) as the separator in `@MessageMapping` methods,
 as the following example shows:
 
 [source,java,indent=0]
@@ -1841,7 +1841,7 @@ example shows how register a custom authentication interceptor:
 ----
 
 Also, note that, when you use Spring Security's authorization for messages, at present,
-you need to ensure that the authentication `ChannelInterceptor` config is ordered
+you need to ensure that the authentication `ChannelInterceptor` com.Li.config is ordered
 ahead of Spring Security's. This is best done by declaring the custom interceptor in
 its own implementation of `WebSocketMessageBrokerConfigurer` that is marked with
 `@Order(Ordered.HIGHEST_PRECEDENCE + 99)`.
@@ -2221,7 +2221,7 @@ transport-level errors including `ConnectionLostException`.
 === WebSocket Scope
 
 Each WebSocket session has a map of attributes. The map is attached as a header to
-inbound client messages and may be accessed from a controller method, as the following example shows:
+inbound client messages and may be accessed from a com.Li.controller method, as the following example shows:
 
 [source,java,indent=0]
 [subs="verbatim,quotes"]
@@ -2281,7 +2281,7 @@ scope proxy mode for WebSocket-scoped beans, as the following example shows:
 ----
 
 As with any custom scope, Spring initializes a new `MyBean` instance the first
-time it is accessed from the controller and stores the instance in the WebSocket
+time it is accessed from the com.Li.controller and stores the instance in the WebSocket
 session attributes. The same instance is subsequently returned until the session
 ends. WebSocket-scoped beans have all Spring lifecycle methods invoked, as
 shown in the preceding examples.
@@ -2527,8 +2527,8 @@ in an overall test strategy. Server-side tests are more focused and easier to wr
 and maintain. End-to-end integration tests, on the other hand, are more complete and
 test much more, but they are also more involved to write and maintain.
 
-The simplest form of server-side tests is to write controller unit tests. However,
-this is not useful enough, since much of what a controller does depends on its
+The simplest form of server-side tests is to write com.Li.controller unit tests. However,
+this is not useful enough, since much of what a com.Li.controller does depends on its
 annotations. Pure unit tests simply cannot test that.
 
 Ideally, controllers under test should be invoked as they are at runtime, much like
@@ -2539,7 +2539,7 @@ possible alternatives here, either use a "`context-based`" or use a "`standalone
 
 * Load the actual Spring configuration with the help of the
 Spring TestContext framework, inject `clientInboundChannel` as a test field, and
-use it to send messages to be handled by controller methods.
+use it to send messages to be handled by com.Li.controller methods.
 
 * Manually set up the minimum Spring framework infrastructure required to invoke
 controllers (namely the `SimpAnnotationMethodMessageHandler`) and pass messages for

@@ -13,10 +13,10 @@
                 path-matcher="pathMatcher" />
     </mvc:annotation-driven>
 
-    <mvc:view-controller path="/" view-name="home"/>
-    <mvc:view-controller path="/test" view-name="test"/>
+    <mvc:view-com.Li.controller path="/" view-name="home"/>
+    <mvc:view-com.Li.controller path="/test" view-name="test"/>
 
-    <bean id="pathMatcher" class="org.springframework.web.servlet.config.MvcNamespaceTests$TestPathMatcher" />
-    <bean id="pathHelper" class="org.springframework.web.servlet.config.MvcNamespaceTests$TestPathHelper" />
+    <bean id="pathMatcher" class="org.springframework.web.servlet.com.Li.config.MvcNamespaceTests$TestPathMatcher" />
+    <bean id="pathHelper" class="org.springframework.web.servlet.com.Li.config.MvcNamespaceTests$TestPathHelper" />
 
 </beans>

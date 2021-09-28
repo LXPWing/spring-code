@@ -43,7 +43,7 @@ import org.springframework.web.util.UrlPathHelper;
  * @since 3.2
  * @deprecated as of 5.2.4. See class-level note in
  * {@link ContentNegotiationManagerFactoryBean} on the deprecation of path
- * extension config options.
+ * extension com.Li.config options.
  */
 @Deprecated
 public class PathExtensionContentNegotiationStrategy extends AbstractMappingContentNegotiationStrategy {

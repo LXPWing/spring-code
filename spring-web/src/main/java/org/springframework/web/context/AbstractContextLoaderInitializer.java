@@ -47,8 +47,8 @@ public abstract class AbstractContextLoaderInitializer implements WebApplication
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
-		registerContextLoaderListener(servletContext);
-	}
+		registerContextLoaderListener(servletContext);//注册监听器
+	}                                                                                   
 
 	/**
 	 * Register a {@link ContextLoaderListener} against the given servlet context. The
@@ -57,9 +57,9 @@ public abstract class AbstractContextLoaderInitializer implements WebApplication
 	 * @param servletContext the servlet context to register the listener against
 	 */
 	protected void registerContextLoaderListener(ServletContext servletContext) {
-		WebApplicationContext rootAppContext = createRootApplicationContext();
+		WebApplicationContext rootAppContext = createRootApplicationContext();//创建一个root容器
 		if (rootAppContext != null) {
-			ContextLoaderListener listener = new ContextLoaderListener(rootAppContext);
+			ContextLoaderListener listener = new ContextLoaderListener(rootAppContext);  //Tomcat监听器注册AnnotationConfigWebApplicationContext容器
 			listener.setContextInitializers(getRootApplicationContextInitializers());
 			servletContext.addListener(listener);
 		}

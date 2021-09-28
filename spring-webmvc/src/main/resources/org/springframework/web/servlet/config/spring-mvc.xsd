@@ -17,7 +17,7 @@
 	Configures the annotation-driven Spring MVC Controller programming model.
 	Note that this tag works in Web MVC only, not in Portlet MVC!
 
-	See org.springframework.web.servlet.config.annotation.EnableWebMvc javadoc for details
+	See org.springframework.web.servlet.com.Li.config.annotation.EnableWebMvc javadoc for details
 	on code-based alternatives to enabling annotation-driven Spring MVC support.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -134,7 +134,7 @@
 				<xsd:element name="argument-resolvers" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
-	Configures HandlerMethodArgumentResolver types to support custom controller method argument types.
+	Configures HandlerMethodArgumentResolver types to support custom com.Li.controller method argument types.
 	Using this option does not override the built-in support for resolving handler method arguments.
 	To customize the built-in support for argument resolution configure RequestMappingHandlerAdapter directly.
 						]]></xsd:documentation>
@@ -166,7 +166,7 @@
 				<xsd:element name="return-value-handlers" minOccurs="0">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
-	Configures HandlerMethodReturnValueHandler types to support custom controller method return value handling.
+	Configures HandlerMethodReturnValueHandler types to support custom com.Li.controller method return value handling.
 	Using this option does not override the built-in support for handling return values.
 	To customize the built-in support for handling return values configure RequestMappingHandlerAdapter directly.
 						]]></xsd:documentation>
@@ -207,7 +207,7 @@
 								<xsd:annotation>
 									<xsd:documentation><![CDATA[
 	The ordered set of interceptors that intercept the lifecycle of concurrently executed
-	requests, which start after a controller returns a java.util.concurrent.Callable.
+	requests, which start after a com.Li.controller returns a java.util.concurrent.Callable.
 									]]></xsd:documentation>
 								</xsd:annotation>
 								<xsd:complexType>
@@ -226,7 +226,7 @@
 								<xsd:annotation>
 									<xsd:documentation><![CDATA[
 	The ordered set of interceptors that intercept the lifecycle of concurrently executed
-	requests, which start after a controller returns a DeferredResult.
+	requests, which start after a com.Li.controller returns a DeferredResult.
 									]]></xsd:documentation>
 								</xsd:annotation>
 								<xsd:complexType>
@@ -245,11 +245,11 @@
 						<xsd:attribute name="task-executor" type="xsd:string">
 							<xsd:annotation>
 								<xsd:documentation source="java:org.springframework.core.task.AsyncTaskExecutor"><![CDATA[
-	The bean name of a default AsyncTaskExecutor to use when a controller method returns a "Callable".
+	The bean name of a default AsyncTaskExecutor to use when a com.Li.controller method returns a "Callable".
 	Controller methods can override this default on a per-request basis by returning an AsyncTask.
 	By default, a SimpleAsyncTaskExecutor is used which does not re-use threads and is not recommended for production.
 
-	As of 5.0 this executor is also used when a controller returns a reactive type that does streaming
+	As of 5.0 this executor is also used when a com.Li.controller returns a reactive type that does streaming
 	(e.g. "text/event-stream" or "application/stream+json") for the blocking writes to the
 	"javax.servlet.ServletOutputStream".
 
@@ -339,7 +339,7 @@
 	For example "/cars;color=red;year=2012". By default, they're removed from the URL. If this property
 	is set to true, matrix variables are not removed from the URL, and the request mapping pattern
 	must use URI variable in path segments where matrix variables are expected. For example "/{cars}".
-	Matrix variables can then be injected into a controller method with @MatrixVariable.
+	Matrix variables can then be injected into a com.Li.controller method with @MatrixVariable.
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
@@ -347,10 +347,10 @@
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	By default, the content of the "default" model is used both during rendering and redirect scenarios.
-	Alternatively a controller method can declare a RedirectAttributes argument and use it to provide attributes
+	Alternatively a com.Li.controller method can declare a RedirectAttributes argument and use it to provide attributes
 	for a redirect. Setting this flag to true ensures the "default" model is never used in a redirect scenario
 	even if a RedirectAttributes argument is not declared. Setting it to false means the "default" model
-	may be used in a redirect if the controller method doesn't declare a RedirectAttributes argument.
+	may be used in a redirect if the com.Li.controller method doesn't declare a RedirectAttributes argument.
 	The default setting is false but new applications should consider setting it to true.
 					]]></xsd:documentation>
 				</xsd:annotation>
@@ -477,7 +477,7 @@
 
 	<xsd:complexType name="resource-chain">
 		<xsd:annotation>
-			<xsd:documentation source="org.springframework.web.servlet.config.annotation.ResourceChainRegistration"><![CDATA[
+			<xsd:documentation source="org.springframework.web.servlet.com.Li.config.annotation.ResourceChainRegistration"><![CDATA[
 	Assists with the registration of resource resolvers and transformers.
 	Unless set to "false", the auto-registration adds default Resolvers (a PathResourceResolver) and Transformers
 	(CssLinkResourceTransformer, if a VersionResourceResolver has been manually registered).
@@ -807,10 +807,10 @@
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="view-controller">
+	<xsd:element name="view-com.Li.controller">
 		<xsd:annotation>
 			<xsd:documentation source="java:org.springframework.web.servlet.mvc.ParameterizableViewController"><![CDATA[
-	Map a simple (logic-less) view controller to a specific URL path (or pattern)
+	Map a simple (logic-less) view com.Li.controller to a specific URL path (or pattern)
 	in order to render a response with a pre-configured status code and view.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -818,7 +818,7 @@
 			<xsd:attribute name="path" type="xsd:string" use="required">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	The URL path (or pattern) the controller is mapped to.
+	The URL path (or pattern) the com.Li.controller is mapped to.
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
@@ -827,7 +827,7 @@
 					<xsd:documentation><![CDATA[
 	Set the view name to return. Optional.
 
-	If not specified, the view controller will return null as the
+	If not specified, the view com.Li.controller will return null as the
 	view name in which case the configured RequestToViewNameTranslator
 	will select the view name. The DefaultRequestToViewNameTranslator
 	for example translates "/foo/bar" to "foo/bar".
@@ -845,10 +845,10 @@
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="redirect-view-controller">
+	<xsd:element name="redirect-view-com.Li.controller">
 		<xsd:annotation>
 			<xsd:documentation source="java:org.springframework.web.servlet.mvc.ParameterizableViewController"><![CDATA[
-	Map a simple (logic-less) view controller to the given URL path (or pattern)
+	Map a simple (logic-less) view com.Li.controller to the given URL path (or pattern)
 	in order to redirect to another URL.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -856,7 +856,7 @@
 			<xsd:attribute name="path" type="xsd:string" use="required">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	The URL path (or pattern) the controller is mapped to.
+	The URL path (or pattern) the com.Li.controller is mapped to.
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
@@ -898,10 +898,10 @@
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="status-controller">
+	<xsd:element name="status-com.Li.controller">
 		<xsd:annotation>
 			<xsd:documentation source="java:org.springframework.web.servlet.mvc.ParameterizableViewController"><![CDATA[
-	Map a simple (logic-less) controller to the given URL path (or pattern) in order to
+	Map a simple (logic-less) com.Li.controller to the given URL path (or pattern) in order to
 	sets the response status to the given code without rendering a body.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -909,7 +909,7 @@
 			<xsd:attribute name="path" type="xsd:string" use="required">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
-	The URL path (or pattern) the controller is mapped to.
+	The URL path (or pattern) the com.Li.controller is mapped to.
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>

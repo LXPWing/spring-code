@@ -7,7 +7,7 @@
 		<constructor-arg value="xml.declared"/>
 	</bean>
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.com.Li.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<map>
 				<entry key="name" value="myName"/>

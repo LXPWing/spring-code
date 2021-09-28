@@ -55,11 +55,11 @@ import org.springframework.web.servlet.View;
  * <p>As a special feature, redirect URLs can be specified via the "redirect:"
  * prefix. E.g.: "redirect:myAction" will trigger a redirect to the given
  * URL, rather than resolution as standard view name. This is typically used
- * for redirecting to a controller URL after finishing a form workflow.
+ * for redirecting to a com.Li.controller URL after finishing a form workflow.
  *
  * <p>Furthermore, forward URLs can be specified via the "forward:" prefix.
  * E.g.: "forward:myAction" will trigger a forward to the given URL, rather than
- * resolution as standard view name. This is typically used for controller URLs;
+ * resolution as standard view name. This is typically used for com.Li.controller URLs;
  * it is not supposed to be used for JSP URLs - use logical view names there.
  *
  * <p>Note: This class does not support localized resolution, i.e. resolving
@@ -89,7 +89,7 @@ public class UrlBasedViewResolver extends AbstractCachingViewResolver implements
 
 	/**
 	 * Prefix for special view names that specify a redirect URL (usually
-	 * to a controller after a form has been submitted and processed).
+	 * to a com.Li.controller after a form has been submitted and processed).
 	 * Such view names will not be resolved in the configured default
 	 * way but rather be treated as special shortcut.
 	 */
@@ -97,7 +97,7 @@ public class UrlBasedViewResolver extends AbstractCachingViewResolver implements
 
 	/**
 	 * Prefix for special view names that specify a forward URL (usually
-	 * to a controller after a form has been submitted and processed).
+	 * to a com.Li.controller after a form has been submitted and processed).
 	 * Such view names will not be resolved in the configured default
 	 * way but rather be treated as special shortcut.
 	 */

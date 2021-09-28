@@ -11,10 +11,10 @@
 
 	<bean class="org.springframework.jms.annotation.AbstractJmsAnnotationDrivenTests$CustomBean"/>
 
-	<bean id="customRegistry" class="org.springframework.jms.config.JmsListenerEndpointRegistry"/>
+	<bean id="customRegistry" class="org.springframework.jms.com.Li.config.JmsListenerEndpointRegistry"/>
 
-	<bean id="jmsListenerContainerFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
-	<bean id="customFactory" class="org.springframework.jms.config.JmsListenerContainerTestFactory"/>
+	<bean id="jmsListenerContainerFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
+	<bean id="customFactory" class="org.springframework.jms.com.Li.config.JmsListenerContainerTestFactory"/>
 
 	<bean id="simpleMessageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter"/>
 

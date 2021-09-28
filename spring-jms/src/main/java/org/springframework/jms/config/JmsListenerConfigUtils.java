@@ -28,12 +28,12 @@ public abstract class JmsListenerConfigUtils {
 	 * The bean name of the internally managed JMS listener annotation processor.
 	 */
 	public static final String JMS_LISTENER_ANNOTATION_PROCESSOR_BEAN_NAME =
-			"org.springframework.jms.config.internalJmsListenerAnnotationProcessor";
+			"org.springframework.jms.com.Li.config.internalJmsListenerAnnotationProcessor";
 
 	/**
 	 * The bean name of the internally managed JMS listener endpoint registry.
 	 */
 	public static final String JMS_LISTENER_ENDPOINT_REGISTRY_BEAN_NAME =
-			"org.springframework.jms.config.internalJmsListenerEndpointRegistry";
+			"org.springframework.jms.com.Li.config.internalJmsListenerEndpointRegistry";
 
 }

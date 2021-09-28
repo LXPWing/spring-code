@@ -9,9 +9,9 @@
 
 	<bean id="annotationSource" class="org.springframework.cache.annotation.AnnotationCacheOperationSource"/>
 
-	<aop:config>
+	<aop:com.Li.config>
 		<aop:advisor advice-ref="debugInterceptor" pointcut="execution(* *..CacheableService.*(..))" order="1"/>
-	</aop:config>
+	</aop:com.Li.config>
 
 	<bean id="cacheInterceptor" class="org.springframework.cache.interceptor.CacheInterceptor">
 		<property name="cacheManager" ref="cacheManager"/>

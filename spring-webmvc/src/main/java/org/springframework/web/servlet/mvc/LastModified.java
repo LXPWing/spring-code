@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
  * default framework can implement this interface to enable last-modified checking.
  *
  * <p><b>Note:</b> Alternative handler implementation approaches have different
- * last-modified handling styles. For example, Spring 2.5's annotated controller
+ * last-modified handling styles. For example, Spring 2.5's annotated com.Li.controller
  * approach (using {@code @RequestMapping}) provides last-modified support
  * through the {@link org.springframework.web.context.request.WebRequest#checkNotModified}
  * method, allowing for last-modified checking within the main handler method.

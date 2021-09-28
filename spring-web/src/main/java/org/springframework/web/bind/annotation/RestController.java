@@ -36,7 +36,7 @@ import org.springframework.stereotype.Controller;
  * <p><b>NOTE:</b> {@code @RestController} is processed if an appropriate
  * {@code HandlerMapping}-{@code HandlerAdapter} pair is configured such as the
  * {@code RequestMappingHandlerMapping}-{@code RequestMappingHandlerAdapter}
- * pair which are the default in the MVC Java config and the MVC namespace.
+ * pair which are the default in the MVC Java com.Li.config and the MVC namespace.
  *
  * @author Rossen Stoyanchev
  * @author Sam Brannen

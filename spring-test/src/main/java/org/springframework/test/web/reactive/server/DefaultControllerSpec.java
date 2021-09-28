@@ -55,7 +55,7 @@ class DefaultControllerSpec extends AbstractMockServerSpec<WebTestClient.Control
 
 
 	DefaultControllerSpec(Object... controllers) {
-		Assert.isTrue(!ObjectUtils.isEmpty(controllers), "At least one controller is required");
+		Assert.isTrue(!ObjectUtils.isEmpty(controllers), "At least one com.Li.controller is required");
 		this.controllers = instantiateIfNecessary(controllers);
 	}
 
