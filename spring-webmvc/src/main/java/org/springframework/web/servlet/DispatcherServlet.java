@@ -862,6 +862,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * @return the List of corresponding strategy objects
 	 */
 	@SuppressWarnings("unchecked")
+	//策略模式生成需要的数据
 	protected <T> List<T> getDefaultStrategies(ApplicationContext context, Class<T> strategyInterface) {
 		String key = strategyInterface.getName();
 		String value = defaultStrategies.getProperty(key);
@@ -871,7 +872,7 @@ public class DispatcherServlet extends FrameworkServlet {
 			for (String className : classNames) {
 				try {
 					Class<?> clazz = ClassUtils.forName(className, DispatcherServlet.class.getClassLoader());
-					Object strategy = createDefaultStrategy(context, clazz);
+ 					Object strategy = createDefaultStrategy(context, clazz);
 					strategies.add((T) strategy);
 				}
 				catch (ClassNotFoundException ex) {
@@ -945,6 +946,7 @@ public class DispatcherServlet extends FrameworkServlet {
 		}
 
 		try {
+			//springMVC核心流程
 			doDispatch(request, response);
 		}
 		finally {
@@ -1005,7 +1007,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	//springMVC处理核心流程 
 	protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpServletRequest processedRequest = request;
-		HandlerExecutionChain mappedHandler = null;
+		HandlerExecutionChain mappedHandler = null; //handler的执行链
 		boolean multipartRequestParsed = false;
 		//异步请求的支持（Servlet3.0以后才有,webflux）
 		WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
@@ -1020,6 +1022,7 @@ public class DispatcherServlet extends FrameworkServlet {
 				multipartRequestParsed = (processedRequest != request);
 
 				// Determine handler for the current request.
+				// 决定使用哪个Handler处理当前请求
 				mappedHandler = getHandler(processedRequest);
 				if (mappedHandler == null) {
 					noHandlerFound(processedRequest, response);
@@ -1027,6 +1030,7 @@ public class DispatcherServlet extends FrameworkServlet {
 				}
 
 				// Determine handler adapter for the current request.
+				//获取适配器
 				HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
 
 				// Process last-modified header, if supported by the handler.
@@ -1237,6 +1241,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	@Nullable
 	protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
 		if (this.handlerMappings != null) {
+			//策略模式选择适合的HandlerMapping处理不同的路径请求
 			for (HandlerMapping mapping : this.handlerMappings) {
 				HandlerExecutionChain handler = mapping.getHandler(request);
 				if (handler != null) {

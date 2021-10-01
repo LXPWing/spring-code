@@ -289,6 +289,7 @@ public class ContextLoader {
 						ApplicationContext parent = loadParentContext(servletContext);
 						cwac.setParent(parent);
 					}
+					//初始化子容器
 					configureAndRefreshWebApplicationContext(cwac, servletContext);
 				}
 			}

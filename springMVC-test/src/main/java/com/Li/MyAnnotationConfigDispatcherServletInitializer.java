@@ -8,15 +8,16 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * @author : xingpeng
  * @date : 2021-09-28 14:57
  **/
+@SuppressWarnings("unchecked")
 public class MyAnnotationConfigDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	@Override //根容器的配置（spring的配置类/配置文件）
 	protected Class<?>[] getRootConfigClasses() {
-		return null;
+		return new Class<?>[]{SpringConfig.class};
 	}
 
 	@Override //web容器的配置（springMVC的配置类/配置文件）
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class<?>[]{SpringMVCConfig.class};
 	}
 
 	@Override //映射路径
