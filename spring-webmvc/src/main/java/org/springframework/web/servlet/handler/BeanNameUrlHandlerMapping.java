@@ -47,6 +47,7 @@ import org.springframework.util.StringUtils;
  * @author Juergen Hoeller
  * @see SimpleUrlHandlerMapping
  */
+//以BeanName为url条件是BeanName以‘/‘开头
 public class BeanNameUrlHandlerMapping extends AbstractDetectingUrlHandlerMapping {
 
 	/**
