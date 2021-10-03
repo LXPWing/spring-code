@@ -598,6 +598,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		try {
 			//自动装配(给创建好的对象属性赋值)
 			populateBean(beanName, mbd, instanceWrapper);
+			//初始化Bean对象
 			exposedObject = initializeBean(beanName, exposedObject, mbd);
 		}
 		catch (Throwable ex) {
@@ -1429,7 +1430,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		PropertyDescriptor[] filteredPds = null;
 		if (hasInstAwareBpps) {
 			if (pvs == null) {
-				pvs = mbd.getPropertyValues();  //xml指定的值
+				pvs = mbd.getPropertyValues();  //缓存xml文件指定的值, 例如<property name="name" value="xiaomao"></property>中的值
 			}
 			//使用后置处理器属性赋值
 			for (BeanPostProcessor bp : getBeanPostProcessors()) {
@@ -1457,7 +1458,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		}
 
 		if (pvs != null) {
-			applyPropertyValues(beanName, mbd, bw, pvs);//xml的所有配置回来到这里给赋值
+			applyPropertyValues(beanName, mbd, bw, pvs);//xml的所有配置会来到这里给赋值
 		}
 	}
 
