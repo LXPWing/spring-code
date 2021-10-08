@@ -157,10 +157,11 @@ public class InvocableHandlerMethod extends HandlerMethod {
 		for (int i = 0; i < parameters.length; i++) {
 			MethodParameter parameter = parameters[i];
 			parameter.initParameterNameDiscovery(this.parameterNameDiscoverer);
-			args[i] = findProvidedArgument(parameter, providedArgs);
+			args[i] = findProvidedArgument(parameter, providedArgs);  //先去已提供的参数中找
 			if (args[i] != null) {
 				continue;
 			}
+			//选择参数的解析器
 			if (!this.resolvers.supportsParameter(parameter)) {
 				throw new IllegalStateException(formatArgumentError(parameter, "No suitable resolver"));
 			}
