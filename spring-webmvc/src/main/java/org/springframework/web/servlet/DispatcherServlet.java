@@ -1053,7 +1053,7 @@ public class DispatcherServlet extends FrameworkServlet {
 				if (asyncManager.isConcurrentHandlingStarted()) {
 					return;
 				}
-
+				//后置拦截处理器
 				applyDefaultViewName(processedRequest, mv);
 				mappedHandler.applyPostHandle(processedRequest, response, mv);
 			}
@@ -1126,7 +1126,7 @@ public class DispatcherServlet extends FrameworkServlet {
 
 		// Did the handler return a view to render?
 		if (mv != null && !mv.wasCleared()) {
-			render(mv, request, response);
+			render(mv, request, response);  //页面渲染
 			if (errorView) {
 				WebUtils.clearErrorRequestAttributes(request);
 			}
@@ -1354,11 +1354,12 @@ public class DispatcherServlet extends FrameworkServlet {
 		Locale locale =
 				(this.localeResolver != null ? this.localeResolver.resolveLocale(request) : request.getLocale());
 		response.setLocale(locale);
-
-		View view;
-		String viewName = mv.getViewName();
+		//默认AcceptHeaderLocaleResolver会根据请求头中的Accept-Language字段决定浏览器接受 中文/英语
+		View view; //视图
+		String viewName = mv.getViewName(); //上一步执行返回的ModelAndView对象中的逻辑视图 index.jsp
 		if (viewName != null) {
 			// We need to resolve the view name.
+			//将目标方法中中的index.jsp 转换为view对象
 			view = resolveViewName(viewName, mv.getModelInternal(), locale, request);
 			if (view == null) {
 				throw new ServletException("Could not resolve view with name '" + mv.getViewName() +
@@ -1422,6 +1423,7 @@ public class DispatcherServlet extends FrameworkServlet {
 			Locale locale, HttpServletRequest request) throws Exception {
 
 		if (this.viewResolvers != null) {
+			//使用视图解析器
 			for (ViewResolver viewResolver : this.viewResolvers) {
 				View view = viewResolver.resolveViewName(viewName, locale);
 				if (view != null) {

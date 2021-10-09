@@ -178,6 +178,7 @@ public abstract class AbstractCachingViewResolver extends WebApplicationObjectSu
 			View view = this.viewAccessCache.get(cacheKey);
 			if (view == null) {
 				synchronized (this.viewCreationCache) {
+					//创建view对象
 					view = this.viewCreationCache.get(cacheKey);
 					if (view == null) {
 						// Ask the subclass to create the View object.
